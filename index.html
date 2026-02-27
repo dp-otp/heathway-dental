@@ -2498,15 +2498,17 @@
                 var data = snap.val();
                 var bar = document.getElementById('announcementBar');
                 var txt = document.getElementById('announcementText');
-                if (data && data.active && data.text) {
+                if (data && data.active === false) {
+                    // Admin explicitly turned it off
+                    bar.classList.remove('active');
+                    document.body.classList.remove('has-announcement');
+                } else if (data && data.text) {
                     if (sessionStorage.getItem('announceDismissed') === data.text) return;
                     txt.textContent = data.text;
                     bar.className = 'announcement-bar active ' + (data.style || 'teal');
                     document.body.classList.add('has-announcement');
-                } else {
-                    bar.classList.remove('active');
-                    document.body.classList.remove('has-announcement');
                 }
+                // If no data at all, keep the default banner as-is
             }, function(err) {
                 console.warn('Announcement listener error:', err.message);
             });
