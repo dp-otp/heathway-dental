@@ -886,7 +886,7 @@
                     </button>
                 </div>
 
-                <div class="chatbot__powered">Heathway AI &mdash; Dental Assistant for The Heathway Dental Surgery</div>
+                <div class="chatbot__powered" id="poweredBy">Heathway AI &mdash; Dental Assistant for The Heathway Dental Surgery</div>
             </div>
         </div>
     </main>
@@ -913,10 +913,29 @@
         </div>
     </footer>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
     <!-- =========================================
          SCRIPTS
          ========================================= -->
     <script>
+        // =============================================
+        // Firebase Configuration
+        // =============================================
+        var firebaseConfig = {
+            apiKey: "AIzaSyA3eVAdYntGPTsvhAZn0sezj7aYTR9qLC4",
+            authDomain: "golden-barbers-e25db.firebaseapp.com",
+            databaseURL: "https://golden-barbers-e25db-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "golden-barbers-e25db",
+            storageBucket: "golden-barbers-e25db.firebasestorage.app",
+            messagingSenderId: "719034478402",
+            appId: "1:719034478402:web:d3b3042688795b34e422db"
+        };
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.database();
+        var DB_PREFIX = 'heathway/';
         // =============================================
         // Header scroll effect
         // =============================================
@@ -1021,14 +1040,222 @@
             return div.innerHTML;
         }
 
+        // Create a bot message bubble and return its inner element for streaming updates
+        function createBotBubble() {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message message--bot';
+            messageDiv.innerHTML = `
+                <div class="message__bubble"></div>
+                <div class="message__time">${getTimeString()}</div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            scrollToBottom();
+            return messageDiv.querySelector('.message__bubble');
+        }
+
         // =============================================
-        // Response Logic — 200+ patterns
+        // LLM Integration — Google Gemini
+        // =============================================
+        const SYSTEM_PROMPT = `You are Heathway AI, the virtual dental assistant for The Heathway Dental Surgery in Dagenham, East London, UK.
+
+PRACTICE DETAILS:
+- Name: The Heathway Dental Surgery
+- Address: 276a Heathway, Dagenham, Essex, RM10 8QS
+- Phone: 020 8592 5030
+- Hours: Monday-Friday 9:00am-1:00pm and 2:00pm-5:00pm (closed 1-2pm for lunch)
+- Saturday & Sunday: Closed
+- Bank Holidays: Closed
+- Nearest tube: Dagenham Heathway (District Line) — 3 minute walk
+- Bus routes: 173, 174, 175 stop nearby
+- Parking: Street parking available on Heathway
+- Google Maps: https://maps.google.com/?q=276a+Heathway+Dagenham+RM10+8QS
+
+TEAM:
+- Dr Niti Kaushal — Principal Dentist, extensive experience, gentle approach, experienced with nervous/anxious patients
+
+NHS DENTAL CHARGES (2024/25):
+- Band 1: £26.80 — Check-up, examination, X-rays, scale & polish (if clinically needed), advice, treatment planning
+- Band 2: £73.50 — Everything in Band 1 plus fillings, root canal treatment, extractions, gum treatments
+- Band 3: £319.10 — Everything in Bands 1 & 2 plus crowns, dentures, bridges (includes lab work and fittings)
+- FREE NHS dental care for: under 18s (or under 19 in full-time education), pregnant women, new mothers (12 months after birth), income-related benefits (Universal Credit, JSA, etc.), NHS HC2 certificate holders, NHS inpatients
+
+SERVICES OFFERED:
+- General: Check-ups, fillings (composite white and amalgam silver), extractions (including wisdom teeth), root canal, X-rays (digital, minimal radiation)
+- Cosmetic: Teeth whitening (in-practice and take-home), porcelain veneers, smile makeovers, bonding
+- Restorative: Crowns (porcelain, 2 visits, 15+ years lifespan), bridges, dentures (full and partial), dental implants (titanium post, private only)
+- Preventive: Scale & polish, fluoride treatment, fissure sealants (especially for children)
+- Orthodontics: Traditional braces, Invisalign clear aligners (6-24 months treatment)
+- Other: Children's dentistry (from age 1, FREE NHS for under 18s), nervous patient care (go at your pace, stop signal, sedation options), emergency dental care, custom mouthguards (sports), night guards (for teeth grinding/bruxism/TMJ)
+- No walk-ins currently, but same-day emergencies accommodated where possible
+
+CQC REGISTRATION: CQC registered and inspected, NHS approved practice, compliant with all safety standards, regular infection control audits, staff undergo continuous professional development
+
+BOOKING: Patients should call 020 8592 5030 to book. New patients welcome (NHS and private). Bring photo ID for first visit. Allow 30-45 minutes for new patient appointments. 24 hours notice appreciated for cancellations. Cancellation list available for earlier appointments.
+
+EMERGENCY GUIDANCE:
+- Call 020 8592 5030 immediately during hours
+- Outside hours: Call NHS 111
+- Toothache: Rinse with warm salt water, take paracetamol/ibuprofen
+- Knocked-out tooth: Keep in milk, come immediately
+- Swelling: Cold compress on cheek, 10 min on/off
+- Bleeding: Bite on clean gauze for 20 minutes
+- Broken tooth: Save any pieces, rinse gently
+
+PAYMENT: Cash, debit and credit cards accepted. Payment plans available for larger private treatments.
+
+RESPONSE GUIDELINES:
+- Be warm, friendly, professional, and concise
+- Use British English spelling
+- For emergencies, ALWAYS prioritise calling 020 8592 5030 or NHS 111
+- For booking, direct patients to call 020 8592 5030
+- Never diagnose conditions — advise to see the dentist
+- Be extra supportive and gentle with nervous/anxious patients
+- Format responses using markdown: **bold**, *italic*, bullet points with - , links with [text](url)
+- Keep responses focused and helpful, typically 3-8 lines
+- Include the phone number when relevant: 020 8592 5030
+- If asked something outside dental/practice scope, politely redirect to dental topics
+- You can use appropriate emojis sparingly to be friendly`;
+
+        let conversationHistory = [];
+        let aiApiKey = null;
+        let aiMode = 'fallback'; // 'llm' or 'fallback'
+
+        // Load AI config from Firebase
+        db.ref(DB_PREFIX + 'aiConfig').on('value', function(snap) {
+            const config = snap.val();
+            if (config && config.apiKey) {
+                aiApiKey = config.apiKey;
+                aiMode = 'llm';
+                console.log('Heathway AI: LLM mode active (Gemini)');
+            } else {
+                aiApiKey = null;
+                aiMode = 'fallback';
+                console.log('Heathway AI: Using built-in responses (no API key configured)');
+            }
+        });
+
+        // Convert markdown from LLM to HTML
+        function markdownToHtml(text) {
+            if (!text) return '';
+            let html = text;
+            html = html.replace(/^#{1,3}\s+(.+)/gm, '<strong>$1</strong>');
+            html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            html = html.replace(/^[\t ]*[-*•]\s+/gm, '&#x2022; ');
+            html = html.replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, '<em>$1</em>');
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color:var(--teal)" target="_blank">$1</a>');
+            html = html.replace(/\n\n/g, '<br><br>');
+            html = html.replace(/\n/g, '<br>');
+            return html;
+        }
+
+        // Emergency patterns — instant response, no API needed
+        function getEmergencyResponse(msg) {
+            const m = msg.toLowerCase().trim();
+            const phone = "<a href='tel:02085925030' style='color:var(--teal);font-weight:600'>020 8592 5030</a>";
+            if (/\b(emergency|agony|unbearable|excruciating|severe pain|swelling|swollen|abscess|knocked out|knocked-out|avulsed|broken tooth|cracked tooth|jaw broke|can't open mouth|face swelling|blood won't stop)\b/.test(m)) {
+                return "&#x1F6A8; <strong>Dental Emergency</strong><br><br>Please call us immediately:<br><br>&#x1F4DE; "+phone+"<br><br>We'll fit you in as soon as possible. If outside hours (Mon-Fri 9am-5pm), call <strong>NHS 111</strong>.<br><br><strong>Quick first aid:</strong><br>&#x2022; Toothache &mdash; rinse with warm salt water, take paracetamol/ibuprofen<br>&#x2022; Knocked-out tooth &mdash; keep in milk, come immediately<br>&#x2022; Swelling &mdash; cold compress on cheek, 10 min on/off<br>&#x2022; Bleeding &mdash; bite down on clean gauze for 20 min<br>&#x2022; Broken tooth &mdash; save any pieces, rinse gently, call us";
+            }
+            return null;
+        }
+
+        // Call Gemini API with streaming
+        async function callGeminiStreaming(userMessage, bubble) {
+            const contents = conversationHistory.map(m => ({
+                role: m.role,
+                parts: [{ text: m.content }]
+            }));
+            contents.push({ role: 'user', parts: [{ text: userMessage }] });
+
+            const response = await fetch(
+                'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key=' + aiApiKey,
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+                        contents: contents,
+                        generationConfig: {
+                            temperature: 0.7,
+                            maxOutputTokens: 800,
+                            topP: 0.95
+                        }
+                    })
+                }
+            );
+
+            if (!response.ok) throw new Error('API error: ' + response.status);
+
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            let fullText = '';
+            let buffer = '';
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+
+                buffer += decoder.decode(value, { stream: true });
+                const lines = buffer.split('\n');
+                buffer = lines.pop();
+
+                for (const line of lines) {
+                    if (line.startsWith('data: ')) {
+                        const data = line.slice(6).trim();
+                        if (!data || data === '[DONE]') continue;
+                        try {
+                            const json = JSON.parse(data);
+                            const text = json.candidates && json.candidates[0] && json.candidates[0].content && json.candidates[0].content.parts && json.candidates[0].content.parts[0] && json.candidates[0].content.parts[0].text;
+                            if (text) {
+                                fullText += text;
+                                bubble.innerHTML = markdownToHtml(fullText);
+                                scrollToBottom();
+                            }
+                        } catch(e) {}
+                    }
+                }
+            }
+
+            return fullText;
+        }
+
+        // Non-streaming fallback for Gemini API
+        async function callGeminiSimple(userMessage) {
+            const contents = conversationHistory.map(m => ({
+                role: m.role,
+                parts: [{ text: m.content }]
+            }));
+            contents.push({ role: 'user', parts: [{ text: userMessage }] });
+
+            const response = await fetch(
+                'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + aiApiKey,
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+                        contents: contents,
+                        generationConfig: {
+                            temperature: 0.7,
+                            maxOutputTokens: 800,
+                            topP: 0.95
+                        }
+                    })
+                }
+            );
+
+            if (!response.ok) throw new Error('API error: ' + response.status);
+            const data = await response.json();
+            return data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0] && data.candidates[0].content.parts[0].text;
+        }
+
+        // =============================================
+        // Fallback Response Logic — 200+ patterns
         // =============================================
         const pick = arr => arr[Math.floor(Math.random() * arr.length)];
         const phone = "<a href='tel:02085925030' style='color:var(--teal);font-weight:600'>020 8592 5030</a>";
         const phoneInline = "<a href='tel:02085925030' style='color:var(--teal)'>020 8592 5030</a>";
 
-        function getBotResponse(input) {
+        function getFallbackResponse(input) {
             const msg = input.toLowerCase().trim();
 
             // ── EMERGENCY (highest priority) ──
@@ -1420,7 +1647,7 @@
         // =============================================
         // Send Message Handler
         // =============================================
-        function sendMessage(text) {
+        async function sendMessage(text) {
             if (!text || !text.trim()) return;
 
             const userText = text.trim();
@@ -1435,16 +1662,70 @@
             chatInput.value = '';
             chatInput.focus();
 
-            // Show typing indicator
-            showTyping();
-
-            // Simulate bot thinking delay (600ms - 1200ms)
-            const delay = 600 + Math.random() * 600;
-            setTimeout(() => {
+            // 1. Check emergency patterns first (instant response, no API needed)
+            const emergency = getEmergencyResponse(userText);
+            if (emergency) {
+                showTyping();
+                await new Promise(function(r) { setTimeout(r, 400); });
                 removeTyping();
-                const response = getBotResponse(userText);
-                addBotMessage(response);
-            }, delay);
+                addBotMessage(emergency);
+                conversationHistory.push({ role: 'user', content: userText });
+                conversationHistory.push({ role: 'model', content: emergency });
+                return;
+            }
+
+            // 2. Try LLM if API key is configured
+            if (aiMode === 'llm' && aiApiKey) {
+                showTyping();
+                try {
+                    // Try streaming first
+                    removeTyping();
+                    const bubble = createBotBubble();
+                    bubble.innerHTML = '<span style="opacity:0.5">Thinking...</span>';
+
+                    let llmResponse = null;
+                    try {
+                        llmResponse = await callGeminiStreaming(userText, bubble);
+                    } catch(streamErr) {
+                        // Streaming failed, try non-streaming
+                        console.log('Streaming failed, trying non-streaming:', streamErr);
+                        try {
+                            llmResponse = await callGeminiSimple(userText);
+                            if (llmResponse) {
+                                bubble.innerHTML = markdownToHtml(llmResponse);
+                            }
+                        } catch(simpleErr) {
+                            console.error('Gemini API error:', simpleErr);
+                        }
+                    }
+
+                    if (llmResponse) {
+                        // Success — update conversation history
+                        conversationHistory.push({ role: 'user', content: userText });
+                        conversationHistory.push({ role: 'model', content: llmResponse });
+                        // Keep last 20 messages to stay within token limits
+                        if (conversationHistory.length > 20) {
+                            conversationHistory = conversationHistory.slice(-20);
+                        }
+                        scrollToBottom();
+                        return;
+                    }
+
+                    // LLM returned nothing — remove empty bubble, fall through to regex
+                    bubble.parentElement.remove();
+                } catch(e) {
+                    console.error('LLM error:', e);
+                    removeTyping();
+                }
+            }
+
+            // 3. Fallback to built-in regex patterns
+            showTyping();
+            const delayMs = 600 + Math.random() * 600;
+            await new Promise(function(r) { setTimeout(r, delayMs); });
+            removeTyping();
+            const response = getFallbackResponse(userText);
+            addBotMessage(response);
         }
 
         // Send on button click
