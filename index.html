@@ -1594,8 +1594,8 @@
 </head>
 <body>
     <!-- Dynamic Announcement Banner (Firebase) -->
-    <div class="announcement-bar" id="announcementBar">
-        <span id="announcementText"></span>
+    <div class="announcement-bar active teal" id="announcementBar">
+        <span id="announcementText">Now accepting new NHS patients — Book online or call 020 8592 5030</span>
         <button class="dismiss-btn" onclick="dismissAnnouncement()">&times;</button>
     </div>
 
@@ -1769,33 +1769,6 @@
         </div>
     </section>
 
-    <!-- =========================================
-         PRICING (Firebase-driven)
-         ========================================= -->
-    <section class="pricing-section" id="pricing">
-        <div class="pricing-section__container">
-            <header class="section-header">
-                <span class="section-eyebrow">Transparent Pricing</span>
-                <h2 class="section-title">Our treatment prices</h2>
-                <p class="section-description">We believe in complete transparency. All prices shown below are kept up to date.</p>
-            </header>
-            <div class="pricing-tabs">
-                <button class="pricing-tab active" onclick="switchPricingTab('nhs')">NHS</button>
-                <button class="pricing-tab" onclick="switchPricingTab('private')">Private</button>
-                <button class="pricing-tab" onclick="switchPricingTab('cosmetic')">Cosmetic</button>
-            </div>
-            <div class="pricing-category active" id="pricing-nhs">
-                <table class="pricing-table"><thead><tr><th>Treatment</th><th style="text-align:right">Price</th></tr></thead><tbody id="pricingNHSBody"><tr><td colspan="2" style="color:#888;text-align:center;padding:30px;">Loading prices...</td></tr></tbody></table>
-            </div>
-            <div class="pricing-category" id="pricing-private">
-                <table class="pricing-table"><thead><tr><th>Treatment</th><th style="text-align:right">Price</th></tr></thead><tbody id="pricingPrivateBody"><tr><td colspan="2" style="color:#888;text-align:center;padding:30px;">Loading prices...</td></tr></tbody></table>
-            </div>
-            <div class="pricing-category" id="pricing-cosmetic">
-                <table class="pricing-table"><thead><tr><th>Treatment</th><th style="text-align:right">Price</th></tr></thead><tbody id="pricingCosmeticBody"><tr><td colspan="2" style="color:#888;text-align:center;padding:30px;">Loading prices...</td></tr></tbody></table>
-            </div>
-            <p style="text-align:center; color:#666; font-size:12px; margin-top:var(--space-md);">Prices last updated: <span id="pricesLastUpdated">-</span></p>
-        </div>
-    </section>
 
     <!-- =========================================
          ABOUT PREVIEW
@@ -1830,21 +1803,6 @@
         </div>
     </section>
 
-    <!-- =========================================
-         LIVE GALLERY (Firebase)
-         ========================================= -->
-    <section class="live-gallery" id="gallery">
-        <div class="live-gallery__container">
-            <header class="section-header">
-                <span class="section-eyebrow">Gallery</span>
-                <h2 class="section-title">Our practice &amp; results</h2>
-                <p class="section-description">Take a look inside our modern surgery and see the results we deliver for our patients.</p>
-            </header>
-            <div class="live-gallery__grid" id="liveGalleryDisplay">
-                <!-- Populated by Firebase -->
-            </div>
-        </div>
-    </section>
 
     <!-- =========================================
          TESTIMONIALS
