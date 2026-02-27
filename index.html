@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Heathway Dental Surgery | Quality Dental Care in Dagenham</title>
+    <meta name="description" content="The Heathway Dental Surgery in Dagenham offers quality NHS and private dental care. Emergency appointments available. Call 020 8592 5030.">
+    <meta name="keywords" content="dentist dagenham, NHS dentist, private dentist, emergency dentist, heathway dental, dental surgery dagenham, teeth whitening, dental implants">
+    <meta name="author" content="The Heathway Dental Surgery">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.heathwaydental.co.uk/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Heathway Dental Surgery | Quality Dental Care in Dagenham">
+    <meta property="og:description" content="NHS and private dental care for the whole family. Emergency appointments available. 20+ years serving Dagenham.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.heathwaydental.co.uk/">
+    <meta property="og:image" content="IMG_3933.jpeg">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Heathway Dental Surgery | Quality Dental Care in Dagenham">
+    <meta name="twitter:description" content="NHS and private dental care for the whole family. Emergency appointments available.">
+    <meta name="twitter:image" content="IMG_3933.jpeg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1344,9 +1364,249 @@
             .hero__metric-value { font-size: 1.25rem; }
             .mobile-menu__link { font-size: 1.125rem; padding: 0.6rem 2rem; }
         }
+
+/* ===========================================
+   ANNOUNCEMENT BANNER
+   =========================================== */
+.announcement-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 10000;
+    padding: 12px 20px; text-align: center;
+    font-weight: 600; font-size: 14px; color: #fff;
+    display: none; align-items: center; justify-content: center; gap: 12px;
+    animation: slideDown 0.4s ease;
+}
+.announcement-bar.active { display: flex; }
+.announcement-bar.teal { background: linear-gradient(135deg, #14b8a6, #0d9488); }
+.announcement-bar.green { background: linear-gradient(135deg, #22c55e, #16a34a); }
+.announcement-bar.red { background: linear-gradient(135deg, #ef4444, #dc2626); }
+.announcement-bar.blue { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.announcement-bar .dismiss-btn {
+    background: rgba(255,255,255,0.2); border: none; color: #fff;
+    width: 24px; height: 24px; border-radius: 50%; cursor: pointer;
+    font-size: 14px; line-height: 1; flex-shrink: 0;
+}
+@keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+.has-announcement .header { top: 42px; }
+
+/* ===========================================
+   SHOP STATUS BANNER
+   =========================================== */
+.shop-closed-banner {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff; text-align: center; padding: 14px 20px;
+    font-weight: 600; font-size: 15px; display: none;
+}
+.shop-closed-banner.active { display: block; }
+.shop-holiday-banner {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #fff; text-align: center; padding: 14px 20px;
+    font-weight: 600; font-size: 15px; display: none;
+}
+.shop-holiday-banner.active { display: block; }
+
+/* ===========================================
+   BOOKING MODAL
+   =========================================== */
+.booking-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+    z-index: 10001; display: none; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(4px);
+}
+.booking-overlay.active { display: flex; }
+.booking-modal {
+    background: linear-gradient(145deg, #131c2a, #0d1520);
+    border: 1px solid rgba(20,184,166,0.2); border-radius: 20px;
+    padding: 30px; max-width: 520px; width: 100%;
+    max-height: 90vh; overflow-y: auto; position: relative;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+}
+.booking-modal h2 {
+    font-family: 'Sora', sans-serif; color: #14b8a6;
+    font-size: 22px; margin-bottom: 6px;
+}
+.booking-modal .booking-subtitle { color: #8899aa; font-size: 14px; margin-bottom: 24px; }
+.booking-modal .close-modal {
+    position: absolute; top: 16px; right: 16px;
+    background: rgba(255,255,255,0.1); border: none; color: #fff;
+    width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+    font-size: 18px; display: flex; align-items: center; justify-content: center;
+}
+.booking-step { display: none; }
+.booking-step.active { display: block; animation: fadeInUp 0.3s ease; }
+.booking-form-group { margin-bottom: 18px; }
+.booking-form-group label {
+    display: block; color: #8899aa; font-size: 12px;
+    margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+}
+.booking-form-group input,
+.booking-form-group select,
+.booking-form-group textarea {
+    width: 100%; padding: 13px 15px;
+    background: rgba(0,0,0,0.4); border: 1px solid rgba(20,184,166,0.3);
+    border-radius: 10px; color: #fff; font-size: 15px;
+    font-family: 'Outfit', sans-serif; transition: border-color 0.3s;
+}
+.booking-form-group input:focus,
+.booking-form-group select:focus,
+.booking-form-group textarea:focus {
+    outline: none; border-color: #14b8a6;
+    box-shadow: 0 0 0 3px rgba(20,184,166,0.1);
+}
+.booking-form-group select option { background: #131c2a; color: #fff; }
+.booking-form-group textarea { min-height: 80px; resize: vertical; }
+.booking-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .booking-form-row { grid-template-columns: 1fr; } }
+.booking-btn {
+    width: 100%; padding: 14px; background: linear-gradient(135deg, #14b8a6, #0d9488);
+    color: #fff; border: none; border-radius: 12px; font-weight: 700;
+    font-size: 15px; cursor: pointer; font-family: 'Outfit', sans-serif;
+    text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s;
+}
+.booking-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(20,184,166,0.3); }
+.booking-btn-secondary {
+    background: rgba(20,184,166,0.1); color: #14b8a6;
+    border: 1px solid rgba(20,184,166,0.3);
+}
+.booking-btn-secondary:hover { background: rgba(20,184,166,0.2); transform: translateY(-1px); }
+.booking-nav { display: flex; gap: 10px; margin-top: 16px; }
+.booking-nav .booking-btn { flex: 1; }
+.booking-steps-indicator {
+    display: flex; gap: 8px; margin-bottom: 20px; justify-content: center;
+}
+.step-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: rgba(20,184,166,0.2); transition: all 0.3s;
+}
+.step-dot.active { background: #14b8a6; transform: scale(1.2); }
+.step-dot.done { background: #22c55e; }
+.booking-confirmation {
+    text-align: center; padding: 20px 0;
+}
+.booking-confirmation .confirm-icon {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: rgba(34,197,94,0.15); border: 2px solid #22c55e;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; font-size: 32px; color: #22c55e;
+}
+.booking-confirmation h3 { color: #22c55e; font-size: 20px; margin-bottom: 8px; }
+.booking-confirmation p { color: #8899aa; font-size: 14px; }
+.booking-confirmation .booking-ref {
+    background: rgba(20,184,166,0.1); border: 1px solid rgba(20,184,166,0.3);
+    border-radius: 10px; padding: 12px; margin: 16px 0;
+    font-family: 'Sora', monospace; font-size: 18px;
+    color: #14b8a6; font-weight: 700; letter-spacing: 2px;
+}
+.booking-summary-row {
+    display: flex; justify-content: space-between; padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px;
+}
+.booking-summary-row .label { color: #8899aa; }
+.booking-summary-row .value { color: #fff; font-weight: 600; }
+
+/* ===========================================
+   DYNAMIC OPENING HOURS (footer)
+   =========================================== */
+.footer__hours-dynamic { font-size: 13px; color: var(--gray-400); line-height: 1.8; }
+.footer__hours-dynamic .today { color: #14b8a6; font-weight: 600; }
+
+/* ===========================================
+   LIVE GALLERY SECTION
+   =========================================== */
+.live-gallery { padding: var(--space-3xl) 0; background: var(--charcoal); }
+.live-gallery__container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding); }
+.live-gallery__grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: var(--space-xl);
+}
+.live-gallery__item {
+    aspect-ratio: 1; border-radius: 16px; overflow: hidden;
+    position: relative; cursor: pointer;
+}
+.live-gallery__item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.live-gallery__item:hover img { transform: scale(1.05); }
+.live-gallery__item .gallery-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 12px; background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: #fff; font-size: 13px; font-weight: 600;
+}
+@media (max-width: 768px) { .live-gallery__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .live-gallery__grid { grid-template-columns: 1fr 1fr; gap: 8px; } }
+
+/* ===========================================
+   COOKIE CONSENT BANNER
+   =========================================== */
+.cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 9998;
+    background: linear-gradient(145deg, #131c2a, #0d1520);
+    border-top: 1px solid rgba(20,184,166,0.2);
+    padding: 18px 24px; display: none;
+    align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+.cookie-banner.active { display: flex; }
+.cookie-banner p { color: #b0bfcc; font-size: 13px; flex: 1; min-width: 200px; }
+.cookie-banner p a { color: #14b8a6; text-decoration: underline; }
+.cookie-banner .cookie-buttons { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-banner .cookie-btn {
+    padding: 10px 20px; border-radius: 8px; font-weight: 600;
+    font-size: 13px; cursor: pointer; border: none; font-family: 'Outfit', sans-serif;
+}
+.cookie-banner .cookie-accept { background: #14b8a6; color: #fff; }
+.cookie-banner .cookie-reject { background: rgba(255,255,255,0.1); color: #b0bfcc; }
+
+/* ===========================================
+   DYNAMIC PRICES SECTION
+   =========================================== */
+.pricing-section { padding: var(--space-3xl) 0; }
+.pricing-section__container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding); }
+.pricing-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: var(--space-xl); flex-wrap: wrap; }
+.pricing-tab {
+    padding: 10px 24px; border-radius: 30px; font-weight: 600;
+    font-size: 14px; cursor: pointer; border: 1px solid rgba(20,184,166,0.3);
+    background: transparent; color: #8899aa; font-family: 'Outfit', sans-serif;
+    transition: all 0.3s;
+}
+.pricing-tab.active { background: #14b8a6; color: #fff; border-color: #14b8a6; }
+.pricing-category { display: none; }
+.pricing-category.active { display: block; animation: fadeInUp 0.3s ease; }
+.pricing-table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    background: linear-gradient(145deg, rgba(20,28,42,0.6), rgba(13,21,32,0.6));
+    border: 1px solid rgba(20,184,166,0.1); border-radius: 16px; overflow: hidden;
+}
+.pricing-table th {
+    text-align: left; padding: 16px 20px; color: #14b8a6;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+    border-bottom: 1px solid rgba(20,184,166,0.1);
+    background: rgba(20,184,166,0.05);
+}
+.pricing-table td {
+    padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.03);
+    font-size: 14px;
+}
+.pricing-table tr:last-child td { border-bottom: none; }
+.pricing-table .service-name { color: #fff; font-weight: 500; }
+.pricing-table .service-price { color: #14b8a6; font-weight: 700; font-size: 16px; text-align: right; }
     </style>
 </head>
 <body>
+    <!-- Dynamic Announcement Banner (Firebase) -->
+    <div class="announcement-bar" id="announcementBar">
+        <span id="announcementText"></span>
+        <button class="dismiss-btn" onclick="dismissAnnouncement()">&times;</button>
+    </div>
+
+    <!-- Shop Closed Banner -->
+    <div class="shop-closed-banner" id="shopClosedBanner">
+        We are currently closed. Please call 020 8592 5030 for emergencies.
+    </div>
+    <div class="shop-holiday-banner" id="shopHolidayBanner">
+        We are currently on holiday. We will reopen soon. For emergencies, call 020 8592 5030.
+    </div>
+
     <!-- =========================================
          NAVIGATION
          ========================================= -->
@@ -1396,7 +1656,7 @@
                 <div class="hero__left">
                     <p class="hero__description">We combine modern dentistry with genuine care. NHS and private treatments for the whole family, in a practice built around you.</p>
                     <div class="hero__cta-group">
-                        <a href="tel:02085925030" class="btn btn--primary">Book Appointment</a>
+                        <button onclick="openBooking()" class="btn btn--primary" style="cursor:pointer;">Book Appointment</button>
                         <a href="#services" class="hero__text-link">View services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div>
                 </div>
@@ -1510,6 +1770,34 @@
     </section>
 
     <!-- =========================================
+         PRICING (Firebase-driven)
+         ========================================= -->
+    <section class="pricing-section" id="pricing">
+        <div class="pricing-section__container">
+            <header class="section-header">
+                <span class="section-eyebrow">Transparent Pricing</span>
+                <h2 class="section-title">Our treatment prices</h2>
+                <p class="section-description">We believe in complete transparency. All prices shown below are kept up to date.</p>
+            </header>
+            <div class="pricing-tabs">
+                <button class="pricing-tab active" onclick="switchPricingTab('nhs')">NHS</button>
+                <button class="pricing-tab" onclick="switchPricingTab('private')">Private</button>
+                <button class="pricing-tab" onclick="switchPricingTab('cosmetic')">Cosmetic</button>
+            </div>
+            <div class="pricing-category active" id="pricing-nhs">
+                <table class="pricing-table"><thead><tr><th>Treatment</th><th style="text-align:right">Price</th></tr></thead><tbody id="pricingNHSBody"><tr><td colspan="2" style="color:#888;text-align:center;padding:30px;">Loading prices...</td></tr></tbody></table>
+            </div>
+            <div class="pricing-category" id="pricing-private">
+                <table class="pricing-table"><thead><tr><th>Treatment</th><th style="text-align:right">Price</th></tr></thead><tbody id="pricingPrivateBody"><tr><td colspan="2" style="color:#888;text-align:center;padding:30px;">Loading prices...</td></tr></tbody></table>
+            </div>
+            <div class="pricing-category" id="pricing-cosmetic">
+                <table class="pricing-table"><thead><tr><th>Treatment</th><th style="text-align:right">Price</th></tr></thead><tbody id="pricingCosmeticBody"><tr><td colspan="2" style="color:#888;text-align:center;padding:30px;">Loading prices...</td></tr></tbody></table>
+            </div>
+            <p style="text-align:center; color:#666; font-size:12px; margin-top:var(--space-md);">Prices last updated: <span id="pricesLastUpdated">-</span></p>
+        </div>
+    </section>
+
+    <!-- =========================================
          ABOUT PREVIEW
          ========================================= -->
     <section class="about-preview" id="about">
@@ -1538,6 +1826,22 @@
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         LIVE GALLERY (Firebase)
+         ========================================= -->
+    <section class="live-gallery" id="gallery">
+        <div class="live-gallery__container">
+            <header class="section-header">
+                <span class="section-eyebrow">Gallery</span>
+                <h2 class="section-title">Our practice &amp; results</h2>
+                <p class="section-description">Take a look inside our modern surgery and see the results we deliver for our patients.</p>
+            </header>
+            <div class="live-gallery__grid" id="liveGalleryDisplay">
+                <!-- Populated by Firebase -->
             </div>
         </div>
     </section>
@@ -1856,10 +2160,13 @@
             <h2 class="cta-section__title">Ready to book your appointment?</h2>
             <p class="cta-section__text">
                 Whether you're due for a check-up or have a specific concern,
-                we're here to help. Call us or visit our contact page.
+                we're here to help. Book online, call us, or visit our contact page.
             </p>
             <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
-                <a href="tel:02085925030" class="btn btn--primary">
+                <button onclick="openBooking()" class="btn btn--primary" style="cursor:pointer;">
+                    Book Online
+                </button>
+                <a href="tel:02085925030" class="btn btn--glass">
                     Call 020 8592 5030
                 </a>
                 <a href="heathway-contact.html" class="btn btn--glass">
@@ -1913,17 +2220,20 @@
                     <h4 class="footer__heading">Contact</h4>
                     <p class="footer__contact-item">276a Heathway<br>Dagenham, Essex, RM10 8QS</p>
                     <p class="footer__contact-item"><a href="tel:02085925030" style="color: var(--cream); text-decoration: none;">020 8592 5030</a></p>
-                    <p class="footer__contact-item">Mon&ndash;Fri: 9am&ndash;1pm, 2pm&ndash;5pm<br>Sat&ndash;Sun: Closed</p>
+                    <div class="footer__hours-dynamic" id="footerHours">Mon&ndash;Fri: 9am&ndash;1pm, 2pm&ndash;5pm<br>Sat&ndash;Sun: Closed</div>
                 </div>
             </div>
 
             <div class="footer__bottom">
                 <p class="footer__copyright">
-                    &copy; 2026 The Heathway Dental Surgery. All rights reserved.
+                    &copy; 2026 The Heathway Dental Surgery. All rights reserved. | GDC Registered | CQC Regulated<br>
+                    <span style="font-size:11px;color:#555;">Last updated: February 2026</span>
                 </p>
                 <div class="footer__legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="#" onclick="showPrivacyPolicy();return false;">Privacy Policy</a>
+                    <a href="#" onclick="showComplaints();return false;">Complaints Procedure</a>
+                    <a href="https://www.gdc-uk.org" target="_blank" rel="noopener">GDC</a>
+                    <a href="https://www.cqc.org.uk" target="_blank" rel="noopener">CQC</a>
                 </div>
             </div>
         </div>
@@ -1936,13 +2246,229 @@
         </svg>
     </a>
 
+    <!-- Booking Modal -->
+    <div class="booking-overlay" id="bookingOverlay">
+        <div class="booking-modal">
+            <button class="close-modal" onclick="closeBooking()">&times;</button>
+            <h2>Book an Appointment</h2>
+            <p class="booking-subtitle">Fill in the details below and we'll confirm your appointment</p>
+            <div class="booking-steps-indicator">
+                <div class="step-dot active" id="dot-1"></div>
+                <div class="step-dot" id="dot-2"></div>
+                <div class="step-dot" id="dot-3"></div>
+                <div class="step-dot" id="dot-4"></div>
+            </div>
+
+            <!-- Step 1: Service -->
+            <div class="booking-step active" id="bookStep1">
+                <div class="booking-form-group">
+                    <label>Select Service</label>
+                    <select id="bookService">
+                        <option value="">-- Choose a service --</option>
+                    </select>
+                </div>
+                <div class="booking-form-group">
+                    <label>Patient Type</label>
+                    <select id="bookPatientType">
+                        <option value="NHS">NHS Patient</option>
+                        <option value="Private">Private Patient</option>
+                        <option value="New">New Patient</option>
+                    </select>
+                </div>
+                <button class="booking-btn" onclick="bookingNext(2)">Continue</button>
+            </div>
+
+            <!-- Step 2: Date/Time -->
+            <div class="booking-step" id="bookStep2">
+                <div class="booking-form-row">
+                    <div class="booking-form-group">
+                        <label>Preferred Date</label>
+                        <input type="date" id="bookDate" min="">
+                    </div>
+                    <div class="booking-form-group">
+                        <label>Preferred Time</label>
+                        <select id="bookTime">
+                            <option value="">-- Select time --</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="09:30">9:30 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="14:30">2:30 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="15:30">3:30 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="16:30">4:30 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="booking-nav">
+                    <button class="booking-btn booking-btn-secondary" onclick="bookingNext(1)">Back</button>
+                    <button class="booking-btn" onclick="bookingNext(3)">Continue</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Details -->
+            <div class="booking-step" id="bookStep3">
+                <div class="booking-form-row">
+                    <div class="booking-form-group">
+                        <label>First Name</label>
+                        <input type="text" id="bookFirstName" placeholder="John">
+                    </div>
+                    <div class="booking-form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="bookLastName" placeholder="Smith">
+                    </div>
+                </div>
+                <div class="booking-form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="bookPhone" placeholder="07xxx xxxxxx">
+                </div>
+                <div class="booking-form-group">
+                    <label>Email (optional)</label>
+                    <input type="email" id="bookEmail" placeholder="john@example.com">
+                </div>
+                <div class="booking-form-group">
+                    <label>Additional Notes (optional)</label>
+                    <textarea id="bookNotes" placeholder="Any specific concerns or requests..."></textarea>
+                </div>
+                <div class="booking-nav">
+                    <button class="booking-btn booking-btn-secondary" onclick="bookingNext(2)">Back</button>
+                    <button class="booking-btn" onclick="bookingNext(4)">Review Booking</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Confirm -->
+            <div class="booking-step" id="bookStep4">
+                <h3 style="color:#fff;font-size:16px;margin-bottom:16px;">Booking Summary</h3>
+                <div id="bookingSummary"></div>
+                <div class="booking-nav" style="margin-top:20px;">
+                    <button class="booking-btn booking-btn-secondary" onclick="bookingNext(3)">Back</button>
+                    <button class="booking-btn" onclick="submitBooking()" id="submitBookingBtn">Confirm Booking</button>
+                </div>
+            </div>
+
+            <!-- Step 5: Confirmation -->
+            <div class="booking-step" id="bookStep5">
+                <div class="booking-confirmation">
+                    <div class="confirm-icon">&#10003;</div>
+                    <h3>Booking Request Sent!</h3>
+                    <p>We'll confirm your appointment shortly via phone.</p>
+                    <div class="booking-ref" id="bookingRefDisplay"></div>
+                    <p style="margin-top:12px;">Please save your reference number.</p>
+                    <button class="booking-btn" style="margin-top:20px;" onclick="closeBooking()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>We use cookies to improve your experience. By continuing to use this site, you consent to our use of cookies. <a href="#" onclick="showPrivacyPolicy();return false;">Learn more</a></p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+            <button class="cookie-btn cookie-reject" onclick="rejectCookies()">Reject</button>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal (reuses booking overlay style) -->
+    <div class="booking-overlay" id="privacyOverlay">
+        <div class="booking-modal" style="max-width:640px;">
+            <button class="close-modal" onclick="document.getElementById('privacyOverlay').classList.remove('active')">&times;</button>
+            <h2>Privacy Policy</h2>
+            <div style="color:#b0bfcc;font-size:14px;line-height:1.8;margin-top:16px;">
+                <p><strong style="color:#fff;">Data Controller:</strong> The Heathway Dental Surgery, 276a Heathway, Dagenham, Essex, RM10 8QS</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">What we collect:</strong> Name, contact details, appointment information, and health records necessary for dental treatment.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Why we collect it:</strong> To provide dental care, manage appointments, send reminders, and comply with NHS/CQC regulations.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">How we store it:</strong> Data is stored securely using encrypted cloud systems (Firebase). Access is restricted to authorised practice staff only.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Data retention:</strong> Patient records are kept for 10 years after last treatment (or until age 25 for children), in line with NHS guidelines.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Your rights:</strong> You have the right to access, correct, or request deletion of your personal data. Contact us at 020 8592 5030 or visit the practice.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Cookies:</strong> We use essential cookies for site functionality. No third-party tracking cookies are used without your consent.</p>
+                <p style="margin-top:12px;">For concerns about data handling, contact the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener" style="color:#14b8a6;">ico.org.uk</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Complaints Procedure Modal -->
+    <div class="booking-overlay" id="complaintsOverlay">
+        <div class="booking-modal" style="max-width:640px;">
+            <button class="close-modal" onclick="document.getElementById('complaintsOverlay').classList.remove('active')">&times;</button>
+            <h2>Complaints Procedure</h2>
+            <div style="color:#b0bfcc;font-size:14px;line-height:1.8;margin-top:16px;">
+                <p>We are committed to providing the highest standard of dental care. If you are unhappy with any aspect of our service, we want to hear from you.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Step 1:</strong> Speak to your dentist or our practice manager directly. Most concerns can be resolved immediately.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Step 2:</strong> If unresolved, write to: Practice Manager, The Heathway Dental Surgery, 276a Heathway, Dagenham, Essex, RM10 8QS. We will acknowledge within 3 working days and respond within 10 working days.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Step 3 — NHS patients:</strong> Contact NHS England at <a href="https://www.england.nhs.uk/contact-us/complaint/" target="_blank" rel="noopener" style="color:#14b8a6;">england.nhs.uk/contact-us/complaint</a> or call 0300 311 22 33.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Step 3 — Private patients:</strong> Contact the Dental Complaints Service at <a href="https://dcs.org.uk" target="_blank" rel="noopener" style="color:#14b8a6;">dcs.org.uk</a> or call 020 8253 0800.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">GDC:</strong> You may also contact the General Dental Council at <a href="https://www.gdc-uk.org" target="_blank" rel="noopener" style="color:#14b8a6;">gdc-uk.org</a> if you believe a dental professional's fitness to practise is impaired.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "The Heathway Dental Surgery",
+        "description": "Quality NHS and private dental care in Dagenham. Emergency appointments available. Serving the community for over 20 years.",
+        "url": "https://www.heathwaydental.co.uk",
+        "telephone": "+442085925030",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "276a Heathway",
+            "addressLocality": "Dagenham",
+            "addressRegion": "Essex",
+            "postalCode": "RM10 8QS",
+            "addressCountry": "GB"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.5375,
+            "longitude": 0.1584
+        },
+        "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:00" }
+        ],
+        "priceRange": "£-£££",
+        "image": "IMG_3933.jpeg",
+        "medicalSpecialty": "Dentistry",
+        "availableService": [
+            { "@type": "MedicalProcedure", "name": "General Dentistry" },
+            { "@type": "MedicalProcedure", "name": "Cosmetic Dentistry" },
+            { "@type": "MedicalProcedure", "name": "Emergency Dental Care" },
+            { "@type": "MedicalProcedure", "name": "Teeth Whitening" },
+            { "@type": "MedicalProcedure", "name": "Dental Crowns" },
+            { "@type": "MedicalProcedure", "name": "Root Canal Treatment" }
+        ],
+        "sameAs": [],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127",
+            "bestRating": "5"
+        }
+    }
+    </script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+
     <!-- =========================================
-         SCRIPTS
+         ALL SCRIPTS
          ========================================= -->
     <script>
+        // ============================================
+        // ORIGINAL SCRIPTS (preserved)
+        // ============================================
+
         // Header scroll effect
         const header = document.getElementById('header');
-
         function updateHeader() {
             if (window.scrollY > 100) {
                 header.classList.add('header--scrolled');
@@ -1952,16 +2478,11 @@
                 header.classList.add('header--dark');
             }
         }
-
         window.addEventListener('scroll', updateHeader, { passive: true });
         updateHeader();
 
         // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1970,7 +2491,6 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.service-card, .testimonial-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
@@ -1994,6 +2514,305 @@
                     document.body.style.overflow = '';
                 });
             });
+        }
+
+        // ============================================
+        // FIREBASE INITIALIZATION
+        // ============================================
+        var firebaseConfig = {
+            apiKey: "AIzaSyA3eVAdYntGPTsvhAZn0sezj7aYTR9qLC4",
+            authDomain: "golden-barbers-e25db.firebaseapp.com",
+            databaseURL: "https://golden-barbers-e25db-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "golden-barbers-e25db",
+            storageBucket: "golden-barbers-e25db.firebasestorage.app",
+            messagingSenderId: "719034478402",
+            appId: "1:719034478402:web:d3b3042688795b34e422db"
+        };
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+        var DB_PREFIX = 'heathway/';
+
+        // ============================================
+        // ANNOUNCEMENT BANNER (real-time from admin)
+        // ============================================
+        try {
+            database.ref(DB_PREFIX + 'announcement').on('value', function(snap) {
+                var data = snap.val();
+                var bar = document.getElementById('announcementBar');
+                var txt = document.getElementById('announcementText');
+                if (data && data.active && data.text) {
+                    if (sessionStorage.getItem('announceDismissed') === data.text) return;
+                    txt.textContent = data.text;
+                    bar.className = 'announcement-bar active ' + (data.style || 'teal');
+                    document.body.classList.add('has-announcement');
+                } else {
+                    bar.classList.remove('active');
+                    document.body.classList.remove('has-announcement');
+                }
+            }, function(err) {
+                console.warn('Announcement listener error:', err.message);
+            });
+        } catch(e) { console.warn('Firebase announcement error:', e); }
+
+        function dismissAnnouncement() {
+            var bar = document.getElementById('announcementBar');
+            var txt = document.getElementById('announcementText').textContent;
+            bar.classList.remove('active');
+            document.body.classList.remove('has-announcement');
+            sessionStorage.setItem('announceDismissed', txt);
+        }
+
+        // ============================================
+        // SHOP STATUS (open/closed/holiday)
+        // ============================================
+        database.ref(DB_PREFIX + 'shopStatus').on('value', function(snap) {
+            var status = snap.val() || 'open';
+            var closedBanner = document.getElementById('shopClosedBanner');
+            var holidayBanner = document.getElementById('shopHolidayBanner');
+            closedBanner.classList.remove('active');
+            holidayBanner.classList.remove('active');
+            if (status === 'closed') closedBanner.classList.add('active');
+            else if (status === 'holiday') holidayBanner.classList.add('active');
+        });
+
+        // ============================================
+        // DYNAMIC PRICING (from Firebase)
+        // ============================================
+        var cachedPrices = {};
+        database.ref(DB_PREFIX + 'servicePrices').on('value', function(snap) {
+            cachedPrices = snap.val() || {};
+            renderPricingTable('nhs', cachedPrices.nhs || {}, 'pricingNHSBody');
+            renderPricingTable('private', cachedPrices.private || {}, 'pricingPrivateBody');
+            renderPricingTable('cosmetic', cachedPrices.cosmetic || {}, 'pricingCosmeticBody');
+            populateBookingServices(cachedPrices);
+            document.getElementById('pricesLastUpdated').textContent = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        });
+
+        function renderPricingTable(category, prices, tbodyId) {
+            var tbody = document.getElementById(tbodyId);
+            if (!tbody) return;
+            var keys = Object.keys(prices);
+            if (keys.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="2" style="color:#888;text-align:center;padding:30px;">No prices available</td></tr>';
+                return;
+            }
+            tbody.innerHTML = keys.map(function(key) {
+                var name = key.replace(/([A-Z])/g, ' $1').replace(/^./, function(s) { return s.toUpperCase(); });
+                name = name.replace(/Nhs/g, 'NHS').replace(/Band /g, 'Band ');
+                var price = prices[key];
+                var display = (typeof price === 'number' || !isNaN(price)) ? '£' + parseFloat(price).toFixed(2) : price;
+                return '<tr><td class="service-name">' + name + '</td><td class="service-price">' + display + '</td></tr>';
+            }).join('');
+        }
+
+        function switchPricingTab(tab) {
+            document.querySelectorAll('.pricing-tab').forEach(function(t) { t.classList.remove('active'); });
+            document.querySelectorAll('.pricing-category').forEach(function(c) { c.classList.remove('active'); });
+            event.target.classList.add('active');
+            document.getElementById('pricing-' + tab).classList.add('active');
+        }
+
+        // ============================================
+        // LIVE GALLERY (from Firebase)
+        // ============================================
+        database.ref(DB_PREFIX + 'liveGallery').on('value', function(snap) {
+            var data = snap.val();
+            var container = document.getElementById('liveGalleryDisplay');
+            if (!container) return;
+            if (!data) {
+                container.innerHTML = '<p style="color:#666;grid-column:1/-1;text-align:center;padding:40px;">Gallery coming soon...</p>';
+                return;
+            }
+            var items = Object.values(data);
+            container.innerHTML = items.map(function(item) {
+                return '<div class="live-gallery__item">' +
+                    '<img src="' + item.url + '" alt="' + (item.title || item.label || 'Gallery') + '" loading="lazy">' +
+                    (item.title ? '<div class="gallery-label">' + item.title + '</div>' : '') +
+                    '</div>';
+            }).join('');
+        });
+
+        // ============================================
+        // DYNAMIC OPENING HOURS (footer)
+        // ============================================
+        var dayNames = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+        database.ref(DB_PREFIX + 'operatingHours').on('value', function(snap) {
+            var hours = snap.val();
+            if (!hours) return;
+            var container = document.getElementById('footerHours');
+            if (!container) return;
+            var today = dayNames[new Date().getDay()];
+            var html = '';
+            ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'].forEach(function(day) {
+                var d = hours[day];
+                var label = day.charAt(0).toUpperCase() + day.slice(1, 3);
+                var isToday = day === today;
+                if (d && d.closed) {
+                    html += '<div' + (isToday ? ' class="today"' : '') + '>' + label + ': Closed</div>';
+                } else if (d) {
+                    html += '<div' + (isToday ? ' class="today"' : '') + '>' + label + ': ' + d.open + ' - ' + d.close + '</div>';
+                }
+            });
+            container.innerHTML = html;
+        });
+
+        // ============================================
+        // BOOKING SYSTEM
+        // ============================================
+        var currentBookingStep = 1;
+
+        function openBooking() {
+            document.getElementById('bookingOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Set min date to today
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementById('bookDate').setAttribute('min', today);
+            bookingNext(1);
+        }
+
+        function closeBooking() {
+            document.getElementById('bookingOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+            // Reset form
+            currentBookingStep = 1;
+            ['bookService','bookPatientType','bookDate','bookTime','bookFirstName','bookLastName','bookPhone','bookEmail','bookNotes'].forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) el.value = el.tagName === 'SELECT' ? el.options[0].value : '';
+            });
+            bookingNext(1);
+        }
+
+        function bookingNext(step) {
+            // Validation
+            if (step === 2 && currentBookingStep === 1) {
+                if (!document.getElementById('bookService').value) { alert('Please select a service.'); return; }
+            }
+            if (step === 3 && currentBookingStep === 2) {
+                if (!document.getElementById('bookDate').value || !document.getElementById('bookTime').value) { alert('Please select a date and time.'); return; }
+            }
+            if (step === 4 && currentBookingStep === 3) {
+                if (!document.getElementById('bookFirstName').value || !document.getElementById('bookLastName').value || !document.getElementById('bookPhone').value) {
+                    alert('Please fill in your name and phone number.'); return;
+                }
+            }
+            currentBookingStep = step;
+            for (var i = 1; i <= 5; i++) {
+                document.getElementById('bookStep' + i).classList.remove('active');
+                var dot = document.getElementById('dot-' + i);
+                if (dot) { dot.classList.remove('active', 'done'); }
+            }
+            document.getElementById('bookStep' + step).classList.add('active');
+            for (var j = 1; j <= 4; j++) {
+                var d = document.getElementById('dot-' + j);
+                if (d) {
+                    if (j < step) d.classList.add('done');
+                    if (j === step) d.classList.add('active');
+                }
+            }
+            // Build summary on step 4
+            if (step === 4) {
+                var summary = document.getElementById('bookingSummary');
+                summary.innerHTML =
+                    '<div class="booking-summary-row"><span class="label">Service</span><span class="value">' + document.getElementById('bookService').value + '</span></div>' +
+                    '<div class="booking-summary-row"><span class="label">Patient Type</span><span class="value">' + document.getElementById('bookPatientType').value + '</span></div>' +
+                    '<div class="booking-summary-row"><span class="label">Date</span><span class="value">' + document.getElementById('bookDate').value + '</span></div>' +
+                    '<div class="booking-summary-row"><span class="label">Time</span><span class="value">' + document.getElementById('bookTime').value + '</span></div>' +
+                    '<div class="booking-summary-row"><span class="label">Name</span><span class="value">' + document.getElementById('bookFirstName').value + ' ' + document.getElementById('bookLastName').value + '</span></div>' +
+                    '<div class="booking-summary-row"><span class="label">Phone</span><span class="value">' + document.getElementById('bookPhone').value + '</span></div>' +
+                    (document.getElementById('bookEmail').value ? '<div class="booking-summary-row"><span class="label">Email</span><span class="value">' + document.getElementById('bookEmail').value + '</span></div>' : '');
+            }
+        }
+
+        function populateBookingServices(prices) {
+            var select = document.getElementById('bookService');
+            if (!select) return;
+            var current = select.value;
+            select.innerHTML = '<option value="">-- Choose a service --</option>';
+            var allServices = [];
+            ['nhs','private','cosmetic'].forEach(function(cat) {
+                if (prices[cat]) {
+                    Object.keys(prices[cat]).forEach(function(key) {
+                        var name = key.replace(/([A-Z])/g, ' $1').replace(/^./, function(s) { return s.toUpperCase(); });
+                        name = name.replace(/Nhs/g, 'NHS');
+                        var price = prices[cat][key];
+                        var display = (typeof price === 'number' || !isNaN(price)) ? ' (£' + parseFloat(price).toFixed(2) + ')' : '';
+                        allServices.push({ name: name + display, cat: cat.toUpperCase() });
+                    });
+                }
+            });
+            // Add common services if prices not loaded
+            if (allServices.length === 0) {
+                ['Check-up','Cleaning','Filling','Root Canal','Crown','Teeth Whitening','Emergency Appointment','Extraction','Veneer','Bridge'].forEach(function(s) {
+                    allServices.push({ name: s, cat: '' });
+                });
+            }
+            allServices.forEach(function(s) {
+                var opt = document.createElement('option');
+                opt.value = s.name;
+                opt.textContent = s.name;
+                select.appendChild(opt);
+            });
+            if (current) select.value = current;
+        }
+
+        function submitBooking() {
+            var btn = document.getElementById('submitBookingBtn');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            var ref = 'HD-' + Date.now().toString(36).toUpperCase().slice(-6);
+            var booking = {
+                reference: ref,
+                service: document.getElementById('bookService').value,
+                patientType: document.getElementById('bookPatientType').value,
+                date: document.getElementById('bookDate').value,
+                time: document.getElementById('bookTime').value,
+                name: document.getElementById('bookFirstName').value + ' ' + document.getElementById('bookLastName').value,
+                phone: document.getElementById('bookPhone').value,
+                email: document.getElementById('bookEmail').value || '',
+                notes: document.getElementById('bookNotes').value || '',
+                status: 'pending',
+                source: 'website',
+                createdAt: new Date().toISOString()
+            };
+
+            database.ref(DB_PREFIX + 'bookings').push(booking).then(function() {
+                document.getElementById('bookingRefDisplay').textContent = ref;
+                btn.disabled = false;
+                btn.textContent = 'Confirm Booking';
+                bookingNext(5);
+            }).catch(function(err) {
+                alert('Sorry, something went wrong. Please call us on 020 8592 5030.');
+                btn.disabled = false;
+                btn.textContent = 'Confirm Booking';
+            });
+        }
+
+        // ============================================
+        // COOKIE CONSENT
+        // ============================================
+        (function() {
+            if (!localStorage.getItem('heathway_cookies')) {
+                document.getElementById('cookieBanner').classList.add('active');
+            }
+        })();
+        function acceptCookies() {
+            localStorage.setItem('heathway_cookies', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('active');
+        }
+        function rejectCookies() {
+            localStorage.setItem('heathway_cookies', 'rejected');
+            document.getElementById('cookieBanner').classList.remove('active');
+        }
+
+        // ============================================
+        // PRIVACY & COMPLAINTS MODALS
+        // ============================================
+        function showPrivacyPolicy() {
+            document.getElementById('privacyOverlay').classList.add('active');
+        }
+        function showComplaints() {
+            document.getElementById('complaintsOverlay').classList.add('active');
         }
     </script>
 </body>

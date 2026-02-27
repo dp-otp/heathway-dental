@@ -692,6 +692,129 @@
             from { opacity: 0; transform: translateY(12px) scale(0.97); }
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
+
+        /* ============================================ */
+        /* PATIENT CRM                                  */
+        /* ============================================ */
+        .patient-search-bar {
+            display: flex; gap: 10px; margin-bottom: 16px;
+        }
+        .patient-search-bar input {
+            flex: 1; padding: 12px 15px; background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(20,184,166,0.3); border-radius: 8px;
+            color: #fff; font-size: 14px; font-family: inherit;
+        }
+        .patient-search-bar input:focus { outline: none; border-color: var(--teal); }
+        .patient-card {
+            background: rgba(20,184,166,0.05); border: 1px solid rgba(20,184,166,0.15);
+            border-radius: 12px; padding: 16px; margin-bottom: 10px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .patient-card:hover { border-color: var(--teal); background: rgba(20,184,166,0.08); }
+        .patient-card h4 { color: #fff; font-size: 15px; margin-bottom: 4px; }
+        .patient-card .patient-meta { color: #888; font-size: 12px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .patient-card .patient-meta span { display: flex; align-items: center; gap: 4px; }
+        .patient-card.overdue { border-left: 3px solid #f59e0b; }
+        .patient-detail-modal { max-width: 600px; }
+        .patient-history-item {
+            padding: 10px; background: rgba(0,0,0,0.2); border-radius: 8px;
+            margin-bottom: 8px; font-size: 13px;
+        }
+        .patient-history-item .date { color: var(--teal); font-weight: 600; }
+        .patient-history-item .info { color: #b0bfcc; margin-top: 4px; }
+
+        /* ============================================ */
+        /* ANALYTICS                                    */
+        /* ============================================ */
+        .chart-container { margin-bottom: 20px; }
+        .bar-chart {
+            display: flex; align-items: flex-end; gap: 6px;
+            height: 180px; padding: 0 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .bar-chart .bar {
+            flex: 1; background: linear-gradient(180deg, var(--teal), var(--teal-muted));
+            border-radius: 4px 4px 0 0; min-height: 4px;
+            position: relative; transition: height 0.5s ease;
+        }
+        .bar-chart .bar:hover { opacity: 0.8; }
+        .bar-chart .bar .bar-label {
+            position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%);
+            font-size: 10px; color: #666; white-space: nowrap;
+        }
+        .bar-chart .bar .bar-value {
+            position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+            font-size: 11px; color: var(--teal); font-weight: 700; white-space: nowrap;
+        }
+        .metric-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px;
+        }
+        .metric-card {
+            background: linear-gradient(145deg, rgba(20,28,42,0.95), rgba(13,21,32,0.98));
+            border: 1px solid rgba(20,184,166,0.1); border-radius: 12px;
+            padding: 16px; text-align: center;
+        }
+        .metric-card .metric-value { font-size: 28px; font-weight: 800; color: var(--teal); }
+        .metric-card .metric-label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 4px; }
+        .metric-card.warn .metric-value { color: #f59e0b; }
+        .metric-card.success .metric-value { color: #22c55e; }
+        .metric-card.info .metric-value { color: #3b82f6; }
+        .top-services-list { list-style: none; }
+        .top-services-list li {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 14px;
+        }
+        .top-services-list li:last-child { border-bottom: none; }
+        .top-services-list .rank { color: var(--teal); font-weight: 700; width: 24px; }
+        .top-services-list .svc-name { color: #fff; flex: 1; }
+        .top-services-list .svc-count { color: #888; font-weight: 600; }
+
+        /* ============================================ */
+        /* BOOKING STATUS BADGES                        */
+        /* ============================================ */
+        .booking-status {
+            display: inline-block; padding: 4px 10px; border-radius: 6px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .booking-status.pending { background: rgba(245,158,11,0.2); color: #f59e0b; }
+        .booking-status.confirmed { background: rgba(34,197,94,0.2); color: #22c55e; }
+        .booking-status.completed { background: rgba(59,130,246,0.2); color: #3b82f6; }
+        .booking-status.cancelled { background: rgba(239,68,68,0.2); color: #ef4444; }
+        .booking-status.noshow { background: rgba(239,68,68,0.2); color: #ef4444; }
+        .booking-actions { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+        .booking-actions button {
+            padding: 6px 12px; border-radius: 6px; font-size: 11px;
+            font-weight: 600; cursor: pointer; border: none; font-family: inherit;
+        }
+        .booking-filter-bar { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+        .booking-filter {
+            padding: 8px 14px; border-radius: 8px; font-size: 12px;
+            font-weight: 600; cursor: pointer; border: 1px solid rgba(20,184,166,0.3);
+            background: transparent; color: #8899aa; font-family: inherit;
+        }
+        .booking-filter.active { background: var(--teal); color: #fff; border-color: var(--teal); }
+
+        /* ============================================ */
+        /* NOTIFICATION SETTINGS                        */
+        /* ============================================ */
+        .notif-toggle-row {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .notif-toggle-row:last-child { border-bottom: none; }
+        .notif-toggle-row .notif-info h4 { color: #fff; font-size: 14px; margin-bottom: 2px; }
+        .notif-toggle-row .notif-info p { color: #888; font-size: 12px; }
+
+        /* ============================================ */
+        /* STRIPE SETTINGS                              */
+        /* ============================================ */
+        .stripe-status {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 600;
+        }
+        .stripe-status.connected { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .stripe-status.disconnected { background: rgba(239,68,68,0.15); color: #ef4444; }
     </style>
 </head>
 <body>
@@ -784,14 +907,22 @@
             <div class="admin-card">
                 <h2>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    Recent Appointments
+                    Appointments
                 </h2>
-                <div class="bookings-list" id="bookingsList">
-                    <p style="text-align: center; color: #888; padding: 40px 0;">No appointments yet. Appointments will appear here when patients book.</p>
+                <div class="booking-filter-bar" id="bookingFilterBar">
+                    <button class="booking-filter active" onclick="filterBookings(this,'all')">All</button>
+                    <button class="booking-filter" onclick="filterBookings(this,'pending')">Pending</button>
+                    <button class="booking-filter" onclick="filterBookings(this,'confirmed')">Confirmed</button>
+                    <button class="booking-filter" onclick="filterBookings(this,'completed')">Completed</button>
+                    <button class="booking-filter" onclick="filterBookings(this,'cancelled')">Cancelled</button>
                 </div>
-                <button onclick="clearAllBookings()" class="btn btn-secondary" style="margin-top: 12px; font-size: 12px; padding: 8px 16px;">
-                    Clear All Appointments
-                </button>
+                <div class="bookings-list" id="bookingsList" style="max-height:600px;">
+                    <p style="text-align: center; color: #888; padding: 40px 0;">No appointments yet.</p>
+                </div>
+                <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
+                    <button onclick="exportAppointments()" class="btn btn-secondary" style="font-size:12px;padding:8px 16px;">Export CSV</button>
+                    <button onclick="clearAllBookings()" class="btn btn-secondary" style="font-size:12px;padding:8px 16px;color:#ef4444;border-color:rgba(239,68,68,0.3);">Clear All</button>
+                </div>
             </div>
         </div>
 
@@ -875,6 +1006,16 @@
                 <div class="form-group">
                     <label>Banner Message</label>
                     <input type="text" id="announceText" placeholder="e.g. Now accepting new NHS patients!" oninput="updateAnnouncePreview()">
+                    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
+                        <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.25);border-radius:20px;color:var(--teal);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">Now accepting new NHS patients!</button>
+                        <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);border-radius:20px;color:#22c55e;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">20% off teeth whitening this month</button>
+                        <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);border-radius:20px;color:#ef4444;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">Closed for bank holiday — reopening Tuesday</button>
+                        <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);border-radius:20px;color:#3b82f6;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">Online booking now available!</button>
+                        <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.25);border-radius:20px;color:var(--teal);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">Free NHS check-ups for under 18s</button>
+                        <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);border-radius:20px;color:#22c55e;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">New hygienist appointments available</button>
+                        <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);border-radius:20px;color:#f59e0b;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">Limited slots — book your check-up today</button>
+                        <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);border-radius:20px;color:#ef4444;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">Emergency? Call us on 020 8592 5030</button>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Banner Style</label>
@@ -1080,6 +1221,181 @@
         </div>
         </div>
 
+        <!-- ==================== PATIENTS CRM SECTION ==================== -->
+        <div class="admin-section" id="section-patients">
+            <div class="admin-card">
+                <h2>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4-4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Patient Database
+                </h2>
+                <div id="patientsSuccess" class="success-message">Patient saved!</div>
+                <div class="patient-search-bar">
+                    <input type="text" id="patientSearch" placeholder="Search patients by name, phone, or NHS number..." oninput="filterPatients()">
+                    <button class="btn btn-small" onclick="showAddPatient()">+ Add Patient</button>
+                </div>
+                <div class="booking-filter-bar">
+                    <button class="booking-filter active" onclick="filterPatientStatus(this,'all')">All</button>
+                    <button class="booking-filter" onclick="filterPatientStatus(this,'overdue')">Overdue Recall</button>
+                    <button class="booking-filter" onclick="filterPatientStatus(this,'new')">New This Month</button>
+                </div>
+                <div id="patientsList"></div>
+                <div style="margin-top:16px;display:flex;gap:10px;">
+                    <button class="btn btn-secondary btn-small" onclick="exportPatients()">Export CSV</button>
+                </div>
+            </div>
+
+            <!-- Add/Edit Patient Form (hidden by default) -->
+            <div class="admin-card" id="addPatientCard" style="display:none;">
+                <h2>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                    <span id="patientFormTitle">Add New Patient</span>
+                </h2>
+                <input type="hidden" id="editPatientKey" value="">
+                <div class="form-grid-2col">
+                    <div class="form-group"><label>First Name</label><input type="text" id="patientFirstName" placeholder="John"></div>
+                    <div class="form-group"><label>Last Name</label><input type="text" id="patientLastName" placeholder="Smith"></div>
+                </div>
+                <div class="form-grid-2col">
+                    <div class="form-group"><label>Phone</label><input type="tel" id="patientPhone" placeholder="07xxx xxxxxx"></div>
+                    <div class="form-group"><label>Email</label><input type="email" id="patientEmail" placeholder="john@email.com"></div>
+                </div>
+                <div class="form-grid-2col">
+                    <div class="form-group"><label>Date of Birth</label><input type="date" id="patientDOB"></div>
+                    <div class="form-group"><label>NHS Number (optional)</label><input type="text" id="patientNHS" placeholder="XXX-XXX-XXXX"></div>
+                </div>
+                <div class="form-group"><label>Patient Type</label>
+                    <select id="patientType"><option value="NHS">NHS</option><option value="Private">Private</option></select>
+                </div>
+                <div class="form-group"><label>Notes</label><textarea id="patientNotes" placeholder="Medical history, allergies, special requirements..."></textarea></div>
+                <div style="display:flex;gap:10px;">
+                    <button class="btn" onclick="savePatient()">Save Patient</button>
+                    <button class="btn btn-secondary" onclick="hideAddPatient()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== ANALYTICS SECTION ==================== -->
+        <div class="admin-section" id="section-analytics">
+            <div class="metric-grid" id="analyticsMetrics">
+                <div class="metric-card success"><div class="metric-value" id="metricTotalRev">£0</div><div class="metric-label">This Month Revenue</div></div>
+                <div class="metric-card"><div class="metric-value" id="metricTotalAppts">0</div><div class="metric-label">This Month Appts</div></div>
+                <div class="metric-card info"><div class="metric-value" id="metricNewPatients">0</div><div class="metric-label">New Patients (30d)</div></div>
+                <div class="metric-card warn"><div class="metric-value" id="metricOverdue">0</div><div class="metric-label">Overdue Recalls</div></div>
+            </div>
+
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <h2>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        Revenue (Last 7 Days)
+                    </h2>
+                    <div class="chart-container">
+                        <div class="bar-chart" id="revenueChart" style="padding-bottom:28px;"></div>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <h2>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Appointments (Last 7 Days)
+                    </h2>
+                    <div class="chart-container">
+                        <div class="bar-chart" id="appointmentsChart" style="padding-bottom:28px;"></div>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <h2>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                        Top Booked Services
+                    </h2>
+                    <ol class="top-services-list" id="topServicesList">
+                        <li style="color:#888;padding:20px 0;text-align:center;">No booking data yet</li>
+                    </ol>
+                </div>
+
+                <div class="admin-card">
+                    <h2>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Export Data
+                    </h2>
+                    <p style="color:#888;font-size:13px;margin-bottom:16px;">Download your practice data as CSV files for accounting or backup.</p>
+                    <div style="display:flex;flex-direction:column;gap:10px;">
+                        <button class="btn btn-secondary" onclick="exportRevenue()">Export Revenue Data</button>
+                        <button class="btn btn-secondary" onclick="exportAppointments()">Export Appointments</button>
+                        <button class="btn btn-secondary" onclick="exportPatients()">Export Patient List</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== NOTIFICATIONS SECTION ==================== -->
+        <div class="admin-section" id="section-notifications">
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <h2>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        SMS &amp; Email Notifications
+                    </h2>
+                    <div id="notifSuccess" class="success-message">Notification settings saved!</div>
+                    <p style="color:#888;font-size:13px;margin-bottom:20px;">Configure automated patient notifications. Requires a Twilio account for SMS.</p>
+
+                    <h3 style="color:var(--teal);font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Twilio Configuration</h3>
+                    <div class="form-grid-2col">
+                        <div class="form-group"><label>Account SID</label><input type="text" id="twilioSID" placeholder="ACxxxxxxxxxxxxxxx"></div>
+                        <div class="form-group"><label>Auth Token</label><input type="password" id="twilioToken" placeholder="Your auth token"></div>
+                    </div>
+                    <div class="form-group"><label>Twilio Phone Number</label><input type="text" id="twilioPhone" placeholder="+44xxxxxxxxxx"></div>
+
+                    <h3 style="color:var(--teal);font-size:13px;text-transform:uppercase;letter-spacing:1px;margin:20px 0 12px;">Notification Triggers</h3>
+                    <div class="notif-toggle-row">
+                        <div class="notif-info"><h4>Booking Confirmation</h4><p>Send SMS when a patient books online</p></div>
+                        <div class="toggle-switch" id="notifBookingConfirm" onclick="toggleNotif('notifBookingConfirm')"></div>
+                    </div>
+                    <div class="notif-toggle-row">
+                        <div class="notif-info"><h4>24hr Reminder</h4><p>SMS reminder 24 hours before appointment</p></div>
+                        <div class="toggle-switch" id="notifReminder24" onclick="toggleNotif('notifReminder24')"></div>
+                    </div>
+                    <div class="notif-toggle-row">
+                        <div class="notif-info"><h4>Recall Reminder</h4><p>SMS patients overdue for checkup (6+ months)</p></div>
+                        <div class="toggle-switch" id="notifRecall" onclick="toggleNotif('notifRecall')"></div>
+                    </div>
+                    <div class="notif-toggle-row">
+                        <div class="notif-info"><h4>Review Request</h4><p>Ask patients for a review after appointment</p></div>
+                        <div class="toggle-switch" id="notifReview" onclick="toggleNotif('notifReview')"></div>
+                    </div>
+                    <button class="btn" style="margin-top:20px;" onclick="saveNotificationSettings()">Save Notification Settings</button>
+                </div>
+
+                <div class="admin-card">
+                    <h2>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                        Stripe Payments
+                    </h2>
+                    <div id="stripeSuccess" class="success-message">Stripe settings saved!</div>
+                    <p style="color:#888;font-size:13px;margin-bottom:20px;">Collect booking deposits from patients. Requires a Stripe account.</p>
+
+                    <div style="margin-bottom:16px;">
+                        <span class="stripe-status disconnected" id="stripeStatusBadge">Not Connected</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Stripe Publishable Key</label>
+                        <input type="text" id="stripePublicKey" placeholder="pk_live_xxxxxxxxx">
+                    </div>
+                    <div class="form-group">
+                        <label>Deposit Amount (£)</label>
+                        <input type="number" id="stripeDeposit" value="25" min="0" step="5">
+                    </div>
+                    <div class="notif-toggle-row" style="border-bottom:none;">
+                        <div class="notif-info"><h4>Collect Deposits</h4><p>Require deposit when booking online</p></div>
+                        <div class="toggle-switch" id="stripeDepositToggle" onclick="toggleNotif('stripeDepositToggle')"></div>
+                    </div>
+                    <button class="btn" style="margin-top:16px;" onclick="saveStripeSettings()">Save Stripe Settings</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- ============================================ -->
@@ -1109,6 +1425,18 @@
         <button class="bottom-nav-item" onclick="navTo('settings')" data-section="settings">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
             <span>Settings</span>
+        </button>
+        <button class="bottom-nav-item" onclick="navTo('patients')" data-section="patients">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4-4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Patients</span>
+        </button>
+        <button class="bottom-nav-item" onclick="navTo('analytics')" data-section="analytics">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+            <span>Analytics</span>
+        </button>
+        <button class="bottom-nav-item" onclick="navTo('notifications')" data-section="notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+            <span>Notify</span>
         </button>
         <div class="sidebar-brand">
             <img src="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png" alt="HD">
@@ -1320,7 +1648,7 @@
                 document.getElementById(day + '-closed').checked = hours[day].closed;
             });
 
-            loadBookings();
+            // loadBookings(); // Replaced by loadBookingsEnhanced
             loadPrices();
             loadGallery();
             loadHiddenGallery();
@@ -1328,6 +1656,10 @@
             loadLiveGalleryFromFirebase();
             loadAnnouncement();
             loadStaff();
+            loadBookingsEnhanced();
+            loadPatients();
+            loadNotificationSettings();
+            loadStripeSettings();
 
             // Set today's date for revenue
             document.getElementById('revenueDate').valueAsDate = new Date();
@@ -1886,6 +2218,11 @@
             else toggle.classList.remove('active');
         }
 
+        function setAnnounce(text) {
+            document.getElementById('announceText').value = text;
+            updateAnnouncePreview();
+        }
+
         function updateAnnouncePreview() {
             var text = document.getElementById('announceText').value;
             var style = document.getElementById('announceStyle').value;
@@ -2071,6 +2408,448 @@
 
         function removeStaff(key) {
             if (confirm('Remove this staff member?')) database.ref(DB_PREFIX + 'staff/' + key).remove();
+        }
+
+        // ============================================
+        // ENHANCED BOOKINGS (status, filtering)
+        // ============================================
+        var allBookings = [];
+        var currentBookingFilter = 'all';
+
+        // Override the existing loadBookings to use enhanced version
+        function loadBookingsEnhanced() {
+            database.ref(DB_PREFIX + 'bookings').orderByChild('createdAt').on('value', function(snapshot) {
+                var data = snapshot.val();
+                allBookings = data ? Object.keys(data).map(function(k) { var b = data[k]; b._key = k; return b; }) : [];
+                allBookings.sort(function(a, b) { return new Date(b.createdAt) - new Date(a.createdAt); });
+                renderBookingsEnhanced();
+                // Update dashboard stats
+                var today = new Date().toISOString().split('T')[0];
+                var todayCount = allBookings.filter(function(b) { return b.date === today && b.status !== 'cancelled'; }).length;
+                document.getElementById('statAppointments').textContent = todayCount;
+                // New patients stat
+                var thirtyDaysAgo = new Date(Date.now() - 30*24*60*60*1000).toISOString();
+                var newPatients = allBookings.filter(function(b) { return b.patientType === 'New' && b.createdAt >= thirtyDaysAgo; }).length;
+                document.getElementById('statNewPatients').textContent = newPatients;
+                // Update analytics
+                updateAnalytics();
+            });
+        }
+
+        function renderBookingsEnhanced() {
+            var container = document.getElementById('bookingsList');
+            var filtered = currentBookingFilter === 'all' ? allBookings : allBookings.filter(function(b) { return (b.status || 'pending') === currentBookingFilter; });
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:#888;padding:40px 0;">No ' + (currentBookingFilter === 'all' ? '' : currentBookingFilter + ' ') + 'appointments.</p>';
+                return;
+            }
+
+            container.innerHTML = filtered.map(function(b) {
+                var status = b.status || 'pending';
+                var statusBadge = '<span class="booking-status ' + status + '">' + status + '</span>';
+                var source = b.source === 'website' ? ' <span style="color:#3b82f6;font-size:11px;">Online</span>' : '';
+                return '<div class="booking-item" style="position:relative;">' +
+                    '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">' +
+                        '<span class="booking-ref">' + (b.reference || 'N/A') + source + '</span>' +
+                        statusBadge +
+                    '</div>' +
+                    '<div class="booking-details">' +
+                        '<div>Name<strong>' + (b.name || 'N/A') + '</strong></div>' +
+                        '<div>Phone<strong>' + (b.phone || 'N/A') + '</strong></div>' +
+                        '<div>Service<strong>' + (b.service || 'N/A') + '</strong></div>' +
+                        '<div>Date<strong>' + (b.date || 'N/A') + '</strong></div>' +
+                        '<div>Time<strong>' + (b.time || 'N/A') + '</strong></div>' +
+                        '<div>Type<strong>' + (b.patientType || 'N/A') + '</strong></div>' +
+                    '</div>' +
+                    (b.notes ? '<p style="color:#666;font-size:12px;margin-top:8px;">Notes: ' + b.notes + '</p>' : '') +
+                    '<div class="booking-actions">' +
+                        (status === 'pending' ? '<button onclick="updateBookingStatus(\'' + b._key + '\',\'confirmed\')" style="background:rgba(34,197,94,0.2);color:#22c55e;">Confirm</button>' : '') +
+                        (status === 'confirmed' ? '<button onclick="updateBookingStatus(\'' + b._key + '\',\'completed\')" style="background:rgba(59,130,246,0.2);color:#3b82f6;">Complete</button>' : '') +
+                        ((status === 'pending' || status === 'confirmed') ? '<button onclick="updateBookingStatus(\'' + b._key + '\',\'cancelled\')" style="background:rgba(239,68,68,0.15);color:#ef4444;">Cancel</button>' : '') +
+                        ((status === 'confirmed') ? '<button onclick="updateBookingStatus(\'' + b._key + '\',\'noshow\')" style="background:rgba(239,68,68,0.15);color:#ef4444;">No-Show</button>' : '') +
+                    '</div>' +
+                '</div>';
+            }).join('');
+        }
+
+        function filterBookings(btn, filter) {
+            currentBookingFilter = filter;
+            document.querySelectorAll('#bookingFilterBar .booking-filter').forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            renderBookingsEnhanced();
+        }
+
+        function updateBookingStatus(key, status) {
+            database.ref(DB_PREFIX + 'bookings/' + key + '/status').set(status);
+            if (status === 'completed') {
+                // Link to patient record if exists
+                var booking = allBookings.find(function(b) { return b._key === key; });
+                if (booking && booking.phone) {
+                    var patient = allPatients.find(function(p) { return p.phone === booking.phone; });
+                    if (patient) {
+                        database.ref(DB_PREFIX + 'patients/' + patient._key + '/lastVisit').set(new Date().toISOString().split('T')[0]);
+                    }
+                }
+            }
+        }
+
+        // ============================================
+        // PATIENT CRM
+        // ============================================
+        var allPatients = [];
+        var patientFilter = 'all';
+
+        function loadPatients() {
+            database.ref(DB_PREFIX + 'patients').on('value', function(snapshot) {
+                var data = snapshot.val();
+                allPatients = data ? Object.keys(data).map(function(k) { var p = data[k]; p._key = k; return p; }) : [];
+                allPatients.sort(function(a, b) { return (a.lastName || '').localeCompare(b.lastName || ''); });
+                renderPatients();
+                updateAnalytics();
+            });
+        }
+
+        function renderPatients() {
+            var container = document.getElementById('patientsList');
+            var search = (document.getElementById('patientSearch').value || '').toLowerCase();
+            var sixMonthsAgo = new Date(Date.now() - 180*24*60*60*1000).toISOString().split('T')[0];
+            var thirtyDaysAgo = new Date(Date.now() - 30*24*60*60*1000).toISOString();
+
+            var filtered = allPatients.filter(function(p) {
+                var matchSearch = !search || (p.firstName + ' ' + p.lastName).toLowerCase().indexOf(search) > -1 ||
+                    (p.phone || '').indexOf(search) > -1 || (p.nhsNumber || '').indexOf(search) > -1;
+                var isOverdue = !p.lastVisit || p.lastVisit < sixMonthsAgo;
+                var isNew = p.createdAt && p.createdAt >= thirtyDaysAgo;
+                if (patientFilter === 'overdue') return matchSearch && isOverdue;
+                if (patientFilter === 'new') return matchSearch && isNew;
+                return matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:#888;padding:40px 0;">No patients found.' + (allPatients.length === 0 ? ' Add your first patient above.' : '') + '</p>';
+                return;
+            }
+
+            container.innerHTML = filtered.map(function(p) {
+                var isOverdue = !p.lastVisit || p.lastVisit < sixMonthsAgo;
+                var lastVisitDisplay = p.lastVisit ? new Date(p.lastVisit + 'T00:00:00').toLocaleDateString('en-GB') : 'Never';
+                return '<div class="patient-card ' + (isOverdue ? 'overdue' : '') + '" onclick="viewPatient(\'' + p._key + '\')">' +
+                    '<h4>' + (p.firstName || '') + ' ' + (p.lastName || '') + (isOverdue ? ' <span style="color:#f59e0b;font-size:11px;">RECALL DUE</span>' : '') + '</h4>' +
+                    '<div class="patient-meta">' +
+                        '<span>' + (p.phone || 'No phone') + '</span>' +
+                        '<span>' + (p.patientType || 'NHS') + '</span>' +
+                        '<span>Last visit: ' + lastVisitDisplay + '</span>' +
+                        (p.nhsNumber ? '<span>NHS: ' + p.nhsNumber + '</span>' : '') +
+                    '</div>' +
+                '</div>';
+            }).join('');
+        }
+
+        function filterPatients() { renderPatients(); }
+
+        function filterPatientStatus(btn, filter) {
+            patientFilter = filter;
+            document.querySelectorAll('#section-patients .booking-filter').forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            renderPatients();
+        }
+
+        function showAddPatient(key) {
+            document.getElementById('addPatientCard').style.display = 'block';
+            if (key) {
+                var p = allPatients.find(function(pat) { return pat._key === key; });
+                if (p) {
+                    document.getElementById('editPatientKey').value = key;
+                    document.getElementById('patientFormTitle').textContent = 'Edit Patient';
+                    document.getElementById('patientFirstName').value = p.firstName || '';
+                    document.getElementById('patientLastName').value = p.lastName || '';
+                    document.getElementById('patientPhone').value = p.phone || '';
+                    document.getElementById('patientEmail').value = p.email || '';
+                    document.getElementById('patientDOB').value = p.dob || '';
+                    document.getElementById('patientNHS').value = p.nhsNumber || '';
+                    document.getElementById('patientType').value = p.patientType || 'NHS';
+                    document.getElementById('patientNotes').value = p.notes || '';
+                }
+            } else {
+                document.getElementById('editPatientKey').value = '';
+                document.getElementById('patientFormTitle').textContent = 'Add New Patient';
+                ['patientFirstName','patientLastName','patientPhone','patientEmail','patientDOB','patientNHS','patientNotes'].forEach(function(id) {
+                    document.getElementById(id).value = '';
+                });
+            }
+            document.getElementById('addPatientCard').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function hideAddPatient() {
+            document.getElementById('addPatientCard').style.display = 'none';
+        }
+
+        function savePatient() {
+            var firstName = document.getElementById('patientFirstName').value.trim();
+            var lastName = document.getElementById('patientLastName').value.trim();
+            if (!firstName || !lastName) { alert('Please enter first and last name.'); return; }
+
+            var data = {
+                firstName: firstName,
+                lastName: lastName,
+                phone: document.getElementById('patientPhone').value.trim(),
+                email: document.getElementById('patientEmail').value.trim(),
+                dob: document.getElementById('patientDOB').value,
+                nhsNumber: document.getElementById('patientNHS').value.trim(),
+                patientType: document.getElementById('patientType').value,
+                notes: document.getElementById('patientNotes').value.trim(),
+                updatedAt: new Date().toISOString()
+            };
+
+            var key = document.getElementById('editPatientKey').value;
+            if (key) {
+                database.ref(DB_PREFIX + 'patients/' + key).update(data);
+            } else {
+                data.createdAt = new Date().toISOString();
+                data.lastVisit = null;
+                database.ref(DB_PREFIX + 'patients').push(data);
+            }
+
+            hideAddPatient();
+            showSuccess('patientsSuccess');
+        }
+
+        function viewPatient(key) {
+            var p = allPatients.find(function(pat) { return pat._key === key; });
+            if (!p) return;
+
+            var sixMonthsAgo = new Date(Date.now() - 180*24*60*60*1000).toISOString().split('T')[0];
+            var isOverdue = !p.lastVisit || p.lastVisit < sixMonthsAgo;
+
+            // Find this patient's appointments
+            var patientAppts = allBookings.filter(function(b) {
+                return b.phone === p.phone || (b.name && b.name.toLowerCase() === (p.firstName + ' ' + p.lastName).toLowerCase());
+            });
+
+            var apptHistory = patientAppts.length > 0 ? patientAppts.map(function(a) {
+                return '<div class="patient-history-item"><span class="date">' + (a.date || 'N/A') + '</span> - ' + (a.service || 'General') +
+                    ' <span class="booking-status ' + (a.status || 'pending') + '">' + (a.status || 'pending') + '</span>' +
+                    (a.notes ? '<div class="info">' + a.notes + '</div>' : '') + '</div>';
+            }).join('') : '<p style="color:#888;font-size:13px;">No appointment history found.</p>';
+
+            // Create modal
+            var modal = document.createElement('div');
+            modal.className = 'booking-overlay active';
+            modal.style.zIndex = '10001';
+            modal.id = 'patientModal';
+            modal.innerHTML = '<div class="booking-modal patient-detail-modal">' +
+                '<button class="close-modal" onclick="document.getElementById(\'patientModal\').remove()">&times;</button>' +
+                '<h2 style="color:var(--teal);font-size:20px;">' + p.firstName + ' ' + p.lastName +
+                    (isOverdue ? ' <span style="background:rgba(245,158,11,0.2);color:#f59e0b;font-size:12px;padding:3px 10px;border-radius:6px;margin-left:8px;">RECALL DUE</span>' : '') +
+                '</h2>' +
+                '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;font-size:14px;">' +
+                    '<div style="color:#888;">Phone<br><strong style="color:#fff;">' + (p.phone || 'N/A') + '</strong></div>' +
+                    '<div style="color:#888;">Email<br><strong style="color:#fff;">' + (p.email || 'N/A') + '</strong></div>' +
+                    '<div style="color:#888;">DOB<br><strong style="color:#fff;">' + (p.dob || 'N/A') + '</strong></div>' +
+                    '<div style="color:#888;">Type<br><strong style="color:#fff;">' + (p.patientType || 'NHS') + '</strong></div>' +
+                    '<div style="color:#888;">NHS Number<br><strong style="color:#fff;">' + (p.nhsNumber || 'N/A') + '</strong></div>' +
+                    '<div style="color:#888;">Last Visit<br><strong style="color:' + (isOverdue ? '#f59e0b' : '#fff') + ';">' + (p.lastVisit || 'Never') + '</strong></div>' +
+                '</div>' +
+                (p.notes ? '<div style="background:rgba(0,0,0,0.3);border-radius:8px;padding:12px;margin-bottom:16px;"><p style="color:#888;font-size:12px;text-transform:uppercase;margin-bottom:4px;">Notes</p><p style="color:#b0bfcc;font-size:14px;">' + p.notes + '</p></div>' : '') +
+                '<h3 style="color:#fff;font-size:15px;margin-bottom:12px;">Appointment History</h3>' + apptHistory +
+                '<div style="display:flex;gap:10px;margin-top:20px;">' +
+                    '<button class="btn btn-small" onclick="document.getElementById(\'patientModal\').remove();showAddPatient(\'' + key + '\');navTo(\'patients\');">Edit Patient</button>' +
+                    '<button class="btn btn-secondary btn-small" onclick="deletePatient(\'' + key + '\')">Delete</button>' +
+                '</div>' +
+            '</div>';
+            document.body.appendChild(modal);
+        }
+
+        function deletePatient(key) {
+            if (confirm('Delete this patient record? This cannot be undone.')) {
+                database.ref(DB_PREFIX + 'patients/' + key).remove();
+                var modal = document.getElementById('patientModal');
+                if (modal) modal.remove();
+            }
+        }
+
+        // ============================================
+        // ANALYTICS
+        // ============================================
+        function updateAnalytics() {
+            var now = new Date();
+            var thisMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+            var thirtyDaysAgo = new Date(Date.now() - 30*24*60*60*1000).toISOString();
+            var sixMonthsAgo = new Date(Date.now() - 180*24*60*60*1000).toISOString().split('T')[0];
+
+            // Monthly revenue
+            var monthlyRev = allRevenue.filter(function(r) { return r.date && r.date.startsWith(thisMonth); })
+                .reduce(function(sum, r) { return sum + r.amount; }, 0);
+            document.getElementById('metricTotalRev').textContent = '£' + monthlyRev.toFixed(0);
+
+            // Monthly appointments
+            var monthlyAppts = allBookings.filter(function(b) { return b.date && b.date.startsWith(thisMonth) && b.status !== 'cancelled'; }).length;
+            document.getElementById('metricTotalAppts').textContent = monthlyAppts;
+
+            // New patients (30 days)
+            var newPats = allPatients.filter(function(p) { return p.createdAt && p.createdAt >= thirtyDaysAgo; }).length;
+            document.getElementById('metricNewPatients').textContent = newPats;
+
+            // Overdue recalls
+            var overdue = allPatients.filter(function(p) { return !p.lastVisit || p.lastVisit < sixMonthsAgo; }).length;
+            document.getElementById('metricOverdue').textContent = overdue;
+
+            // Revenue chart (last 7 days)
+            renderBarChart('revenueChart', 7, function(dateStr) {
+                return allRevenue.filter(function(r) { return r.date === dateStr; }).reduce(function(s, r) { return s + r.amount; }, 0);
+            }, '£');
+
+            // Appointments chart (last 7 days)
+            renderBarChart('appointmentsChart', 7, function(dateStr) {
+                return allBookings.filter(function(b) { return b.date === dateStr && b.status !== 'cancelled'; }).length;
+            }, '');
+
+            // Top services
+            var serviceCounts = {};
+            allBookings.forEach(function(b) {
+                if (b.service && b.status !== 'cancelled') {
+                    var svc = b.service.replace(/ \(£[\d.]+\)/, '');
+                    serviceCounts[svc] = (serviceCounts[svc] || 0) + 1;
+                }
+            });
+            var sorted = Object.keys(serviceCounts).sort(function(a, b) { return serviceCounts[b] - serviceCounts[a]; }).slice(0, 8);
+            var list = document.getElementById('topServicesList');
+            if (sorted.length === 0) {
+                list.innerHTML = '<li style="color:#888;padding:20px 0;text-align:center;">No booking data yet</li>';
+            } else {
+                list.innerHTML = sorted.map(function(svc, i) {
+                    return '<li><span class="rank">' + (i + 1) + '</span><span class="svc-name">' + svc + '</span><span class="svc-count">' + serviceCounts[svc] + '</span></li>';
+                }).join('');
+            }
+        }
+
+        function renderBarChart(containerId, days, valueFn, prefix) {
+            var container = document.getElementById(containerId);
+            if (!container) return;
+            var bars = [];
+            var maxVal = 0;
+            for (var i = days - 1; i >= 0; i--) {
+                var d = new Date(Date.now() - i * 24*60*60*1000);
+                var dateStr = d.toISOString().split('T')[0];
+                var val = valueFn(dateStr);
+                if (val > maxVal) maxVal = val;
+                bars.push({ label: d.toLocaleDateString('en-GB', { weekday: 'short' }), value: val, dateStr: dateStr });
+            }
+            if (maxVal === 0) maxVal = 1;
+            container.innerHTML = bars.map(function(b) {
+                var pct = (b.value / maxVal) * 100;
+                return '<div class="bar" style="height:' + Math.max(pct, 3) + '%;">' +
+                    '<span class="bar-value">' + prefix + (prefix === '£' ? b.value.toFixed(0) : b.value) + '</span>' +
+                    '<span class="bar-label">' + b.label + '</span>' +
+                '</div>';
+            }).join('');
+        }
+
+        // ============================================
+        // CSV EXPORT
+        // ============================================
+        function downloadCSV(filename, rows) {
+            var csv = rows.map(function(r) {
+                return r.map(function(cell) {
+                    return '"' + String(cell || '').replace(/"/g, '""') + '"';
+                }).join(',');
+            }).join('\n');
+            var blob = new Blob([csv], { type: 'text/csv' });
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            a.click();
+        }
+
+        function exportRevenue() {
+            var rows = [['Date', 'Amount', 'Notes']];
+            allRevenue.forEach(function(r) { rows.push([r.date, r.amount, r.notes || '']); });
+            downloadCSV('heathway-revenue-' + new Date().toISOString().split('T')[0] + '.csv', rows);
+        }
+
+        function exportAppointments() {
+            var rows = [['Reference', 'Name', 'Phone', 'Service', 'Date', 'Time', 'Type', 'Status', 'Source', 'Notes']];
+            allBookings.forEach(function(b) {
+                rows.push([b.reference || '', b.name || '', b.phone || '', b.service || '', b.date || '', b.time || '', b.patientType || '', b.status || 'pending', b.source || 'manual', b.notes || '']);
+            });
+            downloadCSV('heathway-appointments-' + new Date().toISOString().split('T')[0] + '.csv', rows);
+        }
+
+        function exportPatients() {
+            var rows = [['First Name', 'Last Name', 'Phone', 'Email', 'DOB', 'NHS Number', 'Type', 'Last Visit', 'Notes']];
+            allPatients.forEach(function(p) {
+                rows.push([p.firstName || '', p.lastName || '', p.phone || '', p.email || '', p.dob || '', p.nhsNumber || '', p.patientType || '', p.lastVisit || '', p.notes || '']);
+            });
+            downloadCSV('heathway-patients-' + new Date().toISOString().split('T')[0] + '.csv', rows);
+        }
+
+        // ============================================
+        // NOTIFICATION SETTINGS
+        // ============================================
+        function loadNotificationSettings() {
+            database.ref(DB_PREFIX + 'notificationSettings').on('value', function(snap) {
+                var data = snap.val() || {};
+                ['notifBookingConfirm','notifReminder24','notifRecall','notifReview'].forEach(function(id) {
+                    var el = document.getElementById(id);
+                    if (el) { if (data[id]) el.classList.add('active'); else el.classList.remove('active'); }
+                });
+                if (data.twilioSID) document.getElementById('twilioSID').value = data.twilioSID;
+                if (data.twilioToken) document.getElementById('twilioToken').value = data.twilioToken;
+                if (data.twilioPhone) document.getElementById('twilioPhone').value = data.twilioPhone;
+            });
+        }
+
+        function toggleNotif(id) {
+            var el = document.getElementById(id);
+            if (el) el.classList.toggle('active');
+        }
+
+        function saveNotificationSettings() {
+            var data = {
+                twilioSID: document.getElementById('twilioSID').value.trim(),
+                twilioToken: document.getElementById('twilioToken').value.trim(),
+                twilioPhone: document.getElementById('twilioPhone').value.trim(),
+                notifBookingConfirm: document.getElementById('notifBookingConfirm').classList.contains('active'),
+                notifReminder24: document.getElementById('notifReminder24').classList.contains('active'),
+                notifRecall: document.getElementById('notifRecall').classList.contains('active'),
+                notifReview: document.getElementById('notifReview').classList.contains('active')
+            };
+            database.ref(DB_PREFIX + 'notificationSettings').set(data).then(function() {
+                showSuccess('notifSuccess');
+            });
+        }
+
+        // ============================================
+        // STRIPE SETTINGS
+        // ============================================
+        function loadStripeSettings() {
+            database.ref(DB_PREFIX + 'stripeSettings').on('value', function(snap) {
+                var data = snap.val() || {};
+                if (data.publicKey) document.getElementById('stripePublicKey').value = data.publicKey;
+                if (data.depositAmount) document.getElementById('stripeDeposit').value = data.depositAmount;
+                var badge = document.getElementById('stripeStatusBadge');
+                var toggle = document.getElementById('stripeDepositToggle');
+                if (data.publicKey && data.publicKey.startsWith('pk_')) {
+                    badge.className = 'stripe-status connected';
+                    badge.textContent = 'Connected';
+                } else {
+                    badge.className = 'stripe-status disconnected';
+                    badge.textContent = 'Not Connected';
+                }
+                if (data.collectDeposits && toggle) toggle.classList.add('active');
+            });
+        }
+
+        function saveStripeSettings() {
+            var data = {
+                publicKey: document.getElementById('stripePublicKey').value.trim(),
+                depositAmount: parseFloat(document.getElementById('stripeDeposit').value) || 25,
+                collectDeposits: document.getElementById('stripeDepositToggle').classList.contains('active')
+            };
+            database.ref(DB_PREFIX + 'stripeSettings').set(data).then(function() {
+                showSuccess('stripeSuccess');
+            });
         }
 
         // Themes removed
