@@ -490,6 +490,25 @@
             direction: ltr;
         }
 
+        .about-grid--text-only {
+            grid-template-columns: 1fr;
+            max-width: 780px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content--full-width {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .about-grid--text-only .about-content__list {
+            display: inline-grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem 2rem;
+            text-align: left;
+        }
+
         .about-image {
             border-radius: 24px;
             overflow: hidden;
@@ -1082,7 +1101,7 @@
         <div class="about-section__container">
             <div class="about-grid">
                 <div class="about-image about-image--reception">
-                    <img src="IMG_3929.jpeg" alt="Heathway Dental reception desk">
+                    <img src="IMG_3930.jpeg" alt="Our friendly receptionist at The Heathway Dental Surgery">
                 </div>
 
                 <div class="about-content">
@@ -1116,12 +1135,8 @@
          ========================================= -->
     <section class="about-section about-section--gradient-2">
         <div class="about-section__container">
-            <div class="about-grid about-grid--reverse">
-                <div class="about-image about-image--portrait">
-                    <img src="IMG_3930.jpeg" alt="Our friendly receptionist at The Heathway Dental Surgery">
-                </div>
-
-                <div class="about-content">
+            <div class="about-grid about-grid--text-only">
+                <div class="about-content about-content--full-width">
                     <span class="about-content__eyebrow">Our Team</span>
                     <h2 class="about-content__title about-content__title--dark">
                         Led by Dr Niti Kaushal
@@ -1150,7 +1165,7 @@
         <div class="about-section__container">
             <div class="about-grid">
                 <div class="about-image about-image--practice">
-                    <img src="IMG_3928.jpeg" alt="The Heathway Dental Surgery waiting area and surgery door">
+                    <img src="IMG_3929.jpeg" alt="Heathway Dental reception desk">
                 </div>
 
                 <div class="about-content">
