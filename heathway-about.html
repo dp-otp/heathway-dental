@@ -496,28 +496,38 @@
 
         .about-grid--text-only {
             grid-template-columns: 1fr;
-            max-width: 860px;
-            margin: 0 auto;
-            text-align: center;
         }
 
-        .about-content--full-width {
-            max-width: 860px;
-            margin: 0 auto;
-            padding: var(--space-2xl) var(--space-xl);
+        .about-section--gradient-2 .about-section__container {
+            max-width: 100% !important;
+            padding: 0 2rem !important;
+        }
+
+        .about-section--gradient-2 .about-grid {
+            display: block !important;
+        }
+
+        .about-content.about-content--full-width {
+            max-width: 100% !important;
+            width: 100% !important;
+            padding: var(--space-3xl) var(--space-4xl);
             background: rgba(0, 0, 0, 0.12);
             border-radius: 24px;
             border: 1px solid rgba(20, 184, 166, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .about-grid--text-only .about-content__eyebrow {
-            font-size: 0.9rem;
+        .about-content--full-width .about-content__eyebrow {
+            font-size: 0.95rem;
             letter-spacing: 0.2em;
-            margin-bottom: var(--space-lg);
+            margin-bottom: var(--space-md);
         }
 
-        .about-grid--text-only .about-content__title {
-            font-size: clamp(2rem, 4vw, 2.75rem);
+        .about-content--full-width .about-content__title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             margin-bottom: var(--space-xl);
             background: linear-gradient(135deg, var(--charcoal), var(--navy-light));
             -webkit-background-clip: text;
@@ -525,19 +535,20 @@
             background-clip: text;
         }
 
-        .about-grid--text-only .about-content__text {
-            font-size: 1.0625rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .about-content--full-width .about-content__text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin-bottom: var(--space-md);
         }
 
-        .about-grid--text-only .about-content__list {
-            display: inline-grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem 3rem;
+        .about-content--full-width .about-content__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem 3rem;
             text-align: left;
-            margin-top: var(--space-md);
+            margin-top: var(--space-xl);
+            font-size: 1.0625rem;
         }
 
         .about-image {
@@ -1050,9 +1061,11 @@
             .about-image--practice img { height: 280px; }
 
             /* Dr Niti text section mobile */
-            .about-content--full-width { padding: var(--space-lg) var(--space-md); }
-            .about-grid--text-only .about-content__title { font-size: 1.75rem; }
-            .about-grid--text-only .about-content__list { grid-template-columns: 1fr; gap: 0.5rem; }
+            .about-section--gradient-2 .about-section__container { padding: 0 var(--space-md); }
+            .about-content--full-width { padding: var(--space-xl) var(--space-md); }
+            .about-content--full-width .about-content__title { font-size: 1.75rem; }
+            .about-content--full-width .about-content__text { font-size: 0.9375rem; }
+            .about-content--full-width .about-content__list { grid-template-columns: 1fr; gap: 0.5rem; }
 
             /* Trust */
             .trust__container { grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); }
@@ -1081,6 +1094,12 @@
             .about-image--practice img { height: 240px; }
             .about-grid--text-only .about-content__title { font-size: 1.5rem; }
             .mobile-menu__link { font-size: 1.125rem; padding: 0.6rem 2rem; }
+            .about-content--full-width { padding: var(--space-md); border-radius: 16px; }
+        }
+
+        /* Safe area for notched phones */
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+            .footer { padding-bottom: env(safe-area-inset-bottom); }
         }
     </style>
 </head>
@@ -1182,15 +1201,20 @@
                         Led by Dr Niti Kaushal
                     </h2>
                     <p class="about-content__text about-content__text--dark">
-                        Dr Niti Kaushal is the Principal Dentist and Owner of The Heathway Dental Surgery. With a commitment to providing the highest standard of dental care, Dr Kaushal leads an experienced and friendly team dedicated to making every patient feel comfortable and confident in their treatment.
+                        Dr Niti Kaushal is the Principal Dentist and Owner of The Heathway Dental Surgery, bringing over two decades of clinical experience to our Dagenham practice. Registered with the General Dental Council and qualified from one of the UK's leading dental schools, Dr Kaushal is committed to providing the highest standard of care for every patient &mdash; whether NHS or private.
                     </p>
                     <p class="about-content__text about-content__text--dark">
-                        From our welcoming reception team to our skilled dental professionals, every member of staff at Heathway Dental is passionate about patient care. We understand that visiting the dentist can sometimes feel daunting, and we go above and beyond to create a calm, supportive environment for patients of all ages.
+                        Under Dr Kaushal's leadership, our team delivers a full range of treatments including check-ups, fillings, crowns, bridges, dentures, root canal therapy, extractions and children's dentistry. Every treatment plan is tailored to the individual, with clear explanations and honest advice at every step.
+                    </p>
+                    <p class="about-content__text about-content__text--dark">
+                        From our welcoming reception staff to our skilled dental nurses and hygienists, every member of the Heathway Dental team is passionate about patient care. We understand that visiting the dentist can feel daunting, and we go above and beyond to create a calm, supportive environment for patients of all ages.
                     </p>
                     <ul class="about-content__list about-content__list--dark">
-                        <li>Experienced, qualified dental professionals</li>
+                        <li>GDC registered dental professionals</li>
                         <li>Warm, welcoming reception team</li>
-                        <li>Dedicated to patient comfort and care</li>
+                        <li>Over 20 years serving Dagenham</li>
+                        <li>CQC regulated practice</li>
+                        <li>NHS and private patients welcome</li>
                         <li>Treating adults and children alike</li>
                     </ul>
                 </div>
@@ -1247,7 +1271,7 @@
             </div>
             <div class="trust__item">
                 <div class="trust__value">CQC</div>
-                <div class="trust__label">Regulated &amp; Approved</div>
+                <div class="trust__label">Regulated &amp; Registered</div>
             </div>
             <div class="trust__item">
                 <div class="trust__value">20+</div>

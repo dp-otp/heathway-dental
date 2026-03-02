@@ -967,8 +967,8 @@
                 <h3 style="color: var(--teal); font-size: 14px; margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 1px;">Private Treatments</h3>
                 <div id="priceListPrivate"></div>
 
-                <h3 style="color: var(--teal); font-size: 14px; margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 1px;">Cosmetic Treatments</h3>
-                <div id="priceListCosmetic"></div>
+                <h3 style="color: var(--teal); font-size: 14px; margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 1px;">Denture Treatments</h3>
+                <div id="priceListDentures"></div>
 
                 <button class="btn" style="margin-top: 20px;" onclick="savePrices()">Save All Prices</button>
             </div>
@@ -1033,7 +1033,7 @@
                     <input type="text" id="announceText" placeholder="e.g. Now accepting new NHS patients!" oninput="updateAnnouncePreview()">
                     <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
                         <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.25);border-radius:20px;color:var(--teal);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">Now accepting new NHS patients!</button>
-                        <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);border-radius:20px;color:#22c55e;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">20% off teeth whitening this month</button>
+                        <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);border-radius:20px;color:#22c55e;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">Private dentures now available from £450</button>
                         <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);border-radius:20px;color:#ef4444;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">Closed for bank holiday — reopening Tuesday</button>
                         <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);border-radius:20px;color:#3b82f6;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">Online booking now available!</button>
                         <button type="button" onclick="setAnnounce(this.textContent)" style="padding:7px 14px;background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.25);border-radius:20px;color:var(--teal);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;">Free NHS check-ups for under 18s</button>
@@ -1233,7 +1233,7 @@
                         </div>
                         <div class="form-group">
                             <label>Speciality</label>
-                            <input type="text" id="staffSpeciality" placeholder="e.g. Cosmetic Dentistry">
+                            <input type="text" id="staffSpeciality" placeholder="e.g. General Dentistry">
                         </div>
                     </div>
                     <button class="btn" onclick="addStaff()">Add Staff Member</button>
@@ -1507,11 +1507,11 @@
             </div>
             <div style="margin-bottom: 20px;">
                 <label style="display: block; color: #888; font-size: 12px; margin-bottom: 8px; text-transform: uppercase;">Title</label>
-                <input type="text" id="liveTitle" placeholder="e.g. Teeth Whitening Results" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.5); border: 1px solid rgba(20, 184, 166, 0.3); border-radius: 8px; color: #fff; font-size: 14px; font-family: inherit;">
+                <input type="text" id="liveTitle" placeholder="e.g. New Denture Service Available" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.5); border: 1px solid rgba(20, 184, 166, 0.3); border-radius: 8px; color: #fff; font-size: 14px; font-family: inherit;">
             </div>
             <div style="margin-bottom: 20px;">
                 <label style="display: block; color: #888; font-size: 12px; margin-bottom: 8px; text-transform: uppercase;">Description</label>
-                <input type="text" id="liveDescription" placeholder="e.g. Professional whitening treatment" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.5); border: 1px solid rgba(20, 184, 166, 0.3); border-radius: 8px; color: #fff; font-size: 14px; font-family: inherit;">
+                <input type="text" id="liveDescription" placeholder="e.g. NHS and private dentures now available" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.5); border: 1px solid rgba(20, 184, 166, 0.3); border-radius: 8px; color: #fff; font-size: 14px; font-family: inherit;">
             </div>
             <div style="display: flex; gap: 10px;">
                 <button onclick="closeLiveModal()" style="flex: 1; padding: 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; cursor: pointer; font-family: inherit;">Cancel</button>
@@ -1738,10 +1738,10 @@
         // ============================================
         var servicePrices = {
             nhs: [
-                { id: 'nhs-band1', name: 'Band 1 (Check-ups, X-rays, Scale & Polish)', price: 26.80 },
-                { id: 'nhs-band2', name: 'Band 2 (Fillings, Root Canals, Extractions)', price: 73.50 },
-                { id: 'nhs-band3', name: 'Band 3 (Crowns, Bridges, Dentures)', price: 319.10 },
-                { id: 'nhs-urgent', name: 'Urgent Treatment', price: 26.80 }
+                { id: 'nhs-band1', name: 'Band 1 (Check-ups, X-rays, Scale & Polish)', price: 27.40 },
+                { id: 'nhs-band2', name: 'Band 2 (Fillings, Root Canals, Extractions)', price: 75.30 },
+                { id: 'nhs-band3', name: 'Band 3 (Crowns, Bridges, Dentures)', price: 326.70 },
+                { id: 'nhs-urgent', name: 'Urgent Treatment', price: 27.40 }
             ],
             private: [
                 { id: 'prv-checkup', name: 'Private Check-up', price: 50 },
@@ -1751,17 +1751,15 @@
                 { id: 'prv-rootcanal', name: 'Root Canal Treatment', price: 350 },
                 { id: 'prv-crown', name: 'Dental Crown', price: 495 },
                 { id: 'prv-bridge', name: 'Dental Bridge (per unit)', price: 495 },
-                { id: 'prv-denture', name: 'Full Denture', price: 650 },
-                { id: 'prv-partial', name: 'Partial Denture', price: 450 },
                 { id: 'prv-xray', name: 'X-Ray (per film)', price: 15 }
             ],
-            cosmetic: [
-                { id: 'cos-whitening-home', name: 'Home Whitening Kit', price: 295 },
-                { id: 'cos-whitening-chair', name: 'In-Chair Whitening', price: 395 },
-                { id: 'cos-veneer-comp', name: 'Composite Veneer (per tooth)', price: 250 },
-                { id: 'cos-veneer-porc', name: 'Porcelain Veneer (per tooth)', price: 650 },
-                { id: 'cos-bonding', name: 'Dental Bonding (per tooth)', price: 195 },
-                { id: 'cos-botox', name: 'Facial Aesthetics (Botox)', price: 195 }
+            dentures: [
+                { id: 'den-full-nhs', name: 'Full Denture (NHS Band 3)', price: 326.70 },
+                { id: 'den-full-private', name: 'Full Denture (Private)', price: 650 },
+                { id: 'den-partial-private', name: 'Partial Denture (Private)', price: 450 },
+                { id: 'den-repair', name: 'Denture Repair', price: 85 },
+                { id: 'den-reline', name: 'Denture Reline', price: 150 },
+                { id: 'den-adjustment', name: 'Denture Adjustment', price: 50 }
             ]
         };
 
@@ -1774,7 +1772,7 @@
         }
 
         function renderPrices() {
-            ['nhs', 'private', 'cosmetic'].forEach(function(cat) {
+            ['nhs', 'private', 'dentures'].forEach(function(cat) {
                 var containerId = 'priceList' + cat.charAt(0).toUpperCase() + cat.slice(1);
                 if (cat === 'nhs') containerId = 'priceListNHS';
                 var container = document.getElementById(containerId);
@@ -1790,7 +1788,7 @@
         }
 
         function savePrices() {
-            ['nhs', 'private', 'cosmetic'].forEach(function(cat) {
+            ['nhs', 'private', 'dentures'].forEach(function(cat) {
                 if (!servicePrices[cat]) return;
                 servicePrices[cat].forEach(function(s) {
                     var input = document.getElementById('price-' + s.id);
@@ -1827,7 +1825,7 @@
             { id: 'heathway-reception', url: 'IMG_3929.jpeg', type: 'image', format: 'jpeg', label: 'Reception Area', createdAt: '2025-01-01T00:00:03.000Z' },
             { id: 'heathway-waiting-area', url: 'IMG_3928.jpeg', type: 'image', format: 'jpeg', label: 'Waiting Area', createdAt: '2025-01-01T00:00:04.000Z' },
             { id: 'heathway-svc-general', url: 'https://images.unsplash.com/photo-1631596577204-53ad0d6e6978?w=800&q=80', type: 'image', format: 'jpeg', label: 'General Dentistry', createdAt: '2025-01-01T00:00:05.000Z' },
-            { id: 'heathway-svc-cosmetic', url: 'https://images.unsplash.com/photo-1675526607070-f5cbd71dde92?w=800&q=80', type: 'image', format: 'jpeg', label: 'Cosmetic Dentistry', createdAt: '2025-01-01T00:00:06.000Z' },
+            { id: 'heathway-svc-dentures', url: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80', type: 'image', format: 'jpeg', label: 'Dentures', createdAt: '2025-01-01T00:00:06.000Z' },
             { id: 'heathway-svc-rootcanal', url: 'https://images.unsplash.com/photo-1766338390573-ec092d69cdcb?w=800&q=80', type: 'image', format: 'jpeg', label: 'Root Canal Treatment', createdAt: '2025-01-01T00:00:07.000Z' },
             { id: 'heathway-svc-crowns', url: 'https://images.unsplash.com/photo-1468493858157-0da44aaf1d13?w=800&q=80', type: 'image', format: 'jpeg', label: 'Crowns & Bridges', createdAt: '2025-01-01T00:00:08.000Z' },
             { id: 'heathway-svc-emergency', url: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80', type: 'image', format: 'jpeg', label: 'Emergency Care', createdAt: '2025-01-01T00:00:09.000Z' },

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Heathway Dental Surgery | Quality Dental Care in Dagenham</title>
     <meta name="description" content="The Heathway Dental Surgery in Dagenham offers quality NHS and private dental care. Emergency appointments available. Call 020 8592 5030.">
-    <meta name="keywords" content="dentist dagenham, NHS dentist, private dentist, emergency dentist, heathway dental, dental surgery dagenham, teeth whitening, dental implants">
+    <meta name="keywords" content="dentist dagenham, NHS dentist, private dentist, emergency dentist, heathway dental, dental surgery dagenham, dental check-ups, fillings, crowns, bridges, dentures, root canal, extractions">
     <meta name="author" content="The Heathway Dental Surgery">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.heathwaydental.co.uk/">
@@ -1599,6 +1599,39 @@
 .pricing-table tr:last-child td { border-bottom: none; }
 .pricing-table .service-name { color: #fff; font-weight: 500; }
 .pricing-table .service-price { color: #14b8a6; font-weight: 700; font-size: 16px; text-align: right; }
+
+/* Pricing mobile */
+@media (max-width: 768px) {
+    .pricing-section { padding: var(--space-2xl) 0; }
+    .pricing-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 16px; }
+    .pricing-table th, .pricing-table td { padding: 12px 14px; font-size: 13px; white-space: nowrap; }
+    .pricing-table .service-price { font-size: 14px; }
+    .pricing-tab { padding: 8px 16px; font-size: 13px; }
+}
+@media (max-width: 480px) {
+    .pricing-table th, .pricing-table td { padding: 10px 12px; font-size: 12px; }
+    .pricing-tab { padding: 7px 14px; font-size: 12px; }
+}
+
+/* Cookie banner mobile */
+@media (max-width: 768px) {
+    .cookie-banner { flex-direction: column; padding: 16px; gap: 12px; }
+    .cookie-banner p { font-size: 12px; min-width: unset; }
+    .cookie-banner .cookie-buttons { width: 100%; justify-content: stretch; }
+    .cookie-banner .cookie-btn { flex: 1; text-align: center; padding: 12px 16px; }
+}
+
+/* Booking modal mobile */
+@media (max-width: 480px) {
+    .booking-modal { margin: 8px; padding: 24px 16px; max-height: 95vh; }
+    .booking-modal h2 { font-size: 18px; }
+}
+
+/* Safe area for notched phones */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .cookie-banner { padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
+    .footer { padding-bottom: env(safe-area-inset-bottom); }
+}
     </style>
 </head>
 <body>
@@ -1748,12 +1781,12 @@
 
                 <article class="service-card">
                     <div class="service-card__icon-wrap">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C9.5 2 7.5 3.5 7 5.5C6 5 4.5 5.5 3.5 6.5C2.5 7.5 2.5 9 3 10C2 11 1.5 12.5 2 14C2.5 15.5 4 16.5 5 16.5L7 22H10L11 17H13L14 22H17L19 16.5C20 16.5 21.5 15.5 22 14C22.5 12.5 22 11 21 10C21.5 9 21.5 7.5 20.5 6.5C19.5 5.5 18 5 17 5.5C16.5 3.5 14.5 2 12 2Z" stroke-linejoin="round" stroke-linecap="round"/><path d="M8 8L9.5 6.5" stroke-linecap="round"/><path d="M16 8L14.5 6.5" stroke-linecap="round"/><line x1="10" y1="10" x2="10" y2="12" stroke-linecap="round"/><line x1="14" y1="10" x2="14" y2="12" stroke-linecap="round"/><path d="M9 14.5C9 14.5 10 16 12 16C14 16 15 14.5 15 14.5" stroke-linecap="round"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M4 12c0-3 2-8 8-8s8 5 8 8" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 12c0 3 2 8 8 8s8-5 8-8" stroke-linejoin="round" stroke-linecap="round"/><line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/><line x1="8" y1="8" x2="8" y2="16" stroke-linecap="round"/><line x1="12" y1="7" x2="12" y2="17" stroke-linecap="round"/><line x1="16" y1="8" x2="16" y2="16" stroke-linecap="round"/></svg>
                     </div>
-                    <h3 class="service-card__title">Cosmetic Dentistry</h3>
+                    <h3 class="service-card__title">Dentures</h3>
                     <p class="service-card__text">
-                        Teeth whitening, veneers, and smile makeovers to help
-                        you feel confident about your smile.
+                        Full and partial dentures to replace missing teeth,
+                        available on NHS and privately.
                     </p>
                 </article>
 
@@ -1940,7 +1973,7 @@
                     <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
                 </div>
                 <p class="testimonial-card__quote">
-                    "Had my teeth whitened here and the results are amazing. So much more affordable than I expected. The team are all lovely and professional."
+                    "Needed a new set of dentures and the team here were brilliant. Comfortable fit, natural look, and so much more affordable than I expected. Lovely and professional staff."
                 </p>
                 <div class="testimonial-card__author">
                     <div class="testimonial-card__avatar">RB</div>
@@ -2078,7 +2111,7 @@
                     <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
                 </div>
                 <p class="testimonial-card__quote">
-                    "Had my teeth whitened here and the results are amazing. So much more affordable than I expected. The team are all lovely and professional."
+                    "Needed a new set of dentures and the team here were brilliant. Comfortable fit, natural look, and so much more affordable than I expected. Lovely and professional staff."
                 </p>
                 <div class="testimonial-card__author">
                     <div class="testimonial-card__avatar">RB</div>
@@ -2437,11 +2470,13 @@
         "medicalSpecialty": "Dentistry",
         "availableService": [
             { "@type": "MedicalProcedure", "name": "General Dentistry" },
-            { "@type": "MedicalProcedure", "name": "Cosmetic Dentistry" },
             { "@type": "MedicalProcedure", "name": "Emergency Dental Care" },
-            { "@type": "MedicalProcedure", "name": "Teeth Whitening" },
-            { "@type": "MedicalProcedure", "name": "Dental Crowns" },
-            { "@type": "MedicalProcedure", "name": "Root Canal Treatment" }
+            { "@type": "MedicalProcedure", "name": "Dental Crowns and Bridges" },
+            { "@type": "MedicalProcedure", "name": "Root Canal Treatment" },
+            { "@type": "MedicalProcedure", "name": "Dentures" },
+            { "@type": "MedicalProcedure", "name": "Tooth Extractions" },
+            { "@type": "MedicalProcedure", "name": "Gum Disease Treatment" },
+            { "@type": "MedicalProcedure", "name": "Children's Dentistry" }
         ],
         "sameAs": []
     }
@@ -2577,7 +2612,7 @@
             cachedPrices = snap.val() || {};
             renderPricingTable('nhs', cachedPrices.nhs || {}, 'pricingNHSBody');
             renderPricingTable('private', cachedPrices.private || {}, 'pricingPrivateBody');
-            renderPricingTable('cosmetic', cachedPrices.cosmetic || {}, 'pricingCosmeticBody');
+            renderPricingTable('dentures', cachedPrices.dentures || {}, 'pricingDenturesBody');
             populateBookingServices(cachedPrices);
             var pricesUpdatedEl = document.getElementById('pricesLastUpdated');
             if (pricesUpdatedEl) pricesUpdatedEl.textContent = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -2724,7 +2759,7 @@
             var current = select.value;
             select.innerHTML = '<option value="">-- Choose a service --</option>';
             var allServices = [];
-            ['nhs','private','cosmetic'].forEach(function(cat) {
+            ['nhs','private','dentures'].forEach(function(cat) {
                 if (prices[cat]) {
                     Object.keys(prices[cat]).forEach(function(key) {
                         var name = key.replace(/([A-Z])/g, ' $1').replace(/^./, function(s) { return s.toUpperCase(); });
@@ -2737,7 +2772,7 @@
             });
             // Add common services if prices not loaded
             if (allServices.length === 0) {
-                ['Check-up','Cleaning','Filling','Root Canal','Crown','Teeth Whitening','Emergency Appointment','Extraction','Veneer','Bridge'].forEach(function(s) {
+                ['Check-up','Cleaning','Filling','Root Canal','Crown','Bridge','Dentures','Emergency Appointment','Extraction','Gum Treatment'].forEach(function(s) {
                     allServices.push({ name: s, cat: '' });
                 });
             }

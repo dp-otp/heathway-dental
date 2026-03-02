@@ -949,6 +949,13 @@
             .page-hero { padding: 6rem 0 2.5rem; }
             .page-hero__title { font-size: 1.75rem; }
             .mobile-menu__link { font-size: 1.125rem; padding: 0.6rem 2rem; }
+            .contact-card { padding: var(--space-md); }
+            .map-wrapper iframe { height: 250px; }
+        }
+
+        /* Safe area for notched phones */
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+            .footer { padding-bottom: env(safe-area-inset-bottom); }
         }
     </style>
 </head>
