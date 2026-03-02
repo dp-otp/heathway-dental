@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | The Heathway Dental Surgery</title>
+    <meta name="description" content="About The Heathway Dental Surgery. Led by Dr Niti Kaushal, serving Dagenham since 2003. CQC registered NHS and private dental practice. Call 020 8592 5030.">
+    <link rel="icon" href="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -72,7 +74,8 @@
 
         html {
             scroll-behavior: smooth;
-            overflow-x: hidden;
+            overflow-x: clip;
+            max-width: 100vw;
         }
 
         body {
@@ -82,7 +85,8 @@
             line-height: 1.6;
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
+            overflow-x: clip;
+            max-width: 100%;
         }
 
         /* ===========================================
@@ -492,21 +496,48 @@
 
         .about-grid--text-only {
             grid-template-columns: 1fr;
-            max-width: 780px;
+            max-width: 860px;
             margin: 0 auto;
             text-align: center;
         }
 
         .about-content--full-width {
-            max-width: 780px;
+            max-width: 860px;
             margin: 0 auto;
+            padding: var(--space-2xl) var(--space-xl);
+            background: rgba(0, 0, 0, 0.12);
+            border-radius: 24px;
+            border: 1px solid rgba(20, 184, 166, 0.1);
+        }
+
+        .about-grid--text-only .about-content__eyebrow {
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-grid--text-only .about-content__title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            margin-bottom: var(--space-xl);
+            background: linear-gradient(135deg, var(--charcoal), var(--navy-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-grid--text-only .about-content__text {
+            font-size: 1.0625rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .about-grid--text-only .about-content__list {
             display: inline-grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0.5rem 2rem;
+            gap: 0.75rem 3rem;
             text-align: left;
+            margin-top: var(--space-md);
         }
 
         .about-image {
@@ -544,6 +575,7 @@
         .about-image--reception img {
             height: 480px;
             object-fit: cover;
+            object-position: center 15%;
         }
 
         .about-image--portrait img {
@@ -1013,9 +1045,14 @@
             /* About grid */
             .about-grid { grid-template-columns: 1fr; }
             .about-grid--reverse { direction: ltr; }
-            .about-image--reception img { height: 280px; }
+            .about-image--reception img { height: 320px; object-position: center 20%; }
             .about-image--portrait img { height: 360px; }
             .about-image--practice img { height: 280px; }
+
+            /* Dr Niti text section mobile */
+            .about-content--full-width { padding: var(--space-lg) var(--space-md); }
+            .about-grid--text-only .about-content__title { font-size: 1.75rem; }
+            .about-grid--text-only .about-content__list { grid-template-columns: 1fr; gap: 0.5rem; }
 
             /* Trust */
             .trust__container { grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); }
@@ -1040,6 +1077,9 @@
             .page-hero__eyebrow { font-size: 0.5625rem; gap: 0.5rem; }
             .page-hero__eyebrow::before, .page-hero__eyebrow::after { width: 1rem; }
             .about-image--portrait img { height: 300px; }
+            .about-image--reception img { height: 260px; }
+            .about-image--practice img { height: 240px; }
+            .about-grid--text-only .about-content__title { font-size: 1.5rem; }
             .mobile-menu__link { font-size: 1.125rem; padding: 0.6rem 2rem; }
         }
     </style>
@@ -1313,7 +1353,7 @@
     </footer>
 
     <!-- AI Chatbot floating button - links to full chatbot page -->
-    <a href="heathway-chatbot.html" class="ai-widget__toggle" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999; width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), #00d4ff); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(20, 184, 166, 0.25); text-decoration: none; animation: pulse-glow 2s ease-in-out infinite;">
+    <a href="heathway-chatbot.html" class="ai-widget__toggle" aria-label="Open Heathway AI chat assistant" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999; width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), #00d4ff); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(20, 184, 166, 0.25); text-decoration: none; animation: pulse-glow 2s ease-in-out infinite;">
         <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
         </svg>

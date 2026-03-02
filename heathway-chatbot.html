@@ -72,7 +72,8 @@
 
         html {
             scroll-behavior: smooth;
-            overflow-x: hidden;
+            overflow-x: clip;
+            max-width: 100vw;
         }
 
         body {
@@ -82,7 +83,8 @@
             line-height: 1.6;
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
+            overflow-x: clip;
+            max-width: 100%;
         }
 
         /* ===========================================
@@ -1112,13 +1114,13 @@
         
         // ── Sentiment Detection ───────────────────────
         function detectSentiment(msg) {
-            if (/\b(urgent|hurting|agony|unbearable|terrified|scared|panic|help me|please help|desperate|worst|never coming back|hate|stupid|useless|rubbish|awful|terrible|pathetic)\b/.test(msg)) {
+            if (/\b(urgent|hurting|agony|unbearable|terrified|panic|help me|please help|desperate|worst|never coming back|hate|stupid|useless|rubbish|awful|terrible|pathetic)\b/.test(msg)) {
                 return 'frustrated';
             }
             if (/\b(nervous|anxious|worried|afraid|fear|phobia|scared|dread)\b/.test(msg)) {
                 return 'anxious';
             }
-            if (/\b(amazing|brilliant|great|love|wonderful|excellent|fantastic|perfect|thank|thanks|cheers|appreciate|helpful|helpful)\b/.test(msg)) {
+            if (/\b(amazing|brilliant|great|love|wonderful|excellent|fantastic|perfect|thank|thanks|cheers|appreciate|helpful)\b/.test(msg)) {
                 return 'positive';
             }
             if (/^.{0,15}$/.test(msg) && /(\?|huh|what|eh|pardon|sorry|don't get|confused|unclear)/.test(msg)) {
@@ -1341,7 +1343,7 @@
                 keywords: ['nhs','price','cost','how much','fee','charge','band','afford','pay','payment','money','expensive','cheap','rates','tariff','nhs charges','dental charges'],
                 weight: 5,
                 responses: [
-                    "&#x1F4B7; <strong>NHS Dental Charges (2024/25)</strong><br><br><strong>Band 1 &mdash; &#163;26.80</strong><br>Check-up, X-rays, scale &amp; polish, advice<br><br><strong>Band 2 &mdash; &#163;73.50</strong><br>Everything in Band 1, plus fillings, root canal, extractions<br><br><strong>Band 3 &mdash; &#163;319.10</strong><br>Everything in Bands 1 &amp; 2, plus crowns, dentures, bridges<br><br>&#x2705; <strong>FREE for:</strong> under 18s, pregnant women, new mothers (12 months after birth), qualifying benefits, HC2 holders<br><br>We also offer private treatments with individual pricing. Call "+phoneInline+" for a quote.",
+                    "&#x1F4B7; <strong>NHS Dental Charges (2025/26)</strong><br><br><strong>Band 1 &mdash; &#163;26.80</strong><br>Check-up, X-rays, scale &amp; polish, advice<br><br><strong>Band 2 &mdash; &#163;73.50</strong><br>Everything in Band 1, plus fillings, root canal, extractions<br><br><strong>Band 3 &mdash; &#163;319.10</strong><br>Everything in Bands 1 &amp; 2, plus crowns, dentures, bridges<br><br>&#x2705; <strong>FREE for:</strong> under 18s, pregnant women, new mothers (12 months after birth), qualifying benefits, HC2 holders<br><br>We also offer private treatments with individual pricing. Call "+phoneInline+" for a quote.",
                     "&#x1F4B7; <strong>Our NHS Price Bands</strong><br><br>&#x2022; <strong>Band 1:</strong> &#163;26.80 &mdash; Check-up, X-rays, scale &amp; polish<br>&#x2022; <strong>Band 2:</strong> &#163;73.50 &mdash; Fillings, extractions, root canal<br>&#x2022; <strong>Band 3:</strong> &#163;319.10 &mdash; Crowns, bridges, dentures<br><br>One band charge covers all treatment at that level in one course. Some patients are entitled to <strong>free treatment</strong> &mdash; see exemptions. Ask about private options too.",
                     "&#x1F4B7; NHS dental treatment is charged in three bands:<br><br>&#x2022; <strong>&#163;26.80</strong> &mdash; Routine check-up (Band 1)<br>&#x2022; <strong>&#163;73.50</strong> &mdash; Fillings, extractions, root canals (Band 2)<br>&#x2022; <strong>&#163;319.10</strong> &mdash; Crowns, bridges, dentures (Band 3)<br><br>Under 18? Pregnant? On benefits? You could get treatment for <strong>free</strong>. Ask us when you call "+phoneInline+"."
                 ]
@@ -2244,11 +2246,12 @@
                     if (topic.id === 'default' || topic.priority > 0) continue;
                     if (topic.keywords.some(kw => msg.includes(kw))) {
                         bestTopic = topic;
+                        bestScore = 1;
                         break;
                     }
                 }
             }
-        
+
             const finalTopic = (bestTopic && bestScore > 0) ? bestTopic : topics.find(t => t.id === 'default');
         
             // Update context

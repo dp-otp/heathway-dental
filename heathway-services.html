@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | The Heathway Dental Surgery</title>
+    <meta name="description" content="NHS and private dental services at The Heathway Dental Surgery, Dagenham. Check-ups, fillings, crowns, root canals, whitening and more. Call 020 8592 5030.">
+    <link rel="icon" href="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -72,7 +74,8 @@
 
         html {
             scroll-behavior: smooth;
-            overflow-x: hidden;
+            overflow-x: clip;
+            max-width: 100vw;
         }
 
         body {
@@ -82,7 +85,8 @@
             line-height: 1.6;
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
+            overflow-x: clip;
+            max-width: 100%;
         }
 
         /* ===========================================
@@ -1149,7 +1153,7 @@
     </footer>
 
     <!-- AI Chatbot floating button - links to full chatbot page -->
-    <a href="heathway-chatbot.html" class="ai-widget__toggle" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999; width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), #00d4ff); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(20, 184, 166, 0.25); text-decoration: none; animation: pulse-glow 2s ease-in-out infinite;">
+    <a href="heathway-chatbot.html" class="ai-widget__toggle" aria-label="Open Heathway AI chat assistant" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999; width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), #00d4ff); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(20, 184, 166, 0.25); text-decoration: none; animation: pulse-glow 2s ease-in-out infinite;">
         <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
         </svg>

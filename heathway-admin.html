@@ -674,15 +674,28 @@
             }
             .sidebar-brand img { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--teal); }
             .sidebar-brand span { color: var(--teal); font-size: 13px; font-weight: 700; letter-spacing: 1px; }
-            .more-drawer {
-                left: 240px; bottom: auto; top: 50%;
-                transform: translateY(-50%) translateX(-20px);
-                opacity: 0; pointer-events: none;
-                transition: all 0.25s ease;
-                border-radius: 14px; width: 320px; max-height: 80vh;
-                border: 1px solid rgba(20, 184, 166, 0.15);
+            .booking-overlay {
+                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
+                display: flex; align-items: center; justify-content: center;
+                opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 10001;
             }
-            .more-drawer.open { transform: translateY(-50%) translateX(0); opacity: 1; pointer-events: auto; }
+            .booking-overlay.active { opacity: 1; visibility: visible; }
+            .booking-modal {
+                background: var(--card-bg, #1a2535); border-radius: 16px;
+                padding: 28px; max-width: 520px; width: 90%; max-height: 85vh;
+                overflow-y: auto; position: relative;
+                border: 1px solid rgba(20, 184, 166, 0.15);
+                box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            }
+            .close-modal {
+                position: absolute; top: 12px; right: 12px;
+                background: rgba(255,255,255,0.1); border: none; color: #fff;
+                width: 32px; height: 32px; border-radius: 50%; font-size: 18px;
+                cursor: pointer; display: flex; align-items: center; justify-content: center;
+                transition: background 0.2s;
+            }
+            .close-modal:hover { background: rgba(255,255,255,0.2); }
         }
 
         /* ============================================ */
@@ -1776,43 +1789,7 @@
         // ============================================
         // BOOKINGS
         // ============================================
-        var allBookings = [];
-
-        function loadBookings() {
-            database.ref(DB_PREFIX + 'bookings').orderByChild('createdAt').on('value', function(snapshot) {
-                var data = snapshot.val();
-                allBookings = data ? Object.keys(data).map(function(k) { var b = data[k]; b._key = k; return b; }) : [];
-                allBookings.sort(function(a, b) { return new Date(b.createdAt) - new Date(a.createdAt); });
-                renderBookings();
-            });
-        }
-
-        function renderBookings() {
-            var container = document.getElementById('bookingsList');
-            if (allBookings.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: #888; padding: 40px 0;">No appointments yet</p>';
-                document.getElementById('statAppointments').textContent = '0';
-                return;
-            }
-
-            var today = new Date().toISOString().split('T')[0];
-            var todayCount = allBookings.filter(function(b) { return b.date === today; }).length;
-            document.getElementById('statAppointments').textContent = todayCount;
-
-            container.innerHTML = allBookings.slice(0, 20).map(function(booking) {
-                return '<div class="booking-item">' +
-                    '<div class="booking-ref">' + (booking.reference || 'N/A') + '</div>' +
-                    '<div class="booking-details">' +
-                        '<div>Patient<strong>' + (booking.name || 'Unknown') + '</strong></div>' +
-                        '<div>Phone<strong>' + (booking.phone || 'N/A') + '</strong></div>' +
-                        '<div>Service<strong>' + (booking.service || 'N/A') + '</strong></div>' +
-                        '<div>Date<strong>' + (booking.date || 'N/A') + '</strong></div>' +
-                        '<div>Time<strong>' + (booking.time || 'N/A') + '</strong></div>' +
-                        '<div>Type<strong>' + (booking.patientType || 'N/A') + '</strong></div>' +
-                    '</div>' +
-                '</div>';
-            }).join('');
-        }
+        // allBookings declared for loadBookingsEnhanced
 
         function clearAllBookings() {
             if (confirm('Are you sure you want to clear all appointments? This cannot be undone.')) {
@@ -1935,10 +1912,10 @@
             }).join('');
         }
 
-        function switchTab(tab) {
+        function switchTab(tab, btn) {
             currentTab = tab;
             document.querySelectorAll('.tab-btn').forEach(function(btn) { btn.classList.remove('active'); });
-            event.target.classList.add('active');
+            if (btn) btn.classList.add('active');
             loadGallery();
         }
 
