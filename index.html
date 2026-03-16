@@ -1,0 +1,2856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Heathway Dental Surgery | Quality Dental Care in Dagenham</title>
+    <meta name="description" content="The Heathway Dental Surgery in Dagenham offers quality NHS and private dental care. Emergency appointments available. Call 020 8592 5030.">
+    <meta name="keywords" content="dentist dagenham, NHS dentist, private dentist, emergency dentist, heathway dental, dental surgery dagenham, dental check-ups, fillings, crowns, bridges, dentures, root canal, extractions">
+    <meta name="author" content="The Heathway Dental Surgery">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.heathwaydental.co.uk/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Heathway Dental Surgery | Quality Dental Care in Dagenham">
+    <meta property="og:description" content="NHS and private dental care for the whole family. Emergency appointments available. 20+ years serving Dagenham.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.heathwaydental.co.uk/">
+    <meta property="og:image" content="https://dp-otp.github.io/heathway-dental/IMG_3933.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Heathway Dental Surgery | Quality Dental Care in Dagenham">
+    <meta name="twitter:description" content="NHS and private dental care for the whole family. Emergency appointments available.">
+    <meta name="twitter:image" content="https://dp-otp.github.io/heathway-dental/IMG_3933.jpeg">
+
+    <!-- Favicon & Theme -->
+    <link rel="icon" type="image/png" href="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png">
+    <link rel="apple-touch-icon" href="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png">
+    <meta name="theme-color" content="#14b8a6">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===========================================
+           DESIGN SYSTEM — Premium Futuristic
+           =========================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core palette */
+            --cream: #E8DFD8;
+            --cream-light: #F5F0EC;
+            --beige: #f5ebe4;
+            --beige-soft: rgba(245, 235, 228, 0.15);
+            --teal: #14b8a6;
+            --teal-muted: #0d9488;
+            --teal-soft: rgba(20, 184, 166, 0.15);
+            --teal-glow: rgba(20, 184, 166, 0.4);
+
+            /* Dark blue accents */
+            --navy: #0a1628;
+            --navy-light: #0f2240;
+            --blue-accent: #1e3a5f;
+            --blue-neon: #00d4ff;
+            --blue-glow: rgba(0, 212, 255, 0.3);
+
+            /* Dark palette */
+            --black: #000000;
+            --charcoal: #0d1520;
+            --gray-900: #131c2a;
+            --gray-800: #1a2535;
+            --gray-700: #243347;
+            --gray-600: #3d4f66;
+            --gray-400: #8899aa;
+            --gray-300: #b0bfcc;
+
+            /* Light palette */
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --warm-gray: #F5F3F0;
+
+            /* Typography */
+            --font-display: 'Sora', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            --space-4xl: 8rem;
+
+            /* Container */
+            --container-max: 1280px;
+            --container-padding: 1.5rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black);
+            color: var(--gray-300);
+            line-height: 1.6;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        /* ===========================================
+           GLOBAL ANIMATIONS
+           =========================================== */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px var(--teal-glow), 0 0 40px rgba(20, 184, 166, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 30px var(--teal-glow), 0 0 60px rgba(20, 184, 166, 0.2);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes neon-flicker {
+            0%, 100% { opacity: 1; }
+            92% { opacity: 1; }
+            93% { opacity: 0.8; }
+            94% { opacity: 1; }
+            96% { opacity: 0.9; }
+            97% { opacity: 1; }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+
+        /* ===========================================
+           NAVIGATION
+           =========================================== */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: var(--space-md) 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .header--dark {
+            background: transparent;
+        }
+
+        .header--scrolled {
+            background: rgba(10, 22, 40, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(20, 184, 166, 0.1);
+            padding: var(--space-sm) 0;
+        }
+
+        .nav {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            text-decoration: none;
+        }
+
+        .logo__mark {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo__mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo__text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: -0.02em;
+        }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+            list-style: none;
+        }
+
+        .nav__link {
+            text-decoration: none;
+            color: var(--cream);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--teal), var(--blue-neon));
+            transition: width 0.3s ease;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--teal-glow);
+        }
+
+        .nav__link:hover,
+        .nav__link--active {
+            color: var(--white);
+        }
+
+        .nav__link:hover::after,
+        .nav__link--active::after {
+            width: 100%;
+        }
+
+        .nav__cta {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--teal), var(--teal-muted));
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav__cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav__cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--teal-glow);
+        }
+
+        .nav__cta:hover::before {
+            left: 100%;
+        }
+
+        .nav__mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .nav__mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav__mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav__mobile-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav__mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* Mobile Menu */
+        .mobile-menu { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(10, 22, 40, 0.98); backdrop-filter: blur(24px); z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .mobile-menu.active { opacity: 1; visibility: visible; }
+        .mobile-menu__links { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 0.25rem; }
+        .mobile-menu__link { text-decoration: none; color: var(--cream); font-size: 1.25rem; font-weight: 500; padding: 0.75rem 2rem; display: block; transition: all 0.3s; font-family: var(--font-body); }
+        .mobile-menu__link:hover, .mobile-menu__link--active { color: var(--white); }
+        .mobile-menu__link--ai { color: var(--teal); }
+        .mobile-menu__cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--teal), var(--teal-muted)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; border-radius: 50px; margin-top: 1rem; transition: all 0.3s; }
+
+        /* ===========================================
+           HERO — Dark Cinematic / Luxury Agency
+           =========================================== */
+
+        .hero {
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Grain texture overlay for premium tactile feel */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Ambient warm light — top right */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -15%;
+            right: -10%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 10rem var(--container-padding) 0;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Eyebrow - thin, understated */
+        .hero__eyebrow {
+            font-size: 0.6875rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: var(--space-xl);
+            animation: fadeInUp 0.7s ease forwards;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero__eyebrow::before {
+            content: '';
+            width: 2rem;
+            height: 1px;
+            background: var(--teal);
+        }
+
+        /* Massive cinematic headline */
+        .hero__title {
+            font-family: var(--font-display);
+            font-size: clamp(2.75rem, 7vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.02;
+            color: var(--cream);
+            letter-spacing: -0.04em;
+            max-width: 900px;
+            margin-bottom: var(--space-2xl);
+            animation: fadeInUp 0.9s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero__title em {
+            font-style: italic;
+            font-weight: 300;
+            color: var(--teal);
+        }
+
+        /* Content + Metrics row */
+        .hero__row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: var(--space-3xl);
+            margin-bottom: auto;
+            padding-bottom: var(--space-3xl);
+            animation: fadeInUp 0.8s ease 0.25s forwards;
+            opacity: 0;
+        }
+
+        .hero__left {
+            max-width: 400px;
+        }
+
+        .hero__description {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--gray-400);
+            margin-bottom: var(--space-lg);
+        }
+
+        .hero__cta-group {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 0.9375rem 1.75rem;
+            font-family: var(--font-body);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn--primary {
+            background: var(--teal);
+            color: var(--white);
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.3);
+        }
+
+        .hero__text-link {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            transition: all 0.3s;
+            opacity: 0.7;
+        }
+
+        .hero__text-link:hover { gap: 0.625rem; opacity: 1; color: var(--teal); }
+
+        /* Metrics */
+        .hero__metrics {
+            display: flex;
+            gap: var(--space-2xl);
+            padding-bottom: 0.5rem;
+        }
+
+        .hero__metric {
+            text-align: left;
+            position: relative;
+            padding-left: var(--space-md);
+        }
+
+        .hero__metric::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: rgba(20, 184, 166, 0.3);
+        }
+
+        .hero__metric-value {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--cream);
+            line-height: 1;
+        }
+
+        .hero__metric-label {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            margin-top: 0.375rem;
+        }
+
+        /* Full-width image triptych at bottom of hero */
+        .hero__image-band {
+            position: relative;
+            width: calc(100% + var(--container-padding) * 2);
+            margin-left: calc(-1 * var(--container-padding));
+            animation: fadeInUp 0.9s ease 0.45s forwards;
+            opacity: 0;
+        }
+
+        .hero__image-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr 1fr;
+            gap: 4px;
+        }
+
+        .hero__img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+            transition: all 0.5s;
+            filter: brightness(0.85);
+        }
+
+        .hero__img:nth-child(1) { object-position: center top; }
+        .hero__img:nth-child(2) { object-position: center 25%; }
+        .hero__img:nth-child(3) { object-position: center center; }
+
+        .hero__img:hover { filter: brightness(1); }
+
+        /* Glass button for dark sections */
+        .btn--glass {
+            background: rgba(245, 235, 228, 0.05);
+            backdrop-filter: blur(10px);
+            color: var(--cream);
+            border: 1px solid rgba(232, 223, 216, 0.15);
+        }
+
+        .btn--glass:hover {
+            background: rgba(245, 235, 228, 0.1);
+            border-color: rgba(232, 223, 216, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* ===========================================
+           TRUST BAR
+           =========================================== */
+
+        .trust {
+            background: var(--charcoal);
+            border-top: 1px solid rgba(20, 184, 166, 0.15);
+            border-bottom: 1px solid rgba(20, 184, 166, 0.15);
+            padding: var(--space-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.05), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+            background-size: 200% 100%;
+        }
+
+        .trust__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-lg);
+            position: relative;
+        }
+
+        .trust__item {
+            text-align: center;
+            padding: var(--space-md);
+        }
+
+        .trust__value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--teal), var(--blue-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-xs);
+        }
+
+        .trust__label {
+            color: var(--cream);
+            font-size: 0.875rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===========================================
+           SERVICES
+           =========================================== */
+
+        .services {
+            background: linear-gradient(180deg, var(--beige) 0%, rgba(180, 165, 150, 1) 100%);
+            padding: var(--space-4xl) 0;
+            position: relative;
+        }
+
+        .services__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .section-eyebrow {
+            display: inline-block;
+            color: var(--teal);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--charcoal);
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-md);
+        }
+
+        .section-description {
+            max-width: 560px;
+            margin: 0 auto;
+            color: var(--navy);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+        }
+
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, rgba(30, 40, 55, 0.9), rgba(20, 30, 45, 0.95), rgba(15, 25, 40, 0.85));
+            backdrop-filter: blur(12px);
+            padding: var(--space-xl);
+            border-radius: 20px;
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), transparent 50%, rgba(0, 212, 255, 0.05));
+            opacity: 0.5;
+            transition: opacity 0.5s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(20, 184, 166, 0.5);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(20, 184, 166, 0.2);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card__icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.2), rgba(0, 212, 255, 0.1));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-lg);
+            color: var(--teal);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-card__icon {
+            box-shadow: 0 0 20px var(--teal-glow);
+        }
+
+        .service-card__icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .service-card__icon-wrap {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: rgba(20, 184, 166, 0.08);
+            border: 1.5px solid rgba(20, 184, 166, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-lg);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .service-card:hover .service-card__icon-wrap {
+            border-color: rgba(20, 184, 166, 0.6);
+            box-shadow: 0 0 25px rgba(20, 184, 166, 0.3), 0 0 50px rgba(20, 184, 166, 0.1);
+            background: rgba(20, 184, 166, 0.12);
+        }
+
+        .service-card__icon-wrap svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--teal);
+            fill: none;
+            stroke-width: 1.5;
+            filter: drop-shadow(0 0 6px rgba(20, 184, 166, 0.4));
+            transition: all 0.5s ease;
+        }
+
+        .service-card:hover .service-card__icon-wrap svg {
+            filter: drop-shadow(0 0 12px rgba(20, 184, 166, 0.6));
+            stroke: #00d4ff;
+        }
+
+        .service-card__title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: var(--space-sm);
+        }
+
+        .service-card__text {
+            color: var(--gray-300);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        /* ===========================================
+           ABOUT PREVIEW
+           =========================================== */
+
+        .about-preview {
+            background: linear-gradient(180deg, rgba(180, 165, 150, 1) 0%, rgba(80, 90, 100, 1) 100%);
+            padding: var(--space-4xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-preview::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.06), transparent 60%);
+            pointer-events: none;
+        }
+
+        .about-preview__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+            position: relative;
+        }
+
+        .about-preview__image {
+            border-radius: 24px;
+            height: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-md);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-preview__image::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--teal), var(--blue-neon), var(--teal));
+            border-radius: 26px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .about-preview__image:hover::before {
+            opacity: 0.5;
+        }
+
+        .about-preview__image-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue-neon);
+        }
+
+        .about-preview__image-text {
+            color: var(--gray-600);
+            font-size: 0.8125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .about-preview__content {
+            max-width: 500px;
+        }
+
+        .about-preview__eyebrow {
+            color: var(--teal);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+        }
+
+        .about-preview__title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1.3;
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-preview__text {
+            color: var(--navy);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-preview__list {
+            list-style: none;
+            margin-bottom: var(--space-xl);
+        }
+
+        .about-preview__list li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--navy);
+            font-size: 0.9375rem;
+            padding: var(--space-xs) 0;
+        }
+
+        .about-preview__list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, var(--teal), var(--blue-neon));
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--teal-glow);
+        }
+
+        .link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--teal);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .link:hover {
+            gap: var(--space-sm);
+            color: var(--blue-neon);
+        }
+
+        /* ===========================================
+           TESTIMONIALS
+           =========================================== */
+
+        .testimonials {
+            background: linear-gradient(180deg, rgba(80, 90, 100, 1) 0%, var(--gray-800) 100%);
+            padding: var(--space-4xl) 0;
+            overflow: hidden;
+        }
+
+        .testimonials__header {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .testimonials .section-title {
+            color: var(--cream);
+        }
+
+        .testimonials__track {
+            display: flex;
+            gap: 28px;
+            animation: scrollReviews 50s linear infinite;
+            width: max-content;
+            padding: var(--space-sm) 0;
+        }
+
+        .testimonials__track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollReviews {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .testimonial-card {
+            flex-shrink: 0;
+            width: 400px;
+            background: linear-gradient(145deg, rgba(30, 40, 55, 0.9), rgba(20, 30, 45, 0.95), rgba(15, 25, 40, 0.85));
+            backdrop-filter: blur(12px);
+            padding: var(--space-xl);
+            border-radius: 20px;
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(20, 184, 166, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25), 0 0 30px rgba(20, 184, 166, 0.15);
+        }
+
+        .testimonial-card__quote-mark {
+            font-size: 60px;
+            color: var(--teal);
+            opacity: 0.15;
+            position: absolute;
+            top: 16px;
+            left: 24px;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-card__stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: var(--space-md);
+        }
+
+        .testimonial-card__star {
+            color: var(--teal);
+            font-size: 1rem;
+        }
+
+        .testimonial-card__quote {
+            color: var(--gray-300);
+            font-size: 0.9375rem;
+            line-height: 1.8;
+            margin-bottom: var(--space-lg);
+            font-style: italic;
+        }
+
+        .testimonial-card__author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .testimonial-card__avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--teal), var(--blue-neon));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.125rem;
+            flex-shrink: 0;
+        }
+
+        .testimonial-card__name {
+            font-weight: 600;
+            color: var(--cream);
+            font-size: 0.9375rem;
+        }
+
+        .testimonial-card__meta {
+            color: var(--gray-400);
+            font-size: 0.8125rem;
+        }
+
+        /* ===========================================
+           CTA SECTION - Hero Style
+           =========================================== */
+
+        .cta-section {
+            padding: var(--space-4xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse 80% 60% at 70% 80%, rgba(20, 184, 166, 0.12), transparent 60%),
+                radial-gradient(ellipse 60% 50% at 20% 30%, rgba(20, 184, 166, 0.08), transparent 50%),
+                radial-gradient(ellipse 50% 40% at 80% 20%, rgba(0, 212, 255, 0.06), transparent 50%),
+                var(--black);
+            background-size: 200% 200%;
+            animation: gradient-shift 20s ease infinite;
+        }
+
+        .cta-section__lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .cta-diagonal {
+            position: absolute;
+            width: 130%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.06) 10%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.06) 90%, transparent 100%);
+            transform-origin: 0 0;
+            transform: rotate(30deg);
+        }
+
+        .cta-diagonal--1 { top: 10%; left: 0; opacity: 0.5; }
+        .cta-diagonal--2 { top: 25%; left: 0; opacity: 0.7; }
+        .cta-diagonal--3 { top: 40%; left: 0; opacity: 0.9; }
+        .cta-diagonal--4 { top: 55%; left: 0; opacity: 0.7; }
+        .cta-diagonal--5 { top: 70%; left: 0; opacity: 0.5; }
+
+        .cta-arc {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            pointer-events: none;
+        }
+
+        .cta-arc--1 { width: 400px; height: 400px; bottom: -200px; right: -100px; }
+        .cta-arc--2 { width: 280px; height: 280px; bottom: -120px; right: -50px; border-color: rgba(255, 255, 255, 0.1); }
+
+        .cta-section__container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section__title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-section__text {
+            color: var(--gray-300);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin-bottom: var(--space-xl);
+        }
+
+        /* ===========================================
+           FOOTER
+           =========================================== */
+
+        .footer {
+            background: var(--black);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            border-top: 1px solid rgba(232, 223, 216, 0.15);
+        }
+
+        .footer__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-3xl);
+            margin-bottom: var(--space-3xl);
+        }
+
+        .footer__brand {
+            max-width: 280px;
+        }
+
+        .footer__logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer__logo-mark {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .footer__logo-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .footer__logo-text {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .footer__tagline {
+            color: var(--cream);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        .footer__heading {
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer__links {
+            list-style: none;
+        }
+
+        .footer__links li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer__links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: all 0.3s;
+        }
+
+        .footer__links a:hover {
+            color: var(--teal);
+        }
+
+        .footer__contact-item {
+            color: var(--cream);
+            font-size: 0.9375rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer__bottom {
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(232, 223, 216, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer__copyright {
+            color: var(--gray-400);
+            font-size: 0.8125rem;
+        }
+
+        .footer__legal {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .footer__legal a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 0.8125rem;
+            transition: color 0.3s;
+        }
+
+        .footer__legal a:hover {
+            color: var(--teal);
+        }
+
+        /* AI chat button handled inline */
+
+        /* ===========================================
+           MOBILE RESPONSIVE
+           =========================================== */
+
+        @media (max-width: 1024px) {
+            .services__grid { grid-template-columns: 1fr; }
+            .testimonials__grid { grid-template-columns: repeat(2, 1fr); }
+            .footer__grid { grid-template-columns: repeat(2, 1fr); }
+            .hero__title { font-size: clamp(2.25rem, 5.5vw, 4rem); }
+            .hero__row { gap: var(--space-2xl); }
+        }
+
+        @media (max-width: 768px) {
+            :root { --space-4xl: 3rem; --space-3xl: 2.5rem; --space-2xl: 2rem; --container-padding: 1.25rem; }
+
+            /* Nav */
+            .header { padding: var(--space-sm) 0; }
+            .nav__links { display: none; }
+            .nav__cta { display: none; }
+            .nav__mobile-toggle { display: flex; }
+            .logo__mark { width: 40px; height: 40px; border-radius: 10px; }
+            .logo__text { font-size: 1rem; }
+
+            /* Hero */
+            .hero { min-height: auto; }
+            .hero__container { padding-top: 6.5rem; }
+            .hero__eyebrow { margin-bottom: var(--space-md); font-size: 0.625rem; }
+            .hero__title { font-size: 2rem; margin-bottom: var(--space-lg); max-width: 100%; }
+            .hero__row { flex-direction: column; align-items: flex-start; gap: var(--space-xl); padding-bottom: var(--space-xl); }
+            .hero__left { max-width: 100%; }
+            .hero__description { font-size: 0.9375rem; }
+            .hero__cta-group { flex-direction: column; align-items: stretch; gap: var(--space-md); width: 100%; }
+            .hero__cta-group .btn { justify-content: center; width: 100%; }
+            .hero__cta-group .hero__text-link { justify-content: center; }
+            .hero__metrics { gap: var(--space-lg); width: 100%; }
+            .hero__metric-value { font-size: 1.5rem; }
+            .hero__image-grid { grid-template-columns: 1fr; gap: 3px; }
+            .hero__img { height: 220px; }
+
+            /* Trust */
+            .trust__container { grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); }
+            .trust__item { padding: var(--space-sm); }
+            .trust__value { font-size: 1.5rem; }
+            .trust__label { font-size: 0.75rem; }
+
+            /* Services */
+            .services__grid { grid-template-columns: 1fr; }
+            .service-card { padding: var(--space-md); }
+            .service-card__icon-wrap { width: 48px; height: 48px; border-radius: 12px; }
+            .service-card__icon-wrap svg { width: 24px; height: 24px; }
+            .section-header { margin-bottom: var(--space-xl); }
+
+            /* About */
+            .about-preview__container { grid-template-columns: 1fr; }
+            .about-preview__image { height: 240px; }
+
+            /* Testimonials */
+            .testimonial-card { width: 320px; padding: var(--space-lg); }
+            .testimonials__track { animation-duration: 35s; gap: 16px; }
+
+            /* Footer */
+            .footer__grid { grid-template-columns: 1fr; gap: var(--space-xl); }
+            .footer__bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
+
+        }
+
+        @media (max-width: 480px) {
+            :root { --container-padding: 1rem; }
+            .logo__mark { width: 36px; height: 36px; border-radius: 8px; }
+            .logo__text { font-size: 0.875rem; }
+            .hero__container { padding-top: 5.5rem; }
+            .hero__eyebrow { font-size: 0.5625rem; gap: 0.5rem; }
+            .hero__eyebrow::before { width: 1rem; }
+            .hero__title { font-size: 1.75rem; }
+            .hero__description { font-size: 0.875rem; }
+            .hero__metrics { flex-direction: column; gap: var(--space-md); }
+            .hero__metric { padding-left: var(--space-sm); }
+            .hero__metric-value { font-size: 1.25rem; }
+            .mobile-menu__link { font-size: 1.125rem; padding: 0.6rem 2rem; }
+        }
+
+/* ===========================================
+   ANNOUNCEMENT BANNER
+   =========================================== */
+.announcement-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 10000;
+    padding: 12px 20px; text-align: center;
+    font-weight: 600; font-size: 14px; color: #fff;
+    display: none; align-items: center; justify-content: center; gap: 12px;
+    animation: slideDown 0.4s ease;
+}
+.announcement-bar.active { display: flex; }
+.announcement-bar.teal { background: linear-gradient(135deg, #14b8a6, #0d9488); }
+.announcement-bar.green { background: linear-gradient(135deg, #22c55e, #16a34a); }
+.announcement-bar.red { background: linear-gradient(135deg, #ef4444, #dc2626); }
+.announcement-bar.blue { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.announcement-bar .dismiss-btn {
+    background: rgba(255,255,255,0.2); border: none; color: #fff;
+    width: 24px; height: 24px; border-radius: 50%; cursor: pointer;
+    font-size: 14px; line-height: 1; flex-shrink: 0;
+}
+@keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+.has-announcement .header { top: 42px; }
+
+/* ===========================================
+   SHOP STATUS BANNER
+   =========================================== */
+.shop-closed-banner {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff; text-align: center; padding: 14px 20px;
+    font-weight: 600; font-size: 15px; display: none;
+}
+.shop-closed-banner.active { display: block; }
+.shop-holiday-banner {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #fff; text-align: center; padding: 14px 20px;
+    font-weight: 600; font-size: 15px; display: none;
+}
+.shop-holiday-banner.active { display: block; }
+
+/* ===========================================
+   BOOKING MODAL
+   =========================================== */
+.booking-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+    z-index: 10001; display: none; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(4px);
+}
+.booking-overlay.active { display: flex; }
+.booking-modal {
+    background: linear-gradient(145deg, #131c2a, #0d1520);
+    border: 1px solid rgba(20,184,166,0.2); border-radius: 20px;
+    padding: 30px; max-width: 520px; width: 100%;
+    max-height: 90vh; overflow-y: auto; position: relative;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+}
+.booking-modal h2 {
+    font-family: 'Sora', sans-serif; color: #14b8a6;
+    font-size: 22px; margin-bottom: 6px;
+}
+.booking-modal .booking-subtitle { color: #8899aa; font-size: 14px; margin-bottom: 24px; }
+.booking-modal .close-modal {
+    position: absolute; top: 16px; right: 16px;
+    background: rgba(255,255,255,0.1); border: none; color: #fff;
+    width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+    font-size: 18px; display: flex; align-items: center; justify-content: center;
+}
+.booking-step { display: none; }
+.booking-step.active { display: block; animation: fadeInUp 0.3s ease; }
+.booking-form-group { margin-bottom: 18px; }
+.booking-form-group label {
+    display: block; color: #8899aa; font-size: 12px;
+    margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+}
+.booking-form-group input,
+.booking-form-group select,
+.booking-form-group textarea {
+    width: 100%; padding: 13px 15px;
+    background: rgba(0,0,0,0.4); border: 1px solid rgba(20,184,166,0.3);
+    border-radius: 10px; color: #fff; font-size: 15px;
+    font-family: 'Outfit', sans-serif; transition: border-color 0.3s;
+}
+.booking-form-group input:focus,
+.booking-form-group select:focus,
+.booking-form-group textarea:focus {
+    outline: none; border-color: #14b8a6;
+    box-shadow: 0 0 0 3px rgba(20,184,166,0.1);
+}
+.booking-form-group select option { background: #131c2a; color: #fff; }
+.booking-form-group textarea { min-height: 80px; resize: vertical; }
+.booking-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .booking-form-row { grid-template-columns: 1fr; } }
+.booking-btn {
+    width: 100%; padding: 14px; background: linear-gradient(135deg, #14b8a6, #0d9488);
+    color: #fff; border: none; border-radius: 12px; font-weight: 700;
+    font-size: 15px; cursor: pointer; font-family: 'Outfit', sans-serif;
+    text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s;
+}
+.booking-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(20,184,166,0.3); }
+.booking-btn-secondary {
+    background: rgba(20,184,166,0.1); color: #14b8a6;
+    border: 1px solid rgba(20,184,166,0.3);
+}
+.booking-btn-secondary:hover { background: rgba(20,184,166,0.2); transform: translateY(-1px); }
+.booking-nav { display: flex; gap: 10px; margin-top: 16px; }
+.booking-nav .booking-btn { flex: 1; }
+.booking-steps-indicator {
+    display: flex; gap: 8px; margin-bottom: 20px; justify-content: center;
+}
+.step-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: rgba(20,184,166,0.2); transition: all 0.3s;
+}
+.step-dot.active { background: #14b8a6; transform: scale(1.2); }
+.step-dot.done { background: #22c55e; }
+.booking-confirmation {
+    text-align: center; padding: 20px 0;
+}
+.booking-confirmation .confirm-icon {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: rgba(34,197,94,0.15); border: 2px solid #22c55e;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; font-size: 32px; color: #22c55e;
+}
+.booking-confirmation h3 { color: #22c55e; font-size: 20px; margin-bottom: 8px; }
+.booking-confirmation p { color: #8899aa; font-size: 14px; }
+.booking-confirmation .booking-ref {
+    background: rgba(20,184,166,0.1); border: 1px solid rgba(20,184,166,0.3);
+    border-radius: 10px; padding: 12px; margin: 16px 0;
+    font-family: 'Sora', monospace; font-size: 18px;
+    color: #14b8a6; font-weight: 700; letter-spacing: 2px;
+}
+.booking-summary-row {
+    display: flex; justify-content: space-between; padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px;
+}
+.booking-summary-row .label { color: #8899aa; }
+.booking-summary-row .value { color: #fff; font-weight: 600; }
+
+/* ===========================================
+   DYNAMIC OPENING HOURS (footer)
+   =========================================== */
+.footer__hours-dynamic { font-size: 13px; color: var(--gray-400); line-height: 1.8; }
+.footer__hours-dynamic .today { color: #14b8a6; font-weight: 600; }
+
+/* ===========================================
+   LIVE GALLERY SECTION
+   =========================================== */
+.live-gallery { padding: var(--space-3xl) 0; background: var(--charcoal); }
+.live-gallery__container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding); }
+.live-gallery__grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: var(--space-xl);
+}
+.live-gallery__item {
+    aspect-ratio: 1; border-radius: 16px; overflow: hidden;
+    position: relative; cursor: pointer;
+}
+.live-gallery__item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.live-gallery__item:hover img { transform: scale(1.05); }
+.live-gallery__item .gallery-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 12px; background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: #fff; font-size: 13px; font-weight: 600;
+}
+@media (max-width: 768px) { .live-gallery__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .live-gallery__grid { grid-template-columns: 1fr 1fr; gap: 8px; } }
+
+/* ===========================================
+   COOKIE CONSENT BANNER
+   =========================================== */
+.cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 9998;
+    background: linear-gradient(145deg, #131c2a, #0d1520);
+    border-top: 1px solid rgba(20,184,166,0.2);
+    padding: 18px 24px; display: none;
+    align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+.cookie-banner.active { display: flex; }
+.cookie-banner p { color: #b0bfcc; font-size: 13px; flex: 1; min-width: 200px; }
+.cookie-banner p a { color: #14b8a6; text-decoration: underline; }
+.cookie-banner .cookie-buttons { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-banner .cookie-btn {
+    padding: 10px 20px; border-radius: 8px; font-weight: 600;
+    font-size: 13px; cursor: pointer; border: none; font-family: 'Outfit', sans-serif;
+}
+.cookie-banner .cookie-accept { background: #14b8a6; color: #fff; }
+.cookie-banner .cookie-reject { background: rgba(255,255,255,0.1); color: #b0bfcc; }
+
+/* ===========================================
+   DYNAMIC PRICES SECTION
+   =========================================== */
+.pricing-section { padding: var(--space-3xl) 0; }
+.pricing-section__container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding); }
+.pricing-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: var(--space-xl); flex-wrap: wrap; }
+.pricing-tab {
+    padding: 10px 24px; border-radius: 30px; font-weight: 600;
+    font-size: 14px; cursor: pointer; border: 1px solid rgba(20,184,166,0.3);
+    background: transparent; color: #8899aa; font-family: 'Outfit', sans-serif;
+    transition: all 0.3s;
+}
+.pricing-tab.active { background: #14b8a6; color: #fff; border-color: #14b8a6; }
+.pricing-category { display: none; }
+.pricing-category.active { display: block; animation: fadeInUp 0.3s ease; }
+.pricing-table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    background: linear-gradient(145deg, rgba(20,28,42,0.6), rgba(13,21,32,0.6));
+    border: 1px solid rgba(20,184,166,0.1); border-radius: 16px; overflow: hidden;
+}
+.pricing-table th {
+    text-align: left; padding: 16px 20px; color: #14b8a6;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+    border-bottom: 1px solid rgba(20,184,166,0.1);
+    background: rgba(20,184,166,0.05);
+}
+.pricing-table td {
+    padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.03);
+    font-size: 14px;
+}
+.pricing-table tr:last-child td { border-bottom: none; }
+.pricing-table .service-name { color: #fff; font-weight: 500; }
+.pricing-table .service-price { color: #14b8a6; font-weight: 700; font-size: 16px; text-align: right; }
+
+/* Pricing mobile */
+@media (max-width: 768px) {
+    .pricing-section { padding: var(--space-2xl) 0; }
+    .pricing-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 16px; }
+    .pricing-table th, .pricing-table td { padding: 12px 14px; font-size: 13px; white-space: nowrap; }
+    .pricing-table .service-price { font-size: 14px; }
+    .pricing-tab { padding: 8px 16px; font-size: 13px; }
+}
+@media (max-width: 480px) {
+    .pricing-table th, .pricing-table td { padding: 10px 12px; font-size: 12px; }
+    .pricing-tab { padding: 7px 14px; font-size: 12px; }
+}
+
+/* Cookie banner mobile */
+@media (max-width: 768px) {
+    .cookie-banner { flex-direction: column; padding: 16px; gap: 12px; }
+    .cookie-banner p { font-size: 12px; min-width: unset; }
+    .cookie-banner .cookie-buttons { width: 100%; justify-content: stretch; }
+    .cookie-banner .cookie-btn { flex: 1; text-align: center; padding: 12px 16px; }
+}
+
+/* Booking modal mobile */
+@media (max-width: 480px) {
+    .booking-modal { margin: 8px; padding: 24px 16px; max-height: 95vh; }
+    .booking-modal h2 { font-size: 18px; }
+}
+
+/* Safe area for notched phones */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .cookie-banner { padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
+    .footer { padding-bottom: env(safe-area-inset-bottom); }
+}
+    </style>
+</head>
+<body>
+    <!-- Dynamic Announcement Banner (Firebase) -->
+    <div class="announcement-bar" id="announcementBar">
+        <span id="announcementText">Now accepting new NHS patients — Book online or call 020 8592 5030</span>
+        <button class="dismiss-btn" onclick="dismissAnnouncement()">&times;</button>
+    </div>
+
+    <!-- Shop Closed Banner -->
+    <div class="shop-closed-banner" id="shopClosedBanner">
+        We are currently closed. Please call 020 8592 5030 for emergencies.
+    </div>
+    <div class="shop-holiday-banner" id="shopHolidayBanner">
+        We are currently on holiday. We will reopen soon. For emergencies, call 020 8592 5030.
+    </div>
+
+    <!-- =========================================
+         NAVIGATION
+         ========================================= -->
+    <header class="header header--dark" id="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <div class="logo__mark"><img src="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png" alt="Heathway Dental Logo"></div>
+                <span class="logo__text">Heathway Dental</span>
+            </a>
+
+            <ul class="nav__links">
+                <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+                <li><a href="heathway-services.html" class="nav__link">Services</a></li>
+                <li><a href="heathway-about.html" class="nav__link">About</a></li>
+                <li><a href="heathway-contact.html" class="nav__link">Contact</a></li>
+                <li><a href="heathway-chatbot.html" class="nav__link">Heathway AI</a></li>
+            </ul>
+
+            <a href="tel:02085925030" class="nav__cta">Call 020 8592 5030</a>
+
+            <button class="nav__mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu__links">
+            <li><a href="index.html" class="mobile-menu__link mobile-menu__link--active">Home</a></li>
+            <li><a href="heathway-services.html" class="mobile-menu__link">Services</a></li>
+            <li><a href="heathway-about.html" class="mobile-menu__link">About</a></li>
+            <li><a href="heathway-contact.html" class="mobile-menu__link">Contact</a></li>
+            <li><a href="heathway-chatbot.html" class="mobile-menu__link mobile-menu__link--ai">Heathway AI</a></li>
+        </ul>
+        <a href="tel:02085925030" class="mobile-menu__cta">Call 020 8592 5030</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero__container">
+            <p class="hero__eyebrow">The Heathway Dental Surgery &mdash; Dagenham</p>
+
+            <h1 class="hero__title">Your smile deserves <em>exceptional</em> care</h1>
+
+            <div class="hero__row">
+                <div class="hero__left">
+                    <p class="hero__description">We combine modern dentistry with genuine care. NHS and private treatments for the whole family, in a practice built around you.</p>
+                    <div class="hero__cta-group">
+                        <button onclick="openBooking()" class="btn btn--primary" style="cursor:pointer;">Book Appointment</button>
+                        <a href="#services" class="hero__text-link">View services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="hero__metrics">
+                    <div class="hero__metric">
+                        <div class="hero__metric-value">20+</div>
+                        <div class="hero__metric-label">Years serving Dagenham</div>
+                    </div>
+                    <div class="hero__metric">
+                        <div class="hero__metric-value">NHS</div>
+                        <div class="hero__metric-label">Registered practice</div>
+                    </div>
+                    <div class="hero__metric">
+                        <div class="hero__metric-value">CQC</div>
+                        <div class="hero__metric-label">Quality approved</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero__image-band">
+            <div class="hero__image-grid">
+                <img src="IMG_3933.jpeg" alt="Heathway Dental Surgery clinic exterior in Dagenham" class="hero__img" loading="eager">
+                <img src="IMG_3930.jpeg" alt="Friendly dental receptionist welcoming patients at Heathway Dental" class="hero__img" loading="eager">
+                <img src="IMG_3931.jpeg" alt="Modern dental treatment room with professional equipment at Heathway" class="hero__img" loading="eager">
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         TRUST INDICATORS
+         ========================================= -->
+    <section class="trust">
+        <div class="trust__container">
+            <div class="trust__item">
+                <div class="trust__value">NHS</div>
+                <div class="trust__label">Registered Practice</div>
+            </div>
+            <div class="trust__item">
+                <div class="trust__value">CQC</div>
+                <div class="trust__label">Regulated &amp; Inspected</div>
+            </div>
+            <div class="trust__item">
+                <div class="trust__value">All Ages</div>
+                <div class="trust__label">Adults &amp; Children</div>
+            </div>
+            <div class="trust__item">
+                <div class="trust__value">20+</div>
+                <div class="trust__label">Years Serving Dagenham</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SERVICES SECTION
+         ========================================= -->
+    <section class="services" id="services">
+        <div class="services__container">
+            <header class="section-header">
+                <span class="section-eyebrow">Our Services</span>
+                <h2 class="section-title">Comprehensive dental care</h2>
+                <p class="section-description">
+                    From routine check-ups to advanced treatments, we provide
+                    the full range of dental services your family needs.
+                </p>
+            </header>
+
+            <div class="services__grid">
+                <article class="service-card">
+                    <div class="service-card__icon-wrap">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C9.5 2 7.5 3.5 7 5.5C6 5 4.5 5.5 3.5 6.5C2.5 7.5 2.5 9 3 10C2 11 1.5 12.5 2 14C2.5 15.5 4 16.5 5 16.5L7 22H10L11 17H13L14 22H17L19 16.5C20 16.5 21.5 15.5 22 14C22.5 12.5 22 11 21 10C21.5 9 21.5 7.5 20.5 6.5C19.5 5.5 18 5 17 5.5C16.5 3.5 14.5 2 12 2Z" stroke-linejoin="round" stroke-linecap="round"/><path d="M9 11L11 13L15 9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="service-card__title">General Dentistry</h3>
+                    <p class="service-card__text">
+                        Routine check-ups, cleanings, and preventive care to keep
+                        your smile healthy for years to come.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__icon-wrap">
+                        <svg viewBox="0 0 24 24"><path d="M4 12c0-3 2-8 8-8s8 5 8 8" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 12c0 3 2 8 8 8s8-5 8-8" stroke-linejoin="round" stroke-linecap="round"/><line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/><line x1="8" y1="8" x2="8" y2="16" stroke-linecap="round"/><line x1="12" y1="7" x2="12" y2="17" stroke-linecap="round"/><line x1="16" y1="8" x2="16" y2="16" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3 class="service-card__title">Dentures</h3>
+                    <p class="service-card__text">
+                        Full and partial dentures to replace missing teeth,
+                        available on NHS and privately.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__icon-wrap">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C9.5 2 7.5 3.5 7 5.5C6 5 4.5 5.5 3.5 6.5C2.5 7.5 2.5 9 3 10C2 11 1.5 12.5 2 14C2.5 15.5 4 16.5 5 16.5L7 22H10L11 17H13L14 22H17L19 16.5C20 16.5 21.5 15.5 22 14C22.5 12.5 22 11 21 10C21.5 9 21.5 7.5 20.5 6.5C19.5 5.5 18 5 17 5.5C16.5 3.5 14.5 2 12 2Z" stroke-linejoin="round" stroke-linecap="round"/><line x1="12" y1="8" x2="12" y2="14" stroke-linecap="round" stroke-width="2"/><line x1="9" y1="11" x2="15" y2="11" stroke-linecap="round" stroke-width="2"/></svg>
+                    </div>
+                    <h3 class="service-card__title">Emergency Care</h3>
+                    <p class="service-card__text">
+                        Same-day appointments available for dental emergencies.
+                        We're here when you need us most.
+                    </p>
+                </article>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-xl);">
+                <a href="heathway-services.html" class="btn btn--glass">
+                    View all services
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================
+         ABOUT PREVIEW
+         ========================================= -->
+    <section class="about-preview" id="about">
+        <div class="about-preview__container">
+            <div class="about-preview__image">
+                <img src="IMG_3929.jpeg" alt="Heathway Dental comfortable reception area with welcoming staff" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;" loading="lazy">
+            </div>
+
+            <div class="about-preview__content">
+                <span class="about-preview__eyebrow">About Us</span>
+                <h2 class="about-preview__title">
+                    Caring for Dagenham's smiles since 2003
+                </h2>
+                <p class="about-preview__text">
+                    Led by Dr Niti Kaushal, our experienced team provides exceptional
+                    dental care for the whole family. NHS and private patients welcome.
+                </p>
+                <ul class="about-preview__list">
+                    <li>NHS &amp; Private patients welcome</li>
+                    <li>CQC regulated practice</li>
+                    <li>Accepting new patients</li>
+                </ul>
+                <a href="heathway-about.html" class="link">
+                    Learn more about us
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================
+         TESTIMONIALS
+         ========================================= -->
+    <section class="testimonials">
+        <div class="testimonials__header">
+            <header class="section-header">
+                <span class="section-eyebrow">Testimonials</span>
+                <h2 class="section-title">What our patients say</h2>
+            </header>
+        </div>
+
+        <div class="testimonials__track">
+            <!-- Card 1 -->
+            <article class="testimonial-card">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "The team at Heathway Dental made me feel completely at ease. Professional, friendly, and my teeth have never looked better! Dr Kaushal is brilliant."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">SJ</div>
+                    <div>
+                        <div class="testimonial-card__name">Sarah J.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="testimonial-card">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "Finally found a dentist I'm not afraid of! They really understand dental anxiety and take the time to make you comfortable. Can't recommend enough."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">AP</div>
+                    <div>
+                        <div class="testimonial-card__name">Aisha P.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="testimonial-card">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "Been coming here for 10 years with my whole family. The staff remember your name and genuinely care. Best dental surgery in Dagenham by far."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">MR</div>
+                    <div>
+                        <div class="testimonial-card__name">Mohammed R.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="testimonial-card">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "Had an emergency toothache and they fit me in the same day. The pain was gone in minutes. Absolute lifesavers. Thank you Heathway Dental!"
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">DK</div>
+                    <div>
+                        <div class="testimonial-card__name">Daniel K.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="testimonial-card">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "My kids actually look forward to their dental appointments now! The receptionist is so welcoming and Dr Kaushal is incredible with children. Five stars all round."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">LT</div>
+                    <div>
+                        <div class="testimonial-card__name">Laura T.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="testimonial-card">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "Moved to Dagenham last year and needed an NHS dentist. Got registered within a week. The whole experience has been seamless. Clean, modern surgery too."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">JO</div>
+                    <div>
+                        <div class="testimonial-card__name">James O.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 7 -->
+            <article class="testimonial-card">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "Needed a new set of dentures and the team here were brilliant. Comfortable fit, natural look, and so much more affordable than I expected. Lovely and professional staff."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">RB</div>
+                    <div>
+                        <div class="testimonial-card__name">Rebecca B.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 8 -->
+            <article class="testimonial-card">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "I've had a bridge fitted and several fillings over the years. Always painless and they explain everything clearly. Wouldn't go anywhere else. Highly recommended."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">PA</div>
+                    <div>
+                        <div class="testimonial-card__name">Priya A.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- DUPLICATED for seamless infinite loop -->
+            <article class="testimonial-card" aria-hidden="true">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "The team at Heathway Dental made me feel completely at ease. Professional, friendly, and my teeth have never looked better! Dr Kaushal is brilliant."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">SJ</div>
+                    <div>
+                        <div class="testimonial-card__name">Sarah J.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "Finally found a dentist I'm not afraid of! They really understand dental anxiety and take the time to make you comfortable. Can't recommend enough."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">AP</div>
+                    <div>
+                        <div class="testimonial-card__name">Aisha P.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "Been coming here for 10 years with my whole family. The staff remember your name and genuinely care. Best dental surgery in Dagenham by far."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">MR</div>
+                    <div>
+                        <div class="testimonial-card__name">Mohammed R.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "Had an emergency toothache and they fit me in the same day. The pain was gone in minutes. Absolute lifesavers. Thank you Heathway Dental!"
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">DK</div>
+                    <div>
+                        <div class="testimonial-card__name">Daniel K.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "My kids actually look forward to their dental appointments now! The receptionist is so welcoming and Dr Kaushal is incredible with children. Five stars all round."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">LT</div>
+                    <div>
+                        <div class="testimonial-card__name">Laura T.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "Moved to Dagenham last year and needed an NHS dentist. Got registered within a week. The whole experience has been seamless. Clean, modern surgery too."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">JO</div>
+                    <div>
+                        <div class="testimonial-card__name">James O.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "Needed a new set of dentures and the team here were brilliant. Comfortable fit, natural look, and so much more affordable than I expected. Lovely and professional staff."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">RB</div>
+                    <div>
+                        <div class="testimonial-card__name">Rebecca B.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+                <div class="testimonial-card__quote-mark">&ldquo;</div>
+                <div class="testimonial-card__stars">
+                    <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+                </div>
+                <p class="testimonial-card__quote">
+                    "I've had a bridge fitted and several fillings over the years. Always painless and they explain everything clearly. Wouldn't go anywhere else. Highly recommended."
+                </p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">PA</div>
+                    <div>
+                        <div class="testimonial-card__name">Priya A.</div>
+                        <div class="testimonial-card__meta">Verified Patient</div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- =========================================
+         CTA SECTION - Hero Style
+         ========================================= -->
+    <section class="cta-section" id="contact">
+        <div class="cta-section__bg">
+            <div class="cta-section__lines">
+                <div class="cta-diagonal cta-diagonal--1"></div>
+                <div class="cta-diagonal cta-diagonal--2"></div>
+                <div class="cta-diagonal cta-diagonal--3"></div>
+                <div class="cta-diagonal cta-diagonal--4"></div>
+                <div class="cta-diagonal cta-diagonal--5"></div>
+            </div>
+            <div class="cta-arc cta-arc--1"></div>
+            <div class="cta-arc cta-arc--2"></div>
+        </div>
+        <div class="cta-section__container">
+            <h2 class="cta-section__title">Ready to book your appointment?</h2>
+            <p class="cta-section__text">
+                Whether you're due for a check-up or have a specific concern,
+                we're here to help. Book online, call us, or visit our contact page.
+            </p>
+            <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+                <button onclick="openBooking()" class="btn btn--primary" style="cursor:pointer;">
+                    Book Online
+                </button>
+                <a href="tel:02085925030" class="btn btn--glass">
+                    Call 020 8592 5030
+                </a>
+                <a href="heathway-contact.html" class="btn btn--glass">
+                    Contact details
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <div class="footer__logo-mark"><img src="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png" alt="Heathway Dental Logo"></div>
+                        <span class="footer__logo-text">Heathway Dental</span>
+                    </div>
+                    <p class="footer__tagline">
+                        Quality dental care for the whole family. NHS and private
+                        patients welcome at our Dagenham practice since 2003.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer__heading">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="heathway-services.html">Services</a></li>
+                        <li><a href="heathway-about.html">About Us</a></li>
+                        <li><a href="heathway-contact.html">Contact</a></li>
+                        <li><a href="heathway-chatbot.html">Heathway AI</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer__heading">Treatments</h4>
+                    <ul class="footer__links">
+                        <li><a href="heathway-services.html">Check-ups &amp; Cleaning</a></li>
+                        <li><a href="heathway-services.html">Crowns &amp; Bridges</a></li>
+                        <li><a href="heathway-services.html">Root Canal Treatment</a></li>
+                        <li><a href="heathway-services.html">Emergency Care</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer__heading">Contact</h4>
+                    <p class="footer__contact-item">276a Heathway<br>Dagenham, Essex, RM10 8QS</p>
+                    <p class="footer__contact-item"><a href="tel:02085925030" style="color: var(--cream); text-decoration: none;">020 8592 5030</a></p>
+                    <div class="footer__hours-dynamic" id="footerHours">Mon&ndash;Fri: 9am&ndash;1pm, 2pm&ndash;5pm<br>Sat&ndash;Sun: Closed</div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2026 The Heathway Dental Surgery. All rights reserved. | GDC Registered | CQC Regulated<br>
+                    <span style="font-size:11px;color:#555;">Last updated: February 2026</span>
+                </p>
+                <div class="footer__legal">
+                    <a href="#" onclick="showPrivacyPolicy();return false;">Privacy Policy</a>
+                    <a href="#" onclick="showComplaints();return false;">Complaints Procedure</a>
+                    <a href="https://www.gdc-uk.org" target="_blank" rel="noopener">GDC</a>
+                    <a href="https://www.cqc.org.uk" target="_blank" rel="noopener">CQC</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot floating button with invitation -->
+    <div class="chat-widget-wrapper" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; align-items: flex-end; gap: 12px;">
+        <a href="heathway-chatbot.html" class="chat-invite" id="chatInvite" style="display: none; background: #fff; color: #0a1628; padding: 12px 18px; border-radius: 16px 16px 4px 16px; font-size: 0.875rem; font-weight: 500; line-height: 1.4; text-decoration: none; box-shadow: 0 4px 24px rgba(0,0,0,0.12); max-width: 220px; position: relative; animation: fadeInUp 0.5s ease forwards; font-family: 'Outfit', sans-serif;">
+            <span style="display: block; font-weight: 600; color: #14b8a6; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 4px;">Heathway AI</span>
+            <span id="chatInviteText">Have a question about our services? Ask me anything!</span>
+            <button onclick="event.preventDefault();event.stopPropagation();document.getElementById('chatInvite').style.display='none';" style="position: absolute; top: -6px; right: -6px; width: 20px; height: 20px; border-radius: 50%; background: #e5e7eb; border: none; color: #666; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1;">&times;</button>
+        </a>
+        <a href="heathway-chatbot.html" class="ai-widget__toggle" aria-label="Open Heathway AI chat assistant" style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), #00d4ff); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(20, 184, 166, 0.25); text-decoration: none; animation: pulse-glow 2s ease-in-out infinite; flex-shrink: 0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+        </a>
+    </div>
+    <script>
+    (function() {
+        var inviteMessages = [
+            "Have a question about our services? Ask me anything!",
+            "Need to book an appointment? I can help!",
+            "Wondering about NHS prices? Just ask!",
+            "New patient? I can tell you everything you need to know!",
+            "Got a dental concern? Chat with me for quick answers."
+        ];
+        var invite = document.getElementById('chatInvite');
+        var inviteText = document.getElementById('chatInviteText');
+        if (!invite || !inviteText) return;
+
+        setTimeout(function() {
+            inviteText.textContent = inviteMessages[Math.floor(Math.random() * inviteMessages.length)];
+            invite.style.display = 'block';
+        }, 4000);
+
+        setTimeout(function() {
+            if (invite.style.display !== 'none') invite.style.display = 'none';
+        }, 14000);
+    })();
+    </script>
+
+    <!-- Booking Modal -->
+    <div class="booking-overlay" id="bookingOverlay">
+        <div class="booking-modal">
+            <button class="close-modal" onclick="closeBooking()" aria-label="Close booking form">&times;</button>
+            <h2>Book an Appointment</h2>
+            <p class="booking-subtitle">Fill in the details below and we'll confirm your appointment</p>
+            <div class="booking-steps-indicator">
+                <div class="step-dot active" id="dot-1"></div>
+                <div class="step-dot" id="dot-2"></div>
+                <div class="step-dot" id="dot-3"></div>
+                <div class="step-dot" id="dot-4"></div>
+            </div>
+
+            <!-- Step 1: Service -->
+            <div class="booking-step active" id="bookStep1">
+                <div class="booking-form-group">
+                    <label>Select Service</label>
+                    <select id="bookService">
+                        <option value="">-- Choose a service --</option>
+                    </select>
+                </div>
+                <div class="booking-form-group">
+                    <label>Patient Type</label>
+                    <select id="bookPatientType">
+                        <option value="NHS">NHS Patient</option>
+                        <option value="Private">Private Patient</option>
+                        <option value="New">New Patient</option>
+                    </select>
+                </div>
+                <button class="booking-btn" onclick="bookingNext(2)">Continue</button>
+            </div>
+
+            <!-- Step 2: Date/Time -->
+            <div class="booking-step" id="bookStep2">
+                <div class="booking-form-row">
+                    <div class="booking-form-group">
+                        <label>Preferred Date</label>
+                        <input type="date" id="bookDate" min="">
+                    </div>
+                    <div class="booking-form-group">
+                        <label>Preferred Time</label>
+                        <select id="bookTime">
+                            <option value="">-- Select time --</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="09:30">9:30 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="14:30">2:30 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="15:30">3:30 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="16:30">4:30 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="booking-nav">
+                    <button class="booking-btn booking-btn-secondary" onclick="bookingNext(1)">Back</button>
+                    <button class="booking-btn" onclick="bookingNext(3)">Continue</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Details -->
+            <div class="booking-step" id="bookStep3">
+                <div class="booking-form-row">
+                    <div class="booking-form-group">
+                        <label>First Name</label>
+                        <input type="text" id="bookFirstName" placeholder="John" autocomplete="given-name">
+                    </div>
+                    <div class="booking-form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="bookLastName" placeholder="Smith" autocomplete="family-name">
+                    </div>
+                </div>
+                <div class="booking-form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="bookPhone" placeholder="07xxx xxxxxx" autocomplete="tel">
+                </div>
+                <div class="booking-form-group">
+                    <label>Email (optional)</label>
+                    <input type="email" id="bookEmail" placeholder="john@example.com" autocomplete="email">
+                </div>
+                <div class="booking-form-group">
+                    <label>Additional Notes (optional)</label>
+                    <textarea id="bookNotes" placeholder="Any specific concerns or requests..."></textarea>
+                </div>
+                <div class="booking-nav">
+                    <button class="booking-btn booking-btn-secondary" onclick="bookingNext(2)">Back</button>
+                    <button class="booking-btn" onclick="bookingNext(4)">Review Booking</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Confirm -->
+            <div class="booking-step" id="bookStep4">
+                <h3 style="color:#fff;font-size:16px;margin-bottom:16px;">Booking Summary</h3>
+                <div id="bookingSummary"></div>
+                <div class="booking-nav" style="margin-top:20px;">
+                    <button class="booking-btn booking-btn-secondary" onclick="bookingNext(3)">Back</button>
+                    <button class="booking-btn" onclick="submitBooking()" id="submitBookingBtn">Confirm Booking</button>
+                </div>
+            </div>
+
+            <!-- Step 5: Confirmation -->
+            <div class="booking-step" id="bookStep5">
+                <div class="booking-confirmation">
+                    <div class="confirm-icon">&#10003;</div>
+                    <h3>Booking Request Sent!</h3>
+                    <p>We'll confirm your appointment shortly via phone.</p>
+                    <div class="booking-ref" id="bookingRefDisplay"></div>
+                    <p style="margin-top:12px;">Please save your reference number.</p>
+                    <button class="booking-btn" style="margin-top:20px;" onclick="closeBooking()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>We use cookies to improve your experience. By continuing to use this site, you consent to our use of cookies. <a href="#" onclick="showPrivacyPolicy();return false;">Learn more</a></p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+            <button class="cookie-btn cookie-reject" onclick="rejectCookies()">Reject</button>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal (reuses booking overlay style) -->
+    <div class="booking-overlay" id="privacyOverlay">
+        <div class="booking-modal" style="max-width:640px;">
+            <button class="close-modal" onclick="document.getElementById('privacyOverlay').classList.remove('active')" aria-label="Close privacy policy">&times;</button>
+            <h2>Privacy Policy</h2>
+            <div style="color:#b0bfcc;font-size:14px;line-height:1.8;margin-top:16px;">
+                <p><strong style="color:#fff;">Data Controller:</strong> The Heathway Dental Surgery, 276a Heathway, Dagenham, Essex, RM10 8QS</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">What we collect:</strong> Name, contact details, appointment information, and health records necessary for dental treatment.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Why we collect it:</strong> To provide dental care, manage appointments, send reminders, and comply with NHS/CQC regulations.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">How we store it:</strong> Data is stored securely using encrypted cloud systems (Firebase). Access is restricted to authorised practice staff only.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Data retention:</strong> Patient records are kept for 10 years after last treatment (or until age 25 for children), in line with NHS guidelines.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Your rights:</strong> You have the right to access, correct, or request deletion of your personal data. Contact us at 020 8592 5030 or visit the practice.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Cookies:</strong> We use essential cookies for site functionality. No third-party tracking cookies are used without your consent.</p>
+                <p style="margin-top:12px;">For concerns about data handling, contact the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener" style="color:#14b8a6;">ico.org.uk</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Complaints Procedure Modal -->
+    <div class="booking-overlay" id="complaintsOverlay">
+        <div class="booking-modal" style="max-width:640px;">
+            <button class="close-modal" onclick="document.getElementById('complaintsOverlay').classList.remove('active')" aria-label="Close complaints procedure">&times;</button>
+            <h2>Complaints Procedure</h2>
+            <div style="color:#b0bfcc;font-size:14px;line-height:1.8;margin-top:16px;">
+                <p>We are committed to providing the highest standard of dental care. If you are unhappy with any aspect of our service, we want to hear from you.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Step 1:</strong> Speak to your dentist or our practice manager directly. Most concerns can be resolved immediately.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Step 2:</strong> If unresolved, write to: Practice Manager, The Heathway Dental Surgery, 276a Heathway, Dagenham, Essex, RM10 8QS. We will acknowledge within 3 working days and respond within 10 working days.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Step 3 — NHS patients:</strong> Contact NHS England at <a href="https://www.england.nhs.uk/contact-us/complaint/" target="_blank" rel="noopener" style="color:#14b8a6;">england.nhs.uk/contact-us/complaint</a> or call 0300 311 22 33.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">Step 3 — Private patients:</strong> Contact the Dental Complaints Service at <a href="https://dcs.org.uk" target="_blank" rel="noopener" style="color:#14b8a6;">dcs.org.uk</a> or call 020 8253 0800.</p>
+                <p style="margin-top:12px;"><strong style="color:#fff;">GDC:</strong> You may also contact the General Dental Council at <a href="https://www.gdc-uk.org" target="_blank" rel="noopener" style="color:#14b8a6;">gdc-uk.org</a> if you believe a dental professional's fitness to practise is impaired.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "The Heathway Dental Surgery",
+        "description": "Quality NHS and private dental care in Dagenham. Emergency appointments available. Serving the community for over 20 years.",
+        "url": "https://www.heathwaydental.co.uk",
+        "telephone": "+442085925030",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "276a Heathway",
+            "addressLocality": "Dagenham",
+            "addressRegion": "Essex",
+            "postalCode": "RM10 8QS",
+            "addressCountry": "GB"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.5375,
+            "longitude": 0.1584
+        },
+        "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "13:00" },
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "14:00", "closes": "17:00" }
+        ],
+        "priceRange": "£-£££",
+        "image": "https://dp-otp.github.io/heathway-dental/IMG_3933.jpeg",
+        "medicalSpecialty": "Dentistry",
+        "availableService": [
+            { "@type": "MedicalProcedure", "name": "General Dentistry" },
+            { "@type": "MedicalProcedure", "name": "Emergency Dental Care" },
+            { "@type": "MedicalProcedure", "name": "Dental Crowns and Bridges" },
+            { "@type": "MedicalProcedure", "name": "Root Canal Treatment" },
+            { "@type": "MedicalProcedure", "name": "Dentures" },
+            { "@type": "MedicalProcedure", "name": "Tooth Extractions" },
+            { "@type": "MedicalProcedure", "name": "Gum Disease Treatment" },
+            { "@type": "MedicalProcedure", "name": "Children's Dentistry" }
+        ],
+        "sameAs": []
+    }
+    </script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+
+    <!-- =========================================
+         ALL SCRIPTS
+         ========================================= -->
+    <script>
+        // ============================================
+        // ORIGINAL SCRIPTS (preserved)
+        // ============================================
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        function updateHeader() {
+            if (window.scrollY > 100) {
+                header.classList.add('header--scrolled');
+                header.classList.remove('header--dark');
+            } else {
+                header.classList.remove('header--scrolled');
+                header.classList.add('header--dark');
+            }
+        }
+        window.addEventListener('scroll', updateHeader, { passive: true });
+        updateHeader();
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.service-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
+        });
+
+        // Mobile menu
+        const mobileToggle = document.querySelector('.nav__mobile-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+            document.querySelectorAll('.mobile-menu__link, .mobile-menu__cta').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // ============================================
+        // FIREBASE INITIALIZATION
+        // ============================================
+        var firebaseConfig = {
+            apiKey: "AIzaSyA3eVAdYntGPTsvhAZn0sezj7aYTR9qLC4",
+            authDomain: "golden-barbers-e25db.firebaseapp.com",
+            databaseURL: "https://golden-barbers-e25db-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "golden-barbers-e25db",
+            storageBucket: "golden-barbers-e25db.firebasestorage.app",
+            messagingSenderId: "719034478402",
+            appId: "1:719034478402:web:d3b3042688795b34e422db"
+        };
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+        var DB_PREFIX = 'heathway/';
+
+        // ============================================
+        // ANNOUNCEMENT BANNER (real-time from admin)
+        // ============================================
+        try {
+            database.ref(DB_PREFIX + 'announcement').on('value', function(snap) {
+                var data = snap.val();
+                var bar = document.getElementById('announcementBar');
+                var txt = document.getElementById('announcementText');
+                if (data && data.active === false) {
+                    // Admin explicitly turned it off
+                    bar.classList.remove('active');
+                    document.body.classList.remove('has-announcement');
+                } else if (data && data.text) {
+                    if (sessionStorage.getItem('announceDismissed') === data.text) return;
+                    txt.textContent = data.text;
+                    bar.className = 'announcement-bar active ' + (data.style || 'teal');
+                    document.body.classList.add('has-announcement');
+                }
+                // If no data at all, keep the default banner as-is
+            }, function(err) {
+                console.warn('Announcement listener error:', err.message);
+            });
+        } catch(e) { console.warn('Firebase announcement error:', e); }
+
+        function dismissAnnouncement() {
+            var bar = document.getElementById('announcementBar');
+            var txt = document.getElementById('announcementText').textContent;
+            bar.classList.remove('active');
+            document.body.classList.remove('has-announcement');
+            sessionStorage.setItem('announceDismissed', txt);
+        }
+
+        // ============================================
+        // SHOP STATUS (open/closed/holiday)
+        // ============================================
+        database.ref(DB_PREFIX + 'shopStatus').on('value', function(snap) {
+            var status = snap.val() || 'open';
+            var closedBanner = document.getElementById('shopClosedBanner');
+            var holidayBanner = document.getElementById('shopHolidayBanner');
+            closedBanner.classList.remove('active');
+            holidayBanner.classList.remove('active');
+            if (status === 'closed') closedBanner.classList.add('active');
+            else if (status === 'holiday') holidayBanner.classList.add('active');
+        });
+
+        // ============================================
+        // DYNAMIC PRICING (from Firebase)
+        // ============================================
+        var cachedPrices = {};
+        database.ref(DB_PREFIX + 'servicePrices').on('value', function(snap) {
+            cachedPrices = snap.val() || {};
+            renderPricingTable('nhs', cachedPrices.nhs || {}, 'pricingNHSBody');
+            renderPricingTable('private', cachedPrices.private || {}, 'pricingPrivateBody');
+            renderPricingTable('dentures', cachedPrices.dentures || {}, 'pricingDenturesBody');
+            populateBookingServices(cachedPrices);
+            var pricesUpdatedEl = document.getElementById('pricesLastUpdated');
+            if (pricesUpdatedEl) pricesUpdatedEl.textContent = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        });
+
+        function renderPricingTable(category, prices, tbodyId) {
+            var tbody = document.getElementById(tbodyId);
+            if (!tbody) return;
+            var keys = Object.keys(prices);
+            if (keys.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="2" style="color:#888;text-align:center;padding:30px;">No prices available</td></tr>';
+                return;
+            }
+            tbody.innerHTML = keys.map(function(key) {
+                var name = key.replace(/([A-Z])/g, ' $1').replace(/^./, function(s) { return s.toUpperCase(); });
+                name = name.replace(/Nhs/g, 'NHS').replace(/Band /g, 'Band ');
+                var price = prices[key];
+                var display = (typeof price === 'number' || !isNaN(price)) ? '£' + parseFloat(price).toFixed(2) : price;
+                return '<tr><td class="service-name">' + name + '</td><td class="service-price">' + display + '</td></tr>';
+            }).join('');
+        }
+
+        function switchPricingTab(tab, btn) {
+            document.querySelectorAll('.pricing-tab').forEach(function(t) { t.classList.remove('active'); });
+            document.querySelectorAll('.pricing-category').forEach(function(c) { c.classList.remove('active'); });
+            if (btn) btn.classList.add('active');
+            document.getElementById('pricing-' + tab).classList.add('active');
+        }
+
+        // ============================================
+        // LIVE GALLERY (from Firebase)
+        // ============================================
+        database.ref(DB_PREFIX + 'liveGallery').on('value', function(snap) {
+            var data = snap.val();
+            var container = document.getElementById('liveGalleryDisplay');
+            if (!container) return;
+            if (!data) {
+                container.innerHTML = '<p style="color:#666;grid-column:1/-1;text-align:center;padding:40px;">Gallery coming soon...</p>';
+                return;
+            }
+            var items = Object.values(data);
+            container.innerHTML = items.map(function(item) {
+                return '<div class="live-gallery__item">' +
+                    '<img src="' + item.url + '" alt="' + (item.title || item.label || 'Gallery') + '" loading="lazy">' +
+                    (item.title ? '<div class="gallery-label">' + item.title + '</div>' : '') +
+                    '</div>';
+            }).join('');
+        });
+
+        // ============================================
+        // DYNAMIC OPENING HOURS (footer)
+        // ============================================
+        var dayNames = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+        database.ref(DB_PREFIX + 'operatingHours').on('value', function(snap) {
+            var hours = snap.val();
+            if (!hours) return;
+            var container = document.getElementById('footerHours');
+            if (!container) return;
+            var today = dayNames[new Date().getDay()];
+            var html = '';
+            ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'].forEach(function(day) {
+                var d = hours[day];
+                var label = day.charAt(0).toUpperCase() + day.slice(1, 3);
+                var isToday = day === today;
+                if (d && d.closed) {
+                    html += '<div' + (isToday ? ' class="today"' : '') + '>' + label + ': Closed</div>';
+                } else if (d) {
+                    html += '<div' + (isToday ? ' class="today"' : '') + '>' + label + ': ' + d.open + ' - ' + d.close + '</div>';
+                }
+            });
+            container.innerHTML = html;
+        });
+
+        // ============================================
+        // BOOKING SYSTEM
+        // ============================================
+        var currentBookingStep = 1;
+
+        function openBooking() {
+            document.getElementById('bookingOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Set min date to today
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementById('bookDate').setAttribute('min', today);
+            bookingNext(1);
+        }
+
+        function closeBooking() {
+            document.getElementById('bookingOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+            // Reset form
+            currentBookingStep = 1;
+            ['bookService','bookPatientType','bookDate','bookTime','bookFirstName','bookLastName','bookPhone','bookEmail','bookNotes'].forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) el.value = el.tagName === 'SELECT' ? el.options[0].value : '';
+            });
+            bookingNext(1);
+        }
+
+        function bookingNext(step) {
+            // Validation
+            if (step === 2 && currentBookingStep === 1) {
+                if (!document.getElementById('bookService').value) { alert('Please select a service.'); return; }
+            }
+            if (step === 3 && currentBookingStep === 2) {
+                if (!document.getElementById('bookDate').value || !document.getElementById('bookTime').value) { alert('Please select a date and time.'); return; }
+            }
+            if (step === 4 && currentBookingStep === 3) {
+                if (!document.getElementById('bookFirstName').value || !document.getElementById('bookLastName').value || !document.getElementById('bookPhone').value) {
+                    alert('Please fill in your name and phone number.'); return;
+                }
+            }
+            currentBookingStep = step;
+            for (var i = 1; i <= 5; i++) {
+                document.getElementById('bookStep' + i).classList.remove('active');
+                var dot = document.getElementById('dot-' + i);
+                if (dot) { dot.classList.remove('active', 'done'); }
+            }
+            document.getElementById('bookStep' + step).classList.add('active');
+            for (var j = 1; j <= 4; j++) {
+                var d = document.getElementById('dot-' + j);
+                if (d) {
+                    if (j < step) d.classList.add('done');
+                    if (j === step) d.classList.add('active');
+                }
+            }
+            // Build summary on step 4
+            if (step === 4) {
+                var summary = document.getElementById('bookingSummary');
+                summary.innerHTML =
+                    '<div class="booking-summary-row"><span class="label">Service</span><span class="value">' + document.getElementById('bookService').value + '</span></div>' +
+                    '<div class="booking-summary-row"><span class="label">Patient Type</span><span class="value">' + document.getElementById('bookPatientType').value + '</span></div>' +
+                    '<div class="booking-summary-row"><span class="label">Date</span><span class="value">' + document.getElementById('bookDate').value + '</span></div>' +
+                    '<div class="booking-summary-row"><span class="label">Time</span><span class="value">' + document.getElementById('bookTime').value + '</span></div>' +
+                    '<div class="booking-summary-row"><span class="label">Name</span><span class="value">' + document.getElementById('bookFirstName').value + ' ' + document.getElementById('bookLastName').value + '</span></div>' +
+                    '<div class="booking-summary-row"><span class="label">Phone</span><span class="value">' + document.getElementById('bookPhone').value + '</span></div>' +
+                    (document.getElementById('bookEmail').value ? '<div class="booking-summary-row"><span class="label">Email</span><span class="value">' + document.getElementById('bookEmail').value + '</span></div>' : '');
+            }
+        }
+
+        function populateBookingServices(prices) {
+            var select = document.getElementById('bookService');
+            if (!select) return;
+            var current = select.value;
+            select.innerHTML = '<option value="">-- Choose a service --</option>';
+            var allServices = [];
+            ['nhs','private','dentures'].forEach(function(cat) {
+                if (prices[cat]) {
+                    Object.keys(prices[cat]).forEach(function(key) {
+                        var name = key.replace(/([A-Z])/g, ' $1').replace(/^./, function(s) { return s.toUpperCase(); });
+                        name = name.replace(/Nhs/g, 'NHS');
+                        var price = prices[cat][key];
+                        var display = (typeof price === 'number' || !isNaN(price)) ? ' (£' + parseFloat(price).toFixed(2) + ')' : '';
+                        allServices.push({ name: name + display, cat: cat.toUpperCase() });
+                    });
+                }
+            });
+            // Add common services if prices not loaded
+            if (allServices.length === 0) {
+                ['Check-up','Cleaning','Filling','Root Canal','Crown','Bridge','Dentures','Emergency Appointment','Extraction','Gum Treatment'].forEach(function(s) {
+                    allServices.push({ name: s, cat: '' });
+                });
+            }
+            allServices.forEach(function(s) {
+                var opt = document.createElement('option');
+                opt.value = s.name;
+                opt.textContent = s.name;
+                select.appendChild(opt);
+            });
+            if (current) select.value = current;
+        }
+
+        function submitBooking() {
+            var btn = document.getElementById('submitBookingBtn');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            var ref = 'HD-' + Date.now().toString(36).toUpperCase().slice(-6);
+            var booking = {
+                reference: ref,
+                service: document.getElementById('bookService').value,
+                patientType: document.getElementById('bookPatientType').value,
+                date: document.getElementById('bookDate').value,
+                time: document.getElementById('bookTime').value,
+                name: document.getElementById('bookFirstName').value + ' ' + document.getElementById('bookLastName').value,
+                phone: document.getElementById('bookPhone').value,
+                email: document.getElementById('bookEmail').value || '',
+                notes: document.getElementById('bookNotes').value || '',
+                status: 'pending',
+                source: 'website',
+                createdAt: new Date().toISOString()
+            };
+
+            database.ref(DB_PREFIX + 'bookings').push(booking).then(function() {
+                document.getElementById('bookingRefDisplay').textContent = ref;
+                btn.disabled = false;
+                btn.textContent = 'Confirm Booking';
+                bookingNext(5);
+            }).catch(function(err) {
+                alert('Sorry, something went wrong. Please call us on 020 8592 5030.');
+                btn.disabled = false;
+                btn.textContent = 'Confirm Booking';
+            });
+        }
+
+        // ============================================
+        // COOKIE CONSENT
+        // ============================================
+        (function() {
+            if (!localStorage.getItem('heathway_cookies')) {
+                document.getElementById('cookieBanner').classList.add('active');
+            }
+        })();
+        function acceptCookies() {
+            localStorage.setItem('heathway_cookies', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('active');
+        }
+        function rejectCookies() {
+            localStorage.setItem('heathway_cookies', 'rejected');
+            document.getElementById('cookieBanner').classList.remove('active');
+        }
+
+        // ============================================
+        // PRIVACY & COMPLAINTS MODALS
+        // ============================================
+        function showPrivacyPolicy() {
+            document.getElementById('privacyOverlay').classList.add('active');
+        }
+        function showComplaints() {
+            document.getElementById('complaintsOverlay').classList.add('active');
+        }
+
+        // Auto-open modals when navigated from other pages via hash
+        (function() {
+            var hash = window.location.hash;
+            if (hash === '#privacy') showPrivacyPolicy();
+            if (hash === '#complaints') showComplaints();
+        })();
+    </script>
+</body>
+</html>

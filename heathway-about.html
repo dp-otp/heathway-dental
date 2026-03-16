@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | The Heathway Dental Surgery</title>
+    <meta name="description" content="About The Heathway Dental Surgery. Led by Dr Niti Kaushal, serving Dagenham since 2003. CQC registered NHS and private dental practice. Call 020 8592 5030.">
+    <link rel="icon" href="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===========================================
+           DESIGN SYSTEM — Premium Futuristic
+           =========================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core palette */
+            --cream: #E8DFD8;
+            --cream-light: #F5F0EC;
+            --beige: #f5ebe4;
+            --beige-soft: rgba(245, 235, 228, 0.15);
+            --teal: #14b8a6;
+            --teal-muted: #0d9488;
+            --teal-soft: rgba(20, 184, 166, 0.15);
+            --teal-glow: rgba(20, 184, 166, 0.4);
+
+            /* Dark blue accents */
+            --navy: #0a1628;
+            --navy-light: #0f2240;
+            --blue-accent: #1e3a5f;
+            --blue-neon: #00d4ff;
+            --blue-glow: rgba(0, 212, 255, 0.3);
+
+            /* Dark palette */
+            --black: #000000;
+            --charcoal: #0d1520;
+            --gray-900: #131c2a;
+            --gray-800: #1a2535;
+            --gray-700: #243347;
+            --gray-600: #3d4f66;
+            --gray-400: #8899aa;
+            --gray-300: #b0bfcc;
+
+            /* Light palette */
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --warm-gray: #F5F3F0;
+
+            /* Typography */
+            --font-display: 'Sora', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            --space-4xl: 8rem;
+
+            /* Container */
+            --container-max: 1280px;
+            --container-padding: 1.5rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black);
+            color: var(--gray-300);
+            line-height: 1.6;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        /* ===========================================
+           GLOBAL ANIMATIONS
+           =========================================== */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px var(--teal-glow), 0 0 40px rgba(20, 184, 166, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 30px var(--teal-glow), 0 0 60px rgba(20, 184, 166, 0.2);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes neon-flicker {
+            0%, 100% { opacity: 1; }
+            92% { opacity: 1; }
+            93% { opacity: 0.8; }
+            94% { opacity: 1; }
+            96% { opacity: 0.9; }
+            97% { opacity: 1; }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+
+        /* ===========================================
+           NAVIGATION
+           =========================================== */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: var(--space-md) 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .header--dark {
+            background: transparent;
+        }
+
+        .header--scrolled {
+            background: rgba(10, 22, 40, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(20, 184, 166, 0.1);
+            padding: var(--space-sm) 0;
+        }
+
+        .nav {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            text-decoration: none;
+        }
+
+        .logo__mark {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo__mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo__text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: -0.02em;
+        }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+            list-style: none;
+        }
+
+        .nav__link {
+            text-decoration: none;
+            color: var(--cream);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--teal), var(--blue-neon));
+            transition: width 0.3s ease;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--teal-glow);
+        }
+
+        .nav__link:hover,
+        .nav__link--active {
+            color: var(--white);
+        }
+
+        .nav__link:hover::after,
+        .nav__link--active::after {
+            width: 100%;
+        }
+
+        .nav__cta {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--teal), var(--teal-muted));
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav__cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav__cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--teal-glow);
+        }
+
+        .nav__cta:hover::before {
+            left: 100%;
+        }
+
+        .nav__mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .nav__mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav__mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav__mobile-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav__mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* Mobile Menu */
+        .mobile-menu { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(10, 22, 40, 0.98); backdrop-filter: blur(24px); z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .mobile-menu.active { opacity: 1; visibility: visible; }
+        .mobile-menu__links { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 0.25rem; }
+        .mobile-menu__link { text-decoration: none; color: var(--cream); font-size: 1.25rem; font-weight: 500; padding: 0.75rem 2rem; display: block; transition: all 0.3s; font-family: var(--font-body); }
+        .mobile-menu__link:hover, .mobile-menu__link--active { color: var(--white); }
+        .mobile-menu__link--ai { color: var(--teal); }
+        .mobile-menu__cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--teal), var(--teal-muted)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; border-radius: 50px; margin-top: 1rem; transition: all 0.3s; }
+
+        /* ===========================================
+           BUTTONS
+           =========================================== */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 0.9375rem 1.75rem;
+            font-family: var(--font-body);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn--primary {
+            background: var(--teal);
+            color: var(--white);
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.3);
+        }
+
+        .btn--glass {
+            background: rgba(245, 235, 228, 0.05);
+            backdrop-filter: blur(10px);
+            color: var(--cream);
+            border: 1px solid rgba(232, 223, 216, 0.15);
+        }
+
+        .btn--glass:hover {
+            background: rgba(245, 235, 228, 0.1);
+            border-color: rgba(232, 223, 216, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* ===========================================
+           PAGE HERO (Smaller, inner page)
+           =========================================== */
+
+        .page-hero {
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+            padding: 10rem 0 4rem;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: -15%;
+            right: -10%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .page-hero__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .page-hero__eyebrow {
+            font-size: 0.6875rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: var(--space-lg);
+            animation: fadeInUp 0.7s ease forwards;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .page-hero__eyebrow::before,
+        .page-hero__eyebrow::after {
+            content: '';
+            width: 2rem;
+            height: 1px;
+            background: var(--teal);
+        }
+
+        .page-hero__title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--cream);
+            letter-spacing: -0.04em;
+            animation: fadeInUp 0.9s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        /* ===========================================
+           ABOUT CONTENT SECTION
+           =========================================== */
+
+        .about-section {
+            padding: var(--space-4xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section--dark {
+            background: var(--charcoal);
+        }
+
+        .about-section--gradient {
+            background: linear-gradient(180deg, var(--beige) 0%, rgba(180, 165, 150, 1) 100%);
+        }
+
+        .about-section--gradient-2 {
+            background: linear-gradient(180deg, rgba(180, 165, 150, 1) 0%, rgba(80, 90, 100, 1) 100%);
+        }
+
+        .about-section--black {
+            background: var(--black);
+        }
+
+        .about-section__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+
+        .about-grid--reverse {
+            direction: rtl;
+        }
+
+        .about-grid--reverse > * {
+            direction: ltr;
+        }
+
+        .about-grid--text-only {
+            grid-template-columns: 1fr;
+        }
+
+        .about-section--gradient-2 .about-section__container {
+            max-width: 100% !important;
+            padding: 0 2rem !important;
+        }
+
+        .about-section--gradient-2 .about-grid {
+            display: block !important;
+        }
+
+        .about-content.about-content--full-width {
+            max-width: 100% !important;
+            width: 100% !important;
+            padding: var(--space-3xl) var(--space-4xl);
+            background: rgba(0, 0, 0, 0.12);
+            border-radius: 24px;
+            border: 1px solid rgba(20, 184, 166, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .about-content--full-width .about-content__eyebrow {
+            font-size: 0.95rem;
+            letter-spacing: 0.2em;
+            margin-bottom: var(--space-md);
+        }
+
+        .about-content--full-width .about-content__title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: var(--space-xl);
+            background: linear-gradient(135deg, var(--charcoal), var(--navy-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content--full-width .about-content__text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin-bottom: var(--space-md);
+        }
+
+        .about-content--full-width .about-content__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem 3rem;
+            text-align: left;
+            margin-top: var(--space-xl);
+            font-size: 1.0625rem;
+        }
+
+        .about-image {
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.5s ease;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--teal), var(--blue-neon), var(--teal));
+            border-radius: 26px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .about-image:hover::before {
+            opacity: 0.5;
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+            border-radius: 24px;
+        }
+
+        .about-image--reception img {
+            height: 480px;
+            object-fit: cover;
+            object-position: center 15%;
+        }
+
+        .about-image--portrait img {
+            height: 500px;
+            object-fit: cover;
+            object-position: center 25%;
+        }
+
+        .about-image--practice img {
+            height: 420px;
+            object-fit: cover;
+        }
+
+        .about-content {
+            max-width: 520px;
+        }
+
+        .about-content__eyebrow {
+            color: var(--teal);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+        }
+
+        .about-content__title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-content__title--dark {
+            color: var(--charcoal);
+        }
+
+        .about-content__title--light {
+            color: var(--cream);
+        }
+
+        .about-content__text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-content__text--dark {
+            color: var(--navy);
+        }
+
+        .about-content__text--light {
+            color: var(--gray-300);
+        }
+
+        .about-content__list {
+            list-style: none;
+            margin-bottom: var(--space-xl);
+        }
+
+        .about-content__list li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 0.9375rem;
+            padding: var(--space-xs) 0;
+        }
+
+        .about-content__list--dark li {
+            color: var(--navy);
+        }
+
+        .about-content__list--light li {
+            color: var(--gray-300);
+        }
+
+        .about-content__list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, var(--teal), var(--blue-neon));
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--teal-glow);
+            flex-shrink: 0;
+        }
+
+        .about-content__cqc {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            background: rgba(20, 184, 166, 0.1);
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            border-radius: 12px;
+            font-size: 0.875rem;
+            color: var(--teal);
+            font-weight: 500;
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-content__cqc svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--teal);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .link:hover {
+            gap: var(--space-sm);
+            color: var(--blue-neon);
+        }
+
+        /* ===========================================
+           SECTION HEADERS
+           =========================================== */
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .section-eyebrow {
+            display: inline-block;
+            color: var(--teal);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-md);
+        }
+
+        .section-title--dark {
+            color: var(--charcoal);
+        }
+
+        .section-title--light {
+            color: var(--cream);
+        }
+
+        .section-description {
+            max-width: 560px;
+            margin: 0 auto;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+        }
+
+        .section-description--dark {
+            color: var(--navy);
+        }
+
+        .section-description--light {
+            color: var(--gray-400);
+        }
+
+        /* ===========================================
+           TRUST BAR
+           =========================================== */
+
+        .trust {
+            background: var(--charcoal);
+            border-top: 1px solid rgba(20, 184, 166, 0.15);
+            border-bottom: 1px solid rgba(20, 184, 166, 0.15);
+            padding: var(--space-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.05), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+            background-size: 200% 100%;
+        }
+
+        .trust__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-lg);
+            position: relative;
+        }
+
+        .trust__item {
+            text-align: center;
+            padding: var(--space-md);
+        }
+
+        .trust__value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--teal), var(--blue-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-xs);
+        }
+
+        .trust__label {
+            color: var(--cream);
+            font-size: 0.875rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===========================================
+           CTA SECTION
+           =========================================== */
+
+        .cta-section {
+            padding: var(--space-4xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse 80% 60% at 70% 80%, rgba(20, 184, 166, 0.12), transparent 60%),
+                radial-gradient(ellipse 60% 50% at 20% 30%, rgba(20, 184, 166, 0.08), transparent 50%),
+                radial-gradient(ellipse 50% 40% at 80% 20%, rgba(0, 212, 255, 0.06), transparent 50%),
+                var(--black);
+            background-size: 200% 200%;
+            animation: gradient-shift 20s ease infinite;
+        }
+
+        .cta-section__lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            pointer-events: none;
+            overflow: visible;
+        }
+
+        .cta-diagonal {
+            position: absolute;
+            width: 130%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.06) 10%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.06) 90%, transparent 100%);
+            transform-origin: 0 0;
+            transform: rotate(30deg);
+        }
+
+        .cta-diagonal--1 { top: 10%; left: 0; opacity: 0.5; }
+        .cta-diagonal--2 { top: 25%; left: 0; opacity: 0.7; }
+        .cta-diagonal--3 { top: 40%; left: 0; opacity: 0.9; }
+        .cta-diagonal--4 { top: 55%; left: 0; opacity: 0.7; }
+        .cta-diagonal--5 { top: 70%; left: 0; opacity: 0.5; }
+
+        .cta-arc {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            pointer-events: none;
+        }
+
+        .cta-arc--1 { width: 400px; height: 400px; bottom: -200px; right: -100px; }
+        .cta-arc--2 { width: 280px; height: 280px; bottom: -120px; right: -50px; border-color: rgba(255, 255, 255, 0.1); }
+
+        .cta-section__container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section__title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-section__text {
+            color: var(--gray-300);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin-bottom: var(--space-xl);
+        }
+
+        /* ===========================================
+           FOOTER
+           =========================================== */
+
+        .footer {
+            background: var(--black);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            border-top: 1px solid rgba(232, 223, 216, 0.15);
+        }
+
+        .footer__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-3xl);
+            margin-bottom: var(--space-3xl);
+        }
+
+        .footer__brand {
+            max-width: 280px;
+        }
+
+        .footer__logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer__logo-mark {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .footer__logo-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .footer__logo-text {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .footer__tagline {
+            color: var(--cream);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        .footer__heading {
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer__links {
+            list-style: none;
+        }
+
+        .footer__links li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer__links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: all 0.3s;
+        }
+
+        .footer__links a:hover {
+            color: var(--teal);
+        }
+
+        .footer__contact-item {
+            color: var(--cream);
+            font-size: 0.9375rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer__bottom {
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(232, 223, 216, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer__copyright {
+            color: var(--gray-600);
+            font-size: 0.8125rem;
+        }
+
+        .footer__legal {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .footer__legal a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 0.8125rem;
+            transition: color 0.3s;
+        }
+
+        .footer__legal a:hover {
+            color: var(--teal);
+        }
+
+        /* ===========================================
+           MOBILE RESPONSIVE
+           =========================================== */
+
+        @media (max-width: 1024px) {
+            .about-grid { gap: var(--space-2xl); }
+            .footer__grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            :root { --space-4xl: 3rem; --space-3xl: 2.5rem; --space-2xl: 2rem; --container-padding: 1.25rem; }
+
+            /* Nav */
+            .header { padding: var(--space-sm) 0; }
+            .nav__links { display: none; }
+            .nav__cta { display: none; }
+            .nav__mobile-toggle { display: flex; }
+            .logo__mark { width: 40px; height: 40px; border-radius: 10px; }
+            .logo__text { font-size: 1rem; }
+
+            /* Page Hero */
+            .page-hero { padding: 7rem 0 3rem; }
+            .page-hero__title { font-size: 2rem; }
+
+            /* About grid */
+            .about-grid { grid-template-columns: 1fr; }
+            .about-grid--reverse { direction: ltr; }
+            .about-image--reception img { height: 320px; object-position: center 20%; }
+            .about-image--portrait img { height: 360px; }
+            .about-image--practice img { height: 280px; }
+
+            /* Dr Niti text section mobile */
+            .about-section--gradient-2 .about-section__container { padding: 0 var(--space-md); }
+            .about-content--full-width { padding: var(--space-xl) var(--space-md); }
+            .about-content--full-width .about-content__title { font-size: 1.75rem; }
+            .about-content--full-width .about-content__text { font-size: 0.9375rem; }
+            .about-content--full-width .about-content__text:nth-of-type(2),
+            .about-content--full-width .about-content__text:nth-of-type(3) { display: none; }
+            .about-content--full-width .about-content__list { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+
+            /* Trust */
+            .trust__container { grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); }
+            .trust__item { padding: var(--space-sm); }
+            .trust__value { font-size: 1.5rem; }
+            .trust__label { font-size: 0.75rem; }
+
+            /* Footer */
+            .footer__grid { grid-template-columns: 1fr; gap: var(--space-xl); }
+            .footer__bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
+
+        }
+
+        @media (max-width: 480px) {
+            :root { --container-padding: 1rem; }
+            .logo__mark { width: 36px; height: 36px; border-radius: 8px; }
+            .logo__text { font-size: 0.875rem; }
+            .page-hero { padding: 6rem 0 2.5rem; }
+            .page-hero__title { font-size: 1.75rem; }
+            .page-hero__eyebrow { font-size: 0.5625rem; gap: 0.5rem; }
+            .page-hero__eyebrow::before, .page-hero__eyebrow::after { width: 1rem; }
+            .about-image--portrait img { height: 300px; }
+            .about-image--reception img { height: 260px; }
+            .about-image--practice img { height: 240px; }
+            .about-grid--text-only .about-content__title { font-size: 1.5rem; }
+            .mobile-menu__link { font-size: 1.125rem; padding: 0.6rem 2rem; }
+            .about-content--full-width { padding: var(--space-md); border-radius: 16px; }
+        }
+
+        /* Safe area for notched phones */
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+            .footer { padding-bottom: env(safe-area-inset-bottom); }
+        }
+    </style>
+</head>
+<body>
+    <!-- =========================================
+         NAVIGATION
+         ========================================= -->
+    <header class="header header--dark" id="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <div class="logo__mark"><img src="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png" alt="Heathway Dental Logo"></div>
+                <span class="logo__text">Heathway Dental</span>
+            </a>
+
+            <ul class="nav__links">
+                <li><a href="index.html" class="nav__link">Home</a></li>
+                <li><a href="heathway-services.html" class="nav__link">Services</a></li>
+                <li><a href="heathway-about.html" class="nav__link nav__link--active">About</a></li>
+                <li><a href="heathway-contact.html" class="nav__link">Contact</a></li>
+                <li><a href="heathway-chatbot.html" class="nav__link">Heathway AI</a></li>
+            </ul>
+
+            <a href="tel:02085925030" class="nav__cta">Call 020 8592 5030</a>
+
+            <button class="nav__mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu__links">
+            <li><a href="index.html" class="mobile-menu__link">Home</a></li>
+            <li><a href="heathway-services.html" class="mobile-menu__link">Services</a></li>
+            <li><a href="heathway-about.html" class="mobile-menu__link mobile-menu__link--active">About</a></li>
+            <li><a href="heathway-contact.html" class="mobile-menu__link">Contact</a></li>
+            <li><a href="heathway-chatbot.html" class="mobile-menu__link mobile-menu__link--ai">Heathway AI</a></li>
+        </ul>
+        <a href="tel:02085925030" class="mobile-menu__cta">Call 020 8592 5030</a>
+    </div>
+
+    <!-- =========================================
+         PAGE HERO
+         ========================================= -->
+    <section class="page-hero">
+        <div class="page-hero__container">
+            <p class="page-hero__eyebrow">The Heathway Dental Surgery</p>
+            <h1 class="page-hero__title">About Us</h1>
+        </div>
+    </section>
+
+    <!-- =========================================
+         ABOUT — OUR STORY (Reception image)
+         ========================================= -->
+    <section class="about-section about-section--gradient">
+        <div class="about-section__container">
+            <div class="about-grid">
+                <div class="about-image about-image--reception">
+                    <img src="IMG_3930.jpeg" alt="Our friendly receptionist at The Heathway Dental Surgery">
+                </div>
+
+                <div class="about-content">
+                    <span class="about-content__eyebrow">Our Story</span>
+                    <h2 class="about-content__title about-content__title--dark">
+                        Caring for Dagenham's smiles since 2003
+                    </h2>
+                    <p class="about-content__text about-content__text--dark">
+                        The Heathway Dental Surgery has been serving the Dagenham community for over two decades. Located at 276a Heathway, Dagenham, Essex RM10 8QS, we are conveniently situated near Dagenham Heathway station, making quality dental care easily accessible for local residents.
+                    </p>
+                    <p class="about-content__text about-content__text--dark">
+                        Our practice has a proud history of providing dental care to the area. Originally established by Mr Omran Abbas, the practice later became known as Kaushal Abbas before being taken over by Dr Niti Kaushal, who continues to lead the surgery as Principal Dentist and Owner.
+                    </p>
+                    <div class="about-content__cqc">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        CQC Registered &mdash; Provider ID: 1-7701378176
+                    </div>
+                    <ul class="about-content__list about-content__list--dark">
+                        <li>NHS and Private patients welcome</li>
+                        <li>Accepting new adults and children</li>
+                        <li>Near Dagenham Heathway station</li>
+                        <li>Over 20 years serving the community</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         OUR TEAM (Receptionist portrait)
+         ========================================= -->
+    <section class="about-section about-section--gradient-2">
+        <div class="about-section__container">
+            <div class="about-grid about-grid--text-only">
+                <div class="about-content about-content--full-width">
+                    <span class="about-content__eyebrow">Our Team</span>
+                    <h2 class="about-content__title about-content__title--dark">
+                        Led by Dr Niti Kaushal
+                    </h2>
+                    <p class="about-content__text about-content__text--dark">
+                        Dr Niti Kaushal is the Principal Dentist and Owner of The Heathway Dental Surgery, bringing over two decades of clinical experience to our Dagenham practice. Registered with the General Dental Council and qualified from one of the UK's leading dental schools, Dr Kaushal is committed to providing the highest standard of care for every patient &mdash; whether NHS or private.
+                    </p>
+                    <p class="about-content__text about-content__text--dark">
+                        Under Dr Kaushal's leadership, our team delivers a full range of treatments including check-ups, fillings, crowns, bridges, dentures, root canal therapy, extractions and children's dentistry. Every treatment plan is tailored to the individual, with clear explanations and honest advice at every step.
+                    </p>
+                    <p class="about-content__text about-content__text--dark">
+                        From our welcoming reception staff to our skilled dental nurses and hygienists, every member of the Heathway Dental team is passionate about patient care. We understand that visiting the dentist can feel daunting, and we go above and beyond to create a calm, supportive environment for patients of all ages.
+                    </p>
+                    <ul class="about-content__list about-content__list--dark">
+                        <li>GDC registered dental professionals</li>
+                        <li>Warm, welcoming reception team</li>
+                        <li>Over 20 years serving Dagenham</li>
+                        <li>CQC regulated practice</li>
+                        <li>NHS and private patients welcome</li>
+                        <li>Treating adults and children alike</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         OUR PRACTICE (Surgery door / waiting area)
+         ========================================= -->
+    <section class="about-section about-section--dark">
+        <div class="about-section__container">
+            <div class="about-grid">
+                <div class="about-image about-image--practice">
+                    <img src="IMG_3929.jpeg" alt="Heathway Dental reception desk">
+                </div>
+
+                <div class="about-content">
+                    <span class="about-content__eyebrow">Our Practice</span>
+                    <h2 class="about-content__title about-content__title--light">
+                        A modern, welcoming environment
+                    </h2>
+                    <p class="about-content__text about-content__text--light">
+                        Our practice features comfortable waiting areas and well-equipped treatment rooms designed to provide you with the best possible dental experience. We maintain the highest standards of hygiene and infection control, ensuring a safe environment for every visit.
+                    </p>
+                    <p class="about-content__text about-content__text--light">
+                        As both an NHS and private practice, we offer a comprehensive range of treatments to suit every patient's needs and budget. Whether you require routine check-ups and preventive care or more advanced dental treatments, we have the facilities and expertise to help.
+                    </p>
+                    <ul class="about-content__list about-content__list--light">
+                        <li>Modern, well-equipped treatment rooms</li>
+                        <li>Comfortable, relaxing waiting area</li>
+                        <li>Highest hygiene and safety standards</li>
+                        <li>Full range of NHS and private treatments</li>
+                    </ul>
+                    <a href="heathway-services.html" class="link">
+                        View our services
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         TRUST INDICATORS
+         ========================================= -->
+    <section class="trust">
+        <div class="trust__container">
+            <div class="trust__item">
+                <div class="trust__value">NHS</div>
+                <div class="trust__label">Registered Practice</div>
+            </div>
+            <div class="trust__item">
+                <div class="trust__value">CQC</div>
+                <div class="trust__label">Regulated &amp; Registered</div>
+            </div>
+            <div class="trust__item">
+                <div class="trust__value">20+</div>
+                <div class="trust__label">Years Serving Dagenham</div>
+            </div>
+            <div class="trust__item">
+                <div class="trust__value">All Ages</div>
+                <div class="trust__label">Adults &amp; Children</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         CTA SECTION
+         ========================================= -->
+    <section class="cta-section">
+        <div class="cta-section__bg">
+            <div class="cta-section__lines">
+                <div class="cta-diagonal cta-diagonal--1"></div>
+                <div class="cta-diagonal cta-diagonal--2"></div>
+                <div class="cta-diagonal cta-diagonal--3"></div>
+                <div class="cta-diagonal cta-diagonal--4"></div>
+                <div class="cta-diagonal cta-diagonal--5"></div>
+            </div>
+            <div class="cta-arc cta-arc--1"></div>
+            <div class="cta-arc cta-arc--2"></div>
+        </div>
+        <div class="cta-section__container">
+            <h2 class="cta-section__title">Ready to book an appointment?</h2>
+            <p class="cta-section__text">
+                Whether you're a new patient looking to register or an existing patient
+                due for a check-up, we'd love to hear from you. Call us today.
+            </p>
+            <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+                <a href="tel:02085925030" class="btn btn--primary">
+                    Call 020 8592 5030
+                </a>
+                <a href="heathway-contact.html" class="btn btn--glass">
+                    Contact details
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <div class="footer__logo-mark"><img src="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png" alt="Heathway Dental Logo"></div>
+                        <span class="footer__logo-text">Heathway Dental</span>
+                    </div>
+                    <p class="footer__tagline">
+                        Quality dental care for the whole family. NHS and private
+                        patients welcome at our Dagenham practice since 2003.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer__heading">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="heathway-services.html">Services</a></li>
+                        <li><a href="heathway-about.html">About Us</a></li>
+                        <li><a href="heathway-contact.html">Contact</a></li>
+                        <li><a href="heathway-chatbot.html">Heathway AI</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer__heading">Treatments</h4>
+                    <ul class="footer__links">
+                        <li><a href="heathway-services.html">Check-ups &amp; Cleaning</a></li>
+                        <li><a href="heathway-services.html">Crowns &amp; Bridges</a></li>
+                        <li><a href="heathway-services.html">Root Canal Treatment</a></li>
+                        <li><a href="heathway-services.html">Emergency Care</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer__heading">Contact</h4>
+                    <p class="footer__contact-item">276a Heathway<br>Dagenham, Essex, RM10 8QS</p>
+                    <p class="footer__contact-item"><a href="tel:02085925030" style="color: var(--cream); text-decoration: none;">020 8592 5030</a></p>
+                    <p class="footer__contact-item">Mon&ndash;Fri: 9am&ndash;1pm, 2pm&ndash;5pm<br>Sat&ndash;Sun: Closed</p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2026 The Heathway Dental Surgery. All rights reserved.
+                </p>
+                <div class="footer__legal">
+                    <a href="index.html#privacy">Privacy Policy</a>
+                    <a href="index.html#complaints">Complaints Procedure</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot floating button - links to full chatbot page -->
+    <a href="heathway-chatbot.html" class="ai-widget__toggle" aria-label="Open Heathway AI chat assistant" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999; width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), #00d4ff); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(20, 184, 166, 0.25); text-decoration: none; animation: pulse-glow 2s ease-in-out infinite;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+    </a>
+
+    <!-- =========================================
+         SCRIPTS
+         ========================================= -->
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+
+        function updateHeader() {
+            if (window.scrollY > 100) {
+                header.classList.add('header--scrolled');
+                header.classList.remove('header--dark');
+            } else {
+                header.classList.remove('header--scrolled');
+                header.classList.add('header--dark');
+            }
+        }
+
+        window.addEventListener('scroll', updateHeader, { passive: true });
+        updateHeader();
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.about-grid, .trust__item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
+        });
+
+        // Mobile menu
+        const mobileToggle = document.querySelector('.nav__mobile-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+            document.querySelectorAll('.mobile-menu__link, .mobile-menu__cta').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

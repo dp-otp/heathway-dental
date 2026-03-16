@@ -1,0 +1,2335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heathway AI | The Heathway Dental Surgery</title>
+    <link rel="icon" href="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===========================================
+           DESIGN SYSTEM — Premium Futuristic
+           =========================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core palette */
+            --cream: #E8DFD8;
+            --cream-light: #F5F0EC;
+            --beige: #f5ebe4;
+            --beige-soft: rgba(245, 235, 228, 0.15);
+            --teal: #14b8a6;
+            --teal-muted: #0d9488;
+            --teal-soft: rgba(20, 184, 166, 0.15);
+            --teal-glow: rgba(20, 184, 166, 0.4);
+
+            /* Dark blue accents */
+            --navy: #0a1628;
+            --navy-light: #0f2240;
+            --blue-accent: #1e3a5f;
+            --blue-neon: #00d4ff;
+            --blue-glow: rgba(0, 212, 255, 0.3);
+
+            /* Dark palette */
+            --black: #000000;
+            --charcoal: #0d1520;
+            --gray-900: #131c2a;
+            --gray-800: #1a2535;
+            --gray-700: #243347;
+            --gray-600: #3d4f66;
+            --gray-400: #8899aa;
+            --gray-300: #b0bfcc;
+
+            /* Light palette */
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --warm-gray: #F5F3F0;
+
+            /* Typography */
+            --font-display: 'Sora', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            --space-4xl: 8rem;
+
+            /* Container */
+            --container-max: 1280px;
+            --container-padding: 1.5rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black);
+            color: var(--gray-300);
+            line-height: 1.6;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        /* ===========================================
+           GLOBAL ANIMATIONS
+           =========================================== */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px var(--teal-glow), 0 0 40px rgba(20, 184, 166, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 30px var(--teal-glow), 0 0 60px rgba(20, 184, 166, 0.2);
+            }
+        }
+
+        @keyframes neon-flicker {
+            0%, 100% { opacity: 1; }
+            92% { opacity: 1; }
+            93% { opacity: 0.8; }
+            94% { opacity: 1; }
+            96% { opacity: 0.9; }
+            97% { opacity: 1; }
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes typing-dot {
+            0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+            30% { opacity: 1; transform: translateY(-4px); }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===========================================
+           NAVIGATION
+           =========================================== */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: var(--space-md) 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .header--dark {
+            background: transparent;
+        }
+
+        .header--scrolled {
+            background: rgba(10, 22, 40, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(20, 184, 166, 0.1);
+            padding: var(--space-sm) 0;
+        }
+
+        .nav {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            text-decoration: none;
+        }
+
+        .logo__mark {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo__mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo__text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: -0.02em;
+        }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+            list-style: none;
+        }
+
+        .nav__link {
+            text-decoration: none;
+            color: var(--cream);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--teal), var(--blue-neon));
+            transition: width 0.3s ease;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--teal-glow);
+        }
+
+        .nav__link:hover,
+        .nav__link--active {
+            color: var(--white);
+        }
+
+        .nav__link:hover::after,
+        .nav__link--active::after {
+            width: 100%;
+        }
+
+        .nav__cta {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--teal), var(--teal-muted));
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav__cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav__cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--teal-glow);
+        }
+
+        .nav__cta:hover::before {
+            left: 100%;
+        }
+
+        .nav__mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .nav__mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav__mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav__mobile-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav__mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* Mobile Menu */
+        .mobile-menu { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(10, 22, 40, 0.98); backdrop-filter: blur(24px); z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .mobile-menu.active { opacity: 1; visibility: visible; }
+        .mobile-menu__links { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 0.25rem; }
+        .mobile-menu__link { text-decoration: none; color: var(--cream); font-size: 1.25rem; font-weight: 500; padding: 0.75rem 2rem; display: block; transition: all 0.3s; font-family: var(--font-body); }
+        .mobile-menu__link:hover, .mobile-menu__link--active { color: var(--white); }
+        .mobile-menu__link--ai { color: var(--teal); }
+        .mobile-menu__cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--teal), var(--teal-muted)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; border-radius: 50px; margin-top: 1rem; transition: all 0.3s; }
+
+        /* ===========================================
+           CHATBOT PAGE LAYOUT
+           =========================================== */
+
+        .chatbot-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Grain texture overlay */
+        .chatbot-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Ambient glow */
+        .chatbot-page::after {
+            content: '';
+            position: absolute;
+            top: -15%;
+            right: -10%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .chatbot-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-top: 100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ===========================================
+           CHATBOT CONTAINER
+           =========================================== */
+
+        .chatbot {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* Chatbot Header */
+        .chatbot__header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-lg) 0;
+            border-bottom: 1px solid rgba(20, 184, 166, 0.15);
+            margin-bottom: var(--space-md);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .chatbot__avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--teal), var(--blue-neon));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            animation: neon-flicker 5s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        .chatbot__info h1 {
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 2px;
+        }
+
+        .chatbot__info p {
+            color: var(--teal);
+            font-size: 0.8125rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .chatbot__status {
+            width: 8px;
+            height: 8px;
+            background: var(--teal);
+            border-radius: 50%;
+            animation: pulse-glow 2s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        /* Chat Messages Area */
+        .chatbot__messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: var(--space-md) 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            min-height: 0;
+            scroll-behavior: smooth;
+        }
+
+        .chatbot__messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chatbot__messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .chatbot__messages::-webkit-scrollbar-thumb {
+            background: rgba(20, 184, 166, 0.3);
+            border-radius: 3px;
+        }
+
+        .chatbot__messages::-webkit-scrollbar-thumb:hover {
+            background: rgba(20, 184, 166, 0.5);
+        }
+
+        /* Message Bubbles */
+        .message {
+            max-width: 80%;
+            animation: slideIn 0.35s ease forwards;
+        }
+
+        .message--bot {
+            align-self: flex-start;
+        }
+
+        .message--user {
+            align-self: flex-end;
+        }
+
+        .message__bubble {
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 18px;
+            font-size: 0.9375rem;
+            line-height: 1.65;
+        }
+
+        .message--bot .message__bubble {
+            background: rgba(20, 184, 166, 0.08);
+            border: 1px solid rgba(20, 184, 166, 0.18);
+            color: var(--gray-300);
+            border-bottom-left-radius: 6px;
+        }
+
+        .message--user .message__bubble {
+            background: linear-gradient(135deg, var(--teal), var(--teal-muted));
+            color: var(--white);
+            border-bottom-right-radius: 6px;
+        }
+
+        .message__time {
+            font-size: 0.6875rem;
+            color: var(--gray-600);
+            margin-top: 6px;
+            padding: 0 4px;
+        }
+
+        .message--user .message__time {
+            text-align: right;
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: var(--space-sm) var(--space-md);
+            background: rgba(20, 184, 166, 0.08);
+            border: 1px solid rgba(20, 184, 166, 0.18);
+            border-radius: 18px;
+            border-bottom-left-radius: 6px;
+            width: fit-content;
+            animation: slideIn 0.3s ease forwards;
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: var(--teal);
+            border-radius: 50%;
+            animation: typing-dot 1.4s ease-in-out infinite;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        /* Quick Suggestions */
+        .chatbot__suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            padding: var(--space-sm) 0;
+            animation: slideIn 0.4s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .chatbot__suggestion {
+            padding: 8px 18px;
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 24px;
+            color: var(--blue-neon);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: var(--font-body);
+        }
+
+        .chatbot__suggestion:hover {
+            background: rgba(0, 212, 255, 0.18);
+            border-color: rgba(0, 212, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.15);
+        }
+
+        /* Input Area */
+        .chatbot__input-area {
+            display: flex;
+            gap: var(--space-sm);
+            padding: var(--space-lg) 0;
+            border-top: 1px solid rgba(20, 184, 166, 0.15);
+        }
+
+        .chatbot__input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: var(--space-sm) var(--space-md);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 0.9375rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .chatbot__input::placeholder {
+            color: var(--gray-600);
+        }
+
+        .chatbot__input:focus {
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.12);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .chatbot__send {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--teal), var(--blue-neon));
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .chatbot__send:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 24px var(--teal-glow);
+        }
+
+        .chatbot__send:active {
+            transform: scale(0.97);
+        }
+
+        .chatbot__send svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* Powered by line */
+        .chatbot__powered {
+            text-align: center;
+            padding: var(--space-xs) 0 var(--space-sm);
+            font-size: 0.6875rem;
+            color: var(--gray-600);
+            letter-spacing: 0.03em;
+        }
+
+        /* ===========================================
+           FOOTER (Simplified)
+           =========================================== */
+
+        .footer {
+            background: var(--black);
+            padding: var(--space-xl) 0;
+            border-top: 1px solid rgba(232, 223, 216, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .footer__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        .footer__brand {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .footer__logo-mark {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .footer__logo-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .footer__logo-text {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .footer__links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+            list-style: none;
+        }
+
+        .footer__links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .footer__links a:hover {
+            color: var(--teal);
+        }
+
+        .footer__copyright {
+            color: var(--gray-600);
+            font-size: 0.8125rem;
+        }
+
+        /* ===========================================
+           MOBILE RESPONSIVE
+           =========================================== */
+
+        @media (max-width: 768px) {
+            :root {
+                --space-4xl: 3rem;
+                --space-3xl: 2.5rem;
+                --space-2xl: 2rem;
+                --container-padding: 1.25rem;
+            }
+
+            /* Nav */
+            .header { padding: var(--space-sm) 0; }
+            .nav__links { display: none; }
+            .nav__cta { display: none; }
+            .nav__mobile-toggle { display: flex; }
+            .logo__mark { width: 40px; height: 40px; border-radius: 10px; }
+            .logo__text { font-size: 1rem; }
+
+            /* Chatbot */
+            .chatbot-wrapper {
+                padding-top: 80px;
+            }
+
+            .chatbot__header {
+                padding: var(--space-md) 0;
+            }
+
+            .chatbot__avatar {
+                width: 48px;
+                height: 48px;
+                border-radius: 14px;
+                font-size: 1.25rem;
+            }
+
+            .chatbot__info h1 {
+                font-size: 1.25rem;
+            }
+
+            .message {
+                max-width: 88%;
+            }
+
+            .message__bubble {
+                font-size: 0.875rem;
+                padding: 0.75rem var(--space-sm);
+            }
+
+            .chatbot__suggestion {
+                font-size: 0.75rem;
+                padding: 7px 14px;
+            }
+
+            .chatbot__input {
+                font-size: 0.875rem;
+            }
+
+            .chatbot__send {
+                width: 46px;
+                height: 46px;
+            }
+
+            /* Footer */
+            .footer__inner {
+                flex-direction: column;
+                text-align: center;
+                gap: var(--space-md);
+            }
+
+            .footer__links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: var(--space-sm);
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root { --container-padding: 1rem; }
+            .logo__mark { width: 36px; height: 36px; border-radius: 8px; }
+            .logo__text { font-size: 0.875rem; }
+            .chatbot-wrapper { padding-top: 70px; }
+            .chatbot__info h1 { font-size: 1.1rem; }
+            .chatbot__info p { font-size: 0.75rem; }
+            .mobile-menu__link { font-size: 1.125rem; padding: 0.6rem 2rem; }
+            .chatbot__suggestion { padding: 8px 12px; font-size: 0.7rem; }
+        }
+
+        /* Safe area for notched phones */
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+            .chatbot__input-area { padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
+            .footer { padding-bottom: env(safe-area-inset-bottom); }
+        }
+    </style>
+</head>
+<body>
+    <!-- =========================================
+         NAVIGATION
+         ========================================= -->
+    <header class="header header--dark" id="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <div class="logo__mark"><img src="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png" alt="Heathway Dental Logo"></div>
+                <span class="logo__text">Heathway Dental</span>
+            </a>
+
+            <ul class="nav__links">
+                <li><a href="index.html" class="nav__link">Home</a></li>
+                <li><a href="heathway-services.html" class="nav__link">Services</a></li>
+                <li><a href="heathway-about.html" class="nav__link">About</a></li>
+                <li><a href="heathway-contact.html" class="nav__link">Contact</a></li>
+                <li><a href="heathway-chatbot.html" class="nav__link nav__link--active">Heathway AI</a></li>
+            </ul>
+
+            <a href="tel:02085925030" class="nav__cta">Call 020 8592 5030</a>
+
+            <button class="nav__mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu__links">
+            <li><a href="index.html" class="mobile-menu__link">Home</a></li>
+            <li><a href="heathway-services.html" class="mobile-menu__link">Services</a></li>
+            <li><a href="heathway-about.html" class="mobile-menu__link">About</a></li>
+            <li><a href="heathway-contact.html" class="mobile-menu__link">Contact</a></li>
+            <li><a href="heathway-chatbot.html" class="mobile-menu__link mobile-menu__link--ai mobile-menu__link--active">Heathway AI</a></li>
+        </ul>
+        <a href="tel:02085925030" class="mobile-menu__cta">Call 020 8592 5030</a>
+    </div>
+
+    <!-- =========================================
+         CHATBOT PAGE
+         ========================================= -->
+    <main class="chatbot-page">
+        <div class="chatbot-wrapper">
+            <div class="chatbot">
+                <!-- Chatbot Header -->
+                <div class="chatbot__header">
+                    <div class="chatbot__avatar">&#x1F9B7;</div>
+                    <div class="chatbot__info">
+                        <h1>Heathway AI</h1>
+                        <p><span class="chatbot__status"></span> Online now</p>
+                    </div>
+                </div>
+
+                <!-- Messages Area -->
+                <div class="chatbot__messages" id="chatMessages">
+                    <!-- Initial bot message -->
+                    <div class="message message--bot">
+                        <div class="message__bubble">
+                            Hello! I'm Heathway AI, your dental assistant at The Heathway Dental Surgery. I can help with appointments, services, opening hours, and more. How can I help you today?
+                        </div>
+                        <div class="message__time" id="initialTime"></div>
+                    </div>
+                </div>
+
+                <!-- Quick Suggestions -->
+                <div class="chatbot__suggestions" id="suggestions">
+                    <button class="chatbot__suggestion" data-message="Book appointment">Book appointment</button>
+                    <button class="chatbot__suggestion" data-message="Opening hours">Opening hours</button>
+                    <button class="chatbot__suggestion" data-message="Services">Services</button>
+                    <button class="chatbot__suggestion" data-message="Location">Location</button>
+                    <button class="chatbot__suggestion" data-message="NHS Pricing">NHS Pricing</button>
+                    <button class="chatbot__suggestion" data-message="Emergency">Emergency</button>
+                </div>
+
+                <!-- Input Area -->
+                <div class="chatbot__input-area">
+                    <input type="text" class="chatbot__input" id="chatInput" placeholder="Type your message..." autocomplete="off">
+                    <button class="chatbot__send" id="sendBtn" aria-label="Send message">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="chatbot__powered" id="poweredBy">Heathway AI &mdash; Dental Assistant for The Heathway Dental Surgery</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- =========================================
+         FOOTER (Simplified)
+         ========================================= -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__inner">
+                <div class="footer__brand">
+                    <div class="footer__logo-mark"><img src="BD1D4592-92E2-4AE9-86C2-ADCECC526B78.png" alt="Heathway Dental Logo"></div>
+                    <span class="footer__logo-text">Heathway Dental</span>
+                </div>
+                <ul class="footer__links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="heathway-services.html">Services</a></li>
+                    <li><a href="heathway-about.html">About</a></li>
+                    <li><a href="heathway-contact.html">Contact</a></li>
+                    <li><a href="tel:02085925030">020 8592 5030</a></li>
+                </ul>
+                <p class="footer__copyright">&copy; 2026 The Heathway Dental Surgery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================
+         SCRIPTS
+         ========================================= -->
+    <script>
+        // =============================================
+        // Header scroll effect
+        // =============================================
+        const header = document.getElementById('header');
+
+        function updateHeader() {
+            if (window.scrollY > 100) {
+                header.classList.add('header--scrolled');
+                header.classList.remove('header--dark');
+            } else {
+                header.classList.remove('header--scrolled');
+                header.classList.add('header--dark');
+            }
+        }
+
+        window.addEventListener('scroll', updateHeader, { passive: true });
+        updateHeader();
+
+        // =============================================
+        // Mobile menu
+        // =============================================
+        const mobileToggle = document.querySelector('.nav__mobile-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+            document.querySelectorAll('.mobile-menu__link, .mobile-menu__cta').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // =============================================
+        // Chatbot Logic
+        // =============================================
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const suggestionsContainer = document.getElementById('suggestions');
+
+        // Set initial message time
+        document.getElementById('initialTime').textContent = getTimeString();
+
+        function getTimeString() {
+            const now = new Date();
+            return now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+        }
+
+        // Add a user message to the chat
+        function addUserMessage(text) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message message--user';
+            messageDiv.innerHTML = `
+                <div class="message__bubble">${escapeHtml(text)}</div>
+                <div class="message__time">${getTimeString()}</div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        // Add a bot message to the chat
+        function addBotMessage(text) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message message--bot';
+            messageDiv.innerHTML = `
+                <div class="message__bubble">${text}</div>
+                <div class="message__time">${getTimeString()}</div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        // Show typing indicator
+        function showTyping() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing-indicator';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = '<span></span><span></span><span></span>';
+            chatMessages.appendChild(typingDiv);
+            scrollToBottom();
+        }
+
+        // Remove typing indicator
+        function removeTyping() {
+            const typing = document.getElementById('typingIndicator');
+            if (typing) typing.remove();
+        }
+
+        function scrollToBottom() {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // =============================================
+        // Heathway AI — Advanced Smart Response Engine
+        // The Heathway Dental Surgery, Dagenham
+        // Replaces getFallbackResponse with full
+        // keyword-scoring, context-tracking, fuzzy
+        // matching, sentiment detection, and 60+
+        // topic categories with multiple variants.
+        // =============================================
+        
+        // ── Helpers ──────────────────────────────────
+        const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+        
+        const phone = "<a href='tel:02085925030' style='color:var(--teal);font-weight:600'>020 8592 5030</a>";
+        const phoneInline = "<a href='tel:02085925030' style='color:var(--teal)'>020 8592 5030</a>";
+        
+        // ── Conversation Context ──────────────────────
+        const conversationContext = {
+            lastTopic: null,
+            topicsDiscussed: [],
+            messageCount: 0,
+            sentiment: 'neutral'   // 'positive' | 'neutral' | 'frustrated' | 'anxious' | 'confused'
+        };
+        
+        // ── Levenshtein Distance (fuzzy matching) ─────
+        function levenshtein(a, b) {
+            const m = a.length, n = b.length;
+            const dp = Array.from({ length: m + 1 }, (_, i) => [i]);
+            for (let j = 0; j <= n; j++) dp[0][j] = j;
+            for (let i = 1; i <= m; i++) {
+                for (let j = 1; j <= n; j++) {
+                    dp[i][j] = a[i - 1] === b[j - 1]
+                        ? dp[i - 1][j - 1]
+                        : 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
+                }
+            }
+            return dp[m][n];
+        }
+        
+        // Does a single word approximately match a single-word keyword token?
+        // Partial match: keyword is a prefix/suffix present in the word (or vice versa).
+        // Fuzzy: Levenshtein <= 1 for words up to 8 chars; <= 2 for words >= 9 chars.
+        // Strict: does NOT match short words (< 4 chars) unless exact.
+        function wordMatchesSingleKeyword(word, keyword) {
+            if (word === keyword) return true;
+            // word contains the keyword stem (e.g. "whitening" contains "whiten")
+            if (keyword.length >= 4 && word.includes(keyword)) return true;
+            // keyword contains the word — only valid if word is at least 70% of keyword length
+            // This prevents short words like "tooth" matching long keywords like "toothache"
+            if (word.length >= 4 && keyword.length >= 4 && keyword.includes(word)) {
+                if (word.length >= keyword.length * 0.7) return true;
+            }
+            // Fuzzy typo correction: both tokens must be at least 6 chars
+            if (keyword.length >= 6 && word.length >= 6) {
+                const dist = levenshtein(word, keyword);
+                // Allow dist=1 freely; allow dist=2 only for longer words (>= 9 chars)
+                const maxDist = (keyword.length >= 9 && word.length >= 9) ? 2 : 1;
+                return dist <= maxDist;
+            }
+            return false;
+        }
+        
+        // Score a topic's keyword list against the message.
+        // Multi-word keywords (containing a space) are matched against the full message string.
+        // Single-word keywords are matched against individual word tokens.
+        function scoreKeywords(words, keywordList) {
+            let score = 0;
+            const fullMsg = words.join(' ');
+            for (const kw of keywordList) {
+                const kwNorm = kw.toLowerCase();
+                if (kwNorm.includes(' ')) {
+                    // Multi-word keyword: check if it appears in the full message
+                    if (fullMsg.includes(kwNorm)) {
+                        score++;
+                    }
+                } else {
+                    // Single-word keyword: check against each word token
+                    let matched = false;
+                    for (const w of words) {
+                        if (wordMatchesSingleKeyword(w, kwNorm)) {
+                            matched = true;
+                            break;
+                        }
+                    }
+                    if (matched) score++;
+                }
+            }
+            return score;
+        }
+        
+        // ── Sentiment Detection ───────────────────────
+        function detectSentiment(msg) {
+            if (/\b(urgent|hurting|agony|unbearable|terrified|panic|help me|please help|desperate|worst|never coming back|hate|stupid|useless|rubbish|awful|terrible|pathetic)\b/.test(msg)) {
+                return 'frustrated';
+            }
+            if (/\b(nervous|anxious|worried|afraid|fear|phobia|scared|dread)\b/.test(msg)) {
+                return 'anxious';
+            }
+            if (/\b(amazing|brilliant|great|love|wonderful|excellent|fantastic|perfect|thank|thanks|cheers|appreciate|helpful)\b/.test(msg)) {
+                return 'positive';
+            }
+            if (/^.{0,15}$/.test(msg) && /(\?|huh|what|eh|pardon|sorry|don't get|confused|unclear)/.test(msg)) {
+                return 'confused';
+            }
+            return 'neutral';
+        }
+        
+        // ── Topic Knowledge Base ──────────────────────
+        // Each topic: { id, keywords, weight, priority, responses[] }
+        // weight  — base score multiplier (default 1)
+        // priority — if >0, overrides scoring (checked in order)
+        
+        const topics = [
+        
+            // ════════════════════════════════════════
+            // PRIORITY 10 — Emergencies (always win)
+            // ════════════════════════════════════════
+            {
+                id: 'emergency_severe',
+                priority: 10,
+                keywords: ['emergency','agony','unbearable','excruciating','severe pain','my face is swelling','face swelling','facial swelling','abscess','knocked out my tooth','tooth knocked out','avulsed tooth','broken tooth','jaw broke','blood won\'t stop','can\'t open my mouth','cannot open my mouth','tooth fell out','lost my tooth','swollen face','my tooth is cracked','cracked tooth'],
+                weight: 10,
+                responses: [
+                    "&#x1F6A8; <strong>Dental Emergency</strong><br><br>Please call us immediately:<br><br>&#x1F4DE; "+phone+"<br><br>We'll fit you in as soon as possible. If outside our hours (Mon&ndash;Fri 9am&ndash;5pm) please call <strong>NHS 111</strong> or attend your nearest A&E for facial swelling.<br><br><strong>Quick first aid:</strong><br>&#x2022; <strong>Toothache</strong> &mdash; rinse with warm salt water, take paracetamol or ibuprofen<br>&#x2022; <strong>Knocked-out tooth</strong> &mdash; store in milk or saliva, come immediately (time is critical)<br>&#x2022; <strong>Swelling</strong> &mdash; apply a cold compress to cheek, 10 min on / 10 min off<br>&#x2022; <strong>Bleeding</strong> &mdash; bite firmly on clean gauze or cloth for 20 minutes<br>&#x2022; <strong>Broken tooth</strong> &mdash; save any pieces, rinse gently with water, call us",
+                    "&#x1F6A8; <strong>This sounds urgent!</strong><br><br>Please call us right away on "+phone+". We'll do everything we can to see you today.<br><br>If you are outside our opening hours (Mon&ndash;Fri 9am&ndash;5pm):<br>&#x2022; Call <strong>NHS 111</strong> for dental urgent care guidance<br>&#x2022; For facial swelling affecting your breathing &mdash; call <strong>999</strong> immediately<br><br><strong>While you wait:</strong><br>&#x2022; Paracetamol or ibuprofen for pain (follow packet doses)<br>&#x2022; Cold compress on cheek for swelling<br>&#x2022; Keep a knocked-out tooth in cold milk",
+                    "&#x26A0;&#xFE0F; <strong>Dental Emergency &mdash; Act Now</strong><br><br>Don't wait &mdash; call "+phone+" and explain you have an emergency. We reserve time for urgent cases every day.<br><br><strong>Out of hours?</strong> Call NHS 111 or visit 111.nhs.uk for an urgent dental referral.<br><br><strong>First aid reminders:</strong><br>&#x2022; Pain &mdash; warm salt water rinse + paracetamol/ibuprofen<br>&#x2022; Knocked-out adult tooth &mdash; don't clean it, store in milk, get here fast<br>&#x2022; Abscess swelling &mdash; never squeeze, see us or NHS 111 urgently<br>&#x2022; Persistent bleeding &mdash; firm pressure with gauze for 20 mins"
+                ]
+            },
+            {
+                id: 'toothache',
+                priority: 9,
+                keywords: ['toothache','tooth ache','tooth hurts','teeth hurt','throbbing','aching','pain in tooth','sore tooth','dental pain'],
+                weight: 8,
+                responses: [
+                    "&#x1F915; <strong>Toothache</strong><br><br>Don't suffer &mdash; call us on "+phone+" for an urgent appointment.<br><br><strong>While you wait:</strong><br>&#x2022; Take paracetamol or ibuprofen (follow packet instructions, do not exceed dose)<br>&#x2022; Rinse with warm salt water<br>&#x2022; Avoid very hot, cold, or sweet foods<br>&#x2022; Do <strong>not</strong> place aspirin directly on the gum &mdash; it can cause a chemical burn<br>&#x2022; Clove oil on a cotton bud can provide temporary numbing<br><br>Toothache may indicate decay, a cracked tooth, or infection. The sooner we see you, the simpler the fix.",
+                    "&#x1F915; <strong>Toothache &mdash; Don't Wait</strong><br><br>Toothache rarely goes away on its own and can get worse quickly. Call "+phone+" and we'll fit you in.<br><br><strong>Temporary relief:</strong><br>&#x2022; Ibuprofen (400mg) is often more effective for dental pain than paracetamol, but both are fine<br>&#x2022; Warm salt water rinsing helps reduce bacteria<br>&#x2022; Clove oil (eugenol) is a natural temporary anaesthetic<br>&#x2022; Avoid lying flat &mdash; keeping your head elevated reduces throbbing<br><br>Our team is experienced in treating dental pain quickly and comfortably.",
+                    "&#x1F915; <strong>We're Sorry You're in Pain</strong><br><br>Toothache can be miserable. Here's what to do:<br><br>1. Call "+phone+" &mdash; we'll prioritise urgent pain cases<br>2. Take your normal pain relief (paracetamol and/or ibuprofen)<br>3. Rinse gently with warm salt water<br>4. Avoid triggers (hot/cold/sweet foods)<br><br>If your face is swelling, you have a fever, or pain is spreading &mdash; this is more urgent. Call us or NHS 111 immediately."
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // PRIORITY 8 — Greetings & social
+            // ════════════════════════════════════════
+            {
+                id: 'greeting',
+                priority: 0,
+                keywords: ['hello','hi','hey','hiya','howdy','yo','sup','whats up','what\'s up','wotcha','alright','good morning','good afternoon','good evening','morning','afternoon','evening','oi','greetings','welcome','helo','helo','heya'],
+                weight: 5,
+                responses: [
+                    "Hello! Welcome to Heathway Dental. &#x1F60A; How can I help you today? I can assist with appointments, services, pricing, directions, dental advice &mdash; just ask!",
+                    "Hi there! I'm Heathway AI, your virtual dental assistant for The Heathway Dental Surgery in Dagenham. &#x1F9B7; What can I do for you today?",
+                    "Hey! Good to see you here. Whether it's booking an appointment, finding out our hours, or getting dental advice &mdash; I'm here to help. What would you like to know?",
+                    "Good day! Welcome to The Heathway Dental Surgery. &#x1F60A; Feel free to ask me anything about our services, prices, location, or dental health.",
+                    "Hiya! &#x1F44B; Thanks for reaching out to Heathway Dental. I can help with appointments, NHS charges, treatments, and more. What's on your mind?"
+                ]
+            },
+            {
+                id: 'farewell',
+                priority: 0,
+                keywords: ['bye','goodbye','good bye','see you','see ya','cya','take care','goodnight','gotta go','that\'s all','all done','toodles','cheerio','farewell','ta ta','byebye','bye bye','see you soon','catch you later'],
+                weight: 5,
+                responses: [
+                    "Goodbye! Take care of those teeth &mdash; brush twice, floss once, and keep smiling! &#x1F60A; Come back anytime.",
+                    "See you! Remember we're always here if you need us. Call "+phoneInline+" to book an appointment anytime!",
+                    "Bye for now! Wishing you a bright, healthy smile. &#x1F9B7; Don't forget your next check-up!",
+                    "Take care! And don't put off that dental check-up &mdash; your teeth will thank you! See you soon. &#x1F44B;",
+                    "Cheerio! &#x1F60A; Remember: a healthy mouth is a healthy you. We're here whenever you need us."
+                ]
+            },
+            {
+                id: 'thanks',
+                priority: 0,
+                keywords: ['thanks','thank you','thankyou','ta','cheers','appreciate','thx','ty','much appreciated','thank','grateful','thankful'],
+                weight: 5,
+                responses: [
+                    "You're very welcome! &#x1F60A; Is there anything else I can help with?",
+                    "My pleasure! Happy to help. Anything else you'd like to know about Heathway Dental?",
+                    "No problem at all &mdash; that's exactly what I'm here for! &#x1F9B7; Need anything else?",
+                    "Glad I could help! Let me know if there's anything else on your mind.",
+                    "Always happy to assist! &#x1F60A; Don't hesitate to ask if anything else comes up."
+                ]
+            },
+            {
+                id: 'small_talk',
+                priority: 0,
+                keywords: ['how are you','how\'re you','how r u','how you doing','you good','you ok','how do you do','what\'s good','how\'s it going','how\'s things','how are things','you alright','you okay'],
+                weight: 4,
+                responses: [
+                    "I'm doing great, thank you for asking! &#x1F60A; Always happy to chat about teeth. What can I help you with today?",
+                    "I'm wonderful &mdash; thanks! All systems running smoothly and ready to assist with anything dental. &#x1F9B7; How about you &mdash; what brings you to Heathway Dental today?",
+                    "Couldn't be better! My circuits are fully charged and my dental knowledge is primed. &#x1F916; What would you like to know?"
+                ]
+            },
+            {
+                id: 'who_are_you',
+                priority: 0,
+                keywords: ['who are you','what are you','your name','are you real','are you human','are you a robot','are you a bot','are you ai','what can you do','tell me about yourself','what do you do','are you chatgpt','are you claude','heathway ai'],
+                weight: 4,
+                responses: [
+                    "&#x1F916; I'm <strong>Heathway AI</strong>, the virtual dental assistant for The Heathway Dental Surgery in Dagenham, East London.<br><br>I can help with:<br>&#x2022; Booking appointments &amp; registration<br>&#x2022; Opening hours &amp; location<br>&#x2022; NHS pricing &amp; charges<br>&#x2022; Detailed treatment information<br>&#x2022; Dental advice &amp; oral hygiene tips<br>&#x2022; Emergency guidance<br>&#x2022; Nervous patient support<br>&#x2022; Children's dentistry<br>&#x2022; And much more!<br><br>I'm not a real person, but I'm loaded with real information about our practice. For anything urgent, call "+phoneInline+".",
+                    "&#x1F9B7; I'm <strong>Heathway AI</strong> &mdash; think of me as your always-available dental concierge for The Heathway Dental Surgery!<br><br>I'm a virtual assistant (not a real dentist!), but I can give you detailed information about our services, prices, opening hours, and dental health topics.<br><br>Just type your question naturally &mdash; I understand plain English. Or call us on "+phoneInline+" to speak to a real person.",
+                    "&#x1F916; Great question! I'm the AI chatbot for <strong>The Heathway Dental Surgery</strong>, 276a Heathway, Dagenham.<br><br>I know everything about:<br>&#x2022; Our team, services &amp; treatments<br>&#x2022; NHS &amp; private pricing<br>&#x2022; Appointments &amp; registration<br>&#x2022; Oral health tips<br>&#x2022; Emergencies &amp; aftercare<br><br>I'm available 24/7 &mdash; the real team is available Mon&ndash;Fri 9am&ndash;5pm on "+phoneInline+"."
+                ]
+            },
+            {
+                id: 'compliment',
+                priority: 0,
+                keywords: ['good bot','smart','helpful','amazing','brilliant','great bot','clever','awesome','love you','well done','nice one','legend','fantastic','excellent','perfect','wonderful','impressive','thank god','best chatbot','love this'],
+                weight: 3,
+                responses: [
+                    "Aww, thank you! That honestly means a lot. &#x1F60A; Is there anything else I can help with today?",
+                    "You're too kind! &#x1F9B7; I'm just happy to help make your Heathway experience smooth. What else can I do for you?",
+                    "That's made my digital day! &#x1F916; I'm here to make your Heathway experience as easy as possible. Anything else I can assist with?"
+                ]
+            },
+            {
+                id: 'insult',
+                priority: 0,
+                keywords: ['stupid','dumb','useless','rubbish','terrible','hate this','worst','idiot','suck','awful','pathetic','trash','garbage','shut up','crap','bad bot','hopeless','pointless','waste of time'],
+                weight: 3,
+                responses: [
+                    "I'm sorry you feel that way! &#x1F614; I'm always trying to improve. If I misunderstood your question, please try rephrasing it and I'll do my best to help.<br><br>Or for direct assistance, call our friendly team on "+phone+".",
+                    "I'm sorry I haven't been helpful enough &mdash; that's frustrating and I understand. &#x1F614; Please try rewording your question, or call us directly on "+phone+" and our reception team will be glad to assist.",
+                    "Fair enough! &#x1F614; I don't always get things right. Please give me another chance with a rephrased question, or call "+phoneInline+" to speak to a real person straightaway."
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // APPOINTMENTS & REGISTRATION
+            // ════════════════════════════════════════
+            {
+                id: 'appointment_book',
+                priority: 0,
+                keywords: ['book','appointment','schedule','visit','register','sign up','new patient','first visit','how to book','make an appointment','see the dentist','get seen','come in','walkin','walk-in','drop-in','drop in','join','get registered','first appointment','new to the practice'],
+                weight: 6,
+                responses: [
+                    "&#x1F4C5; <strong>Book an Appointment</strong><br><br>To book, simply call our reception team:<br><br>&#x1F4DE; "+phone+"<br><strong>Mon&ndash;Fri: 9:00am&ndash;1:00pm &amp; 2:00pm&ndash;5:00pm</strong><br><br><strong>New patients:</strong><br>&#x2022; Both NHS and private patients are welcome<br>&#x2022; Please bring photo ID for your first visit<br>&#x2022; Allow 45&ndash;60 minutes for a new patient appointment<br>&#x2022; Bring a list of any medications you take<br><br>We don't currently accept walk-ins, but we do accommodate same-day emergencies where possible.",
+                    "&#x1F4C5; <strong>How to Book</strong><br><br>Call us on "+phone+" during opening hours:<br>&#x2022; Mon&ndash;Fri: 9am&ndash;1pm and 2pm&ndash;5pm<br>&#x2022; Closed 1&ndash;2pm for lunch<br>&#x2022; Weekends and bank holidays: closed<br><br>When you call, our team will:<br>&#x2022; Register you as a new patient if needed<br>&#x2022; Find a convenient appointment time<br>&#x2022; Explain what to bring and what to expect<br><br>Both NHS and private appointments available!",
+                    "&#x1F4C5; <strong>Ready to Book?</strong><br><br>Give us a call on "+phone+" &mdash; our friendly reception team will sort everything out for you.<br><br><strong>Useful to know:</strong><br>&#x2022; New patients are always welcome (NHS &amp; private)<br>&#x2022; For your first visit, bring photo ID and any referral letters<br>&#x2022; Emergency appointments available &mdash; just let us know when you call<br>&#x2022; Ask about our cancellation list if you need an earlier slot"
+                ]
+            },
+            {
+                id: 'appointment_cancel',
+                priority: 0,
+                keywords: ['cancel','cancellation','reschedule','change appointment','move appointment','rearrange','put off','postpone'],
+                weight: 5,
+                responses: [
+                    "To cancel or reschedule your appointment, please call "+phone+" as soon as possible. We really appreciate at least <strong>24 hours' notice</strong> &mdash; it allows us to offer that slot to another patient who may be waiting. Thank you for being considerate! &#x1F60A;",
+                    "Need to cancel or rearrange? No problem &mdash; just call "+phone+" as early as you can. We ask for at least <strong>24 hours' notice</strong> where possible. Our team will be happy to find you an alternative date.",
+                    "Life happens! To reschedule, call "+phone+". We just ask for <strong>24 hours' notice</strong> where possible. If it's a genuine emergency, don't worry &mdash; just let us know when you call."
+                ]
+            },
+            {
+                id: 'waiting_list',
+                priority: 0,
+                keywords: ['waiting list','wait list','cancellation list','sooner','earlier appointment','any sooner','get seen quicker','jump the queue'],
+                weight: 4,
+                responses: [
+                    "Want to be seen sooner? Ask to be placed on our <strong>cancellation list</strong> when you call "+phone+". If a slot opens up due to a cancellation, we'll call you straight away!",
+                    "We have a cancellation list for patients who'd like an earlier appointment. Just mention it when you call "+phone+" and we'll add you on. We'll contact you as soon as a slot becomes available.",
+                    "Ask about our <strong>cancellation list</strong> when you call "+phone+". Slots do open up, and you could get seen much sooner than expected!"
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // OPENING HOURS
+            // ════════════════════════════════════════
+            {
+                id: 'hours',
+                priority: 0,
+                keywords: ['hours','opening hours','opening times','when open','when are you open','close','closed','what time','working hours','lunch','monday','tuesday','wednesday','thursday','friday','saturday','sunday','weekend','bank holiday','open today','are you open','times'],
+                weight: 6,
+                responses: [
+                    "&#x1F553; <strong>Opening Hours</strong><br><br><strong>Monday &ndash; Friday</strong><br>&#x2022; Morning: <strong>9:00am &ndash; 1:00pm</strong><br>&#x2022; Afternoon: <strong>2:00pm &ndash; 5:00pm</strong><br>&#x2022; <em>Closed 1pm&ndash;2pm for lunch</em><br><br><strong>Saturday:</strong> Closed<br><strong>Sunday:</strong> Closed<br><strong>Bank Holidays:</strong> Closed<br><br>&#x1F4DE; Call "+phoneInline+" during opening hours.",
+                    "&#x1F553; We're open <strong>Monday to Friday</strong>, 9am&ndash;1pm and 2pm&ndash;5pm. We close for lunch 1&ndash;2pm each day.<br><br>We're closed on weekends and bank holidays. If you have a dental emergency outside these hours, please call <strong>NHS 111</strong>.<br><br>Call us on "+phoneInline+" during opening hours to book.",
+                    "&#x1F553; <strong>When Can You Visit?</strong><br><br>We're open <strong>Mon&ndash;Fri</strong> 9am&ndash;1pm and 2pm&ndash;5pm (closed 1&ndash;2pm for lunch).<br><br>Closed Saturdays, Sundays, and Bank Holidays.<br><br>Outside hours? Call <strong>NHS 111</strong> for urgent dental care. Or leave a message and we'll call you back next working day."
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // NHS PRICING
+            // ════════════════════════════════════════
+            {
+                id: 'nhs_band1',
+                priority: 0,
+                keywords: ['band 1','band one','nhs band 1','27.40','£27','cheapest band','first band','check up cost','examination cost'],
+                weight: 7,
+                responses: [
+                    "&#x1F4B7; <strong>NHS Band 1 &mdash; &#163;27.40</strong><br><br>Band 1 covers:<br>&#x2022; Full examination &amp; diagnosis<br>&#x2022; Digital X-rays (if clinically needed)<br>&#x2022; Scale &amp; polish (if clinically indicated)<br>&#x2022; Preventive advice &amp; planning<br>&#x2022; Urgent same-band treatment if needed<br><br>This is the standard charge for a routine check-up. One payment covers all Band 1 care in a single course of treatment.",
+                    "&#x1F4B7; <strong>NHS Band 1: &#163;27.40</strong><br><br>This band covers a check-up and anything in that band during one course of treatment, including X-rays and a scale &amp; polish if the dentist thinks it's clinically necessary.<br><br>Remember: if you qualify for free NHS dental care (under 18, pregnant, certain benefits), you won't pay anything!",
+                    "&#x1F4B7; The cheapest NHS band is <strong>Band 1 at &#163;27.40</strong>. It covers your check-up, any X-rays needed, and a scale &amp; polish if clinically indicated.<br><br>One Band 1 charge covers everything at the same clinical level in a single course of treatment.<br><br>Need to know about higher bands? Just ask!"
+                ]
+            },
+            {
+                id: 'nhs_band2',
+                priority: 0,
+                keywords: ['band 2','band two','nhs band 2','75.30','£75','second band','filling cost','root canal cost','extraction cost'],
+                weight: 7,
+                responses: [
+                    "&#x1F4B7; <strong>NHS Band 2 &mdash; &#163;75.30</strong><br><br>Band 2 covers everything in Band 1, plus:<br>&#x2022; Fillings (white or amalgam)<br>&#x2022; Root canal treatment<br>&#x2022; Tooth extractions<br>&#x2022; Gum treatments<br><br>Crucially, <strong>one Band 2 charge covers all the treatment you need</strong> in the same course &mdash; so multiple fillings at the same time still only costs &#163;75.30.",
+                    "&#x1F4B7; <strong>NHS Band 2: &#163;75.30</strong><br><br>This covers everything from Band 1 plus more complex work: fillings, root canals, extractions, and gum treatments.<br><br>One Band 2 charge applies per course of treatment regardless of how many procedures are needed. Great value for multiple treatments!",
+                    "&#x1F4B7; For fillings, root canals, and extractions, the NHS charge is <strong>Band 2: &#163;75.30</strong>. This covers all such treatments needed within one course of treatment &mdash; so if you need two fillings and an extraction, you still only pay &#163;75.30.<br><br>Free if you qualify (under 18, pregnant, benefits, HC2)."
+                ]
+            },
+            {
+                id: 'nhs_band3',
+                priority: 0,
+                keywords: ['band 3','band three','nhs band 3','326.70','£326','third band','crown cost','denture cost','bridge cost','most expensive band'],
+                weight: 7,
+                responses: [
+                    "&#x1F4B7; <strong>NHS Band 3 &mdash; &#163;326.70</strong><br><br>Band 3 covers everything in Bands 1 &amp; 2, plus:<br>&#x2022; Crowns<br>&#x2022; Dentures (full and partial)<br>&#x2022; Bridges<br><br>This includes all lab-made restorations and multiple fitting appointments &mdash; all covered by the single Band 3 charge.",
+                    "&#x1F4B7; <strong>NHS Band 3: &#163;326.70</strong><br><br>The highest NHS band covers crowns, bridges, and dentures &mdash; all the lab-made work. Includes all Bands 1 &amp; 2 treatment as well.<br><br>One charge covers all the treatment in one course &mdash; multiple crowns, for example, all within &#163;326.70 on the NHS.",
+                    "&#x1F4B7; Crowns, bridges, and dentures fall under <strong>NHS Band 3: &#163;326.70</strong>. This single payment covers all the complex restorative work you need in one course of treatment, including all lab fees and fitting appointments.<br><br>Private options are available too &mdash; call "+phoneInline+" for a quote."
+                ]
+            },
+            {
+                id: 'nhs_pricing_overview',
+                priority: 0,
+                keywords: ['nhs','price','cost','how much','fee','charge','band','afford','pay','payment','money','expensive','cheap','rates','tariff','nhs charges','dental charges'],
+                weight: 5,
+                responses: [
+                    "&#x1F4B7; <strong>NHS Dental Charges (2025/26)</strong><br><br><strong>Band 1 &mdash; &#163;27.40</strong><br>Check-up, X-rays, scale &amp; polish, advice<br><br><strong>Band 2 &mdash; &#163;75.30</strong><br>Everything in Band 1, plus fillings, root canal, extractions<br><br><strong>Band 3 &mdash; &#163;326.70</strong><br>Everything in Bands 1 &amp; 2, plus crowns, dentures, bridges<br><br>&#x2705; <strong>FREE for:</strong> under 18s, pregnant women, new mothers (12 months after birth), qualifying benefits, HC2 holders<br><br>We also offer private treatments with individual pricing. Call "+phoneInline+" for a quote.",
+                    "&#x1F4B7; <strong>Our NHS Price Bands</strong><br><br>&#x2022; <strong>Band 1:</strong> &#163;27.40 &mdash; Check-up, X-rays, scale &amp; polish<br>&#x2022; <strong>Band 2:</strong> &#163;75.30 &mdash; Fillings, extractions, root canal<br>&#x2022; <strong>Band 3:</strong> &#163;326.70 &mdash; Crowns, bridges, dentures<br><br>One band charge covers all treatment at that level in one course. Some patients are entitled to <strong>free treatment</strong> &mdash; see exemptions. Ask about private options too.",
+                    "&#x1F4B7; NHS dental treatment is charged in three bands:<br><br>&#x2022; <strong>&#163;27.40</strong> &mdash; Routine check-up (Band 1)<br>&#x2022; <strong>&#163;75.30</strong> &mdash; Fillings, extractions, root canals (Band 2)<br>&#x2022; <strong>&#163;326.70</strong> &mdash; Crowns, bridges, dentures (Band 3)<br><br>Under 18? Pregnant? On benefits? You could get treatment for <strong>free</strong>. Ask us when you call "+phoneInline+"."
+                ]
+            },
+            {
+                id: 'nhs_free',
+                priority: 0,
+                keywords: ['free dental','exempt','exemption','hc2','hc3','maternity exemption','free nhs','who gets free','qualify for free','free treatment','no charge','dont pay','don\'t have to pay','free check','free dentist'],
+                weight: 6,
+                responses: [
+                    "&#x2705; <strong>Free NHS Dental Care</strong><br><br>You may be entitled to completely free NHS treatment if you are:<br>&#x2022; <strong>Under 18</strong> (or under 19 in full-time education)<br>&#x2022; <strong>Pregnant</strong> or had a baby in the <strong>last 12 months</strong><br>&#x2022; Receiving <strong>Universal Credit</strong>, Income Support, income-related JSA, income-related ESA, or Pension Credit (Guarantee Credit)<br>&#x2022; Named on an <strong>NHS HC2 certificate</strong> (full exemption)<br>&#x2022; An NHS hospital inpatient<br>&#x2022; A war pension holder (for relevant treatment)<br><br>Please bring <strong>proof of exemption</strong> to your appointment. Ask reception if you're unsure!",
+                    "&#x2705; <strong>Who Qualifies for Free NHS Dentistry?</strong><br><br>&#x2022; Children under 18 (or 19 in full-time education)<br>&#x2022; Pregnant women &amp; new mothers up to 12 months after birth<br>&#x2022; People on qualifying benefits (Universal Credit, JSA, ESA, Pension Credit, Income Support)<br>&#x2022; NHS Low Income Scheme &mdash; HC2 certificate (full), HC3 (partial)<br><br>If you're on a low income but not on benefits, you may still qualify through the <a href='https://www.nhsbsa.nhs.uk/exemptions' target='_blank' style='color:var(--teal)'>NHS Low Income Scheme</a>. Call "+phoneInline+" and we'll advise you.",
+                    "&#x2705; Several groups receive <strong>free NHS dental treatment</strong>:<br><br>&#x2022; Under-18s (and under-19s in full-time education)<br>&#x2022; Pregnant women and those who gave birth in the last 12 months (get a MatEx certificate from your midwife)<br>&#x2022; Benefits claimants (Universal Credit, JSA, ESA, etc.)<br>&#x2022; HC2 certificate holders<br><br>Not sure if you qualify? Call us on "+phoneInline+" and we'll help you work it out!"
+                ]
+            },
+            {
+                id: 'payment_options',
+                priority: 0,
+                keywords: ['private','payment plan','finance','instalment','spread the cost','card','cash','accept payment','pay how','payment options','payment methods','credit card','debit card','direct debit','how to pay'],
+                weight: 5,
+                responses: [
+                    "&#x1F4B3; <strong>Payment Options</strong><br><br>&#x2022; <strong>NHS treatments:</strong> Standard band charges (Band 1: &#163;27.40, Band 2: &#163;75.30, Band 3: &#163;326.70)<br>&#x2022; <strong>Private treatments:</strong> Priced individually at your consultation<br>&#x2022; We accept <strong>cash</strong> and <strong>debit / credit cards</strong><br>&#x2022; <strong>Payment plans</strong> available for larger private treatments &mdash; ask at reception<br><br>Call "+phoneInline+" for pricing queries on specific private treatments.",
+                    "&#x1F4B3; We accept <strong>cash and all major debit/credit cards</strong>. NHS charges are fixed (Band 1&ndash;3). For private treatments, we can provide a full quote at your consultation.<br><br>For larger private treatments, we can discuss <strong>flexible payment plans</strong> to spread the cost. Call "+phoneInline+" to find out more.",
+                    "&#x1F4B3; <strong>How to Pay</strong><br><br>&#x2022; Cash or card accepted (all major debit/credit cards)<br>&#x2022; NHS charges are the same everywhere (set by the government)<br>&#x2022; Private treatment costs vary &mdash; we provide detailed quotes<br>&#x2022; Payment plans available for larger private work<br><br>No hidden fees. No surprises. We explain all costs before any treatment begins."
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // LOCATION & TRANSPORT
+            // ════════════════════════════════════════
+            {
+                id: 'location',
+                priority: 0,
+                keywords: ['location','address','where are you','directions','find you','map','postcode','post code','get there','parking','station','bus','tube','underground','near','how to get','satnav','sat nav','dagenham','heathway','rm10','transport','travel'],
+                weight: 6,
+                responses: [
+                    "&#x1F4CD; <strong>Our Location</strong><br><br><strong>The Heathway Dental Surgery</strong><br>276a Heathway, Dagenham<br>Essex, RM10 8QS<br><br>&#x1F687; <strong>Tube:</strong> Dagenham Heathway station (District Line) &mdash; just a <strong>3-minute walk</strong><br>&#x1F68C; <strong>Bus:</strong> Routes <strong>173, 174, 175</strong> stop nearby on Heathway<br>&#x1F697; <strong>Parking:</strong> Street parking available along Heathway<br>&#x1F697; <strong>Driving:</strong> Nearest postcode: RM10 8QS (use Google Maps for directions)<br><br><a href='https://maps.google.com/?q=276a+Heathway+Dagenham+RM10+8QS' target='_blank' style='color:var(--teal)'>Open in Google Maps &#x2197;</a>",
+                    "&#x1F4CD; We're at <strong>276a Heathway, Dagenham, Essex, RM10 8QS</strong>.<br><br><strong>Getting here:</strong><br>&#x2022; <strong>Tube:</strong> Dagenham Heathway (District Line) &mdash; 3 min walk<br>&#x2022; <strong>Bus:</strong> 173, 174, or 175 along Heathway<br>&#x2022; <strong>Car:</strong> Street parking on Heathway &mdash; check signs for restrictions<br><br><a href='https://maps.google.com/?q=276a+Heathway+Dagenham+RM10+8QS' target='_blank' style='color:var(--teal)'>Open Google Maps &#x2197;</a>",
+                    "&#x1F4CD; <strong>Address:</strong> 276a Heathway, Dagenham, Essex, RM10 8QS<br><br><strong>Transport links:</strong><br>&#x2022; Dagenham Heathway tube station (District Line) is 3 minutes on foot<br>&#x2022; Buses 173, 174, 175 stop right on Heathway<br>&#x2022; Street parking available (check signs)<br><br><a href='https://maps.google.com/?q=276a+Heathway+Dagenham+RM10+8QS' target='_blank' style='color:var(--teal)'>View on Google Maps &#x2197;</a>"
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // TREATMENTS — Dentures
+            // ════════════════════════════════════════
+            {
+                id: 'dentures',
+                priority: 0,
+                keywords: ['denture','dentures','false teeth','missing teeth','no teeth','lost teeth','replace teeth','replacement teeth','partial denture','full denture','teeth replacement'],
+                weight: 6,
+                responses: [
+                    "&#x1F9B7; <strong>Dentures</strong><br><br>We provide comfortable, natural-looking dentures to replace missing teeth:<br><br>&#x2022; <strong>Full dentures:</strong> Replace all teeth in upper or lower jaw<br>&#x2022; <strong>Partial dentures:</strong> Fill gaps while keeping your natural teeth<br>&#x2022; <strong>NHS Band 3:</strong> &#163;326.70 covers dentures on the NHS<br>&#x2022; <strong>Private options:</strong> Premium materials for a more natural look<br>&#x2022; Adjustments and repairs available<br><br>Call "+phoneInline+" to book a consultation.",
+                    "&#x1F9B7; <strong>Dentures at Heathway Dental</strong><br><br>Missing teeth? Dentures can restore your smile and help you eat comfortably again.<br><br>&#x2022; Full and partial dentures available<br>&#x2022; Available on the NHS (Band 3: &#163;326.70)<br>&#x2022; Private dentures with premium materials also offered<br>&#x2022; We provide adjustments, relines, and repairs<br><br>Book a denture consultation: "+phoneInline,
+                    "&#x1F9B7; <strong>Replace Missing Teeth</strong><br><br>Don't let missing teeth hold you back. Our denture options include:<br><br>&#x2022; Full dentures for complete tooth loss<br>&#x2022; Partial dentures to fill gaps<br>&#x2022; NHS and private options available<br>&#x2022; Ongoing adjustments to ensure comfort<br><br>Call "+phoneInline+" to discuss which option suits you best."
+                ]
+            },
+            {
+                id: 'whitening',
+                priority: 0,
+                keywords: ['whitening','whiten','whiter teeth','bleach teeth','teeth whitening','bright teeth','brighter smile','white smile','tray whitening','laser whitening','home whitening','teeth bleach'],
+                weight: 6,
+                responses: [
+                    "We don't currently offer teeth whitening at Heathway Dental. We focus on NHS general and restorative dentistry.<br><br>We can help with: check-ups, fillings, root canal treatment, crowns, bridges, dentures, extractions, and gum disease treatment.<br><br>Call "+phoneInline+" for any of these treatments."
+                ]
+            },
+            {
+                id: 'veneers',
+                priority: 0,
+                keywords: ['veneer','veneers','porcelain veneer','composite veneer','dental veneer','tooth veneer','bonding','dental bonding','tooth bonding'],
+                weight: 6,
+                responses: [
+                    "We don't currently offer veneers or cosmetic bonding at Heathway Dental.<br><br>For damaged or discoloured teeth, we do offer <strong>crowns</strong> and <strong>bridges</strong> which can restore both function and appearance. These are available on the NHS (Band 3: &#163;326.70).<br><br>Call "+phoneInline+" to discuss your options."
+                ]
+            },
+            {
+                id: 'cosmetic_enquiry',
+                priority: 0,
+                keywords: ['smile makeover','improve my smile','better teeth','hate my teeth','embarrassed about teeth','cosmetic dentistry','cosmetic treatment','want a new smile','transform smile','smile design','dream smile','confident smile'],
+                weight: 5,
+                responses: [
+                    "We're an <strong>NHS general and restorative dental practice</strong> &mdash; we don't offer cosmetic treatments like whitening or veneers.<br><br>However, we can still help improve your smile with the treatments we do offer:<br><br>&#x2022; <strong>Crowns</strong> &mdash; rebuild and reshape damaged teeth<br>&#x2022; <strong>Bridges</strong> &mdash; replace missing teeth<br>&#x2022; <strong>Dentures</strong> &mdash; full or partial tooth replacement<br>&#x2022; <strong>Fillings</strong> &mdash; repair decay<br>&#x2022; <strong>Scale &amp; polish</strong> &mdash; professional cleaning<br><br>Call "+phoneInline+" to book a check-up and we'll advise on how we can help."
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // TREATMENTS — Restorative
+            // ════════════════════════════════════════
+            {
+                id: 'fillings',
+                priority: 0,
+                keywords: ['filling','fillings','amalgam','composite','white filling','silver filling','tooth filled','fill a tooth','cavity filling','need a filling'],
+                weight: 6,
+                responses: [
+                    "&#x1F9B7; <strong>Dental Fillings</strong><br><br>We offer both NHS and private filling options:<br><br>&#x2022; <strong>Composite (white/tooth-coloured):</strong> Virtually invisible, bonds directly to tooth<br>&#x2022; <strong>Amalgam (silver):</strong> Highly durable, cost-effective &mdash; NHS standard option<br><br>Most fillings are completed in a single visit under local anaesthetic &mdash; completely pain-free. Covered by <strong>NHS Band 2: &#163;75.30</strong>.",
+                    "&#x1F9B7; <strong>Fillings</strong><br><br>A filling repairs a cavity and stops further decay:<br><br>&#x2022; White composite fillings blend seamlessly with your tooth<br>&#x2022; Amalgam fillings are very durable for back teeth<br>&#x2022; Treatment is quick, painless with local anaesthetic<br>&#x2022; NHS Band 2 (&#163;75.30) covers fillings &mdash; one charge covers multiple fillings in the same course<br><br>Book now: "+phoneInline,
+                    "&#x1F9B7; <strong>Do You Need a Filling?</strong><br><br>Signs you might: sensitivity, toothache, visible hole, rough edge. We can confirm at a check-up.<br><br>&#x2022; Local anaesthetic ensures no pain during treatment<br>&#x2022; White (composite) or silver (amalgam) options<br>&#x2022; Most done in 30&ndash;45 minutes<br>&#x2022; NHS: &#163;75.30 (Band 2)<br><br>Don't leave cavities &mdash; they only get bigger. Book: "+phoneInline
+                ]
+            },
+            {
+                id: 'crowns',
+                priority: 0,
+                keywords: ['crown','crowns','dental crown','tooth cap','porcelain crown','need a crown','cracked tooth crown','crown after root canal'],
+                weight: 6,
+                responses: [
+                    "&#x1F451; <strong>Dental Crowns</strong><br><br>A crown (cap) fits over a damaged tooth, restoring its shape, strength, and appearance.<br><br>&#x2022; Made from porcelain for a completely natural look<br>&#x2022; Protects weakened, cracked, or root-treated teeth<br>&#x2022; Usually takes 2 appointments (preparation + fitting)<br>&#x2022; Can last <strong>15+ years</strong> with good care<br>&#x2022; NHS: <strong>Band 3 (&#163;326.70)</strong> | Private options available<br><br>Call "+phoneInline+" to book a crown assessment.",
+                    "&#x1F451; <strong>What Is a Dental Crown?</strong><br><br>A crown completely covers a tooth, giving it back its shape and protecting it from further damage.<br><br>When you might need one:<br>&#x2022; After root canal treatment<br>&#x2022; Large fillings that weaken the tooth<br>&#x2022; Cracked or broken teeth<br>&#x2022; Heavily worn teeth<br><br>NHS: &#163;326.70 (Band 3). Private ceramic options available. Call "+phoneInline+".",
+                    "&#x1F451; <strong>Dental Crowns</strong><br><br>Crowns are one of the most reliable ways to save and protect a damaged tooth.<br><br>&#x2022; Natural-looking porcelain crowns<br>&#x2022; 2 visits &mdash; temporary crown on day 1, permanent on day 2<br>&#x2022; Extremely durable &mdash; 15+ years typical lifespan<br>&#x2022; NHS Band 3: &#163;326.70<br><br>Ask us about the difference between NHS and private crowns at your consultation."
+                ]
+            },
+            {
+                id: 'bridges',
+                priority: 0,
+                keywords: ['bridge','bridges','dental bridge','tooth bridge','replace missing tooth','fixed replacement','gap in teeth'],
+                weight: 6,
+                responses: [
+                    "&#x1F9B7; <strong>Dental Bridges</strong><br><br>A bridge replaces one or more missing teeth by anchoring to adjacent teeth.<br><br>&#x2022; Fixed in place &mdash; no removing like dentures<br>&#x2022; Looks and functions like natural teeth<br>&#x2022; Restores your smile, bite, and speech<br>&#x2022; Usually 2&ndash;3 visits<br>&#x2022; NHS Band 3 (&#163;326.70) or private options<br><br>Book a consultation: "+phoneInline,
+                    "&#x1F9B7; <strong>Bridges</strong><br><br>If you're missing one or more teeth, a bridge could be the perfect solution:<br><br>&#x2022; Permanently fixed &mdash; feels and looks natural<br>&#x2022; Adjacent teeth are crowned to support the bridge<br>&#x2022; Prevents remaining teeth from shifting<br>&#x2022; NHS Band 3 or private<br><br>We'll advise whether a bridge or denture is best for you. Call "+phoneInline+".",
+                    "&#x1F9B7; <strong>What Is a Dental Bridge?</strong><br><br>A bridge 'bridges' the gap left by missing teeth, supported by crowns on neighbouring teeth.<br><br>&#x2022; No gaps in your smile<br>&#x2022; Fixed &mdash; not removable<br>&#x2022; 2&ndash;3 appointments to complete<br>&#x2022; NHS or private &mdash; we'll explain the options<br><br>Call "+phoneInline+" to find out if a bridge is right for you."
+                ]
+            },
+            {
+                id: 'dentures',
+                priority: 0,
+                keywords: ['denture','dentures','false teeth','full denture','partial denture','denture fitting','new dentures','ill-fitting dentures','denture repair'],
+                weight: 6,
+                responses: [
+                    "&#x1F9B7; <strong>Dentures</strong><br><br>Modern dentures are more comfortable and natural-looking than ever:<br><br>&#x2022; <strong>Full dentures:</strong> Replace all teeth in upper or lower jaw<br>&#x2022; <strong>Partial dentures:</strong> Fill gaps between remaining natural teeth<br>&#x2022; Custom-made from impressions of your mouth<br>&#x2022; Takes a few appointments to get the perfect fit<br>&#x2022; NHS Band 3 (&#163;326.70) or private options<br><br>Call "+phoneInline+" to discuss.",
+                    "&#x1F9B7; <strong>Dental Dentures</strong><br><br>Whether you need full or partial dentures, we make them comfortable and natural-looking:<br><br>&#x2022; Custom impressions for a precise fit<br>&#x2022; Multiple try-in appointments to get it right<br>&#x2022; Can be adjusted over time as your mouth changes<br>&#x2022; NHS: &#163;326.70 | Private options: better materials, more natural appearance<br><br>Call "+phoneInline+" and we'll guide you through the process.",
+                    "&#x1F9B7; <strong>Considering Dentures?</strong><br><br>We understand this can feel like a big step. Our team will make the process as comfortable as possible:<br><br>&#x2022; Realistic-looking, well-fitting modern dentures<br>&#x2022; Full and partial styles available<br>&#x2022; Adjustments and relines for ongoing comfort<br>&#x2022; NHS: &#163;326.70 per course of treatment<br><br>Call "+phoneInline+" to arrange a denture consultation."
+                ]
+            },
+            {
+                id: 'implants',
+                priority: 0,
+                keywords: ['implant','implants','dental implant','tooth implant','permanent tooth','titanium implant','implant crown'],
+                weight: 6,
+                responses: [
+                    "We don't currently offer dental implants at Heathway Dental.<br><br>For replacing missing teeth, we do offer:<br><br>&#x2022; <strong>Bridges</strong> &mdash; fixed replacements anchored to adjacent teeth<br>&#x2022; <strong>Dentures</strong> &mdash; full or partial, NHS or private<br><br>Both are available on NHS Band 3 (&#163;326.70). Call "+phoneInline+" to discuss the best option for you."
+                ]
+            },
+            {
+                id: 'root_canal',
+                priority: 0,
+                keywords: ['root canal','endodontic','root treatment','infected tooth','nerve removed','root filling','tooth nerve','pulp','pulpitis'],
+                weight: 6,
+                responses: [
+                    "&#x1F9B7; <strong>Root Canal Treatment</strong><br><br>Root canal saves an infected or damaged tooth instead of extracting it:<br><br>&#x2022; Removes infected pulp (nerve tissue) from inside the tooth<br>&#x2022; Modern techniques make it <strong>no more uncomfortable than a filling</strong><br>&#x2022; Usually 1&ndash;2 visits<br>&#x2022; NHS Band 2 (&#163;75.30)<br>&#x2022; Tooth is usually crowned afterwards for long-term protection<br><br>Don't delay &mdash; early treatment prevents complications! Call "+phoneInline+".",
+                    "&#x1F9B7; <strong>Root Canal &mdash; Don't Be Afraid!</strong><br><br>Root canal has a bad reputation, but modern dentistry has changed that:<br><br>&#x2022; Carried out under local anaesthetic &mdash; you won't feel the treatment<br>&#x2022; Saves your natural tooth (better long-term than extraction)<br>&#x2022; Stops the infection spreading<br>&#x2022; NHS: &#163;75.30 (Band 2)<br>&#x2022; Quick recovery &mdash; back to normal in a day or two<br><br>Call "+phoneInline+" if you think you might need one.",
+                    "&#x1F9B7; <strong>What Is Root Canal?</strong><br><br>When the nerve inside a tooth gets infected, root canal removes the infection and seals the tooth.<br><br>&#x2022; Step 1: Local anaesthetic (completely numbs the area)<br>&#x2022; Step 2: Infected pulp removed through tiny access hole<br>&#x2022; Step 3: Canals cleaned, shaped, and filled with gutta-percha<br>&#x2022; Step 4: Tooth crowned to protect it<br><br>NHS: &#163;75.30. The alternative (extraction) often costs more in the long run. Don't wait &mdash; call "+phoneInline+"."
+                ]
+            },
+            {
+                id: 'extractions',
+                priority: 0,
+                keywords: ['extraction','extract','pull tooth','tooth out','remove tooth','tooth removed','pulling a tooth','wisdom tooth','wisdom teeth','wisdom tooth removal','tooth pulling'],
+                weight: 6,
+                responses: [
+                    "&#x1F9B7; <strong>Tooth Extractions</strong><br><br>Sometimes a tooth needs to be removed &mdash; we make the process as comfortable as possible:<br><br>&#x2022; Local anaesthetic means you won't feel pain &mdash; just pressure<br>&#x2022; Includes wisdom tooth extractions<br>&#x2022; We always discuss replacement options afterwards<br>&#x2022; NHS Band 2 (&#163;75.30)<br><br><strong>Aftercare:</strong> Bite on gauze for 20 min, avoid hot drinks and smoking for 48 hours, eat soft foods, rinse with warm salt water from 24 hours post-extraction.<br><br>Call "+phoneInline+" if you're concerned.",
+                    "&#x1F9B7; <strong>Extractions</strong><br><br>We only extract a tooth when it's the best option for your long-term health. When we do:<br><br>&#x2022; Local anaesthetic ensures a pain-free procedure<br>&#x2022; Most extractions take just a few minutes<br>&#x2022; Wisdom teeth may take slightly longer<br>&#x2022; NHS: &#163;75.30 (Band 2)<br><br>After the extraction we'll discuss how to replace the tooth if needed (bridge or denture). Call "+phoneInline+".",
+                    "&#x1F9B7; <strong>Do You Need a Tooth Removed?</strong><br><br>Don't worry &mdash; extractions are very routine. Here's what to expect:<br><br>&#x2022; The area is thoroughly numbed before anything happens<br>&#x2022; You'll feel some pressure but no pain<br>&#x2022; The socket heals within 1&ndash;2 weeks<br>&#x2022; NHS Band 2: &#163;75.30<br><br>Recovery tips: soft foods, no smoking, warm salt water rinses from day 2. Call "+phoneInline+" with any concerns."
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // TREATMENTS — Orthodontics
+            // ════════════════════════════════════════
+            {
+                id: 'orthodontics',
+                priority: 0,
+                keywords: ['brace','braces','invisalign','straight teeth','teeth straightening','orthodontic','orthodontics','clear aligners','aligners','teeth alignment','straighten'],
+                weight: 6,
+                responses: [
+                    "We don't currently offer orthodontic treatment (braces or Invisalign) at Heathway Dental.<br><br>If you need teeth straightening, your dentist can assess your teeth and refer you to a specialist orthodontist if appropriate.<br><br>Call "+phoneInline+" to book a check-up and discuss your options."
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // TREATMENTS — Preventive
+            // ════════════════════════════════════════
+            {
+                id: 'scale_polish',
+                priority: 0,
+                keywords: ['scale and polish','scale polish','hygienist','hygiene','teeth cleaning','clean teeth','professional cleaning','deep clean','plaque removal','tartar removal','stain removal','hygiene appointment'],
+                weight: 5,
+                responses: [
+                    "&#x2728; <strong>Scale &amp; Polish (Hygiene)</strong><br><br>Professional cleaning keeps your mouth at its healthiest:<br><br>&#x2022; Removes plaque and hardened tartar that brushing can't reach<br>&#x2022; Polishes away surface stains (tea, coffee, red wine)<br>&#x2022; Prevents and treats gum disease<br>&#x2022; Freshens breath significantly<br>&#x2022; Recommended every 6 months<br>&#x2022; Included in NHS Band 1 (&#163;27.40) if clinically indicated<br><br>Book a hygiene appointment: "+phoneInline,
+                    "&#x2728; <strong>Professional Teeth Cleaning</strong><br><br>Even the most diligent brusher and flosser can't remove everything &mdash; that's what our hygiene visits are for:<br><br>&#x2022; Ultrasonic scaler removes hard tartar painlessly<br>&#x2022; Polish removes surface stains<br>&#x2022; Gum check included<br>&#x2022; Personalised oral hygiene tips<br>&#x2022; NHS: included in Band 1 when indicated<br><br>Call "+phoneInline+" to book.",
+                    "&#x2728; <strong>Scale &amp; Polish</strong><br><br>A hygiene appointment every 6 months is one of the best investments in your dental health:<br><br>&#x2022; Prevents gum disease &mdash; the main cause of tooth loss in adults<br>&#x2022; Removes calculus (hardened plaque) before it causes damage<br>&#x2022; Your mouth will feel incredibly fresh afterwards<br>&#x2022; NHS Band 1 includes this if clinically needed<br><br>Call "+phoneInline+" to book."
+                ]
+            },
+            {
+                id: 'checkup',
+                priority: 0,
+                keywords: ['check-up','checkup','check up','examination','exam','routine appointment','dental exam','annual check','regular appointment','dental check'],
+                weight: 5,
+                responses: [
+                    "&#x2705; <strong>Dental Check-ups</strong><br><br>Regular check-ups are the cornerstone of good dental health:<br><br>&#x2022; Thorough examination of teeth, gums, and soft tissues<br>&#x2022; Digital X-rays if needed<br>&#x2022; Oral cancer screening<br>&#x2022; Scale &amp; polish if clinically indicated<br>&#x2022; Personalised home care advice<br>&#x2022; NHS Band 1: <strong>&#163;27.40</strong> (free for exempt patients)<br><br>We recommend check-ups every 6&ndash;12 months. Book yours: "+phoneInline,
+                    "&#x2705; <strong>Book a Check-up</strong><br><br>It's the most important dental appointment you can make! At your check-up we:<br><br>&#x2022; Examine every tooth for decay<br>&#x2022; Check your gums for disease<br>&#x2022; Screen for oral cancer<br>&#x2022; Review your X-rays<br>&#x2022; Give you personalised advice<br><br>NHS Band 1: &#163;27.40. Don't wait until something hurts &mdash; early problems are much easier (and cheaper!) to treat. Call "+phoneInline+".",
+                    "&#x2705; <strong>Why Regular Check-ups Matter</strong><br><br>&#x2022; Catch decay early when it's still a small filling, not a crown<br>&#x2022; Detect gum disease before it causes tooth loss<br>&#x2022; Oral cancer detected early is highly treatable<br>&#x2022; Keep your NHS registration active<br>&#x2022; Cost: &#163;27.40 (Band 1) &mdash; free if exempt<br><br>Every 6&ndash;12 months is ideal. Call "+phoneInline+" to book."
+                ]
+            },
+            {
+                id: 'xrays',
+                priority: 0,
+                keywords: ['x-ray','x ray','xray','radiograph','dental x-ray','bitewing','panoramic','radiation','dental scan'],
+                weight: 5,
+                responses: [
+                    "&#x1F4F7; <strong>Dental X-Rays</strong><br><br>X-rays are essential for detecting problems invisible to the naked eye:<br><br>&#x2022; Decay hiding between teeth<br>&#x2022; Bone loss from gum disease<br>&#x2022; Impacted wisdom teeth<br>&#x2022; Infections at the root<br>&#x2022; Hidden cysts or tumours<br><br>Our digital X-rays use <strong>minimal radiation</strong> &mdash; far less than a chest X-ray &mdash; and are completely safe. Included in NHS Band 1 check-ups when clinically needed.",
+                    "&#x1F4F7; <strong>Are Dental X-Rays Safe?</strong><br><br>Absolutely. Modern digital X-rays deliver extremely low doses of radiation &mdash; about equivalent to a short flight.<br><br>They're essential for diagnosis:<br>&#x2022; Spotting cavities early<br>&#x2022; Monitoring bone levels<br>&#x2022; Planning extractions and treatments<br>&#x2022; Checking wisdom tooth position<br><br>Included in NHS Band 1 when clinically indicated.",
+                    "&#x1F4F7; <strong>Dental X-Rays</strong><br><br>We take X-rays when clinically needed &mdash; not routinely for every visit. When we do take them:<br><br>&#x2022; Digital sensors for minimal radiation<br>&#x2022; Results are instant &mdash; we discuss them with you immediately<br>&#x2022; Different types: bitewing (decay), periapical (roots), panoramic (full jaw)<br><br>They're an essential tool for accurate diagnosis. Included in NHS Band 1."
+                ]
+            },
+            {
+                id: 'fluoride',
+                priority: 0,
+                keywords: ['fluoride','fluoride treatment','fluoride varnish','fluoride toothpaste','fluoride for kids','fluoride application'],
+                weight: 4,
+                responses: [
+                    "&#x1F9B7; <strong>Fluoride Treatment</strong><br><br>Fluoride is nature's cavity fighter! It strengthens tooth enamel and reverses early decay.<br><br>&#x2022; Fluoride varnish applied at check-ups (especially for children)<br>&#x2022; High-fluoride toothpaste available on prescription for high-risk patients<br>&#x2022; Safe for all ages in professional doses<br>&#x2022; Particularly beneficial for: children, elderly patients, high decay risk<br><br>Ask your dentist about fluoride at your next visit!",
+                    "&#x1F9B7; <strong>Fluoride &mdash; Why It Matters</strong><br><br>Fluoride is one of the most effective preventive tools in dentistry:<br><br>&#x2022; Remineralises early decay before it becomes a cavity<br>&#x2022; Makes enamel more resistant to acid attack<br>&#x2022; Safe when used professionally<br>&#x2022; Varnish applied in seconds at your check-up<br><br>Adults can benefit too, not just children! Speak to Dr Kaushal at your next appointment.",
+                    "&#x1F9B7; <strong>Fluoride Treatments</strong><br><br>We offer professional fluoride varnish and can prescribe high-fluoride toothpaste for at-risk patients. It's one of the most cost-effective ways to prevent decay.<br><br>Especially recommended for:<br>&#x2022; Children (from first tooth onwards)<br>&#x2022; Patients with high decay history<br>&#x2022; Dry mouth sufferers<br>&#x2022; Orthodontic patients<br><br>Ask at your next check-up!"
+                ]
+            },
+            {
+                id: 'sealants',
+                priority: 0,
+                keywords: ['sealant','sealants','fissure sealant','fissure seal','protective coating','back teeth protection','molar protection'],
+                weight: 4,
+                responses: [
+                    "&#x1F9B7; <strong>Fissure Sealants</strong><br><br>Fissure sealants protect the grooves of back teeth where decay most often starts:<br><br>&#x2022; Thin plastic coating applied painlessly to biting surfaces<br>&#x2022; No drilling required<br>&#x2022; Quick to apply &mdash; takes just a few minutes<br>&#x2022; Can last several years<br>&#x2022; Especially recommended for children when adult molars come through<br><br>Ask about sealants at your child's next check-up!",
+                    "&#x1F9B7; <strong>Fissure Sealants &mdash; Cavity Prevention</strong><br><br>The deep grooves of back teeth are hard to clean and prone to decay. Sealants solve this:<br><br>&#x2022; Painless, quick, no anaesthetic needed<br>&#x2022; Seals off the fissures so bacteria can't get in<br>&#x2022; Ideal for children aged 6&ndash;14 when molars erupt<br>&#x2022; Adults can benefit too<br>&#x2022; Very cost-effective prevention<br><br>Call "+phoneInline+" to ask about sealants.",
+                    "&#x1F9B7; <strong>What Are Fissure Sealants?</strong><br><br>Think of them as a shield for your back teeth:<br><br>&#x2022; Applied like a varnish &mdash; completely painless<br>&#x2022; Bonds into the grooves of molars<br>&#x2022; Prevents food and bacteria getting into crevices<br>&#x2022; Dramatically reduces decay risk in molars<br>&#x2022; Best applied as soon as adult molars appear (around age 6&ndash;7)<br><br>Ask your dentist at the next check-up!"
+                ]
+            },
+            {
+                id: 'mouthguards',
+                priority: 0,
+                keywords: ['mouthguard','gum shield','sports guard','sports mouthguard','protect teeth sport','rugby mouthguard','boxing mouthguard','hockey mouthguard','contact sport teeth'],
+                weight: 5,
+                responses: [
+                    "&#x1F3C6; <strong>Custom Sports Mouthguards</strong><br><br>Custom mouthguards offer far superior protection to shop-bought ones:<br><br>&#x2022; Made from impressions of your own teeth &mdash; perfect fit<br>&#x2022; More comfortable &mdash; you can even talk in them<br>&#x2022; Much better shock absorption<br>&#x2022; Essential for contact sports: rugby, boxing, martial arts, hockey<br>&#x2022; Available in custom colours and designs<br><br>Call "+phoneInline+" to arrange a fitting.",
+                    "&#x1F3C6; <strong>Protect Your Teeth During Sport</strong><br><br>A knocked-out tooth costs far more to fix than a custom mouthguard!<br><br>&#x2022; Takes just one appointment to fit<br>&#x2022; Made from high-quality, safe materials<br>&#x2022; Fits perfectly &mdash; won't fall out mid-game<br>&#x2022; Recommended by all major sporting bodies<br><br>Book a mouthguard fitting: "+phoneInline,
+                    "&#x1F3C6; <strong>Mouthguards</strong><br><br>Any sport where you could take a hit to the face warrants a mouthguard:<br><br>&#x2022; Custom-fitted &mdash; incomparably better than off-the-shelf<br>&#x2022; Protects teeth, gums, lips, and jaw<br>&#x2022; Can reduce concussion risk<br>&#x2022; Lasts 1&ndash;2 seasons<br><br>Call "+phoneInline+" to book a quick fitting appointment."
+                ]
+            },
+            {
+                id: 'night_guards',
+                priority: 0,
+                keywords: ['night guard','night guards','grinding','bruxism','clenching','clench teeth','tmj','jaw pain','clicking jaw','jaw clicking','tooth grinding','grinding my teeth','grind my teeth','i grind','grind teeth at night','grinding at night','wake up with jaw pain','headache from teeth','teeth grinding','jaw clenching'],
+                weight: 6,
+                responses: [
+                    "&#x1F634; <strong>Night Guards &amp; Teeth Grinding (Bruxism)</strong><br><br>Grinding is more common than you might think &mdash; often stress-related and happening while you sleep.<br><br><strong>Signs you might grind:</strong><br>&#x2022; Waking with a sore jaw or headache<br>&#x2022; Worn, flat, or sensitive teeth<br>&#x2022; Clicking or popping jaw joint<br>&#x2022; Partner tells you they hear grinding at night<br><br><strong>Solution:</strong> A custom night guard &mdash; much more effective than shop-bought versions &mdash; protects your teeth while you sleep.<br><br>Book an assessment: "+phoneInline,
+                    "&#x1F634; <strong>Teeth Grinding &amp; Night Guards</strong><br><br>Bruxism (grinding) can cause significant tooth wear over time, plus jaw pain (TMJ disorder) and headaches.<br><br>&#x2022; Custom night guards take the force off your teeth<br>&#x2022; Comfortable to wear &mdash; custom-fitted to your bite<br>&#x2022; Lasts 5+ years with care<br>&#x2022; Far superior to anything from a chemist<br><br>We also check for wear patterns at your check-up. Call "+phoneInline+" if you suspect grinding.",
+                    "&#x1F634; <strong>TMJ &amp; Grinding</strong><br><br>Jaw clicking, headaches, and worn teeth can all be signs of bruxism (grinding) or TMJ dysfunction.<br><br>Treatment options:<br>&#x2022; Custom night guard to protect teeth<br>&#x2022; Bite adjustment if needed<br>&#x2022; Relaxation and stress management advice<br>&#x2022; Botox for severe jaw clenching (private)<br><br>Call "+phoneInline+" for a TMJ/grinding assessment."
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // SERVICES OVERVIEW
+            // ════════════════════════════════════════
+            {
+                id: 'services_overview',
+                priority: 0,
+                keywords: ['services','treatments','what do you offer','what do you do','options available','treatment list','all services','full list','menu','what can you treat','what treatments','your services','list of services','your treatments','what treatments do you offer'],
+                weight: 6,
+                responses: [
+                    "&#x1F9B7; <strong>Our Services</strong><br><br><strong>General &amp; Preventive:</strong> Check-ups, X-rays, scale &amp; polish, oral hygiene advice<br><strong>Restorative:</strong> Fillings, crowns, bridges, dentures, root canal<br><strong>Surgical:</strong> Tooth extractions, wisdom teeth removal<br><strong>Gum Care:</strong> Gum disease treatment and management<br><strong>Other:</strong> Children's dentistry, emergency care<br><br>Both <strong>NHS and private</strong> options available.<br><br>Visit our <a href='heathway-services.html' style='color:var(--teal)'>Services page</a> or call "+phoneInline+" for details.",
+                    "&#x1F9B7; <strong>What We Offer at Heathway Dental</strong><br><br>We provide comprehensive NHS and private dental care:<br><br>&#x2022; <strong>Check-ups &amp; cleaning:</strong> Examinations, X-rays, scale &amp; polish<br>&#x2022; <strong>Restorative:</strong> Fillings, root canals, crowns, bridges, dentures<br>&#x2022; <strong>Extractions:</strong> Simple and surgical, including wisdom teeth<br>&#x2022; <strong>Gum disease:</strong> Treatment and ongoing management<br>&#x2022; <strong>Children's dentistry:</strong> Gentle care for under 17s<br>&#x2022; <strong>Emergency care:</strong> Urgent dental appointments<br><br>Call "+phoneInline+" to discuss your needs.",
+                    "&#x1F9B7; <strong>Full Treatment Range</strong><br><br>From routine check-ups to restorative work &mdash; we're here for your dental health:<br><br>&#x2022; NHS and private treatments<br>&#x2022; General, restorative, and preventive care<br>&#x2022; Emergency and urgent appointments<br>&#x2022; Children's and family dentistry<br>&#x2022; Dentures, crowns, and bridges<br><br>Not sure what you need? Book a check-up and we'll advise. "+phoneInline
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // DENTAL CONDITIONS
+            // ════════════════════════════════════════
+            {
+                id: 'decay_cavities',
+                priority: 0,
+                keywords: ['cavity','cavities','decay','hole in tooth','rotten tooth','tooth decay','decayed tooth','caries','dental caries'],
+                weight: 5,
+                responses: [
+                    "&#x1F9B7; <strong>Tooth Decay &amp; Cavities</strong><br><br>Cavities form when bacteria in plaque produce acids that attack enamel.<br><br><strong>Prevention:</strong><br>&#x2022; Brush twice daily with fluoride toothpaste<br>&#x2022; Floss or use interdental brushes daily<br>&#x2022; Limit sugary and acidic food/drinks<br>&#x2022; Regular check-ups every 6&ndash;12 months<br><br><strong>Treatment:</strong> Small cavities need a simple filling. Left untreated, decay reaches the nerve &mdash; then you need root canal or extraction. Early treatment is always simpler!<br><br>Book a check-up: "+phoneInline,
+                    "&#x1F9B7; <strong>Dental Decay</strong><br><br>Tooth decay is the most common dental problem &mdash; and the most preventable.<br><br>&#x2022; Early decay: no symptoms, treated with a small filling<br>&#x2022; Moderate decay: sensitivity, pain, larger filling or crown<br>&#x2022; Advanced decay: toothache, infection, root canal or extraction<br><br>Don't wait for pain &mdash; regular check-ups catch it early. Call "+phoneInline+".",
+                    "&#x1F9B7; <strong>Worried About a Cavity?</strong><br><br>Common signs: sensitivity to sweet/cold, visible dark spot, rough edge, toothache.<br><br>&#x2022; We'll confirm with X-rays at your check-up<br>&#x2022; Small cavities = small, quick fillings<br>&#x2022; We use tooth-coloured composite for natural results<br>&#x2022; NHS Band 2: &#163;75.30 covers fillings<br><br>The earlier the better! Call "+phoneInline+"."
+                ]
+            },
+            {
+                id: 'gum_disease',
+                priority: 0,
+                keywords: ['gum disease','gum bleeding','bleeding gums','gingivitis','periodontitis','periodontal','receding gums','gum recession','gums bleed','swollen gums','gum infection','gum problem','gum health','gum care'],
+                weight: 5,
+                responses: [
+                    "&#x1F9B7; <strong>Gum Disease</strong><br><br>Gum disease is the leading cause of tooth loss in adults &mdash; but it's preventable and treatable.<br><br><strong>Stages:</strong><br>&#x2022; <strong>Gingivitis:</strong> Gums bleed when brushing &mdash; reversible with good hygiene<br>&#x2022; <strong>Periodontitis:</strong> Bone loss occurs &mdash; needs professional treatment<br><br><strong>Signs:</strong> Bleeding, swollen, or receding gums; bad breath; loose teeth; pain when chewing<br><br><strong>Treatment:</strong> Deep cleaning (root planing), hygiene visits, improved home care<br><br>Don't ignore bleeding gums! Call "+phoneInline+".",
+                    "&#x1F9B7; <strong>Gum Disease &mdash; Act Now</strong><br><br>Bleeding gums are not normal &mdash; they're a warning sign.<br><br>&#x2022; Caused by plaque build-up at the gum line<br>&#x2022; Early stage (gingivitis): entirely reversible<br>&#x2022; Advanced stage: bone loss is irreversible, but progression can be stopped<br>&#x2022; Linked to heart disease, diabetes, and pregnancy complications<br><br>Treatment involves professional cleaning and better home care. Don't delay &mdash; call "+phoneInline+".",
+                    "&#x1F9B7; <strong>Bleeding or Swollen Gums?</strong><br><br>This is almost always gum disease. Here's what to know:<br><br>&#x2022; Keep brushing &mdash; don't stop because gums bleed (this is the wrong response!)<br>&#x2022; Add flossing or interdental brushes to your routine<br>&#x2022; Book a hygiene appointment for professional cleaning<br>&#x2022; Regular hygiene visits prevent gum disease from progressing<br><br>Call "+phoneInline+" to book a gum assessment."
+                ]
+            },
+            {
+                id: 'ulcers',
+                priority: 0,
+                keywords: ['ulcer','mouth ulcer','mouth sore','canker sore','sore mouth','sore tongue','aphthous','oral ulcer'],
+                weight: 4,
+                responses: [
+                    "&#x1F9B7; <strong>Mouth Ulcers</strong><br><br>Most mouth ulcers are harmless and heal within 1&ndash;2 weeks. Common triggers: stress, minor trauma, certain foods.<br><br><strong>Self-care:</strong><br>&#x2022; Antiseptic mouthwash (Corsodyl)<br>&#x2022; Avoid spicy, acidic, or crunchy foods<br>&#x2022; Use a soft toothbrush<br>&#x2022; Bonjela or similar over-the-counter gel<br><br><strong>See us if:</strong> An ulcer lasts <strong>more than 3 weeks</strong>, keeps recurring, or is unusually large or painful. This is important for oral cancer monitoring.<br><br>Call "+phoneInline+" if concerned.",
+                    "&#x1F9B7; <strong>Dealing with Mouth Ulcers</strong><br><br>&#x2022; Most are minor and heal within 2 weeks without treatment<br>&#x2022; Corsodyl mouthwash speeds healing and prevents infection<br>&#x2022; Bonjela/Anbesol gel provides temporary pain relief<br>&#x2022; Vitamin deficiency (B12, iron, folate) can cause recurring ulcers<br><br><strong>When to see us:</strong> Ulcer lasting 3+ weeks, or you're worried about any sore patch in your mouth. Oral cancer is rare but important to rule out.<br><br>Call "+phoneInline+".",
+                    "&#x1F9B7; <strong>Mouth Ulcers</strong><br><br>Common, often harmless, but occasionally a sign of something needing attention:<br><br>&#x2022; Use Iglu or Bonjela gel for pain relief<br>&#x2022; Rinse with salt water or Corsodyl<br>&#x2022; Avoid triggers: citrus, spicy food, SLS toothpaste<br>&#x2022; Stress and low immunity make them more likely<br><br>Any ulcer lasting more than 3 weeks needs checking. Book with us: "+phoneInline
+                ]
+            },
+            {
+                id: 'dry_mouth',
+                priority: 0,
+                keywords: ['dry mouth','xerostomia','lack of saliva','not enough saliva','cotton mouth','mouth dryness','dry lips','thirsty mouth'],
+                weight: 4,
+                responses: [
+                    "&#x1F4A7; <strong>Dry Mouth</strong><br><br>Dry mouth (xerostomia) significantly increases your decay risk as saliva protects teeth.<br><br><strong>Tips:</strong><br>&#x2022; Sip water throughout the day<br>&#x2022; Chew sugar-free gum (stimulates saliva)<br>&#x2022; Avoid caffeine, alcohol, and tobacco<br>&#x2022; Use a dry mouth spray or gel (Biotène)<br>&#x2022; Fluoride toothpaste is even more important<br><br>Common causes: medications, mouth breathing, Sjogren's syndrome. Let us know at your next check-up.",
+                    "&#x1F4A7; <strong>Dry Mouth (Xerostomia)</strong><br><br>Many common medications cause dry mouth &mdash; antihistamines, antidepressants, blood pressure tablets and more.<br><br>&#x2022; Biotène products (spray, gel, mouthwash) specifically designed for dry mouth<br>&#x2022; Sugar-free pastilles/gum help stimulate saliva<br>&#x2022; Use high-fluoride toothpaste to offset increased decay risk<br>&#x2022; Tell us what medications you take at your check-up<br><br>We can help manage dry mouth &mdash; call "+phoneInline+".",
+                    "&#x1F4A7; <strong>Dealing with Dry Mouth</strong><br><br>&#x2022; Drink water regularly throughout the day<br>&#x2022; Avoid alcohol, caffeine, and tobacco<br>&#x2022; Breathe through your nose where possible<br>&#x2022; Use Biotène spray or gel<br>&#x2022; Book regular hygiene visits &mdash; you're higher risk for decay<br><br>If dry mouth is affecting your quality of life, mention it at your next appointment and we can advise further."
+                ]
+            },
+            {
+                id: 'crooked_teeth',
+                priority: 0,
+                keywords: ['crooked teeth','misaligned','overcrowded','overcrowding','crossbite','overbite','underbite','gap teeth','gapped teeth','spaced teeth','teeth gap','teeth space'],
+                weight: 4,
+                responses: [
+                    "&#x1F9B7; <strong>Crooked or Misaligned Teeth</strong><br><br>Crooked or crowded teeth are very common and can affect both your bite and oral hygiene.<br><br>We don't offer orthodontic treatment (braces/Invisalign) at our practice, but your dentist can assess your teeth during a check-up and refer you to a specialist orthodontist if needed.<br><br>Call "+phoneInline+" to book an assessment.",
+                    "&#x1F9B7; <strong>Crooked Teeth?</strong><br><br>It's more common than you think! Crooked or crowded teeth aren't just an appearance issue &mdash; they're harder to clean and can affect your bite.<br><br>While we don't offer braces or Invisalign, we can assess your teeth and arrange a referral to an orthodontic specialist. Call "+phoneInline+" to book a check-up."
+                ]
+            },
+            {
+                id: 'chipped_tooth',
+                priority: 0,
+                keywords: ['chipped tooth','chipped teeth','chip','broken tooth','cracked tooth','fractured tooth','knocked tooth','damaged tooth'],
+                weight: 5,
+                responses: [
+                    "&#x1F9B7; <strong>Chipped or Broken Tooth</strong><br><br>Don't worry &mdash; we can almost certainly fix it! Options include:<br><br>&#x2022; <strong>Filling:</strong> Quick repair for small chips<br>&#x2022; <strong>Crown:</strong> For significant damage or cracks<br>&#x2022; <strong>Root canal + crown:</strong> If the nerve is affected<br><br>Save any broken pieces if possible. Rinse gently with water. Call "+phoneInline+" to book.",
+                    "&#x1F9B7; <strong>Chipped a Tooth?</strong><br><br>We see chipped teeth regularly &mdash; usually a straightforward fix:<br><br>&#x2022; Small chip: filling (tooth-coloured, done in one visit)<br>&#x2022; Larger chip or crack: dental crown<br>&#x2022; Large break with pain: may need root canal first, then crown<br><br>Even if it doesn't hurt, get it checked &mdash; sharp edges can cut your tongue and the tooth may be at risk. Call "+phoneInline+".",
+                    "&#x1F9B7; <strong>Broken or Chipped Tooth</strong><br><br>&#x2022; Rinse gently with warm water<br>&#x2022; Save any pieces (wrap in damp cloth)<br>&#x2022; Take paracetamol if painful<br>&#x2022; Call "+phoneInline+" &mdash; we'll try to see you promptly<br><br>Treatment options: filling or crown depending on size. Most chips are fixed in a single visit."
+                ]
+            },
+            {
+                id: 'loose_tooth',
+                priority: 0,
+                keywords: ['loose tooth','wobbly tooth','tooth moving','moving tooth','loose adult tooth','teeth loosening','loose teeth'],
+                weight: 5,
+                responses: [
+                    "&#x26A0;&#xFE0F; <strong>Loose Adult Tooth</strong><br><br>A loose adult tooth always needs prompt attention. Possible causes:<br><br>&#x2022; <strong>Gum disease</strong> (most common) &mdash; bone loss around the root<br>&#x2022; <strong>Trauma</strong> &mdash; injury loosening the tooth<br>&#x2022; <strong>Grinding</strong> &mdash; excessive force over time<br>&#x2022; <strong>Infection</strong> &mdash; abscess destroying supporting bone<br><br>Early treatment can often save the tooth. Please call "+phone+" soon for an assessment.",
+                    "&#x26A0;&#xFE0F; <strong>Don't Ignore a Loose Tooth</strong><br><br>Adult teeth don't loosen without cause. The sooner we investigate, the better the outcome.<br><br>Gum disease is the most common reason, and advanced gum disease is treatable even if not reversible. We can stop progression and stabilise remaining teeth.<br><br>Please call "+phone+" promptly.",
+                    "&#x26A0;&#xFE0F; A loose adult tooth needs to be seen soon. Please call "+phone+". We'll take X-rays, diagnose the cause, and recommend treatment. The sooner the better!"
+                ]
+            },
+            {
+                id: 'sensitivity',
+                priority: 0,
+                keywords: ['sensitive teeth','tooth sensitivity','sensitive to cold','cold sensitivity','sensitivity','sensitiv','hot cold pain','teeth sensitive','sensitive to hot','sensitive when eating','ice cream tooth','sensitive tooth','tingly teeth','teeth tingling','dental sensitivity'],
+                weight: 6,
+                responses: [
+                    "&#x1F9CA; <strong>Tooth Sensitivity</strong><br><br>Sensitivity is very common and usually very treatable.<br><br><strong>Common causes:</strong><br>&#x2022; Worn enamel (from acidic diet or grinding)<br>&#x2022; Exposed dentine (gum recession, over-brushing)<br>&#x2022; Decay or cracked tooth<br>&#x2022; Teeth bleaching (temporary)<br><br><strong>Self-help:</strong><br>&#x2022; Sensodyne or other desensitising toothpaste &mdash; apply directly to sensitive spot<br>&#x2022; Soft toothbrush, gentle technique<br>&#x2022; Avoid acidic foods/drinks<br>&#x2022; Wait 30 min after eating before brushing<br><br>If sensitivity is sudden or severe, book a check-up: "+phoneInline,
+                    "&#x1F9CA; <strong>Sensitive Teeth</strong><br><br>&#x2022; Use Sensodyne or similar for 2+ weeks and see if it helps<br>&#x2022; Apply a blob of desensitising toothpaste to the sensitive tooth and leave it on at night<br>&#x2022; Avoid acidic drinks (citrus juice, fizzy drinks)<br>&#x2022; Sip with a straw to reduce acid contact<br><br>If sensitivity is on one specific tooth or appeared suddenly, it could be a cavity or crack &mdash; book a check-up: "+phoneInline+".",
+                    "&#x1F9CA; <strong>Managing Tooth Sensitivity</strong><br><br>Sensitivity to hot, cold, or sweet usually means dentine is exposed:<br><br>&#x2022; Sensodyne (potassium nitrate) or Pronamel toothpaste<br>&#x2022; Use as directed &mdash; take several weeks to work<br>&#x2022; Professional fluoride varnish can help seal dentine<br>&#x2022; If sensitivity is getting worse or is localised to one tooth: book a check-up<br><br>Call "+phoneInline+" and we'll help."
+                ]
+            },
+            {
+                id: 'bad_breath',
+                priority: 0,
+                keywords: ['bad breath','breath smell','halitosis','smelly breath','odour mouth','stinky breath','breath problem','morning breath','chronic bad breath'],
+                weight: 4,
+                responses: [
+                    "&#x1F4A8; <strong>Bad Breath (Halitosis)</strong><br><br><strong>Most common causes:</strong><br>&#x2022; Plaque and bacteria on teeth and tongue<br>&#x2022; Gum disease<br>&#x2022; Dry mouth<br>&#x2022; Strong foods (garlic, onions)<br>&#x2022; Certain medications<br><br><strong>Effective tips:</strong><br>&#x2022; Brush teeth AND tongue twice daily<br>&#x2022; Floss daily<br>&#x2022; Stay well hydrated<br>&#x2022; Chew sugar-free gum after meals<br>&#x2022; Use mouthwash at a different time to brushing<br>&#x2022; Regular hygiene visits<br><br>Persistent bad breath despite good hygiene may indicate gum disease. Book: "+phoneInline,
+                    "&#x1F4A8; <strong>Dealing with Bad Breath</strong><br><br>&#x2022; 90% of bad breath originates in the mouth (not stomach)<br>&#x2022; Your tongue is a major source &mdash; brush or scrape it daily<br>&#x2022; Gum disease produces very strong odour &mdash; see us if gums bleed<br>&#x2022; Dry mouth contributes &mdash; stay hydrated<br>&#x2022; Good oral hygiene + regular hygiene visits solves most cases<br><br>Book a hygiene appointment: "+phoneInline+".",
+                    "&#x1F4A8; <strong>Bad Breath?</strong><br><br>Here's an honest assessment:<br><br>&#x2022; If you have good oral hygiene but still have bad breath &mdash; book a check-up (could be gum disease)<br>&#x2022; If your hygiene isn't great &mdash; step up brushing, flossing, tongue cleaning<br>&#x2022; Use Corsodyl mouthwash for gum issues (short-term)<br>&#x2022; Chewing parsley or using activated charcoal products may help temporarily<br><br>Long-term fix: excellent hygiene + regular hygiene visits. Call "+phoneInline+"."
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // CHILDREN
+            // ════════════════════════════════════════
+            {
+                id: 'children',
+                priority: 0,
+                keywords: ['child','children','kid','kids','baby','toddler','infant','son','daughter','little one','young child','first tooth','teething','milk teeth','baby teeth','child dentist','paediatric','kids dentist','family dentist','bring child'],
+                weight: 5,
+                responses: [
+                    "&#x1F476; <strong>Children's Dentistry</strong><br><br>&#x2022; <strong>First visit:</strong> As soon as the first tooth appears, or around age 1<br>&#x2022; <strong>Free NHS</strong> treatment for all children under 18<br>&#x2022; Gentle, friendly team experienced with all ages<br>&#x2022; Preventive focus: fluoride, sealants, diet advice<br>&#x2022; We make dental visits fun and stress-free!<br><br><strong>Teething tips:</strong><br>&#x2022; Cool (not frozen) teething ring<br>&#x2022; Clean finger massage on gums<br>&#x2022; Sugar-free teething gel (ask pharmacist)<br><br>Register your child: "+phoneInline,
+                    "&#x1F476; <strong>Family &amp; Children's Dentistry</strong><br><br>We love treating children &mdash; the earlier you start, the better their dental habits for life!<br><br>&#x2022; Free NHS care for under-18s<br>&#x2022; First visit at 1 year or when first teeth arrive<br>&#x2022; We use child-friendly language and take our time<br>&#x2022; No white coats, no scary words &mdash; just friendly faces<br>&#x2022; Fluoride varnish and sealants for cavity prevention<br><br>Call "+phoneInline+" to register your child.",
+                    "&#x1F476; <strong>Bringing Your Child to the Dentist</strong><br><br>&#x2022; First appointment ideally by age 1<br>&#x2022; The earlier you start, the more comfortable they become<br>&#x2022; Children's NHS treatment is completely free<br>&#x2022; We offer stickers and praise &mdash; we make it positive!<br>&#x2022; Siblings welcome to watch so they get used to it<br><br>Start building great habits early! Call "+phoneInline+" to register."
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // NERVOUS PATIENTS
+            // ════════════════════════════════════════
+            {
+                id: 'nervous',
+                priority: 0,
+                keywords: ['nervous','scared','anxiety','afraid','anxious','phobia','dental fear','worried','panic','dread','hate dentist','terrified','frightened','dental anxiety','fear of dentist','can\'t face dentist','put off dentist','avoiding dentist'],
+                weight: 6,
+                responses: [
+                    "&#x1F49A; <strong>Nervous Patient Care</strong><br><br>You're not alone &mdash; dental anxiety is incredibly common, and we truly understand.<br><br>Our approach for anxious patients:<br>&#x2022; <strong>Your pace, always</strong> &mdash; no rushing, ever<br>&#x2022; <strong>Full explanation</strong> of every step before we begin<br>&#x2022; <strong>Stop signal</strong> &mdash; raise your hand and everything stops immediately<br>&#x2022; <strong>Breaks</strong> whenever you need them<br>&#x2022; <strong>Dr Kaushal</strong> is experienced and compassionate with anxious patients<br>&#x2022; <strong>Sedation options</strong> available for severe anxiety<br><br>The first step is just calling us. We'll look after you. "+phoneInline+" &#x1F49A;",
+                    "&#x1F49A; <strong>We Understand Dental Anxiety</strong><br><br>Many of our most nervous patients become our most loyal ones, once they realise how different we are.<br><br>&#x2022; Tell us about your anxiety when you call &mdash; we'll note it and prepare<br>&#x2022; First appointment can just be a chat &mdash; no treatment if you're not ready<br>&#x2022; We use numbing gel before any injection<br>&#x2022; You're in control at all times<br>&#x2022; Sedation available for those who need it<br><br>Please don't let fear hold you back from essential care. Call "+phoneInline+".",
+                    "&#x1F49A; <strong>Dental Phobia</strong><br><br>Dental fear is real and we take it seriously. Here's what we promise:<br><br>&#x2022; Never judge you or rush you<br>&#x2022; Agree a signal to stop whenever you want<br>&#x2022; Numbing gel before any injection (you won't feel it)<br>&#x2022; Explain everything before touching anything<br>&#x2022; Let you listen to music or use headphones<br>&#x2022; Sedation options for severe cases<br><br>You deserve good dental care regardless of your anxiety. Please call "+phoneInline+" &mdash; we're here for you."
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // PREGNANCY & MEDICAL
+            // ════════════════════════════════════════
+            {
+                id: 'pregnancy',
+                priority: 0,
+                keywords: ['pregnant','pregnancy','expecting','maternity','prenatal','antenatal','baby bump','while pregnant','dental while pregnant'],
+                weight: 5,
+                responses: [
+                    "&#x1F930; <strong>Dental Care During Pregnancy</strong><br><br>Good news &mdash; dental treatment is completely safe during pregnancy!<br><br>&#x2022; <strong>NHS treatment is FREE</strong> during pregnancy and for 12 months after birth<br>&#x2022; Apply for a <strong>Maternity Exemption Certificate (MatEx)</strong> via your midwife or GP<br>&#x2022; Hormonal changes increase gum disease risk &mdash; extra hygiene visits recommended<br>&#x2022; Morning sickness acid can erode enamel &mdash; rinse with water after vomiting, wait 30 min to brush<br>&#x2022; X-rays can be taken if essential (minimal radiation, leaded apron provided)<br><br>Don't neglect your teeth while pregnant! Call "+phoneInline+".",
+                    "&#x1F930; <strong>Pregnant? Here's What to Know</strong><br><br>&#x2022; Dental treatment is safe at all stages of pregnancy<br>&#x2022; Your NHS dental care is <strong>completely free</strong> during pregnancy and 12 months postpartum<br>&#x2022; Pregnancy gingivitis is very common &mdash; gums may bleed more<br>&#x2022; Increase brushing and flossing; book an extra hygiene appointment<br>&#x2022; Tell us when you call so we can take any extra precautions<br><br>Call "+phoneInline+" and mention your pregnancy.",
+                    "&#x1F930; <strong>Dental Health in Pregnancy</strong><br><br>Your oral health affects your baby's health too &mdash; gum disease is linked to premature birth and low birth weight.<br><br>&#x2022; Free NHS dental care &mdash; get your MatEx certificate<br>&#x2022; Keep up check-ups and hygiene visits<br>&#x2022; Use a softer brush if gums are sore<br>&#x2022; Stay hydrated and maintain a good diet<br><br>We'll make every appointment as comfortable as possible. Call "+phoneInline+"."
+                ]
+            },
+            {
+                id: 'diabetes',
+                priority: 0,
+                keywords: ['diabetes','diabetic','type 1','type 2','blood sugar','insulin','diabetes and teeth','diabetes dental'],
+                weight: 4,
+                responses: [
+                    "&#x1F9B7; <strong>Diabetes &amp; Dental Health</strong><br><br>Diabetes and gum disease are closely linked in both directions:<br><br>&#x2022; Diabetics are at higher risk of gum disease and infection<br>&#x2022; Gum disease can make blood sugar harder to control<br>&#x2022; Healing after extractions or surgery may be slower<br>&#x2022; Dry mouth is common, increasing decay risk<br>&#x2022; More frequent check-ups (every 3&ndash;6 months) may be recommended<br><br>Always tell us about your diabetes and medications. We'll tailor your care accordingly. Call "+phoneInline+".",
+                    "&#x1F9B7; <strong>Managing Dental Health with Diabetes</strong><br><br>&#x2022; Tell us your blood sugar control and medications<br>&#x2022; Avoid dental appointments when blood sugar is very low<br>&#x2022; Bring a snack in case your appointment runs long<br>&#x2022; Excellent oral hygiene is especially important<br>&#x2022; Regular hygiene visits every 3&ndash;6 months<br>&#x2022; If you have an infection, we'll prescribe antibiotics promptly<br><br>Call "+phoneInline+" and let us know about your diabetes.",
+                    "&#x1F9B7; <strong>Diabetes &amp; Your Teeth</strong><br><br>There's a well-established link between gum disease and blood sugar control:<br><br>&#x2022; Good gum health can help improve HbA1c levels<br>&#x2022; Diabetics heal more slowly &mdash; we plan treatment accordingly<br>&#x2022; Dry mouth (common with diabetes) increases cavity risk<br>&#x2022; We can issue antibiotic cover if required<br><br>Always disclose your diabetes status when you register or attend. Call "+phoneInline+"."
+                ]
+            },
+            {
+                id: 'medical_history',
+                priority: 0,
+                keywords: ['medical history','medication','blood thinner','warfarin','rivaroxaban','heart condition','allergy','allergic','asthma','epilepsy','medical condition','health condition','medications list','what to tell dentist'],
+                weight: 4,
+                responses: [
+                    "&#x1F4CB; <strong>Your Medical History</strong><br><br>It's essential we know about your health for safe treatment. Please always tell us about:<br><br>&#x2022; All medications (including herbal supplements)<br>&#x2022; Blood thinners (warfarin, aspirin, rivaroxaban, etc.)<br>&#x2022; Allergies (especially to latex, anaesthetics, or penicillin)<br>&#x2022; Heart conditions, pacemakers, artificial valves or joints<br>&#x2022; Diabetes, epilepsy, asthma, or any other condition<br>&#x2022; Recent hospital treatment or surgery<br><br>You can update your medical history at any appointment.",
+                    "&#x1F4CB; <strong>Medical History &amp; Medications</strong><br><br>Your safety is our priority &mdash; please tell us everything relevant:<br><br>&#x2022; Any conditions affecting healing or bleeding<br>&#x2022; Blood thinners, steroids, bisphosphonates<br>&#x2022; Allergies (latex, anaesthetics, medications)<br>&#x2022; Pacemakers or implanted devices<br>&#x2022; If anything changes between visits, tell us at your next appointment<br><br>Everything is kept confidential. Call "+phoneInline+" if you have specific concerns.",
+                    "&#x1F4CB; <strong>Updating Your Medical History</strong><br><br>New medication? New diagnosis? Please let us know at your next visit or call "+phoneInline+".<br><br>Common things that affect dental treatment:<br>&#x2022; Blood thinners &mdash; may need cover for extractions<br>&#x2022; Bisphosphonates &mdash; affects healing after extractions<br>&#x2022; Latex allergy &mdash; we'll use latex-free gloves<br>&#x2022; Penicillin allergy &mdash; affects antibiotic choice<br><br>Never hesitate to disclose &mdash; it helps us keep you safe."
+                ]
+            },
+            {
+                id: 'smoking',
+                priority: 0,
+                keywords: ['smoking','smoke','cigarette','tobacco','vaping','vape','e-cigarette','nicotine','quit smoking','stop smoking'],
+                weight: 4,
+                responses: [
+                    "&#x1F6AD; <strong>Smoking &amp; Oral Health</strong><br><br>Smoking has serious consequences for your mouth:<br><br>&#x2022; 6x increased risk of gum disease<br>&#x2022; Significantly slows healing after extractions and surgery<br>&#x2022; Causes persistent bad breath and staining<br>&#x2022; <strong>Massively increases oral cancer risk</strong><br>&#x2022; Masks gum disease symptoms (reduced bleeding)<br><br>Vaping is better than smoking but still causes dry mouth, gum irritation, and some cancer risk.<br><br>We can advise on quitting at any appointment. Ask your dentist!",
+                    "&#x1F6AD; <strong>Effects of Smoking on Your Teeth</strong><br><br>&#x2022; Yellow staining on teeth<br>&#x2022; Bad breath (halitosis)<br>&#x2022; Gum disease &mdash; smokers have 6x higher risk<br>&#x2022; Delayed healing after treatment<br>&#x2022; Oral cancer risk increased by up to 10x<br>&#x2022; Implant failure rates higher in smokers<br><br>Quitting is the single best thing you can do for your oral health. Ask us for support at your next visit.",
+                    "&#x1F6AD; <strong>Smoking / Vaping Advice</strong><br><br>We won't judge you, but we will be honest:<br><br>&#x2022; Smoking is the biggest preventable risk factor for oral cancer<br>&#x2022; Vaping still causes dry mouth and gum inflammation<br>&#x2022; Both interfere with gum disease healing<br>&#x2022; Stopping even for a few weeks before treatment improves outcomes<br><br>NHS Stop Smoking services are free and effective. Ask your dentist for a referral at your next check-up."
+                ]
+            },
+            {
+                id: 'diet',
+                priority: 0,
+                keywords: ['diet','sugar','sugary','sweet','fizzy','cola','juice','acid teeth','erosion','coffee stain','tea stain','staining','yellowing','discolouring','wine teeth','food teeth','what to eat','what not to eat','tooth friendly'],
+                weight: 4,
+                responses: [
+                    "&#x1F34E; <strong>Diet &amp; Your Teeth</strong><br><br><strong>Reduce or avoid:</strong><br>&#x2022; Sugary drinks and snacks<br>&#x2022; Fizzy drinks (even 'diet' &mdash; still acidic)<br>&#x2022; Fruit juice (natural sugar, high acid)<br>&#x2022; Picking at sweet snacks throughout the day<br><br><strong>Tooth-friendly foods:</strong><br>&#x2022; Cheese &mdash; neutralises acid and contains calcium<br>&#x2022; Crunchy vegetables &mdash; stimulate saliva<br>&#x2022; Water &mdash; fluoridated tap water is best<br>&#x2022; Sugar-free gum after meals<br><br><strong>Tips:</strong> Drink acidic drinks through a straw. Wait 30 min after eating before brushing.",
+                    "&#x1F34E; <strong>What's Bad for Your Teeth?</strong><br><br>&#x2022; <strong>Frequency</strong> matters more than amount &mdash; sipping fizzy drinks all day is worse than having one with a meal<br>&#x2022; Citric acid erodes enamel quickly (lemon water, citrus fruit)<br>&#x2022; Red wine, coffee, and tea cause staining<br>&#x2022; Sticky sweets stay in contact with teeth longest<br><br>Professional cleaning removes most staining. Whitening can help with deeper discolouration. Call "+phoneInline+".",
+                    "&#x1F34E; <strong>Diet for a Healthier Smile</strong><br><br>Simple swaps that make a real difference:<br><br>&#x2022; Water instead of juice or fizzy drinks<br>&#x2022; Cheese instead of biscuits as a snack<br>&#x2022; Sugar-free gum (xylitol) after meals<br>&#x2022; Rinse with water after acidic foods<br>&#x2022; Finish meals with dairy to neutralise acid<br><br>Regular hygiene visits keep your teeth clean regardless of diet. Book: "+phoneInline
+                ]
+            },
+            {
+                id: 'brushing',
+                priority: 0,
+                keywords: ['brush','brushing','how to brush','toothbrush','electric toothbrush','manual toothbrush','brushing technique','brushing teeth','brush properly','brushing guide','how often brush','when to brush'],
+                weight: 4,
+                responses: [
+                    "&#x1FAA5; <strong>Brushing Guide</strong><br><br>&#x2022; Brush <strong>twice daily</strong> &mdash; last thing at night is the most important<br>&#x2022; Use <strong>fluoride toothpaste</strong> (at least 1350ppm for adults; 1000ppm for children)<br>&#x2022; <strong>2 minutes</strong> each session<br>&#x2022; Soft-bristled brush, gentle circular or small back-and-forth motions<br>&#x2022; Include the gum line and behind teeth<br>&#x2022; Brush the <strong>tongue</strong> for fresh breath<br>&#x2022; <strong>Spit, don't rinse</strong> &mdash; rinsing washes away the fluoride<br>&#x2022; Replace your brush every <strong>3 months</strong> or when bristles splay<br>&#x2022; Electric brushes are excellent &mdash; they do the motion for you",
+                    "&#x1FAA5; <strong>How to Brush Your Teeth Properly</strong><br><br>It's not just about brushing &mdash; it's about brushing <em>correctly</em>:<br><br>&#x2022; Small, gentle circular strokes at 45&deg; to the gumline<br>&#x2022; Cover all surfaces: outer, inner, biting<br>&#x2022; 2 minutes minimum (try a timer or electric brush with built-in timer)<br>&#x2022; Don't rinse after &mdash; just spit<br>&#x2022; Soft brush only &mdash; hard brushes damage gums and enamel<br><br>Ask your hygienist to check your technique at your next visit!",
+                    "&#x1FAA5; <strong>Brushing Tips</strong><br><br>&#x2022; Twice a day &mdash; morning and <strong>especially before bed</strong><br>&#x2022; 2 minutes &mdash; no less<br>&#x2022; Fluoride toothpaste &mdash; don't rinse off<br>&#x2022; Soft head, gentle pressure<br>&#x2022; Electric toothbrush recommended (oscillating-rotating type)<br>&#x2022; Don't forget your tongue and the backs of your teeth<br><br>Your technique matters as much as frequency. Ask us at your next check-up!"
+                ]
+            },
+            {
+                id: 'flossing',
+                priority: 0,
+                keywords: ['floss','flossing','interdental brush','between teeth','food stuck between teeth','food between teeth','tepe','waterflosser','water flosser','floss picks','dental floss'],
+                weight: 4,
+                responses: [
+                    "&#x1F9F7; <strong>Flossing &amp; Interdental Cleaning</strong><br><br>&#x2022; Clean between teeth <strong>once daily</strong> &mdash; any time, but bedtime is ideal<br>&#x2022; Traditional floss, floss picks, or <strong>TePe interdental brushes</strong> &mdash; all work well<br>&#x2022; Water flossers (Waterpik) are excellent if you find floss tricky<br>&#x2022; Gently slide between teeth and curve around each tooth in a C-shape<br>&#x2022; Bleeding when you start is normal &mdash; it stops within 2 weeks as gums improve<br>&#x2022; This prevents 40% of dental surfaces from being missed<br><br>Your hygienist can demonstrate the best technique for your mouth!",
+                    "&#x1F9F7; <strong>Why Floss?</strong><br><br>Your toothbrush misses the surfaces between teeth &mdash; that's where a lot of decay and gum disease starts!<br><br>&#x2022; Floss, TePe brushes, or water flossers: pick what you'll actually use<br>&#x2022; Once a day is enough<br>&#x2022; If gums bleed: keep going (gently) and they'll strengthen within weeks<br>&#x2022; TePe brushes come in different sizes &mdash; ask your hygienist which is right for your gaps<br><br>Book a hygiene appointment for a personalised demo: "+phoneInline,
+                    "&#x1F9F7; <strong>Interdental Cleaning Guide</strong><br><br>Choose your weapon:<br>&#x2022; <strong>Floss:</strong> Best for tight contacts<br>&#x2022; <strong>TePe interdental brushes:</strong> Best for larger gaps<br>&#x2022; <strong>Water flosser:</strong> Great for bridges, implants, or those with limited dexterity<br>&#x2022; <strong>Floss picks:</strong> Easier to use than traditional floss<br><br>Daily use prevents 40% of decay and most gum disease. Start today! Ask us at your next appointment."
+                ]
+            },
+            {
+                id: 'mouthwash',
+                priority: 0,
+                keywords: ['mouthwash','mouth rinse','corsodyl','listerine','antiseptic rinse','fluoride rinse','mouthrinse','rinse mouth','oral rinse'],
+                weight: 3,
+                responses: [
+                    "&#x1F9B7; <strong>Using Mouthwash Correctly</strong><br><br>&#x2022; Use mouthwash at a <strong>different time to brushing</strong> (e.g. after lunch)<br>&#x2022; <strong>Don't use right after brushing</strong> &mdash; it rinses away protective fluoride<br>&#x2022; <strong>Fluoride mouthwash</strong> (e.g. Colgate Plax, ACT) adds extra enamel protection<br>&#x2022; <strong>Corsodyl</strong> is effective for gum disease but long-term use can cause staining<br>&#x2022; Mouthwash is a supplement, not a replacement for brushing and flossing!",
+                    "&#x1F9B7; <strong>Mouthwash Tips</strong><br><br>&#x2022; Time it: after breakfast/lunch, not right after brushing<br>&#x2022; For gum problems: Corsodyl (chlorhexidine) is very effective &mdash; use for 4 weeks, then switch to fluoride rinse<br>&#x2022; For general protection: fluoride-containing mouthwash<br>&#x2022; Alcohol-free versions better for dry mouth<br>&#x2022; Children under 6: avoid mouthwash unless prescribed<br><br>Any questions? Ask at your next check-up!",
+                    "&#x1F9B7; <strong>Which Mouthwash Should I Use?</strong><br><br>&#x2022; <strong>For gum disease:</strong> Corsodyl 0.2% (2x daily for up to 4 weeks)<br>&#x2022; <strong>For general protection:</strong> Fluoride mouthwash (1x daily, after lunch)<br>&#x2022; <strong>For fresh breath:</strong> Any antibacterial rinse<br>&#x2022; <strong>For dry mouth:</strong> Alcohol-free rinse or Biotène<br><br>Remember: use it separately from brushing. Ask your dentist at your next visit!"
+                ]
+            },
+            {
+                id: 'tongue_cleaning',
+                priority: 0,
+                keywords: ['tongue','tongue cleaning','tongue scraper','clean tongue','brush tongue','tongue bacteria','white tongue','coated tongue'],
+                weight: 3,
+                responses: [
+                    "&#x1F445; <strong>Tongue Cleaning</strong><br><br>Your tongue harbours bacteria that cause bad breath and contribute to plaque:<br><br>&#x2022; Brush your tongue gently when you brush your teeth<br>&#x2022; Or use a <strong>tongue scraper</strong> for more thorough cleaning<br>&#x2022; Move from back to front with gentle strokes<br>&#x2022; Rinse after<br>&#x2022; Do it daily &mdash; especially last thing at night<br><br>It's one of the most overlooked oral hygiene steps!",
+                    "&#x1F445; <strong>Why Clean Your Tongue?</strong><br><br>&#x2022; The tongue's surface harbours millions of bacteria<br>&#x2022; These bacteria contribute significantly to bad breath<br>&#x2022; They also re-colonise your teeth after brushing<br>&#x2022; Tongue scrapers are inexpensive and very effective<br>&#x2022; Alternatively, use the back of your toothbrush head<br><br>Add it to your routine &mdash; takes only 10 seconds!"
+                ]
+            },
+            {
+                id: 'aftercare',
+                priority: 0,
+                keywords: ['aftercare','after treatment','recovery','after extraction','after filling','what to eat after','swelling after','bleeding after','after root canal','post treatment','after dental','after procedure','healing','socket','dry socket'],
+                weight: 5,
+                responses: [
+                    "&#x1F3E5; <strong>Aftercare Advice</strong><br><br><strong>After extractions:</strong><br>&#x2022; Bite firmly on gauze for 20 minutes<br>&#x2022; No hot drinks for 24 hours<br>&#x2022; No smoking or alcohol for at least 48 hours<br>&#x2022; Soft foods for 24&ndash;48 hours<br>&#x2022; Don't rinse for 24 hours, then warm salt water rinses 3x daily<br><br><strong>After fillings:</strong><br>&#x2022; Wait for numbness to fully wear off before eating<br>&#x2022; Some sensitivity for a few days is normal<br><br><strong>After root canal:</strong><br>&#x2022; Take prescribed or over-the-counter pain relief as directed<br>&#x2022; Avoid chewing on that side until crowned<br><br>&#x26A0;&#xFE0F; <strong>Contact us if:</strong> Excessive bleeding, severe pain, or swelling gets worse. Call "+phoneInline+".",
+                    "&#x1F3E5; <strong>Post-Treatment Recovery</strong><br><br><strong>Extraction aftercare:</strong><br>&#x2022; Blood clot is vital &mdash; don't disturb it<br>&#x2022; If bleeding restarts: fold gauze, bite firmly for 20 mins<br>&#x2022; Signs of dry socket (days 2&ndash;4): throbbing pain, bad taste &mdash; call us<br><br><strong>Filling aftercare:</strong><br>&#x2022; Your bite should feel normal within a few days<br>&#x2022; If bite feels high: call us, may need adjusting<br><br><strong>Root canal aftercare:</strong><br>&#x2022; Some discomfort for 3&ndash;5 days is normal<br>&#x2022; Take ibuprofen and paracetamol alternately for pain<br><br>Any concerns? Call "+phoneInline+"."
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // TEAM & PRACTICE INFO
+            // ════════════════════════════════════════
+            {
+                id: 'team',
+                priority: 0,
+                keywords: ['team','staff','niti kaushal','niti','kaushal','principal dentist','dr kaushal','who is the dentist','who is my dentist','who are the dentists','heathway team','meet the team','about dr kaushal','who works at','your dentists','dental team'],
+                weight: 5,
+                responses: [
+                    "&#x1F469;&#x200D;&#x2695;&#xFE0F; <strong>Our Team</strong><br><br><strong>Dr Niti Kaushal</strong> &mdash; Principal Dentist<br>Dr Kaushal leads our practice with extensive clinical experience and a reputation for being gentle and thorough. She is particularly skilled with nervous patients.<br><br>Our full team includes experienced clinicians and a warm, welcoming reception and nursing team, all committed to delivering excellent care.<br><br>Learn more on our <a href='heathway-about.html' style='color:var(--teal)'>About page</a>.",
+                    "&#x1F469;&#x200D;&#x2695;&#xFE0F; <strong>Meet Dr Niti Kaushal</strong><br><br>Dr Kaushal is the Principal Dentist at The Heathway Dental Surgery. She has extensive experience across general, preventive, and restorative dentistry and is known for her calm, reassuring manner &mdash; especially appreciated by nervous patients.<br><br>Our support team is equally dedicated to making your visit as pleasant as possible. Call "+phoneInline+" or visit our <a href='heathway-about.html' style='color:var(--teal)'>About page</a>.",
+                    "&#x1F469;&#x200D;&#x2695;&#xFE0F; <strong>The Heathway Dental Team</strong><br><br>Our practice is led by <strong>Dr Niti Kaushal</strong>, Principal Dentist, supported by an experienced team of dental nurses and reception staff.<br><br>We pride ourselves on a warm, family-friendly atmosphere where every patient feels welcome. Call "+phoneInline+" &mdash; you'll hear the difference from the very first call!"
+                ]
+            },
+            {
+                id: 'cqc',
+                priority: 0,
+                keywords: ['cqc','regulated','inspection','cqc registered','safe','standards','quality','accredited','nhs approved','regulated practice','inspected'],
+                weight: 4,
+                responses: [
+                    "&#x2705; <strong>CQC Registered Practice</strong><br><br>The Heathway Dental Surgery is:<br><br>&#x2022; Fully <strong>CQC (Care Quality Commission)</strong> registered<br>&#x2022; <strong>NHS registered</strong> practice<br>&#x2022; Compliant with all GDC (General Dental Council) requirements<br>&#x2022; Regular infection control audits<br>&#x2022; Staff undergo continuous professional development (CPD)<br><br>Your safety and care quality are always our top priorities.",
+                    "&#x2705; <strong>Our Standards</strong><br><br>We're registered with the <strong>Care Quality Commission (CQC)</strong> &mdash; the independent regulator of all health and social care in England.<br><br>All clinical staff are registered with the <strong>General Dental Council (GDC)</strong>. Our infection control and clinical protocols meet or exceed all required standards.<br><br>You're in safe, regulated hands at Heathway Dental."
+                ]
+            },
+            {
+                id: 'covid_safety',
+                priority: 0,
+                keywords: ['covid','coronavirus','infection control','ppe','mask','sterilise','sterilization','sterilisation','safe to visit','is it safe','hygiene standards'],
+                weight: 4,
+                responses: [
+                    "&#x1F637; <strong>Infection Control &amp; Safety</strong><br><br>We maintain the highest standards of infection control at all times:<br><br>&#x2022; Full PPE for all clinical procedures<br>&#x2022; Rigorous sterilisation and decontamination of all instruments<br>&#x2022; Hand sanitiser stations throughout the practice<br>&#x2022; Regular deep cleaning of all clinical areas between patients<br>&#x2022; Enhanced ventilation in treatment rooms<br>&#x2022; CQC inspected and compliant<br><br>Your safety has always been and will always remain our top priority.",
+                    "&#x1F637; <strong>Is It Safe to Visit?</strong><br><br>Absolutely. Dental practices like ours follow strict infection control protocols far beyond typical medical settings:<br><br>&#x2022; All instruments fully sterilised in autoclave between every patient<br>&#x2022; Disposable items used where possible<br>&#x2022; Full PPE (gloves, mask, visor) for all clinical procedures<br>&#x2022; Thorough disinfection of all surfaces between patients<br>&#x2022; Regular CQC inspections ensure compliance<br><br>It's safe to visit. Book: "+phoneInline
+                ]
+            },
+            {
+                id: 'accessibility',
+                priority: 0,
+                keywords: ['wheelchair','disabled','disability','accessibility','mobility','step-free','ramp','lift','access','hearing','visually impaired','special needs','adaptations'],
+                weight: 4,
+                responses: [
+                    "&#x267F; <strong>Accessibility</strong><br><br>We strive to make our practice accessible to all patients.<br><br>Please call us on "+phoneInline+" <strong>before your visit</strong> to discuss your specific requirements. Our team will do everything possible to ensure your appointment is comfortable and accessible.",
+                    "&#x267F; <strong>Accessible Dental Care</strong><br><br>We want everyone to be able to access dental care. If you have mobility, sensory, or other accessibility needs, please let us know when booking on "+phoneInline+".<br><br>We'll make appropriate arrangements to ensure you can attend and receive treatment comfortably."
+                ]
+            },
+            {
+                id: 'referral',
+                priority: 0,
+                keywords: ['referral','refer','specialist','hospital','consultant','orthodontist','periodontist','endodontist','oral surgeon','maxillofacial','second opinion'],
+                weight: 4,
+                responses: [
+                    "&#x1F3E5; <strong>Referrals &amp; Specialists</strong><br><br>When specialist treatment is needed, we arrange referrals to:<br><br>&#x2022; <strong>Orthodontists</strong> &mdash; complex teeth straightening cases<br>&#x2022; <strong>Oral surgeons</strong> &mdash; complex extractions, jaw surgery<br>&#x2022; <strong>Periodontists</strong> &mdash; advanced gum disease specialists<br>&#x2022; <strong>Endodontists</strong> &mdash; complex root canal cases<br><br>Your dentist will discuss the referral and arrange it for you. NHS referrals are available for clinically necessary specialist care. Call "+phoneInline+" for any queries.",
+                    "&#x1F3E5; <strong>Need a Second Opinion or Referral?</strong><br><br>You're always entitled to a second opinion. We welcome patients who've been told they need treatment elsewhere and want it confirmed.<br><br>When our dentist believes specialist care would benefit you, they'll:<br>&#x2022; Discuss the reason clearly<br>&#x2022; Write a detailed referral letter<br>&#x2022; Arrange NHS or private referral as appropriate<br><br>Call "+phoneInline+" to discuss."
+                ]
+            },
+            {
+                id: 'waiting_times',
+                priority: 0,
+                keywords: ['how long wait','waiting time','wait for appointment','same day','quick appointment','how soon','earliest appointment','any appointments this week','urgent appointment','how busy'],
+                weight: 4,
+                responses: [
+                    "&#x23F0; <strong>Appointment Availability</strong><br><br>&#x2022; <strong>Routine check-ups:</strong> Usually within 1&ndash;2 weeks<br>&#x2022; <strong>Emergency/urgent:</strong> We aim to see urgent cases the same day<br>&#x2022; <strong>Cancellation list:</strong> Ask to be added for earlier slots<br><br>Availability can vary &mdash; for the most up-to-date slot information, please call "+phoneInline+" directly.",
+                    "&#x23F0; <strong>How Long is the Wait?</strong><br><br>It depends on the type of appointment:<br><br>&#x2022; <strong>Same-day:</strong> Dental emergencies (pain, swelling, knocked-out tooth)<br>&#x2022; <strong>This week / next week:</strong> Urgent non-emergency issues<br>&#x2022; <strong>1&ndash;4 weeks:</strong> Routine check-ups and hygiene<br><br>For exact availability, call "+phoneInline+". Ask about the cancellation list for sooner slots!"
+                ]
+            },
+            {
+                id: 'elderly',
+                priority: 0,
+                keywords: ['elderly','senior','pensioner','older patient','aging','ageing','retirement','over 65','old age','geriatric','care home'],
+                weight: 4,
+                responses: [
+                    "&#x1F9D3; <strong>Dental Care for Older Patients</strong><br><br>&#x2022; Regular check-ups are more important with age (oral cancer, dry mouth, gum disease risk)<br>&#x2022; Dry mouth (from medications) increases decay risk &mdash; we can help manage this<br>&#x2022; Gum recession is common but treatable<br>&#x2022; Denture care and adjustments always available<br>&#x2022; Oral cancer screening included in every check-up<br>&#x2022; If mobility is a concern, please call to discuss &mdash; home visits may be available in exceptional circumstances<br><br>You may qualify for free NHS treatment on benefits. Call "+phoneInline+".",
+                    "&#x1F9D3; <strong>Dental Care for Older Adults</strong><br><br>As we age, our dental needs change:<br><br>&#x2022; Medications can cause dry mouth &mdash; we'll address this<br>&#x2022; Gum disease and tooth loss risk increases &mdash; more frequent hygiene visits help<br>&#x2022; Dentures may need relining or replacing over time<br>&#x2022; Implant-retained dentures offer more stability if appropriate<br>&#x2022; NHS check-ups remain &#163;27.40 (free if on qualifying benefits)<br><br>We treat every patient with dignity and patience. Call "+phoneInline+"."
+                ]
+            },
+            {
+                id: 'complaints',
+                priority: 0,
+                keywords: ['complaint','complain','unhappy','unsatisfied','dissatisfied','problem with treatment','issue with dentist','not happy','something went wrong','feedback','raise concern','formal complaint'],
+                weight: 4,
+                responses: [
+                    "&#x1F4DD; <strong>Feedback &amp; Complaints</strong><br><br>We're sorry to hear you've had a less than perfect experience. All feedback is taken very seriously.<br><br><strong>How to raise a concern:</strong><br>&#x2022; <strong>Call us:</strong> "+phoneInline+" &mdash; ask to speak to the Practice Manager<br>&#x2022; <strong>In writing:</strong> 276a Heathway, Dagenham, Essex, RM10 8QS<br><br>We'll investigate thoroughly and respond in writing within <strong>10 working days</strong>.<br><br>If you're not satisfied with our response, you can contact the <strong>Dental Complaints Service</strong> (0208 253 0800) or the <strong>CQC</strong>.",
+                    "&#x1F4DD; <strong>Raising a Concern</strong><br><br>Please don't hesitate to tell us if something wasn't right. We'd far rather know so we can put it right.<br><br>&#x2022; Call "+phoneInline+" and ask for the Practice Manager<br>&#x2022; Or write to us at 276a Heathway, Dagenham, RM10 8QS<br><br>All complaints are handled confidentially and professionally. Your feedback genuinely helps us improve."
+                ]
+            },
+            {
+                id: 'reviews',
+                priority: 0,
+                keywords: ['review','google review','leave a review','rate us','rating','recommend','testimonial','feedback online','5 star'],
+                weight: 3,
+                responses: [
+                    "&#x2B50; <strong>Reviews</strong><br><br>If you've had a positive experience at Heathway Dental, we'd be truly grateful if you could leave us a <strong>Google review</strong>. It helps other patients in Dagenham find quality, trustworthy dental care.<br><br>Thank you so much for your support! &#x1F60A;",
+                    "&#x2B50; <strong>Love Your Experience?</strong><br><br>Your reviews mean the world to us and help new patients feel confident choosing Heathway Dental.<br><br>A quick <strong>Google review</strong> takes just 2 minutes and makes a huge difference. Thank you in advance! &#x1F60A;"
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // DENTAL FACTS, MYTHS, JOKES
+            // ════════════════════════════════════════
+            {
+                id: 'dental_facts',
+                priority: 0,
+                keywords: ['fact','trivia','did you know','interesting fact','tell me something','random fact','fun fact','dental history','dentist history','tell me a fact','dental fact','teeth fact','tooth fact'],
+                weight: 4,
+                responses: [
+                    "&#x1F4A1; <strong>Dental Fact:</strong> Tooth enamel is the <strong>hardest substance in the human body</strong> &mdash; even harder than bone! Yet acid can dissolve it in minutes.<br><br>Want another? Just ask!",
+                    "&#x1F4A1; <strong>Dental Fact:</strong> The average person produces about <strong>10,000 gallons of saliva</strong> in their lifetime. Saliva is your mouth's natural defence against decay &mdash; it neutralises acid and remineralises enamel.<br><br>Want another?",
+                    "&#x1F4A1; <strong>Dental Fact:</strong> Your teeth are as <strong>unique as your fingerprints</strong>. No two people have the same dental pattern &mdash; it's why dentists can identify individuals.<br><br>Ask me for another!",
+                    "&#x1F4A1; <strong>Dental Fact:</strong> A snail's mouth contains over <strong>20,000 teeth</strong> &mdash; all on its tongue (called a radula). Imagine the toothpaste bill! &#x1F40C;<br><br>Want more?",
+                    "&#x1F4A1; <strong>Dental Fact:</strong> The first toothbrush was invented in China in <strong>1498</strong>, using stiff hairs from pigs' necks tied to a bamboo stick. Bristles have improved since then!<br><br>Another?",
+                    "&#x1F4A1; <strong>Dental Fact:</strong> You'll spend roughly <strong>38.5 days</strong> of your life brushing your teeth. That's time very well spent!<br><br>Want another fact?",
+                    "&#x1F4A1; <strong>Dental Fact:</strong> <strong>Cheese</strong> is one of the best foods for your teeth. It neutralises mouth acid and contains calcium and phosphate that help remineralise enamel. &#x1F9C0;<br><br>Another?",
+                    "&#x1F4A1; <strong>Dental Fact:</strong> The first known dentist was an Egyptian named <strong>Hesy-Re</strong>, around 2600 BC. He was described as 'the greatest of those who deal with teeth'.<br><br>Want more?",
+                    "&#x1F4A1; <strong>Dental Fact:</strong> Tooth decay is the <strong>most common chronic disease in children</strong> globally &mdash; yet it's almost entirely preventable with fluoride toothpaste, flossing, and regular check-ups!<br><br>Another?",
+                    "&#x1F4A1; <strong>Dental Fact:</strong> The blue whale is the <strong>largest animal on Earth, yet has no teeth</strong> at all &mdash; it uses baleen plates to filter food. Humans make do with just 32 adult teeth.<br><br>Want another?",
+                    "&#x1F4A1; <strong>Dental Fact:</strong> <strong>Sugar-free chewing gum</strong> (especially with xylitol) actually helps protect teeth. Chewing stimulates saliva flow which neutralises acid and washes away bacteria.<br><br>Another?",
+                    "&#x1F4A1; <strong>Dental Fact:</strong> In the 18th century, it was fashionable among wealthy Europeans to have the teeth of <strong>executed criminals or fallen soldiers transplanted into their own jaws</strong>. Needless to say, it rarely worked!<br><br>More?"
+                ]
+            },
+            {
+                id: 'dental_myths',
+                priority: 0,
+                keywords: ['myth','is it true','true or false','old wives tale','dental myth','heard that','is it a myth','debunk','myth that','bust a myth','dental myths','tooth myths','common myths','is it really true','i heard that'],
+                weight: 5,
+                responses: [
+                    "&#x274C; <strong>Myth:</strong> \"White teeth = healthy teeth\"<br>&#x2705; <strong>Truth:</strong> Tooth colour varies naturally between people. Perfectly white teeth can still have decay or gum disease hiding beneath the surface. Regular check-ups matter far more than colour.<br><br>Want to bust another myth?",
+                    "&#x274C; <strong>Myth:</strong> \"Sugar directly causes cavities\"<br>&#x2705; <strong>Truth:</strong> Not quite. It's the bacteria in your mouth that <em>feed</em> on sugar and produce acid that attacks enamel. How <em>often</em> you have sugar matters more than how much in one sitting.<br><br>Another myth?",
+                    "&#x274C; <strong>Myth:</strong> \"Brushing harder cleans better\"<br>&#x2705; <strong>Truth:</strong> Aggressive brushing actually damages your enamel and gum tissue. Gentle circular motions with a soft brush are far more effective and safer.<br><br>Another?",
+                    "&#x274C; <strong>Myth:</strong> \"Baby teeth don't matter because they fall out\"<br>&#x2705; <strong>Truth:</strong> Baby teeth hold space for permanent teeth, affect speech development, aid chewing, and influence jaw development. Cavities in baby teeth can also cause pain and infection. They absolutely matter!<br><br>Want another?",
+                    "&#x274C; <strong>Myth:</strong> \"If it doesn't hurt, there's no problem\"<br>&#x2705; <strong>Truth:</strong> Many dental problems &mdash; including decay, gum disease, and even oral cancer &mdash; are painless until very advanced. Regular check-ups are essential for early detection.<br><br>Another myth?",
+                    "&#x274C; <strong>Myth:</strong> \"You shouldn't brush bleeding gums\"<br>&#x2705; <strong>Truth:</strong> Bleeding gums usually indicate gingivitis (early gum disease). The answer is to brush <em>more carefully</em>, not stop. Avoiding brushing makes the problem much worse.<br><br>Another?",
+                    "&#x274C; <strong>Myth:</strong> \"Root canals are extremely painful\"<br>&#x2705; <strong>Truth:</strong> Modern root canal treatment is carried out under effective local anaesthetic. Most patients report it feeling similar to a filling. It's the <em>infection before</em> treatment that hurts &mdash; the treatment relieves the pain!<br><br>Another?",
+                    "&#x274C; <strong>Myth:</strong> \"You only need to see the dentist when something hurts\"<br>&#x2705; <strong>Truth:</strong> By the time most dental problems cause pain, they're often more advanced (and expensive to fix). Regular check-ups every 6&ndash;12 months catch problems while they're still small.<br><br>Want another?"
+                ]
+            },
+            {
+                id: 'jokes',
+                priority: 0,
+                keywords: ['joke','funny','laugh','humour','humor','make me laugh','tell me a joke','cheer me up','bored','dental joke','dentist joke'],
+                weight: 3,
+                responses: [
+                    "Why did the king go to the dentist? <br><strong>To get his teeth crowned!</strong> &#x1F451;<br><br>&#x1F604; Want another?",
+                    "What does the dentist of the year get? <br><strong>A little plaque!</strong> &#x1F3C6;<br><br>&#x1F604; Another?",
+                    "What time is a dental appointment? <br><strong>Tooth-hurty!</strong> (2:30) &#x1F570;<br><br>&#x1F604; Want another?",
+                    "What do you call a bear with no teeth? <br><strong>A gummy bear!</strong> &#x1F43B;<br><br>&#x1F604; Another?",
+                    "Why did the deer need braces? <br><strong>Because it had buck teeth!</strong> &#x1F98C;<br><br>&#x1F604; Want another?",
+                    "What did the tooth say to the departing dentist? <br><strong>\"Fill me in when you get back!\"</strong> &#x1F60A;<br><br>&#x1F604; Another?",
+                    "Why did the smartphone go to the dentist? <br><strong>It had Bluetooth problems!</strong> &#x1F4F1;<br><br>&#x1F604; Want another?",
+                    "What does a dentist call an astronaut's cavity? <br><strong>A black hole!</strong> &#x1F680;<br><br>&#x1F604; Another?",
+                    "What's a dentist's favourite animal? <br><strong>A molar bear!</strong> &#x1F43B;<br><br>&#x1F604; Want another?",
+                    "What's a dentist's favourite day of the week? <br><strong>Toothsday!</strong> &#x1F9B7;<br><br>&#x1F604; Another?",
+                    "I told my dentist I wanted a crown. She replied: <br><strong>\"You're absolutely royalty to us!\"</strong> &#x1F451;<br><br>&#x1F604; Want another?",
+                    "What did one tooth say to the other? <br><strong>\"Get your cap on, the dentist is taking us out tonight!\"</strong> &#x1F9B7;<br><br>&#x1F604; Another?",
+                    "How do you fix a broken tooth? <br><strong>With toothpaste, of course!</strong> &#x1F604;<br><br>Want another?",
+                    "Patient: Doctor, I have yellow teeth. What should I do?<br>Dentist: <strong>Wear a brown tie.</strong> &#x1F454;<br><br>&#x1F604; Want another?"
+                ]
+            },
+        
+            // ════════════════════════════════════════
+            // CONTACT & MISC
+            // ════════════════════════════════════════
+            {
+                id: 'contact',
+                priority: 0,
+                keywords: ['phone','call us','contact','email','reach','get in touch','speak to someone','talk to','how to contact','reception','front desk'],
+                weight: 5,
+                responses: [
+                    "&#x1F4DE; <strong>Contact Us</strong><br><br><strong>Phone:</strong> "+phone+"<br><strong>Address:</strong> 276a Heathway, Dagenham, Essex, RM10 8QS<br><strong>Hours:</strong> Mon&ndash;Fri 9am&ndash;1pm, 2pm&ndash;5pm<br><br>Visit our <a href='heathway-contact.html' style='color:var(--teal)'>Contact page</a> for more details.",
+                    "&#x1F4DE; <strong>Get in Touch</strong><br><br>The best way to reach us is by phone:<br>"+phone+"<br><br>Lines are open <strong>Monday to Friday, 9am&ndash;1pm and 2pm&ndash;5pm</strong> (closed 1&ndash;2pm for lunch).<br><br>Our reception team is friendly and helpful. Don't be shy &mdash; give us a call!"
+                ]
+            },
+            {
+                id: 'insurance',
+                priority: 0,
+                keywords: ['insurance','dental insurance','bupa','vitality','axa','aviva','simplyhealth','denplan','health plan','dental plan','private insurance','insurance cover'],
+                weight: 4,
+                responses: [
+                    "&#x1F4BC; <strong>Dental Insurance</strong><br><br>We can treat patients with dental insurance plans, including many major providers. Please call "+phoneInline+" before your appointment and mention your insurance provider so we can check compatibility and billing arrangements.",
+                    "&#x1F4BC; <strong>Insurance Plans</strong><br><br>If you have dental insurance through an employer or private plan, please call "+phoneInline+" to discuss. We'll confirm whether we can accept your plan and how billing works.<br><br>We also offer our own flexible payment plans for larger private treatments."
+                ]
+            },
+            {
+                id: 'off_topic',
+                priority: 0,
+                keywords: ['weather','football','soccer','cricket','rugby','pizza','burger','dog','cat','pet','movie','film','music','song','game','love','girlfriend','boyfriend','wife','husband','politics','trump','election','news','bitcoin','crypto','stocks'],
+                weight: 2,
+                responses: [
+                    "Ha! That's a bit outside my area of expertise. &#x1F604; I'm best with dental topics &mdash; but I do know that <strong>smiling uses fewer muscles than frowning</strong>, so keep smiling! How can I help with your teeth?",
+                    "I wish I could help with that, but I'm trained in teeth, not world affairs! &#x1F9B7; Anything dental I can assist with?",
+                    "I'm just a humble dental assistant &mdash; I'll leave that to the experts! &#x1F604; Now, about those teeth of yours &mdash; anything I can help with?"
+                ]
+            },
+            {
+                id: 'follow_up',
+                priority: 0,
+                keywords: ['how much','how much does it cost','how much is it','what does it cost','more info','tell me more','and the address','where is that','when is that','what about','more about','can you explain','what else','anything else to know','go on','continue'],
+                weight: 2,
+                responses: [
+                    "Happy to give you more details! Could you let me know which topic you'd like more information on? For example:<br>&#x2022; Pricing for a specific treatment<br>&#x2022; More about a particular service<br>&#x2022; Location and how to get here<br><br>Or call "+phoneInline+" and our team can go through everything with you.",
+                    "Of course! What would you like to know more about? I can go deeper on:<br>&#x2022; NHS charges and what each band covers<br>&#x2022; Any of our treatments<br>&#x2022; Location and transport<br>&#x2022; Our team<br><br>Just ask!"
+                ]
+            },
+            {
+                id: 'clarification',
+                priority: 0,
+                keywords: ['what','huh','eh','pardon','sorry','come again','repeat that','again','didn\'t understand','don\'t understand','don\'t get it','confused','not sure what you mean','what do you mean'],
+                weight: 2,
+                responses: [
+                    "No worries at all! Could you rephrase that? I can help with appointments, services, pricing, dental advice, and much more. Or try one of the quick suggestions! &#x1F60A;",
+                    "Sorry if that wasn't clear! Try asking me something like:<br>&#x2022; \"How much does a filling cost?\"<br>&#x2022; \"What are your opening hours?\"<br>&#x2022; \"How do I book an appointment?\"<br>&#x2022; \"Tell me about dentures\"<br><br>Or call "+phoneInline+" for direct help."
+                ]
+            },
+        
+            // ── Default (lowest weight, always last resort) ──
+            {
+                id: 'default',
+                priority: -1,
+                keywords: [],
+                weight: 0,
+                responses: [
+                    "I'm not quite sure what you're asking, but I'd love to help! Try asking about:<br>&#x2022; &#x1F4C5; Booking an appointment<br>&#x2022; &#x1F9B7; Our services &amp; treatments<br>&#x2022; &#x1F4B7; NHS pricing<br>&#x2022; &#x1F553; Opening hours<br>&#x2022; &#x1F4CD; Location &amp; directions<br>&#x2022; &#x1F6A8; Dental emergencies<br><br>Or call "+phone+" and our team will be happy to help! &#x1F60A;",
+                    "Hmm, I didn't quite catch that. I can help with:<br>&#x2022; Appointments &amp; registration<br>&#x2022; NHS &amp; private pricing<br>&#x2022; Treatments (fillings, crowns, dentures and more)<br>&#x2022; Oral health advice<br>&#x2022; Hours, location &amp; transport<br><br>Try rephrasing your question, or call "+phone+".",
+                    "I want to help &mdash; could you give me a bit more to go on? Try asking something like \"How much is a crown?\" or \"Are you open Saturday?\"<br><br>Or for a direct answer, call "+phoneInline+" during our opening hours (Mon&ndash;Fri 9am&ndash;5pm)."
+                ]
+            }
+        ];
+        
+        // ── Context-aware follow-up response ─────────
+        function getContextualResponse(msgWords) {
+            const ctx = conversationContext;
+        
+            // "how much?" after a topic about a treatment
+            const pricingFollowUp = ['how much','cost','price','charge','fee','expensive','affordable','pay'];
+            if (pricingFollowUp.some(w => msgWords.includes(w)) && ctx.lastTopic) {
+                const pricedTopics = {
+                    'checkup':        "A check-up is covered by <strong>NHS Band 1: &#163;27.40</strong>. Free if you qualify for NHS exemptions (under 18, pregnant, benefits, HC2).",
+                    'fillings':       "Fillings are <strong>NHS Band 2: &#163;75.30</strong> &mdash; and one Band 2 charge covers all fillings in the same course of treatment. Private white fillings are quoted individually.",
+                    'crowns':         "Crowns are <strong>NHS Band 3: &#163;326.70</strong> on the NHS. Private ceramic crowns are quoted at consultation &mdash; call "+phoneInline+" for a quote.",
+                    'bridges':        "Bridges fall under <strong>NHS Band 3: &#163;326.70</strong>. Private options are available &mdash; call "+phoneInline+" for a private quote.",
+                    'dentures':       "Dentures are <strong>NHS Band 3: &#163;326.70</strong>. Private dentures (better materials, more natural look) are quoted individually.",
+                    'root_canal':     "Root canal is covered by <strong>NHS Band 2: &#163;75.30</strong>. Private options available for more complex cases.",
+                    'extractions':    "Extractions are <strong>NHS Band 2: &#163;75.30</strong>. Free if you have an NHS exemption.",
+                    'scale_polish':   "Scale &amp; polish is included in <strong>NHS Band 1 (&#163;27.40)</strong> when clinically indicated. If you'd like an extra hygiene visit, ask us about private hygiene appointments.",
+                    'mouthguards':    "Custom mouthguards are a <strong>private treatment</strong>. Call "+phoneInline+" for current pricing.",
+                    'night_guards':   "Custom night guards are a <strong>private treatment</strong>. Call "+phoneInline+" for current pricing.",
+                    'xrays':          "X-rays are included in your <strong>NHS Band 1 check-up (&#163;27.40)</strong> when clinically needed. No extra charge.",
+                    'nhs_pricing_overview': "NHS charges: <strong>Band 1: &#163;27.40</strong> (check-up), <strong>Band 2: &#163;75.30</strong> (fillings, extractions), <strong>Band 3: &#163;326.70</strong> (crowns, bridges, dentures). Free for exempt patients.",
+                };
+                const resp = pricedTopics[ctx.lastTopic];
+                if (resp) return resp;
+            }
+        
+            // "where?" follow-up
+            const locationWords = ['where','address','how do i get','directions','location'];
+            if (locationWords.some(w => msgWords.some(mw => mw.includes(w)))) {
+                return "&#x1F4CD; We're at <strong>276a Heathway, Dagenham, Essex, RM10 8QS</strong>.<br><br>&#x1F687; Dagenham Heathway tube (District Line) &mdash; 3 min walk<br>&#x1F68C; Buses 173, 174, 175<br>&#x1F697; Street parking on Heathway<br><br><a href='https://maps.google.com/?q=276a+Heathway+Dagenham+RM10+8QS' target='_blank' style='color:var(--teal)'>Open in Google Maps &#x2197;</a>";
+            }
+        
+            // "when?" follow-up
+            const timeWords = ['when','hours','open','time','what time'];
+            if (timeWords.some(w => msgWords.includes(w))) {
+                return "&#x1F553; We're open <strong>Mon&ndash;Fri 9am&ndash;1pm and 2pm&ndash;5pm</strong> (closed 1&ndash;2pm for lunch). Closed weekends and bank holidays.";
+            }
+        
+            return null;
+        }
+        
+        // ── Sentiment-aware opening ───────────────────
+        function sentimentPrefix(sentiment) {
+            if (sentiment === 'frustrated') return "I'm really sorry you're having a tough time. Let me help as best I can.<br><br>";
+            if (sentiment === 'anxious') return "I completely understand &mdash; you're not alone. Here's what you need to know:<br><br>";
+            return '';
+        }
+        
+        // ── Multi-part question detector ──────────────
+        // Returns an array of matched topic IDs if the message seems to contain multiple questions
+        function detectMultiPart(input, words) {
+            const connectors = /\b(and|also|plus|as well as|what about|additionally)\b/i;
+            if (!connectors.test(input)) return null;
+        
+            const parts = input.split(/\b(?:and|also|plus|as well as|what about|additionally)\b/i);
+            if (parts.length < 2) return null;
+        
+            const hitIds = [];
+            for (const part of parts) {
+                const pw = part.toLowerCase().split(/\s+/).filter(Boolean);
+                let best = null, bestScore = 0;
+                for (const topic of topics) {
+                    if (topic.id === 'default' || topic.id === 'follow_up' || topic.id === 'clarification') continue;
+                    const s = scoreKeywords(pw, topic.keywords);
+                    if (s > bestScore) { bestScore = s; best = topic; }
+                }
+                if (best && bestScore > 0 && !hitIds.includes(best.id)) hitIds.push(best.id);
+            }
+            return hitIds.length >= 2 ? hitIds : null;
+        }
+        
+        // ── Main smart response function ──────────────
+        function smartResponse(input) {
+            conversationContext.messageCount++;
+        
+            const msg = input.toLowerCase().trim();
+            const words = msg.split(/\s+/).filter(Boolean);
+            const sentiment = detectSentiment(msg);
+            conversationContext.sentiment = sentiment;
+        
+            // ── 1. Check priority topics first (emergencies etc.) ──
+            for (const topic of topics.filter(t => t.priority > 0).sort((a, b) => b.priority - a.priority)) {
+                const s = scoreKeywords(words, topic.keywords);
+                if (s >= 1) {
+                    conversationContext.lastTopic = topic.id;
+                    if (!conversationContext.topicsDiscussed.includes(topic.id)) {
+                        conversationContext.topicsDiscussed.push(topic.id);
+                    }
+                    return sentimentPrefix(sentiment) + pick(topic.responses);
+                }
+            }
+        
+            // ── 2. Very short/unclear messages ──
+            if (words.length <= 2 && /^(\?+|huh|eh|what|ok|okay|yes|no|yeah|nah|nope|yep|sure|k|lol|haha)$/.test(msg)) {
+                if (msg === 'yes' || msg === 'yeah' || msg === 'yep' || msg === 'sure') {
+                    // Affirmative — continue with last topic or prompt
+                    if (conversationContext.lastTopic) {
+                        return "Great! Feel free to ask anything else about " + conversationContext.lastTopic.replace(/_/g, ' ') + ", or any other dental topic. &#x1F60A;";
+                    }
+                    return "What would you like to know? I can help with appointments, services, prices, and more! &#x1F60A;";
+                }
+                return pick([
+                    "Could you tell me a bit more? I can help with appointments, pricing, services, location, and dental health tips. &#x1F60A;",
+                    "No worries! Try asking something like \"How much is a check-up?\" or \"Are you taking new patients?\" &#x1F60A;",
+                    "Happy to help! What would you like to know about Heathway Dental? &#x1F60A;"
+                ]);
+            }
+        
+            // ── 3. Context-aware follow-up detection ──
+            const followUpKeywords = ['how much','more info','tell me more','and the address','where is that','when is that','what about that','more about','anything else','go on'];
+            const isFollowUp = followUpKeywords.some(kw => msg.includes(kw));
+            if (isFollowUp && conversationContext.lastTopic) {
+                const contextResp = getContextualResponse(words);
+                if (contextResp) return contextResp;
+            }
+        
+            // ── 4. Multi-part question detection ──
+            const multiHits = detectMultiPart(msg, words);
+            if (multiHits && multiHits.length >= 2) {
+                const responses = [];
+                for (const id of multiHits.slice(0, 2)) {
+                    const topic = topics.find(t => t.id === id);
+                    if (topic) responses.push(pick(topic.responses));
+                }
+                conversationContext.lastTopic = multiHits[multiHits.length - 1];
+                multiHits.forEach(id => {
+                    if (!conversationContext.topicsDiscussed.includes(id)) {
+                        conversationContext.topicsDiscussed.push(id);
+                    }
+                });
+                if (responses.length >= 2) {
+                    return sentimentPrefix(sentiment) + responses.join("<br><br><hr style='border-color:rgba(255,255,255,0.1);margin:1rem 0'><br>");
+                }
+            }
+        
+            // ── 5. Score all non-priority topics ──
+            let bestTopic = null;
+            let bestScore = 0;
+        
+            for (const topic of topics) {
+                if (topic.priority > 0) continue; // already handled
+                if (topic.id === 'default') continue;
+                const s = scoreKeywords(words, topic.keywords);
+                if (s > bestScore) {
+                    bestScore = s;
+                    bestTopic = topic;
+                }
+            }
+        
+            // ── 6. Threshold check and fallback ──
+            // Score of 0 = no match, use default
+            if (!bestTopic || bestScore === 0) {
+                // Try one more time with original phrasing (checking for partial topic keyword presence)
+                for (const topic of topics) {
+                    if (topic.id === 'default' || topic.priority > 0) continue;
+                    if (topic.keywords.some(kw => msg.includes(kw))) {
+                        bestTopic = topic;
+                        bestScore = 1;
+                        break;
+                    }
+                }
+            }
+
+            const finalTopic = (bestTopic && bestScore > 0) ? bestTopic : topics.find(t => t.id === 'default');
+        
+            // Update context
+            if (finalTopic && finalTopic.id !== 'default') {
+                conversationContext.lastTopic = finalTopic.id;
+                if (!conversationContext.topicsDiscussed.includes(finalTopic.id)) {
+                    conversationContext.topicsDiscussed.push(finalTopic.id);
+                }
+            }
+        
+            return sentimentPrefix(sentiment) + pick(finalTopic.responses);
+        }
+        
+        // ── Backwards-compatibility alias ────────────
+        // If the existing code calls getFallbackResponse(), route it here.
+        function getFallbackResponse(input) {
+            return smartResponse(input);
+        }
+
+        // =============================================
+        // Send Message Handler
+        // =============================================
+        function sendMessage(text) {
+            if (!text || !text.trim()) return;
+
+            const userText = text.trim();
+            addUserMessage(userText);
+
+            // Hide suggestions after first message
+            if (suggestionsContainer) {
+                suggestionsContainer.style.display = 'none';
+            }
+
+            // Clear input
+            chatInput.value = '';
+            chatInput.focus();
+
+            // Show typing indicator
+            showTyping();
+
+            // Variable delay based on response complexity
+            const delay = 400 + Math.random() * 500;
+            setTimeout(() => {
+                removeTyping();
+                const response = smartResponse(userText);
+                addBotMessage(response);
+            }, delay);
+        }
+
+        // Send on button click
+        sendBtn.addEventListener('click', () => {
+            sendMessage(chatInput.value);
+        });
+
+        // Send on Enter key
+        chatInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                sendMessage(chatInput.value);
+            }
+        });
+
+        // Quick suggestion clicks
+        document.querySelectorAll('.chatbot__suggestion').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const message = btn.getAttribute('data-message');
+                sendMessage(message);
+            });
+        });
+
+        // Focus input on page load
+        window.addEventListener('load', () => {
+            chatInput.focus();
+        });
+    </script>
+</body>
+</html>
