@@ -2278,121 +2278,19 @@
 
     <!-- Booking Modal -->
     <div class="booking-overlay" id="bookingOverlay">
-        <div class="booking-modal">
-            <button class="close-modal" onclick="closeBooking()" aria-label="Close booking form">&times;</button>
-            <h2>Book an Appointment</h2>
-            <p class="booking-subtitle">Fill in the details below and we'll confirm your appointment</p>
-            <div class="booking-steps-indicator">
-                <div class="step-dot active" id="dot-1"></div>
-                <div class="step-dot" id="dot-2"></div>
-                <div class="step-dot" id="dot-3"></div>
-                <div class="step-dot" id="dot-4"></div>
-            </div>
-
-            <!-- Step 1: Service -->
-            <div class="booking-step active" id="bookStep1">
-                <div class="booking-form-group">
-                    <label>Select Service</label>
-                    <select id="bookService">
-                        <option value="">-- Choose a service --</option>
-                    </select>
-                </div>
-                <div class="booking-form-group">
-                    <label>Patient Type</label>
-                    <select id="bookPatientType">
-                        <option value="NHS">NHS Patient</option>
-                        <option value="Private">Private Patient</option>
-                        <option value="New">New Patient</option>
-                    </select>
-                </div>
-                <button class="booking-btn" onclick="bookingNext(2)">Continue</button>
-            </div>
-
-            <!-- Step 2: Date/Time -->
-            <div class="booking-step" id="bookStep2">
-                <div class="booking-form-row">
-                    <div class="booking-form-group">
-                        <label>Preferred Date</label>
-                        <input type="date" id="bookDate" min="">
-                    </div>
-                    <div class="booking-form-group">
-                        <label>Preferred Time</label>
-                        <select id="bookTime">
-                            <option value="">-- Select time --</option>
-                            <option value="09:00">9:00 AM</option>
-                            <option value="09:30">9:30 AM</option>
-                            <option value="10:00">10:00 AM</option>
-                            <option value="10:30">10:30 AM</option>
-                            <option value="11:00">11:00 AM</option>
-                            <option value="11:30">11:30 AM</option>
-                            <option value="12:00">12:00 PM</option>
-                            <option value="12:30">12:30 PM</option>
-                            <option value="14:00">2:00 PM</option>
-                            <option value="14:30">2:30 PM</option>
-                            <option value="15:00">3:00 PM</option>
-                            <option value="15:30">3:30 PM</option>
-                            <option value="16:00">4:00 PM</option>
-                            <option value="16:30">4:30 PM</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="booking-nav">
-                    <button class="booking-btn booking-btn-secondary" onclick="bookingNext(1)">Back</button>
-                    <button class="booking-btn" onclick="bookingNext(3)">Continue</button>
-                </div>
-            </div>
-
-            <!-- Step 3: Details -->
-            <div class="booking-step" id="bookStep3">
-                <div class="booking-form-row">
-                    <div class="booking-form-group">
-                        <label>First Name</label>
-                        <input type="text" id="bookFirstName" placeholder="John" autocomplete="given-name">
-                    </div>
-                    <div class="booking-form-group">
-                        <label>Last Name</label>
-                        <input type="text" id="bookLastName" placeholder="Smith" autocomplete="family-name">
-                    </div>
-                </div>
-                <div class="booking-form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" id="bookPhone" placeholder="07xxx xxxxxx" autocomplete="tel">
-                </div>
-                <div class="booking-form-group">
-                    <label>Email (optional)</label>
-                    <input type="email" id="bookEmail" placeholder="john@example.com" autocomplete="email">
-                </div>
-                <div class="booking-form-group">
-                    <label>Additional Notes (optional)</label>
-                    <textarea id="bookNotes" placeholder="Any specific concerns or requests..."></textarea>
-                </div>
-                <div class="booking-nav">
-                    <button class="booking-btn booking-btn-secondary" onclick="bookingNext(2)">Back</button>
-                    <button class="booking-btn" onclick="bookingNext(4)">Review Booking</button>
-                </div>
-            </div>
-
-            <!-- Step 4: Confirm -->
-            <div class="booking-step" id="bookStep4">
-                <h3 style="color:#fff;font-size:16px;margin-bottom:16px;">Booking Summary</h3>
-                <div id="bookingSummary"></div>
-                <div class="booking-nav" style="margin-top:20px;">
-                    <button class="booking-btn booking-btn-secondary" onclick="bookingNext(3)">Back</button>
-                    <button class="booking-btn" onclick="submitBooking()" id="submitBookingBtn">Confirm Booking</button>
-                </div>
-            </div>
-
-            <!-- Step 5: Confirmation -->
-            <div class="booking-step" id="bookStep5">
-                <div class="booking-confirmation">
-                    <div class="confirm-icon">&#10003;</div>
-                    <h3>Booking Request Sent!</h3>
-                    <p>We'll confirm your appointment shortly via phone.</p>
-                    <div class="booking-ref" id="bookingRefDisplay"></div>
-                    <p style="margin-top:12px;">Please save your reference number.</p>
-                    <button class="booking-btn" style="margin-top:20px;" onclick="closeBooking()">Close</button>
-                </div>
-            </div>
+        <div class="booking-modal" style="max-width:420px;text-align:center;">
+            <button class="close-modal" onclick="closeBooking()" aria-label="Close">&times;</button>
+            <div style="font-size:48px;margin-bottom:16px;">📞</div>
+            <h2 style="margin-bottom:12px;">Book an Appointment</h2>
+            <p class="booking-subtitle" style="margin-bottom:28px;">Call us and our team will get you booked in straight away.</p>
+            <a href="tel:02085925030" class="booking-btn" style="display:block;font-size:18px;padding:18px;text-decoration:none;margin-bottom:16px;">
+                020 8592 5030
+            </a>
+            <p style="color:#8899aa;font-size:13px;line-height:1.6;">
+                <strong style="color:#fff;">Mon – Fri:</strong> 9:00am – 1:00pm &amp; 2:00pm – 5:00pm<br>
+                Closed weekends &amp; bank holidays
+            </p>
+            <p style="color:#8899aa;font-size:12px;margin-top:16px;">Out of hours? Call <strong style="color:#fff;">NHS 111</strong> for urgent dental advice.</p>
         </div>
     </div>
 
@@ -2687,135 +2585,16 @@
         });
 
         // ============================================
-        // BOOKING SYSTEM
+        // BOOKING MODAL (call-to-book)
         // ============================================
-        var currentBookingStep = 1;
-
         function openBooking() {
             document.getElementById('bookingOverlay').classList.add('active');
             document.body.style.overflow = 'hidden';
-            // Set min date to today
-            var today = new Date().toISOString().split('T')[0];
-            document.getElementById('bookDate').setAttribute('min', today);
-            bookingNext(1);
         }
 
         function closeBooking() {
             document.getElementById('bookingOverlay').classList.remove('active');
             document.body.style.overflow = '';
-            // Reset form
-            currentBookingStep = 1;
-            ['bookService','bookPatientType','bookDate','bookTime','bookFirstName','bookLastName','bookPhone','bookEmail','bookNotes'].forEach(function(id) {
-                var el = document.getElementById(id);
-                if (el) el.value = el.tagName === 'SELECT' ? el.options[0].value : '';
-            });
-            bookingNext(1);
-        }
-
-        function bookingNext(step) {
-            // Validation
-            if (step === 2 && currentBookingStep === 1) {
-                if (!document.getElementById('bookService').value) { alert('Please select a service.'); return; }
-            }
-            if (step === 3 && currentBookingStep === 2) {
-                if (!document.getElementById('bookDate').value || !document.getElementById('bookTime').value) { alert('Please select a date and time.'); return; }
-            }
-            if (step === 4 && currentBookingStep === 3) {
-                if (!document.getElementById('bookFirstName').value || !document.getElementById('bookLastName').value || !document.getElementById('bookPhone').value) {
-                    alert('Please fill in your name and phone number.'); return;
-                }
-            }
-            currentBookingStep = step;
-            for (var i = 1; i <= 5; i++) {
-                document.getElementById('bookStep' + i).classList.remove('active');
-                var dot = document.getElementById('dot-' + i);
-                if (dot) { dot.classList.remove('active', 'done'); }
-            }
-            document.getElementById('bookStep' + step).classList.add('active');
-            for (var j = 1; j <= 4; j++) {
-                var d = document.getElementById('dot-' + j);
-                if (d) {
-                    if (j < step) d.classList.add('done');
-                    if (j === step) d.classList.add('active');
-                }
-            }
-            // Build summary on step 4
-            if (step === 4) {
-                var summary = document.getElementById('bookingSummary');
-                summary.innerHTML =
-                    '<div class="booking-summary-row"><span class="label">Service</span><span class="value">' + document.getElementById('bookService').value + '</span></div>' +
-                    '<div class="booking-summary-row"><span class="label">Patient Type</span><span class="value">' + document.getElementById('bookPatientType').value + '</span></div>' +
-                    '<div class="booking-summary-row"><span class="label">Date</span><span class="value">' + document.getElementById('bookDate').value + '</span></div>' +
-                    '<div class="booking-summary-row"><span class="label">Time</span><span class="value">' + document.getElementById('bookTime').value + '</span></div>' +
-                    '<div class="booking-summary-row"><span class="label">Name</span><span class="value">' + document.getElementById('bookFirstName').value + ' ' + document.getElementById('bookLastName').value + '</span></div>' +
-                    '<div class="booking-summary-row"><span class="label">Phone</span><span class="value">' + document.getElementById('bookPhone').value + '</span></div>' +
-                    (document.getElementById('bookEmail').value ? '<div class="booking-summary-row"><span class="label">Email</span><span class="value">' + document.getElementById('bookEmail').value + '</span></div>' : '');
-            }
-        }
-
-        function populateBookingServices(prices) {
-            var select = document.getElementById('bookService');
-            if (!select) return;
-            var current = select.value;
-            select.innerHTML = '<option value="">-- Choose a service --</option>';
-            var allServices = [];
-            ['nhs','private','dentures'].forEach(function(cat) {
-                if (prices[cat]) {
-                    Object.keys(prices[cat]).forEach(function(key) {
-                        var name = key.replace(/([A-Z])/g, ' $1').replace(/^./, function(s) { return s.toUpperCase(); });
-                        name = name.replace(/Nhs/g, 'NHS');
-                        var price = prices[cat][key];
-                        var display = (typeof price === 'number' || !isNaN(price)) ? ' (£' + parseFloat(price).toFixed(2) + ')' : '';
-                        allServices.push({ name: name + display, cat: cat.toUpperCase() });
-                    });
-                }
-            });
-            // Add common services if prices not loaded
-            if (allServices.length === 0) {
-                ['Check-up','Cleaning','Filling','Root Canal','Crown','Bridge','Dentures','Emergency Appointment','Extraction','Gum Treatment'].forEach(function(s) {
-                    allServices.push({ name: s, cat: '' });
-                });
-            }
-            allServices.forEach(function(s) {
-                var opt = document.createElement('option');
-                opt.value = s.name;
-                opt.textContent = s.name;
-                select.appendChild(opt);
-            });
-            if (current) select.value = current;
-        }
-
-        function submitBooking() {
-            var btn = document.getElementById('submitBookingBtn');
-            btn.disabled = true;
-            btn.textContent = 'Submitting...';
-
-            var ref = 'HD-' + Date.now().toString(36).toUpperCase().slice(-6);
-            var booking = {
-                reference: ref,
-                service: document.getElementById('bookService').value,
-                patientType: document.getElementById('bookPatientType').value,
-                date: document.getElementById('bookDate').value,
-                time: document.getElementById('bookTime').value,
-                name: document.getElementById('bookFirstName').value + ' ' + document.getElementById('bookLastName').value,
-                phone: document.getElementById('bookPhone').value,
-                email: document.getElementById('bookEmail').value || '',
-                notes: document.getElementById('bookNotes').value || '',
-                status: 'pending',
-                source: 'website',
-                createdAt: new Date().toISOString()
-            };
-
-            database.ref(DB_PREFIX + 'bookings').push(booking).then(function() {
-                document.getElementById('bookingRefDisplay').textContent = ref;
-                btn.disabled = false;
-                btn.textContent = 'Confirm Booking';
-                bookingNext(5);
-            }).catch(function(err) {
-                alert('Sorry, something went wrong. Please call us on 020 8592 5030.');
-                btn.disabled = false;
-                btn.textContent = 'Confirm Booking';
-            });
         }
 
         // ============================================
